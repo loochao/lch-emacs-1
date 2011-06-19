@@ -1,0 +1,37 @@
+\frametitle {Matrices}
+\label{sec-5_1_23}
+
+Now we know enough to write ourselves a matrix library
+\begin{verbatim}
+  typedef struct Matrix {
+     float **data;
+     int nrow;
+     int ncol;
+  };
+
+  Matrix *newMatrix(int nrow, int ncol);
+...
+  Matrix *A = newMatrix(10, 10);
+  Matrix *B = newMatrix(10, 10);
+\end{verbatim}
+
+\pause
+However, you can't write:
+\begin{verbatim}
+Matrix *sum = A + B;
+\end{verbatim}
+\pause \ldots{} not until you switch to \CPP.
+
+
+
+
+
+
+
+
+[3] In \CPP you'd probably use a \code{const} variable but scoping rules are different in C, so a macro is appropriate
+
+[4] this isn't quite true;  it could pass a limited number of variables by using \textit{register}s
+
+[5] actually you can omit the dimension;
+ it'll be calculated for you. You need to allow an extra character for the \code{'\\0'} that traditionally ends a string in C.

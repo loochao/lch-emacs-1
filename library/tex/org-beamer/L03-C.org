@@ -1,0 +1,1179 @@
+#+startup: beamer
+#+latex_class: beamer
+#+latex_class_options: [10pt, t]
+#+latex_header: \usepackage{APC524b}
+#+beamer_frame_level: 3
+#+title: C
+#+author: robert lupton
+#+date: 23 september 2010
+#+columns: %45ITEM %10BEAMER_env(Env) %8BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+property: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+options: toc:t
+
+* Introduction
+** types
+*** Introduction
+C was designed as a system programming language, to remove the necessity of writing operating systems in
+assembler.  It's one of the large family of languages deriving from Algol.
+
+\pause
+You've seen ``hello world'' before:
+#+INCLUDE src/hello.c src C
+\pause
+
+This example comes from "The C Programming Language" by Brian Kernighan and Dennis Ritchie ("K&R")
+
+*** Declarations
+ All variables must be declared before they can be used:
+#+begin_src c
+ char c = 'a';
+ char *s = "I am a string";
+ double d = 1;
+ float f = 1.0f;
+ int i = 101010101;
+ long l = 10;
+ short s = 10;
+#+end_src
+\pause
+"string" is spelt \code{char *} for reasons that I'll explain in a bit.
+\pause
+\code{short} is actually a shorthand for \code{short int} (\code{long} means \code{long int}).  
+You can also define integral types (\code{char} and \code{int}) as being \code{signed} or \code{unsigned}. 
+\pause One especially useful qualifier is \code{const}:
+#+begin_src c
+const unsigned long bad = 0xdeadbeef00000000;
+#+end_src
+
+\pause An unqualified \code{int} is supposed to be the most efficient integral type on your machine, and is
+what you'd generally use unless there was some reason not to. 
+
+*** Declaring your own types
+C allows you to use your own name for a type:
+#+BEGIN_SRC c
+typedef unsigned short U16;
+#+END_SRC
+\pause
+Why would I want to do this?
+
+\pause
+CCD image data is typically created using a 16-bit A/D converter, so
+the natural type for a single pixel is a 2-byte integer.
+
+But C doesn't tell me how large an \code{int} is; I 
+can find out (using \code{sizeof(int)}) but I don't want to have to change all my declarations when I move
+to a new system.
+
+\pause
+Actually, these days, I could say:
+#+BEGIN_SRC c
+#include <stdint.h>
+typedef uint16_t U16;
+#+END_SRC
+but even that only works if the processor actually has an unsigned 16-bit type.
+
+*** Declarations
+You can mix code and declarations:
+#+BEGIN_SRC c
+  int pwv = 0;                            // Precipitable Water Vapour
+  /*
+   * Estimate the PWV based on the altitude
+   */
+  ...;
+  /*
+   * Given that estimate, find a better value
+   */
+  const int pwv0 = pwv;                   /* initial estimate of pwv */
+#+END_SRC
+\pause
+The ability to declare variables when they are first needed means that you can usually initialize them too;
+when possible, make them \code{const}.
+
+*** Scope
+A variable's /scope/ is the part of the programme it may be referenced from;  in C, a variable's scope
+is the nearest set of braces (\code{\{\}}), a /block/.  If it isn't in a block, a variable is visible globally
+(i.e. it'll show up when you run \code{nm} on your object file).  If this isn't what you wanted, you can:
+ \pause
+ - Move it into a function --- remember, global variables should usually be avoided
+ \pause
+ - Label it \code{static} which makes it only visible within the file
+ \pause
+ - Decide that it really /must/ be globally visible, and declare it in a header file:
+  #+BEGIN_SRC c
+  extern int nread;	// Number of times I've read from a file
+  #+END_SRC
+
+\pause
+It is generally a good idea to declare a variable in as restricted a scope as possible (the "No Globals" rule 
+is a special case of this one).
+
+* Program Structure
+** =for=, =if=, ...
+*** Control Flow
+
+C has the usual constructs:
+ - \code{if(...) \{ ... \} else if(...) \{ ...\} else \{ ... \}}
+ \pause
+ - \code{for(...) \{ ... \}}
+ - \code{while \{ ... \}}
+ - \code{do \{ ... \} while (...);}
+ \pause
+ - \code{switch (...) \{ case XXX: ... break; ... \} }
+ \pause
+ - \code{break}, \code{continue}
+ \pause
+ - \code{goto}
+
+*** If statements
+#+BEGIN_SRC c
+       if (i < 9) {
+           printf("Hello");
+       } else {
+           printf("Goodbye");
+       }
+       printf(" world\n");
+#+END_SRC
+\pause
+Legally, you can write this as
+#+BEGIN_SRC c
+       if (i < 9)
+           printf("Hello");
+       else
+           printf("Goodbye");
+
+       printf(" world\n");
+#+END_SRC
+But we don't recommend it;
+\pause  it's too easy to write
+#+BEGIN_SRC c
+       if (i < 9)
+           printf("Hello");
+       else
+           printf("Goodbye");
+           printf(" and good riddance");
+
+       printf(" world\n");
+#+END_SRC
+*** For loops
+#+INCLUDE src/for.c src C
+This only works with a compiler that supports the C99 standard (\code{cc --std=c99 ...})
+\pause
+This is almost equivalent to:
+# "almost" because of i's scope
+#+BEGIN_SRC c
+  #include <stdio.h>
+  
+  int
+  main()
+  {
+       int i = 0;
+       while (i != 10) {
+            printf("Hello world\n");
+            ++i;
+       }
+  
+       return 0;
+  }
+#+END_SRC
+
+*** Switch
+:PROPERTIES:
+:BEAMER_env: frame
+:BEAMER_envargs: [allowframebreaks]
+:END:
+#+INCLUDE src/printf.c src C
+*** Switch
+#+BEGIN_SRC sh
+$ make printf && ./printf
+$ cc -g -Wall -O3 --std=c99    printf.c   -o printf
+a
+b
+c
+:
+<space>
+<integer>
+%
+<space>
+d
+o
+n
+e
+<newline>
+#+END_SRC
+(N.b. The call was \code{checkFormat("abc: \%d\%\% done\\n");})
+
+*** Putting that together
+#+INCLUDE src/switch.c src C
+* Functions
+** subroutines, arrays, operators
+*** Subroutines
+Here is a function to add two numbers:
+
+\snippetFile[C++]{src/c_examples.c}
+
+\includeSnippet{add}
+\pause
+and here is one to multiply them:
+
+\includeSnippet{mult}
+
+\pause
+So far, just like Fortran
+
+\pause
+\includeSnippet{square}
+
+\pause
+That's a little clumsier --- in Fortran (or python) you could have said \code{x**2}.  And 
+note the extra include file, \file{math.h}.  In the old days you needed to link \code{-lm} too, but modern 
+systems seem to be more forgiving.
+
+*** Recursion
+Subroutines may be called recursively --- that is, they may call themselves, either directly or indirectly.
+There is no limit except the capacity of your computer.
+#+INCLUDE src/factorial.c src c
+*** Recursion
+That may not seem very interesting; it's easy enough to write a loop to calculate factorials.  
+
+However, consider a routine \code{integrate(float a, float b, float (*func)(float x))} [fn:: \code{float (*func)(float x)} is C for "a function =func= expecting a float and returning a float"]
+
+\pause
+
+If I need to do a double integral, I can say something like:
+#+BEGIN_SRC c
+  static float yy;                        // current value of y
+  
+  static float func(float x) {
+     return sin(x)*cos(yy);
+  }
+  
+  static float dfunc(float y) {
+     yy = y;                              // pass y to func
+     return integrate(0, y, func);
+  }
+  
+  const double ans = integrate(1, 3, dfunc);
+#+END_SRC
+
+to calculate
+$$
+\int_{x=0}^{y} \int_{y=1}^{3} \sin x \cos y \,  d\!x d\!y
+$$
+
+*** Complete Example
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <math.h>
+
+double integrate(const float a, const float b, float (*func)(float x)) {
+      const int nstep = 1000;		// number of steps
+      const float step = (b - a)/nstep;
+
+      double ans = 0.0;
+      float x = a;
+      for (int i = 0; i != nstep; ++i) {
+	 ans += func(x); 
+	 x += step;
+      }
+
+      return step*ans;
+}
+
+static float yy;			// current value of y
+
+static float func(float x) {
+   return sin(x)*cos(yy);
+}
+
+static float dfunc(float y) {
+   yy = y;				// pass y to func
+   return integrate(0, y, func);
+}
+
+int main() {
+   printf("ans = %g\n", integrate(1, 3, dfunc));
+   return 0;
+}
+#+END_SRC
+
+*** Subroutine Arguments
+Question: What does this do?
+#+BEGIN_SRC c
+void triple(double x) {
+   x *= 3;
+}
+...
+double x = 1;
+triple(x);
+#+END_SRC
+\pause
+Answer: wastes CPU cycles.
+
+The function \code{triple} is passed a /copy/ of \code{x}, so *nothing* that \code{triple} does can 
+affect the program that calls it.
+
+\pause
+The solution is to pass a /pointer/ to x:
+#+BEGIN_SRC c
+void triple(double @\color{red}*@x) {
+    @\color{red}*@x *= 3;
+}
+...
+double x = 1;
+triple(@\color{red}\&@x);
+#+END_SRC
+\pause
+Fortran /always/ passes arguments this way; a famous party trick when I was young was to say
+#+BEGIN_SRC c
+call triple(1)
+#+END_SRC
+*** Prototypes
+It is critically important that subroutines' callers and callees agree about the number and
+types of the arguments (the /signature/).  C uses a /prototype/ to allow the compiler to check; given
+#+BEGIN_SRC c
+void triple(double *x) {
+    *x *= 3;
+}
+#+END_SRC
+we put the prototype \code{void triple(double *x);} in a header (".h") file and \code{#include} 
+it in the file that defines \code{triple} and also whenever we call
+\code{triple}. [fn:: Most compilers these days will complain if you don't do this.]
+
+This isn't a lot of extra work and soon becomes second nature.
+
+*** Arrays
+Arrays are declared and subscripted using \code{[]}.
+#+BEGIN_SRC c
+int ids[10];
+#+END_SRC 
+\pause
+In C99, the dimension need /not/ be known at compile time:
+#+BEGIN_SRC c
+void foo(const int n) {
+    int ids[n];
+    ...
+    double x = ids[n/2];
+}
+#+END_SRC
+The index starts at /0/ (not /1/, as in Fortran) as it specifies the distance from the start of the array.
+#+BEGIN_SRC c
+printf("ID0: %d\n", ids[0]);
+#+END_SRC
+\pause
+This may make more sense when we discuss /pointers/.
+
+*** =n=-D Arrays
+You can also define =n=-D arrays:
+#+BEGIN_SRC c
+U16 data[4096][2048];
+...
+U16 const peak = data[y][x];		// the (x, y)th pixel
+#+END_SRC
+
+The data is stored row-by-row so the /last/ index increases fastest if we access pixels in the order in which
+they're stored (unlike Fortran arrays, in which the /first/ index varies fastest).
+
+\pause
+=n=-D arrays aren't as useful as you might think as they are passed to
+subroutines as /pointers/; for now all you need to know is that you *must* specify
+all but the first dimension when passing an =n=-D array to a subroutine:
+#+BEGIN_SRC c
+void debias(U16 data[][2048], const int nrow, const int ncol) {
+   ...
+}
+#+END_SRC
+\pause (hmm, I seem to have typed \code{2048} twice; was that a good idea...?)
+
+*** Operator Precedence
+\newcommand{\pipe}{|}
+|------------------------------------------------------------+---------------|
+| operator                                                   | associativity |
+|------------------------------------------------------------+---------------|
+| =()= =[]= =->= =.=                                         | left to right |
+| \texttt{!} =~= =++= \texttt{-}\texttt{-} =-= =(type)= =*= =&= =sizeof()=    | right to left |
+| \texttt{*} =/= =%=                                         | left to right |
+| \texttt{+} =-=                                             | left to right |
+| \texttt{<}\texttt{<} \texttt{>}\texttt{>}                  | left to right |
+| \texttt{<} \texttt{<=} \texttt{>} \texttt{>=}              | left to right |
+| \texttt{==} \texttt{!=}                                    | left to right |
+| \texttt{\&}                                                | left to right |
+| =^=                                                        | left to right |
+| \texttt{\pipe}                                             | left to right |
+| \texttt{\&\&}                                              | left to right |
+| \texttt{\pipe\pipe}                                        | left to right |
+| \texttt{?:}                                                | right to left |
+| \texttt{=} \texttt{+=} \texttt{-=} etc.                    | right to left |
+| \texttt{,}                                                 | left to right |
+|------------------------------------------------------------+---------------|
+
+* Macros
+** =#if=, =#define=
+*** Macros and the C Pre-Processor (/CPP/)
+C provides a simple macro processor which can be used to keep /magic numbers/ out of your
+code[fn:: In \CPP you'd probably use a \code{const} variable but scoping rules are different in C, so a macro is appropriate]
+instead of
+#+BEGIN_SRC c
+  char configFile[21];                    // name of configuration file
+  fgets(stdin, fileName, 20);
+#+END_SRC
+\pause
+you can write
+#+BEGIN_SRC c
+  #define FILE_LEN 20                     // maximum length for filename
+  
+  char configFile[FILE_LEN + 1];          // name of configuration file
+  fgets(stdin, fileName, FILE_LEN);
+#+END_SRC
+\pause writing all macros in CAPITALS is a common convention.
+
+*** Conditional Compilation
+In the bad old days, we wrote lots of code like:
+#+BEGIN_SRC c
+    #if defined(vms)
+       return -1;
+    #elif defined(HAVE_SELECT) && !defined(USE_POLL)
+       if(select(ncheck,&mask,(fd_set *)NULL,(fd_set *)NULL,
+                 (void *)NULL) != 0) {
+            ...
+       }
+    #else
+      /* Use poll() */
+    #endif
+#+END_SRC 
+\pause
+Fortunately, in these days of [[http://www.opengroup.org/onlinepubs/009695399/][Posix]] (=IEEE 1003=; =ISO/IEC 9945=) there is much less need for of this sort of thing.
+\pause 
+The (or at least my) main use of the CPP is:
+#+BEGIN_SRC c
+  #define DEBUG 1
+  ...
+  #if DEBUG
+  int niter = 0;
+  #endif
+  ...
+  #if DEBUG
+  printf("niter %d\n", ++niter);
+  #endif
+#+END_SRC
+*** Good uses for macros I
+One standard use for macros is to prevent header files being parsed more than once
+#+BEGIN_SRC C
+ #if !defined(GREET_H)
+ #define GREET_H
+ /* Lots of stuff that should be processed only once */
+ #endif
+#+END_SRC
+
+This use of a macro is known as an /include guard/.
+*** Good uses for macros II
+#+INCLUDE src/macros.c src c
+\pause
+#+BEGIN_SRC sh
+$ make macros && macros 1 2 3
+cc -g -Wall --std=c99 macros.c -o macros
+macros.c:009: Hello world!
+macros.c:010: My name is macros and I was called with 3 arguments.
+#+END_SRC 
+
+\pause
+Unfortunately, this code does not conform to the C99 standard (=ISO 9899:1999=):
+#+BEGIN_SRC sh
+$ cc -g -Wall --std=c99 --pedantic-errors macros.c -o macros
+macros.c:3:29: error: ISO C does not permit named variadic macros
+macros.c:7:30: error: ISO C99 requires rest arguments to be used
+#+END_SRC
+
+*** Good uses for macros II
+A legal version is:
+#+INCLUDE src/macros2.c src c
+Note that we were forced to pass at least one argument (hence the \code{""} in the first call).
+*** Bad uses for macros I
+You can use the CPP to pretend that you're writing Algol, not C
+#+BEGIN_SRC c
+#define IF	if(
+#define THEN	){
+#define ELSE	} else {
+#define ELIF	} else if (
+#define FI	;}
+
+IF x == 0 THEN
+   printf("zero\n");
+ELIF x == 1 THEN
+   printf("one\n");
+ELSE
+   printf("many\n");
+FI
+#+END_SRC
+\pause
+These macros come from the original Bourne shell source code in Unix Version 7.
+*** Bad uses for macros II
+How about
+#+BEGIN_SRC c
+#define MAX(a,b)	((a)>(b)?(a):(b))
+#+END_SRC
+This one also comes from Steve Bourne.
+
+\pause
+Why is this bad?  Consider
+#+BEGIN_SRC c
+const double fg = MAX(funcs(x), gunks(x));
+#+END_SRC
+\pause
+#+BEGIN_SRC c
+double funcs(const double x) {
+   static int x = 0.5;
+   x = sin(x);
+   return x;
+}
+
+static int i = 0;
+double gunks(const double x) {
+   return (x < ++i) ? 5.6 : 5.9;
+}
+#+END_SRC 
+\pause
+Both \code{funcs} and \code{gunks} are called twice; this is always inefficient, but in this case
+ catastrophic as they maintain internal state.
+
+\pause
+You don't write code like /that/, of course.  But \code{MAX(getchar(), 'a')} is just as bad.
+
+\pause
+C99 (and \CPP) have the \code{inline} keyword which removes some of the desire for macros like this.
+* Structs and Memory
+** =struct=, the stack, =malloc=
+*** Structs
+If you routinely write code like:
+#+BEGIN_SRC c
+  void printObjects(const int n, const int id[],
+                    const float xcen[], const float ycen[],
+                    const float flux[]);
+
+  #define NOBJECT 1000                    // Maximum number of objects
+
+  int id[NOBJECT];                        // Object IDs
+  float xcen[NOBJECT];                    // x-coordinate of centre
+  float ycen[NOBJECT];                    // y-coordinate of centre
+  float flux[NOBJECT];                    // object's flux
+    
+  for (int i = 0; i < n; ++i) {
+     id[i] = i;
+     xcen[i] = ...;
+     ycen[i] = ...;
+     flux[i] = ...;
+  }
+  
+  printObjects(n, id, xcen, ycen, flux);
+#+END_SRC
+C and we can help.
+*** Structs
+A cleaner way to write this is:
+#+BEGIN_SRC c
+  struct Object {
+     int id;                              // Object IDs
+     float xcen;                          // x-coordinate of centre
+     float ycen;                          // y-coordinate of centre
+  };
+
+  typedef struct Object Object;
+  
+  void printObjects(const int n, const Object objs[]);
+  
+  #define NOBJECT 1000                    // Maximum number of objects
+  
+  Object objs[NOBJECT];			  // our objects
+
+  for (int i = 0; i < n; ++i) {
+     objs[i].id = i;
+     objs[i].xcen = ...;
+     objs[i].ycen = ...;
+  }
+  
+  printObjects(n, objs);
+#+END_SRC
+Now if we need to add more fields (e.g. \code{float flux;}) we don't need to 
+change \code{printObjects}' signature.
+
+\pause
+The top of this example (down to \code{#define NOBJECT}) would usually be put in a 
+header file with /include guards/
+*** Memory Allocation
+You should be a little uneasy about \code{NOBJECT} in that last example.  A number of questions come to mind:
+- How did I know that I only had 1000 objects?  
+- What would I do if I had more? 
+- Am I wasting space if I have less?
+\pause
+and also
+- Where is the computer putting all those IDs and positions?
+*** Inside your job
+A running program consists of a number of pieces:
+  - \pause =text=  Our instructions and read-only data
+  - \pause =data=  Initialised global data
+  #+ Wiki: BSS (Block Started by Symbol) was a pseudo-operation in UA-SAP (United Aircraft Symbolic Assembly
+  #+ Program), the assembler developed in the mid-1950s for the IBM 704
+  - \pause =bss=   Uninitialized global data
+  - \pause =stack= Memory for variables in subroutines
+  - \pause =heap=  Memory available to the programmer
+
+\pause
+All of these are mapped into a single (logical) section of RAM:
+
+#+ATTR_LaTeX: align=|*{8}{l|}
+|---+--------------+------+------+-----+------+--------------+-------|
+| # | \texttt{0x0} | text | data | bss | heap | \hspace{1cm} | stack |
+|---+--------------+------+------+-----+------+--------------+-------|
+
+(=0x0= is how you write a hexadecimal number in C (or \CPP))
+
+*** Stack and Heap
+
+It's traditional to think of the heap and stack as growing down and up respectively:
+
+#+ATTR_LaTeX: align=|l|l|
+|-------+--------------|
+| heap  | $\downarrow$ |
+|-------+--------------|
+| \null |              |
+|-------+--------------|
+| stack | $\uparrow$   |
+|-------+--------------|
+
+*** The Stack
+
+What happens when I call a function? E.g.
+#+BEGIN_SRC c
+double integrate(const float a, const float b, float (*func)(float x)) {
+      const int nstep = 1000;		// number of steps
+      const float step = (b - a)/nstep;
+      ...
+      ans += func(x);
+}
+
+double ans = integrate(1, 3, dfunc);
+#+END_SRC
+\pause
+We first push the values of =a=, =b=, and =func= onto the stack:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+# (=<dfunc>= is actually the address of the function)
+\pause
+We then make space for =step= and =nstep=
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{???}     |
+|------------------|
+| \texttt{???}     |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+*** The Stack
+
+We initialised =step= to =1000= and =nstep= to =(b - a)/nstep=, so:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{0.002}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+\pause
+
+Within =integrate= we call =dfunc= with argument =x=; this pushes =x= (=1.0=) onto the stack:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+| \texttt{0.002}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+*** The Stack
+
+within =dfunc= we calculate =y= (=1.0=) and call \code{integrate(0, y, func)} resulting in:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{0.001}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<func>}  |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+| \texttt{0.0}     |
+|------------------|
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+| \texttt{0.002}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+And so on.
+
+*** The Stack
+
+When =integrate= has calculated its return value, it puts it somewhere 
+and /pops/ the stack:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+| \texttt{0.002}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+\pause
+
+=dfunc= puts /its/ return value somewhere, and pops the stack:
+
+#+ATTR_LaTeX: align=|c|
+|------------------|
+| \texttt{0.002}   |
+|------------------|
+| \texttt{1000}    |
+|------------------|
+| \texttt{<dfunc>} |
+|------------------|
+| \texttt{3.0}     |
+|------------------|
+| \texttt{1.0}     |
+|------------------|
+|------------------|
+
+\pause 
+
+And finally the outer call to =integrate= finishes, saves its value, pops the stack, and we're
+back where we started.
+
+*** Subroutine Arguments Redux
+It should now be clear that:
+- A language can *only* pass variables by value if it wishes to support recursion
+ [fn:: this isn't quite true;  it could pass a limited number of variables by using \textit{register}s]
+- Variables in subroutines are irretrievably lost when the routine returns
+- Uninitialized values may have any value
+- (Almost) all variables are stored somewhere in the process's memory
+
+\pause The last bullet suggests a way to work around the first one: we can push the variable's /address/ onto
+the stack and agree to use not the value on the stack, but the value stored at that location.
+
+\pause
+In C, \code{&x} is =x='s address, and \code{*px} means "use the value stored at the address =px="
+
+*** Pointers
+
+A variable that holds an address is called a /pointer/; there's nothing magic about it;  it just happens 
+that you can apply the \code{*} operator if you want to use the value it points to.
+
+\pause
+#+BEGIN_SRC c
+int i = 0;
+int *pi = &i;
+printf("i = %d, %d\n", i, *pi);
+*pi = 10;
+printf("i = %d, %d\n", i, *pi);
+#+END_SRC
+
+\pause
+If you haven't ensured that a pointer is set to a valid address, you're going to suffer.  If you say
+#+BEGIN_SRC c
+int *pi;
+*pi = 10;
+printf("i = %d\n", *pi);
+#+END_SRC
+your program may well (and should!) crash.
+*** Arrays
+By definition, given any type \code{type}
+#+BEGIN_SRC c
+int i;
+type p[N];
+p[i] == *(p + i);
+p + i == &p[i]
+#+END_SRC
+\pause
+i.e. adding an integer to a pointer gives you an address larger by \code{i*sizeof(type)}
+\pause
+
+E.g. \code{float} is usually a 4-byte real, so if \code{p} is \texttt{0xffff0000}, \code{p + 2} is \texttt{0xffff0008}.
+
+\pause
+In fact, whenever you refer to an array (\code{p}), it is treated as a pointer to the first element (\code{&p[0]}). 
+This is why you can't pass an =n=-D array to a subroutine.
+
+*** Strings
+
+We introduced \code{char *} as a way of spelling "string" and we can now see how it works.
+
+We can write \code{char str[7] = "abcdef";} [fn:: actually you can omit the dimension;
+ it'll be calculated for you. You need to allow an extra character for the \code{'\\0'} that traditionally ends a string in C.]
+\pause
+
+The statement \code{char *str = "abcdef";} is analogous to \code{float *x = &xx;}, 
+and \code{*str} is indeed \code{a}.
+\pause
+
+The difference between \code{char *str = "abcdef";} and \code{char str[7] = "abcdef";} is where the data is
+actually stored; in the former case it's in the =data= segment, in the latter case it's on the stack.
+
+*** Structs revisited
+
+Convinced of the value of a =struct= such as
+#+BEGIN_SRC c
+  struct Object {
+     int id;                              // Object IDs
+     float xcen;                          // x-coordinate of centre
+     float ycen;                          // y-coordinate of centre
+  };
+
+  typedef struct Object Object;
+#+END_SRC
+I wrote a convenience function:
+#+BEGIN_SRC c
+  Object *newObject(const int id, const float xcen, const double ycen) {
+     Object obj;
+  
+     obj.id = id;
+     obj.xcen = xcen;
+     obj.ycen = ycen;
+  
+     return &obj;
+  }
+  #define NOBJECT 1000                    // Maximum number of objects
+  
+  Object *objs[NOBJECT];                  // our objects
+  
+  for (int i = 0; i < n; ++i) {
+     objs[i] = newObject(i, ...);
+  }
+#+END_SRC
+
+*** Malloc
+
+After some time spent in =gdb=, I remembered: 
+- Variables in subroutines are irretrievably lost when the routine returns
+and that's exactly what this does:
+#+BEGIN_SRC c
+  Object *newObject(const int id, const float xcen, const double ycen) {
+     Object obj;
+     ...
+     return @\color{red}\&@obj;
+  }
+#+END_SRC
+
+\pause
+The solution is to get a pointer to a piece of persistent memory.  
+C provides this via a call to \code{malloc}:
+#+BEGIN_SRC c
+  #include <stdlib.h>
+
+  Object *newObject(const int id, const float xcen, const double ycen) {
+     Object @\color{red}*@obj = malloc(sizeof(Object));
+     ...
+     return obj;
+  }
+#+END_SRC
+\pause
+Malloc finds the memory you ask for on the =heap=.
+
+*** Pointers-to-Pointers
+How about:
+#+BEGIN_SRC c
+  #define NOBJECT 1000                    // Maximum number of objects
+  
+  Object *objs[NOBJECT];                  // our objects
+#+END_SRC 
+\pause
+
+We know that
+#+BEGIN_SRC c
+int i[10];
+#+END_SRC
+and
+#+BEGIN_SRC c
+int *i;
+#+END_SRC
+are equivalent (except for the question of where the data lives).\pause{}
+We can provide the needed storage with:
+#+BEGIN_SRC c
+int *i = malloc(10*sizeof(int));
+#+END_SRC
+
+\pause
+So:
+#+BEGIN_SRC c
+  n = ...;
+  Object **objs = malloc(n*sizeof(Object *)); // our objects
+#+END_SRC 
+\pause
+If you don't know =n= /a priori/, look up the system call \code{realloc}.
+\pause
+There is also \code{calloc} but I never use it --- initialising to =0x0= is a blunt weapon.
+*** Free
+As I said, \code{malloc} returns persistent memory, so it's important to return it to the system
+when you've finished with it:
+#+BEGIN_SRC c
+  for (int i = 0; i != n; ++i) {
+     free(objects[i]);
+  }
+  free(objects);
+#+END_SRC
+\pause Failure to do so results in a /memory leak/.
+
+\pause
+Freeing a piece of memory more than once usually has catastrophic consequences; don't do it.
+
+\pause
+Another failure mode is that sometimes \code{malloc} can't give you the memory you want.  In this case it
+returns =0=, conventionally written =NULL=.  There is not much you can do when this happens, so a reasonable
+response is to abort:
+#+BEGIN_SRC c
+  #include <stdlib.h>
+  #include <assert.h>
+  
+  Object *newObject(const int id, const float xcen, const double ycen) {
+     Object @\color{red}*@obj = malloc(sizeof(Object));
+     assert (obj != NULL);
+     ...
+     return obj;
+  }
+#+END_SRC
+
+*** =struct= and =typedef=
+I wrote
+#+BEGIN_SRC c
+  struct Object {
+     int id;                              // Object IDs
+     ...
+  };
+  typedef struct Object Object;
+#+END_SRC 
+\pause
+This can be abbreviated
+#+BEGIN_SRC c
+  typedef struct {
+     int id;                              // Object IDs
+     ...
+  } Object;
+#+END_SRC 
+
+\pause There are two reasons why you might not always want to omit the name in \code{struct Object \{...\}}:
+- structs can contain pointers to themselves:
+#+BEGIN_SRC c
+typedef struct List {
+    struct List *prev, *next;
+    ...;
+} List;
+#+END_SRC
+\pause
+- If you just want to pass an =Object= around, you can just say \code{struct Object *obj}; the compiler doesn't need to see the details.  \pause This reduces the need to recompile.
+
+*** CCD Data again
+
+You will recall a code fragment that looked like this:
+#+BEGIN_SRC c
+U16 data[4096][2048];
+...
+U16 const peak = data[y][x];		// the (x, y)th pixel
+...
+void debias(U16 data[][2048], const int nrow, const int ncol);
+#+END_SRC
+
+We are now in a position to do better.
+
+*** CCD Data again
+We need a 2-D =ncol*nrow= array of type =U16=
+
+#+ATTR_LaTeX: align=|*{9}{l|}
+|-------+---+---+---+---+---+---+---+---|
+| \null |   |   |   |   |   |   |   |   |
+|-------+---+---+---+---+---+---+---+---|
+| \null |   |   |   |   |   |   |   |   |
+|-------+---+---+---+---+---+---+---+---|
+| \null |   |   |   |   |   |   |   |   |
+|-------+---+---+---+---+---+---+---+---|
+| \null |   |   |   |   |   |   |   |   |
+|-------+---+---+---+---+---+---+---+---|
+| \null |   |   |   |   |   |   |   |   |
+|-------+---+---+---+---+---+---+---+---|
+
+\pause Create an 1-D array =rows= of type =U16 *= and dimension =nrow=
+
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+\end{tabular}
+\pause
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+\end{tabular}
+\end{center}
+
+Make each element of =rows= point to the start of a row, e.g. =rows[1]= points to the first pixel
+in the second row of data.  Then =rows[1][2]= is the value of the =(2, 1)= pixel.
+
+*** CCD Data again
+#+BEGIN_SRC c
+#include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
+  
+typedef uint16_t Pixel_t;
+
+struct Image {
+     Pixel_t **rows;
+     int nrow, ncol;
+};
+typedef struct Image Image;
+
+Image *newImage(const int ncol, int const nrow) {
+     Image *im = malloc(sizeof(Image));   // the Image
+     assert (im != NULL);
+     
+     im->rows = malloc(nrow*sizeof(Pixel_t *)); // pointers to rows
+     assert (im->rows != NULL);
+  
+     for (int i = 0; i != nrow; ++i) {
+        im->rows[i] = malloc(ncol*sizeof(Pixel_t *)); // ith row
+	assert (im->rows[i] != NULL);
+     }
+  
+     im->nrow = nrow;
+     im->ncol = ncol;
+  
+     return im;
+}
+#+END_SRC
+That's a lot of calls to =malloc=; an alternative is:
+
+*** CCD Data again
+#+BEGIN_SRC c
+#include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
+  
+typedef uint16_t Pixel_t;
+
+struct Image {
+     Pixel_t **rows;
+     int nrow, ncol;
+};
+typedef struct Image Image;
+
+Image *newImage(const int ncol, int const nrow) {
+     Image *im = malloc(sizeof(Image));   // the Image
+     assert (im != NULL);
+     
+     im->rows = malloc(nrow*sizeof(Pixel_t *)); // pointers to rows
+     assert (im->rows != NULL);
+  
+     im->rows[0] = malloc(nrow*ncol*sizeof(Pixel_t *)); // data
+     assert (im->rows[0] != NULL);
+  
+     for (int i = 0; i != nrow; ++i) {
+        im->rows[i] = im->rows[0] + i*ncol;
+     }
+  
+     im->nrow = nrow;
+     im->ncol = ncol;
+  
+     return im;
+}
+#+END_SRC
+*** Matrices
+Now we know enough to write ourselves a matrix library
+#+BEGIN_SRC c
+  typedef struct Matrix {
+     float **data;
+     int nrow;
+     int ncol;
+  };
+  
+  Matrix *newMatrix(int nrow, int ncol);
+...
+  Matrix *A = newMatrix(10, 10);
+  Matrix *B = newMatrix(10, 10);
+#+END_SRC 
+
+\pause
+However, you can't write:
+#+BEGIN_SRC c
+  Matrix *sum = A + B;
+#+END_SRC 
+\pause ... not until you switch to \CPP.
+
+
+
+
+

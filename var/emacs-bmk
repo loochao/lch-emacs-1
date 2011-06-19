@@ -1,0 +1,80 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("lch-emacs-rc"
+ (filename . "~/Dropbox/.emacs.d/rc/")
+ (front-context-string . "lch-alias.el\n  -")
+ (rear-context-string . "4K Apr 13 16:14 ")
+ (position . 140))
+("PPPL"
+ (filename . "/scpc:yluo@portal.pppl.gov:/u/yluo/")
+ (front-context-string . "IER\n  drwxr-xr-x")
+ (rear-context-string . "0K Apr 16 10:25 ")
+ (position . 97))
+("xwl-emacs"
+ (filename . "~/Dropbox/.emacs.d/library/emacs.d/xwl-emacs/.emacs.d/site-lisp/")
+ (front-context-string . "goto-last-change")
+ (rear-context-string . "5K Feb 20 23:11 ")
+ (position . 1337))
+("PUFiles"
+ (filename . "/scpc:chaol@fedora.princeton.edu:/u/chaol/")
+ (front-context-string . "$RECYCLE.BIN\n  d")
+ (rear-context-string . "0K Jul 10  2009 ")
+ (position . 107))
+("PHOTO"
+ (filename . "/Volumes/DATA/PRV/PHOTO/")
+ (front-context-string . "110403_Spring.To")
+ (rear-context-string . "3B Apr  7 12:57 ")
+ (position . 1581))
+("EmacsD"
+ (filename . "~/Dropbox/.emacs.d/library/_emacs.d/")
+ (front-context-string . "Copy of dotEmacs")
+ (rear-context-string . "9K Feb 22 01:20 ")
+ (position . 151))
+("site-lisp"
+ (filename . "~/Dropbox/.emacs.d/site-lisp/")
+ (front-context-string . "ac-company.el\n  ")
+ (rear-context-string . "7K Feb 22 21:45 ")
+ (position . 148))
+("dotfiles"
+ (filename . "~/Dropbox/REPO/GIT/dotfiles/")
+ (front-context-string . "ChangeLog\n  -rw-")
+ (rear-context-string . "5K Mar 21 02:13 ")
+ (position . 146))
+("REPO"
+ (filename . "~/Dropbox/REPO/")
+ (front-context-string . "CVS\n  drwxr-xr-x")
+ (rear-context-string . "8B Feb 23 18:41 ")
+ (position . 131))
+("FLV"
+ (filename . "~/Dropbox/FLV/")
+ (front-context-string . "Classical\n  drwx")
+ (rear-context-string . "8B Mar 20 22:41 ")
+ (position . 130))
+("Research"
+ (filename . "~/Dropbox/RESEARCH/Research/")
+ (front-context-string . "Bibtex\n  drwxr-x")
+ (rear-context-string . "2B Mar 21 15:54 ")
+ (position . 146))
+("org-capture-last-stored"
+ (filename . "~/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** 戛纳电影 \n[2011-")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
+("org-refile-last-stored"
+ (filename . "~/Dropbox/org/private/iDea.org")
+ (front-context-string . "*** 看了那个自己做乐器的农民")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
+("Downloads"
+ (filename . "~/Downloads/")
+ (front-context-string . "Emacs-23.3-unive")
+ (rear-context-string . "1M Mar 10 16:52 ")
+ (position . 132))
+("Dropbox"
+ (filename . "~/Dropbox/")
+ (front-context-string . "Lecture\n  drwxr-")
+ (rear-context-string . "6B Nov 17 15:37 ")
+ (position . 437))
+)

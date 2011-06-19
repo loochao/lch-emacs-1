@@ -1,0 +1,123 @@
+;-*- coding: utf-8; mode: lisp -*-
+
+;>========== DOTEMACS ==========<;
+
+;- Copyright (C) 2005 2006 2007 2008 2009 2010 2011
+;- Author: Chao LU <(concat "Loochao" at-symbol "gmail.com")>
+;- Keywords: dotemacs, init, loochao, lch
+;- URL: <>
+;-
+;- This file is NOT part of GNU Emacs.
+;-
+;- $Revision:  $
+;- $Date: 2010-07-08 15:13:00 +0200 (Thu, 08 Jul 2010) $
+;-
+;- This file is free software; you can redistribute it and/or modify
+;- it under the terms of the GNU General Public License as published by
+;- the Free Software Foundation; either version 2, or (at your option)
+;- any later version.
+;-
+;- This file is distributed in the hope that it will be useful,
+;- but WITHOUT ANY WARRANTY; without even the implied warranty of
+;- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;- GNU General Public License for more details.
+;-
+;- You should have received a copy of the GNU General Public License
+;- along with GNU Emacs; see the file COPYING.  If not, write to
+;- the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+;- Boston, MA 02111-1307, USA.
+;-
+;~~ Commentary:
+;-
+;- "Show me your ~/.emacs and I will tell you who you are."
+;-                                                    [Bogdan Maryniuk]
+;-
+;- "Emacs is like a laser guided missile. It only has to be slightly
+;-  mis-configured to ruin your whole day."
+;-                                                       [Sean McGrath]
+;-
+;- "While any text editor can save your files, only Emacs can save your
+;- soul."
+;-                                                     [Per Abrahamsen]
+
+(message "* --[ Loading my Emacs init file ]--")
+
+;- uptimes
+(setq emacs-load-start-time (current-time))
+
+(defconst lch-win32-p (eq system-type 'windows-nt) "Are we on Windows?")
+(defconst lch-linux-p (eq system-type 'gnu/linux) "Are we on Linux?")
+(defconst lch-mac-p (eq system-type 'darwin) "Are we on Mac")
+
+(if lch-win32-p
+    (defconst emacs-path "~/Dropbox")
+  (defconst emacs-path "~/Dropbox"))
+
+(if lch-win32-p
+    (defconst dropbox-path "~/Dropbox")
+  (defconst dropbox-path "~/Dropbox"))
+
+(defvar emacs-dir (concat emacs-path "/.emacs.d"))
+(setq user-emacs-directory (concat emacs-dir "/"))
+
+;; ;>---- OS Type ----<;
+;; (defmacro GNULinux (&rest body)
+;;   (list 'if (string-match "linux" (prin1-to-string system-type))
+;;         (cons 'progn body)))
+
+;; (defmacro Windows (&rest body)
+;;   (list 'if (string-match "windows" (prin1-to-string system-type))
+;;         (cons 'progn body)))
+
+;; ;>---- Emacs type ----<;
+;; (defmacro GNUEmacs (&rest body)
+;;   "Execute any number of forms if running under GNU Emacs."
+;;   (list 'if (string-match "GNU Emacs" (version))
+;;         (cons 'progn body)))
+
+;; (defmacro GNUEmacs23 (&rest body)
+;;   (list 'if (string-match "GNU Emacs 23" (version))
+;;         (cons 'progn body)))
+
+;; (defmacro GNUEmacs22 (&rest body)
+;;   (list 'if (string-match "GNU Emacs 22" (version))
+;;         (cons 'progn body)))
+
+;; (defmacro XEmacs (&rest body)
+;;   "Execute any number of forms if running under XEmacs."
+;;   (list 'if (string-match "XEmacs" (version))
+;;         (cons 'progn body)))
+
+;>---- Emacs version ----<;
+;; (GNUEmacs
+;;  (list emacs-version emacs-major-version emacs-minor-version
+;;        system-type system-name system-configuration
+;;        window-system
+;;        (when (boundp 'aquamacs-version) aquamacs-version)))
+
+;>---- Configurations ----<;
+(load (concat emacs-dir "/rc/lch-env.el"))
+(require 'lch-conf)
+(require 'lch-z)
+(require 'lch-startup)
+
+;>-------- CONF from Others --------<;
+;(require 'lch-other-conf)
+
+;>-------- LOAD CONF FILES --------<;
+;- This has to be put at the end of dotEmacs
+;(mapc 'load (directory-files (concat emacs-dir "/rc") t "\\.el\\'"))
+;- If under Windows then load the w3m.el
+;(add-to-list 'auto-mode-alist '("\\.el2\\'" . emacs-lisp-mode))
+;(if (and lch-win32-p (file-exists-p (concat emacs-dir "/rc/lch-w3m.el2")))
+;    (load (concat emacs-dir "/rc/lch-w3m.el2")))
+
+;; Local Variables:
+;; coding: utf-8
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; ispell-local-dictionary: "en_US"
+;; byte-compile: nil
+;; End:
+
+;>======== EMACS MAKE A CRAZY SOUL ========<;

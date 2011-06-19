@@ -1,0 +1,8 @@
+
+#== Source .bashrc ==#
+[ -f ~/.bashrc ] && source ~/.bashrc
+
+# The same as above
+# if [ -e ~/.bashrc ] ; then
+#     . ~/.bashrc
+# fi

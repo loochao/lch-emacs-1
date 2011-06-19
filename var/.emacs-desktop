@@ -1,0 +1,40 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon May 23 14:01:40 2011
+;; Desktop file format version 206
+;; Emacs version 23.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("coput" "emacs" "note" "fail" "org" "org.el" "provi" "late" "latex" "link" "git" "worg" "publish" "color-theme-lch" "b‘ÐÍ" "dired"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/org/private/iPrv.org" "~/Dropbox/org/org/Pearl.org" "~/Dropbox/.emacs.d/rc/lch-env.el" "~/Dropbox/org/private/iPrv.org" "~/Dropbox/org/private/iStuff.org" "~/Dropbox/org/org/Archive/Research" "~/Dropbox/org/org/Archive/" "~/Dropbox/org/org/Archive" "~/Dropbox/org/org/ComputerSE.org" "~/Dropbox/org/org/Culture.org" "~/Dropbox/.emacs.d/rc/lch-conf.el" "~/Dropbox/.emacs.d/rc/lch-ui-theme.el" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/org/org/Emacs.org" "/Users/LooChao/.wine/dosdevices/c:/loochao/filetype.reg" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/org/private/iLog.org" "~/Dropbox/org/org/Life.org" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-el-get.el" "/Users/LooChao/Dropbox/org/private/test.org" "~/Dropbox/org/org/index.org" "~/Dropbox/org/org/Unix.org" "~/Dropbox/org/org/USLife.org" "~/Dropbox/org/org/Travel.org" "~/Dropbox/org/org/Sports.org" "~/Dropbox/org/org/Softip.org" "~/Dropbox/org/org/Sociology.org" "~/Dropbox/org/org/Society.org" "~/Dropbox/org/org/Sitemap.org" "~/Dropbox/org/org/Science.org" "~/Dropbox/org/org/Programming.org" "~/Dropbox/org/org/Politics.org" "~/Dropbox/org/org/Physics.org" "~/Dropbox/org/org/Philosophy.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/org/private/iPrv.org"
+  "iPrv.org"
+  'org-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  357
+  '(34 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/org/org/Emacs.org"
+  "Emacs.org"
+  'org-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  221
+  '(221 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+

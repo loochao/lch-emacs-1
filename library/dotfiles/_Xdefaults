@@ -1,0 +1,52 @@
+!! ------------------------------------------------------------------------------------------
+!! Emacs setting
+!! ------------------------------------------------------------------------------------------
+emacs*background:black
+emacs*foreground:white
+
+
+!! ------------------------------------------------------------------------------------------
+!! RXVT setting
+!! ------------------------------------------------------------------------------------------
+
+
+URxvt*background:black
+URxvt*foreground:white
+URxvt*font:8x16,\
+           -microsoft-tahoma-medium-r-normal-*-*-*-*-*-p-*-viscii1*1-1,\
+           8x16,-misc-simsun-medium-r-normal-*-*-*-*-*-p-0-iso10646-1
+URxvt.visualBell:False
+URxvt*colorBD:red
+URxvt*colorUL:cyan
+URxvt*multichar_encoding:utf8
+URxvt*scrollBar:True
+URxvt*scrollBar_right:True
+URxvt*scrollBar_floating: False
+URxvt*scrollstyle: next
+URxvt*saveLines:1500
+URxvt*shading:100
+Rxvt*saveLines:1500
+URxvt*preeditType:Root
+URxvt*borderLess:False
+URxvt*title:lchao's urxvt
+
+           !! -*-times-medium-r-*-*-16-*-*-*-*-*-*-*,\
+           !!8x16,xft:WenQuanYi Bitmap Song:Medium:encoding=iso10646-1,\
+!! ------------------------------------------------------------------------------------------
+
+!! ------------------------------------------------------------------------------------------
+!! XScreenSaver setting
+!! ------------------------------------------------------------------------------------------
+
+!! Time out after 3 minutes, cycle mode after each 2
+xscreensaver.timeout: 3
+xscreensaver.cycle: 2
+
+!! Run very low priority, and fade between modes
+xscreensaver.nice: 12
+xscreensaver.fadeSeconds: 2
+
+!! ------------------------------------------------------------------------------------------
+
+
+

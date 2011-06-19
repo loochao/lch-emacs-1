@@ -1,0 +1,1487 @@
+% Created 2011-05-19 Thu 03:51
+\documentclass[10pt, t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{APC524b}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{C}
+\author{robert lupton\thanks{LooChao@gmail.com}}
+\date{23 september 2010}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Outline}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\label{sec-1}
+\subsection{types}
+\label{sec-1_1}
+\begin{frame}
+\frametitle{Introduction}
+\label{sec-1_1_1}
+
+C was designed as a system programming language, to remove the necessity of writing operating systems in
+assembler.  It's one of the large family of languages deriving from Algol.
+
+\pause
+You've seen ``hello world'' before:
+CANNOT INCLUDE FILE src/hello.c
+\pause
+
+This example comes from ``The C Programming Language'' by Brian Kernighan and Dennis Ritchie (``K\&R'')
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declarations}
+\label{sec-1_1_2}
+
+ All variables must be declared before they can be used:
+\begin{verbatim}
+char c = 'a';
+char *s = "I am a string";
+double d = 1;
+float f = 1.0f;
+int i = 101010101;
+long l = 10;
+short s = 10;
+\end{verbatim}
+\pause
+``string'' is spelt \code{char *} for reasons that I'll explain in a bit.
+\pause
+\code{short} is actually a shorthand for \code{short int} (\code{long} means \code{long int}).  
+You can also define integral types (\code{char} and \code{int}) as being \code{signed} or \code{unsigned}. 
+\pause One especially useful qualifier is \code{const}:
+\begin{verbatim}
+const unsigned long bad = 0xdeadbeef00000000;
+\end{verbatim}
+
+\pause An unqualified \code{int} is supposed to be the most efficient integral type on your machine, and is
+what you'd generally use unless there was some reason not to. 
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declaring your own types}
+\label{sec-1_1_3}
+
+C allows you to use your own name for a type:
+\begin{verbatim}
+typedef unsigned short U16;
+\end{verbatim}
+\pause
+Why would I want to do this?
+
+\pause
+CCD image data is typically created using a 16-bit A/D converter, so
+the natural type for a single pixel is a 2-byte integer.
+
+But C doesn't tell me how large an \code{int} is; I 
+can find out (using \code{sizeof(int)}) but I don't want to have to change all my declarations when I move
+to a new system.
+
+\pause
+Actually, these days, I could say:
+\begin{verbatim}
+#include <stdint.h>
+typedef uint16_t U16;
+\end{verbatim}
+but even that only works if the processor actually has an unsigned 16-bit type.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declarations}
+\label{sec-1_1_4}
+
+You can mix code and declarations:
+\begin{verbatim}
+int pwv = 0;                            // Precipitable Water Vapour
+/*
+ * Estimate the PWV based on the altitude
+ */
+...;
+/*
+ * Given that estimate, find a better value
+ */
+const int pwv0 = pwv;                   /* initial estimate of pwv */
+\end{verbatim}
+\pause
+The ability to declare variables when they are first needed means that you can usually initialize them too;
+when possible, make them \code{const}.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Scope}
+\label{sec-1_1_5}
+
+A variable's \emph{scope} is the part of the programme it may be referenced from;  in C, a variable's scope
+is the nearest set of braces (\code{\{\}}), a \emph{block}.  If it isn't in a block, a variable is visible globally
+(i.e. it'll show up when you run \code{nm} on your object file).  If this isn't what you wanted, you can:
+ \pause
+
+\begin{itemize}
+\item Move it into a function --- remember, global variables should usually be avoided
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item Label it \code{static} which makes it only visible within the file
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item Decide that it really \emph{must} be globally visible, and declare it in a header file:
+\begin{verbatim}
+extern int nread;     // Number of times I've read from a file
+\end{verbatim}
+\end{itemize}
+
+\pause
+It is generally a good idea to declare a variable in as restricted a scope as possible (the ``No Globals'' rule 
+is a special case of this one).
+\end{frame}
+\section{Program Structure}
+\label{sec-2}
+\subsection{\texttt{for}, \texttt{if}, \ldots{}}
+\label{sec-2_1}
+\begin{frame}
+\frametitle{Control Flow}
+\label{sec-2_1_1}
+
+
+C has the usual constructs:
+
+\begin{itemize}
+\item \code{if(...) \{ ... \} else if(...) \{ ...\} else \{ ... \}}
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item \code{for(...) \{ ... \}}
+\item \code{while \{ ... \}}
+\item \code{do \{ ... \} while (...);}
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item \code{switch (...) \{ case XXX: ... break; ... \} }
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item \code{break}, \code{continue}
+\end{itemize}
+ \pause
+
+\begin{itemize}
+\item \code{goto}
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{If statements}
+\label{sec-2_1_2}
+
+\begin{verbatim}
+if (i < 9) {
+    printf("Hello");
+} else {
+    printf("Goodbye");
+}
+printf(" world\n");
+\end{verbatim}
+\pause
+Legally, you can write this as
+\begin{verbatim}
+if (i < 9)
+    printf("Hello");
+else
+    printf("Goodbye");
+
+printf(" world\n");
+\end{verbatim}
+But we don't recommend it;
+\pause  it's too easy to write
+\begin{verbatim}
+if (i < 9)
+    printf("Hello");
+else
+    printf("Goodbye");
+    printf(" and good riddance");
+
+printf(" world\n");
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{For loops}
+\label{sec-2_1_3}
+
+CANNOT INCLUDE FILE src/for.c
+This only works with a compiler that supports the C99 standard (\code{cc --std=c99 ...})
+\pause
+This is almost equivalent to:
+\begin{verbatim}
+#include <stdio.h>
+
+int
+main()
+{
+     int i = 0;
+     while (i != 10) {
+          printf("Hello world\n");
+          ++i;
+     }
+
+     return 0;
+}
+\end{verbatim}
+\end{frame}
+\begin{frame}[allowframebreaks]
+\frametitle{Switch}
+\label{sec-2_1_4}
+
+CANNOT INCLUDE FILE src/printf.c
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Switch}
+\label{sec-2_1_5}
+
+\begin{verbatim}
+$ make printf && ./printf
+$ cc -g -Wall -O3 --std=c99    printf.c   -o printf
+a
+b
+c
+:
+<space>
+<integer>
+%
+<space>
+d
+o
+n
+e
+<newline>
+\end{verbatim}
+(N.b. The call was \code{checkFormat("abc: \%d\%\% done\\n");})
+\end{frame}
+\begin{frame}
+\frametitle{Putting that together}
+\label{sec-2_1_6}
+
+CANNOT INCLUDE FILE src/switch.c
+\end{frame}
+\section{Functions}
+\label{sec-3}
+\subsection{subroutines, arrays, operators}
+\label{sec-3_1}
+\begin{frame}
+\frametitle{Subroutines}
+\label{sec-3_1_1}
+
+Here is a function to add two numbers:
+
+\snippetFile[C++]{src/c_examples.c}
+
+\includeSnippet{add}
+\pause
+and here is one to multiply them:
+
+\includeSnippet{mult}
+
+\pause
+So far, just like Fortran
+
+\pause
+\includeSnippet{square}
+
+\pause
+That's a little clumsier --- in Fortran (or python) you could have said \code{x**2}.  And 
+note the extra include file, \file{math.h}.  In the old days you needed to link \code{-lm} too, but modern 
+systems seem to be more forgiving.
+\end{frame}
+\begin{frame}
+\frametitle{Recursion}
+\label{sec-3_1_2}
+
+Subroutines may be called recursively --- that is, they may call themselves, either directly or indirectly.
+There is no limit except the capacity of your computer.
+CANNOT INCLUDE FILE src/factorial.c
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Recursion}
+\label{sec-3_1_3}
+
+That may not seem very interesting; it's easy enough to write a loop to calculate factorials.  
+
+However, consider a routine \code{integrate(float a, float b, float (*func)(float x))} \footnote{\code{float (*func)(float x)} is C for ``a function \texttt{func} expecting a float and returning a float'' }
+
+\pause
+
+If I need to do a double integral, I can say something like:
+\begin{verbatim}
+static float yy;                        // current value of y
+
+static float func(float x) {
+   return sin(x)*cos(yy);
+}
+
+static float dfunc(float y) {
+   yy = y;                              // pass y to func
+   return integrate(0, y, func);
+}
+
+const double ans = integrate(1, 3, dfunc);
+\end{verbatim}
+
+to calculate
+$$
+\int_{x=0}^{y} \int_{y=1}^{3} \sin x \cos y \,  d\!x d\!y
+$$
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Complete Example}
+\label{sec-3_1_4}
+
+\begin{verbatim}
+#include <stdio.h>
+#include <math.h>
+
+double integrate(const float a, const float b, float (*func)(float x)) {
+      const int nstep = 1000;           // number of steps
+      const float step = (b - a)/nstep;
+
+      double ans = 0.0;
+      float x = a;
+      for (int i = 0; i != nstep; ++i) {
+         ans += func(x); 
+         x += step;
+      }
+
+      return step*ans;
+}
+
+static float yy;                        // current value of y
+
+static float func(float x) {
+   return sin(x)*cos(yy);
+}
+
+static float dfunc(float y) {
+   yy = y;                              // pass y to func
+   return integrate(0, y, func);
+}
+
+int main() {
+   printf("ans = %g\n", integrate(1, 3, dfunc));
+   return 0;
+}
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Subroutine Arguments}
+\label{sec-3_1_5}
+
+Question: What does this do?
+\begin{verbatim}
+void triple(double x) {
+   x *= 3;
+}
+...
+double x = 1;
+triple(x);
+\end{verbatim}
+\pause
+Answer: wastes CPU cycles.
+
+The function \code{triple} is passed a \emph{copy} of \code{x}, so \textbf{nothing} that \code{triple} does can 
+affect the program that calls it.
+
+\pause
+The solution is to pass a \emph{pointer} to x:
+\begin{verbatim}
+void triple(double @\color{red}*@x) {
+    @\color{red}*@x *= 3;
+}
+...
+double x = 1;
+triple(@\color{red}\&@x);
+\end{verbatim}
+\pause
+Fortran \emph{always} passes arguments this way; a famous party trick when I was young was to say
+\begin{verbatim}
+call triple(1)
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Prototypes}
+\label{sec-3_1_6}
+
+It is critically important that subroutines' callers and callees agree about the number and
+types of the arguments (the \emph{signature}).  C uses a \emph{prototype} to allow the compiler to check; given
+\begin{verbatim}
+void triple(double *x) {
+    *x *= 3;
+}
+\end{verbatim}
+we put the prototype \code{void triple(double *x);} in a header (``.h'') file and \code{#include} 
+it in the file that defines \code{triple} and also whenever we call
+\code{triple}. \footnote{Most compilers these days will complain if you don't do this. }
+
+This isn't a lot of extra work and soon becomes second nature.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Arrays}
+\label{sec-3_1_7}
+
+Arrays are declared and subscripted using \code{[]}.
+\begin{verbatim}
+int ids[10];
+\end{verbatim}
+\pause
+In C99, the dimension need \emph{not} be known at compile time:
+\begin{verbatim}
+void foo(const int n) {
+    int ids[n];
+    ...
+    double x = ids[n/2];
+}
+\end{verbatim}
+The index starts at \emph{0} (not \emph{1}, as in Fortran) as it specifies the distance from the start of the array.
+\begin{verbatim}
+printf("ID0: %d\n", ids[0]);
+\end{verbatim}
+\pause
+This may make more sense when we discuss \emph{pointers}.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\texttt{n}-D Arrays}
+\label{sec-3_1_8}
+
+You can also define \texttt{n}-D arrays:
+\begin{verbatim}
+U16 data[4096][2048];
+...
+U16 const peak = data[y][x];            // the (x, y)th pixel
+\end{verbatim}
+
+The data is stored row-by-row so the \emph{last} index increases fastest if we access pixels in the order in which
+they're stored (unlike Fortran arrays, in which the \emph{first} index varies fastest).
+
+\pause
+\texttt{n}-D arrays aren't as useful as you might think as they are passed to
+subroutines as \emph{pointers}; for now all you need to know is that you \textbf{must} specify
+all but the first dimension when passing an \texttt{n}-D array to a subroutine:
+\begin{verbatim}
+void debias(U16 data[][2048], const int nrow, const int ncol) {
+   ...
+}
+\end{verbatim}
+\pause (hmm, I seem to have typed \code{2048} twice; was that a good idea\ldots{}?)
+\end{frame}
+\begin{frame}
+\frametitle{Operator Precedence}
+\label{sec-3_1_9}
+
+\newcommand{\pipe}{|}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+ operator                                                                                                                                    &  associativity  \\
+\hline
+ \texttt{()} \texttt{[]} \texttt{->} \texttt{.}                                                                                              &  left to right  \\
+ \texttt{!} \texttt{\textasciitilde{}} \texttt{++} \texttt{-}\texttt{-} \texttt{-} \texttt{(type)} \texttt{*} \texttt{\&} \texttt{sizeof()}  &  right to left  \\
+ \texttt{*} \texttt{/} \texttt{\%}                                                                                                           &  left to right  \\
+ \texttt{+} \texttt{-}                                                                                                                       &  left to right  \\
+ \texttt{<}\texttt{<} \texttt{>}\texttt{>}                                                                                                   &  left to right  \\
+ \texttt{<} \texttt{<=} \texttt{>} \texttt{>=}                                                                                               &  left to right  \\
+ \texttt{==} \texttt{!=}                                                                                                                     &  left to right  \\
+ \texttt{\&}                                                                                                                                 &  left to right  \\
+ \texttt{\textasciicircum{}}                                                                                                                 &  left to right  \\
+ \texttt{\pipe}                                                                                                                              &  left to right  \\
+ \texttt{\&\&}                                                                                                                               &  left to right  \\
+ \texttt{\pipe\pipe}                                                                                                                         &  left to right  \\
+ \texttt{?:}                                                                                                                                 &  right to left  \\
+ \texttt{=} \texttt{+=} \texttt{-=} etc.                                                                                                     &  right to left  \\
+ \texttt{,}                                                                                                                                  &  left to right  \\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+\section{Macros}
+\label{sec-4}
+\subsection{\texttt{\#if}, \texttt{\#define}}
+\label{sec-4_1}
+\begin{frame}[fragile]
+\frametitle{Macros and the C Pre-Processor (\emph{CPP})}
+\label{sec-4_1_1}
+
+C provides a simple macro processor which can be used to keep \emph{magic numbers} out of your
+code[3]
+instead of
+\begin{verbatim}
+char configFile[21];                    // name of configuration file
+fgets(stdin, fileName, 20);
+\end{verbatim}
+\pause
+you can write
+\begin{verbatim}
+#define FILE_LEN 20                     // maximum length for filename
+
+char configFile[FILE_LEN + 1];          // name of configuration file
+fgets(stdin, fileName, FILE_LEN);
+\end{verbatim}
+\pause writing all macros in CAPITALS is a common convention.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Conditional Compilation}
+\label{sec-4_1_2}
+
+In the bad old days, we wrote lots of code like:
+\begin{verbatim}
+#if defined(vms)
+   return -1;
+#elif defined(HAVE_SELECT) && !defined(USE_POLL)
+   if(select(ncheck,&mask,(fd_set *)NULL,(fd_set *)NULL,
+             (void *)NULL) != 0) {
+        ...
+   }
+#else
+  /* Use poll() */
+#endif
+\end{verbatim}
+\pause
+Fortunately, in these days of \href{http://www.opengroup.org/onlinepubs/009695399/}{Posix} (\texttt{IEEE 1003}; \texttt{ISO/IEC 9945}) there is much less need for of this sort of thing.
+\pause 
+The (or at least my) main use of the CPP is:
+\begin{verbatim}
+#define DEBUG 1
+...
+#if DEBUG
+int niter = 0;
+#endif
+...
+#if DEBUG
+printf("niter %d\n", ++niter);
+#endif
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Good uses for macros I}
+\label{sec-4_1_3}
+
+One standard use for macros is to prevent header files being parsed more than once
+\begin{verbatim}
+#if !defined(GREET_H)
+#define GREET_H
+/* Lots of stuff that should be processed only once */
+#endif
+\end{verbatim}
+
+This use of a macro is known as an \emph{include guard}.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Good uses for macros II}
+\label{sec-4_1_4}
+
+CANNOT INCLUDE FILE src/macros.c
+\pause
+\begin{verbatim}
+$ make macros && macros 1 2 3
+cc -g -Wall --std=c99 macros.c -o macros
+macros.c:009: Hello world!
+macros.c:010: My name is macros and I was called with 3 arguments.
+\end{verbatim}
+
+\pause
+Unfortunately, this code does not conform to the C99 standard (\texttt{ISO 9899:1999}):
+\begin{verbatim}
+$ cc -g -Wall --std=c99 --pedantic-errors macros.c -o macros
+macros.c:3:29: error: ISO C does not permit named variadic macros
+macros.c:7:30: error: ISO C99 requires rest arguments to be used
+\end{verbatim}
+\end{frame}
+\begin{frame}
+\frametitle{Good uses for macros II}
+\label{sec-4_1_5}
+
+A legal version is:
+CANNOT INCLUDE FILE src/macros2.c
+Note that we were forced to pass at least one argument (hence the \code{""} in the first call).
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Bad uses for macros I}
+\label{sec-4_1_6}
+
+You can use the CPP to pretend that you're writing Algol, not C
+\begin{verbatim}
+#define IF      if(
+#define THEN    ){
+#define ELSE    } else {
+#define ELIF    } else if (
+#define FI      ;}
+
+IF x == 0 THEN
+   printf("zero\n");
+ELIF x == 1 THEN
+   printf("one\n");
+ELSE
+   printf("many\n");
+FI
+\end{verbatim}
+\pause
+These macros come from the original Bourne shell source code in Unix Version 7.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Bad uses for macros II}
+\label{sec-4_1_7}
+
+How about
+\begin{verbatim}
+#define MAX(a,b)        ((a)>(b)?(a):(b))
+\end{verbatim}
+This one also comes from Steve Bourne.
+
+\pause
+Why is this bad?  Consider
+\begin{verbatim}
+const double fg = MAX(funcs(x), gunks(x));
+\end{verbatim}
+\pause
+\begin{verbatim}
+double funcs(const double x) {
+   static int x = 0.5;
+   x = sin(x);
+   return x;
+}
+
+static int i = 0;
+double gunks(const double x) {
+   return (x < ++i) ? 5.6 : 5.9;
+}
+\end{verbatim}
+\pause
+Both \code{funcs} and \code{gunks} are called twice; this is always inefficient, but in this case
+ catastrophic as they maintain internal state.
+
+\pause
+You don't write code like \emph{that}, of course.  But \code{MAX(getchar(), 'a')} is just as bad.
+
+\pause
+C99 (and \CPP) have the \code{inline} keyword which removes some of the desire for macros like this.
+\end{frame}
+\section{Structs and Memory}
+\label{sec-5}
+\subsection{\texttt{struct}, the stack, \texttt{malloc}}
+\label{sec-5_1}
+\begin{frame}[fragile]
+\frametitle{Structs}
+\label{sec-5_1_1}
+
+If you routinely write code like:
+\begin{verbatim}
+void printObjects(const int n, const int id[],
+                  const float xcen[], const float ycen[],
+                  const float flux[]);
+
+#define NOBJECT 1000                    // Maximum number of objects
+
+int id[NOBJECT];                        // Object IDs
+float xcen[NOBJECT];                    // x-coordinate of centre
+float ycen[NOBJECT];                    // y-coordinate of centre
+float flux[NOBJECT];                    // object's flux
+  
+for (int i = 0; i < n; ++i) {
+   id[i] = i;
+   xcen[i] = ...;
+   ycen[i] = ...;
+   flux[i] = ...;
+}
+
+printObjects(n, id, xcen, ycen, flux);
+\end{verbatim}
+C and we can help.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Structs}
+\label{sec-5_1_2}
+
+A cleaner way to write this is:
+\begin{verbatim}
+struct Object {
+   int id;                              // Object IDs
+   float xcen;                          // x-coordinate of centre
+   float ycen;                          // y-coordinate of centre
+};
+
+typedef struct Object Object;
+
+void printObjects(const int n, const Object objs[]);
+
+#define NOBJECT 1000                    // Maximum number of objects
+
+Object objs[NOBJECT];                   // our objects
+
+for (int i = 0; i < n; ++i) {
+   objs[i].id = i;
+   objs[i].xcen = ...;
+   objs[i].ycen = ...;
+}
+
+printObjects(n, objs);
+\end{verbatim}
+Now if we need to add more fields (e.g. \code{float flux;}) we don't need to 
+change \code{printObjects}' signature.
+
+\pause
+The top of this example (down to \code{#define NOBJECT}) would usually be put in a 
+header file with \emph{include guards}
+\end{frame}
+\begin{frame}
+\frametitle{Memory Allocation}
+\label{sec-5_1_3}
+
+You should be a little uneasy about \code{NOBJECT} in that last example.  A number of questions come to mind:
+
+\begin{itemize}
+\item How did I know that I only had 1000 objects?
+\item What would I do if I had more?
+\item Am I wasting space if I have less?
+\end{itemize}
+\pause
+and also
+
+\begin{itemize}
+\item Where is the computer putting all those IDs and positions?
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Inside your job}
+\label{sec-5_1_4}
+
+A running program consists of a number of pieces:
+
+\begin{itemize}
+\item \pause \texttt{text}  Our instructions and read-only data
+\item \pause \texttt{data}  Initialised global data
+\end{itemize}
+
+\begin{itemize}
+\item \pause \texttt{bss}   Uninitialized global data
+\item \pause \texttt{stack} Memory for variables in subroutines
+\item \pause \texttt{heap}  Memory available to the programmer
+\end{itemize}
+
+\pause
+All of these are mapped into a single (logical) section of RAM:
+
+
+\begin{center}
+\begin{tabular}{|*{8}{l|}}
+\hline
+ \texttt{0x0}  &  text  &  data  &  bss  &  heap  &  \hspace{1cm}  &  stack  \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+(\texttt{0x0} is how you write a hexadecimal number in C (or \CPP))
+\end{frame}
+\begin{frame}
+\frametitle{Stack and Heap}
+\label{sec-5_1_5}
+
+
+It's traditional to think of the heap and stack as growing down and up respectively:
+
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+ heap   &  $\downarrow$  \\
+\hline
+ \null  &                \\
+\hline
+ stack  &  $\uparrow$    \\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{The Stack}
+\label{sec-5_1_6}
+
+
+What happens when I call a function? E.g.
+\begin{verbatim}
+double integrate(const float a, const float b, float (*func)(float x)) {
+      const int nstep = 1000;           // number of steps
+      const float step = (b - a)/nstep;
+      ...
+      ans += func(x);
+}
+
+double ans = integrate(1, 3, dfunc);
+\end{verbatim}
+\pause
+We first push the values of \texttt{a}, \texttt{b}, and \texttt{func} onto the stack:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\pause
+We then make space for \texttt{step} and \texttt{nstep}
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{???}      \\
+\hline
+ \texttt{???}      \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{The Stack}
+\label{sec-5_1_7}
+
+
+We initialised \texttt{step} to \texttt{1000} and \texttt{nstep} to \texttt{(b - a)/nstep}, so:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{0.002}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+
+\pause
+
+Within \texttt{integrate} we call \texttt{dfunc} with argument \texttt{x}; this pushes \texttt{x} (\texttt{1.0}) onto the stack:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+ \texttt{0.002}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{The Stack}
+\label{sec-5_1_8}
+
+
+within \texttt{dfunc} we calculate \texttt{y} (\texttt{1.0}) and call \code{integrate(0, y, func)} resulting in:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{0.001}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<func>}   \\
+\hline
+ \texttt{1.0}      \\
+\hline
+ \texttt{0.0}      \\
+\hline
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+ \texttt{0.002}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+
+
+And so on.
+\end{frame}
+\begin{frame}
+\frametitle{The Stack}
+\label{sec-5_1_9}
+
+
+When \texttt{integrate} has calculated its return value, it puts it somewhere 
+and \emph{pops} the stack:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+ \texttt{0.002}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\pause
+
+\texttt{dfunc} puts \emph{its} return value somewhere, and pops the stack:
+
+
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+ \texttt{0.002}    \\
+\hline
+ \texttt{1000}     \\
+\hline
+ \texttt{<dfunc>}  \\
+\hline
+ \texttt{3.0}      \\
+\hline
+ \texttt{1.0}      \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\pause 
+
+And finally the outer call to \texttt{integrate} finishes, saves its value, pops the stack, and we're
+back where we started.
+\end{frame}
+\begin{frame}
+\frametitle{Subroutine Arguments Redux}
+\label{sec-5_1_10}
+
+It should now be clear that:
+
+\begin{itemize}
+\item A language can \textbf{only} pass variables by value if it wishes to support recursion
+ [4]
+\item Variables in subroutines are irretrievably lost when the routine returns
+\item Uninitialized values may have any value
+\item (Almost) all variables are stored somewhere in the process's memory
+\end{itemize}
+
+\pause The last bullet suggests a way to work around the first one: we can push the variable's \emph{address} onto
+the stack and agree to use not the value on the stack, but the value stored at that location.
+
+\pause
+In C, \code{&x} is \texttt{x}'s address, and \code{*px} means ``use the value stored at the address \texttt{px}''
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Pointers}
+\label{sec-5_1_11}
+
+
+A variable that holds an address is called a \emph{pointer}; there's nothing magic about it;  it just happens 
+that you can apply the \code{*} operator if you want to use the value it points to.
+
+\pause
+\begin{verbatim}
+int i = 0;
+int *pi = &i;
+printf("i = %d, %d\n", i, *pi);
+*pi = 10;
+printf("i = %d, %d\n", i, *pi);
+\end{verbatim}
+
+\pause
+If you haven't ensured that a pointer is set to a valid address, you're going to suffer.  If you say
+\begin{verbatim}
+int *pi;
+*pi = 10;
+printf("i = %d\n", *pi);
+\end{verbatim}
+your program may well (and should!) crash.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Arrays}
+\label{sec-5_1_12}
+
+By definition, given any type \code{type}
+\begin{verbatim}
+int i;
+type p[N];
+p[i] == *(p + i);
+p + i == &p[i]
+\end{verbatim}
+\pause
+i.e. adding an integer to a pointer gives you an address larger by \code{i*sizeof(type)}
+\pause
+
+E.g. \code{float} is usually a 4-byte real, so if \code{p} is \texttt{0xffff0000}, \code{p + 2} is \texttt{0xffff0008}.
+
+\pause
+In fact, whenever you refer to an array (\code{p}), it is treated as a pointer to the first element (\code{&p[0]}). 
+This is why you can't pass an \texttt{n}-D array to a subroutine.
+\end{frame}
+\begin{frame}
+\frametitle{Strings}
+\label{sec-5_1_13}
+
+
+We introduced \code{char *} as a way of spelling ``string'' and we can now see how it works.
+
+We can write \code{char str[7] = "abcdef";} [5]
+\pause
+
+The statement \code{char *str = "abcdef";} is analogous to \code{float *x = &xx;}, 
+and \code{*str} is indeed \code{a}.
+\pause
+
+The difference between \code{char *str = "abcdef";} and \code{char str[7] = "abcdef";} is where the data is
+actually stored; in the former case it's in the \texttt{data} segment, in the latter case it's on the stack.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Structs revisited}
+\label{sec-5_1_14}
+
+
+Convinced of the value of a \texttt{struct} such as
+\begin{verbatim}
+struct Object {
+   int id;                              // Object IDs
+   float xcen;                          // x-coordinate of centre
+   float ycen;                          // y-coordinate of centre
+};
+
+typedef struct Object Object;
+\end{verbatim}
+I wrote a convenience function:
+\begin{verbatim}
+Object *newObject(const int id, const float xcen, const double ycen) {
+   Object obj;
+
+   obj.id = id;
+   obj.xcen = xcen;
+   obj.ycen = ycen;
+
+   return &obj;
+}
+#define NOBJECT 1000                    // Maximum number of objects
+
+Object *objs[NOBJECT];                  // our objects
+
+for (int i = 0; i < n; ++i) {
+   objs[i] = newObject(i, ...);
+}
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Malloc}
+\label{sec-5_1_15}
+
+
+After some time spent in \texttt{gdb}, I remembered: 
+
+\begin{itemize}
+\item Variables in subroutines are irretrievably lost when the routine returns
+\end{itemize}
+and that's exactly what this does:
+\begin{verbatim}
+Object *newObject(const int id, const float xcen, const double ycen) {
+   Object obj;
+   ...
+   return @\color{red}\&@obj;
+}
+\end{verbatim}
+
+\pause
+The solution is to get a pointer to a piece of persistent memory.  
+C provides this via a call to \code{malloc}:
+\begin{verbatim}
+#include <stdlib.h>
+
+Object *newObject(const int id, const float xcen, const double ycen) {
+   Object @\color{red}*@obj = malloc(sizeof(Object));
+   ...
+   return obj;
+}
+\end{verbatim}
+\pause
+Malloc finds the memory you ask for on the \texttt{heap}.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Pointers-to-Pointers}
+\label{sec-5_1_16}
+
+How about:
+\begin{verbatim}
+#define NOBJECT 1000                    // Maximum number of objects
+
+Object *objs[NOBJECT];                  // our objects
+\end{verbatim}
+\pause
+
+We know that
+\begin{verbatim}
+int i[10];
+\end{verbatim}
+and
+\begin{verbatim}
+int *i;
+\end{verbatim}
+are equivalent (except for the question of where the data lives).\pause{}
+We can provide the needed storage with:
+\begin{verbatim}
+int *i = malloc(10*sizeof(int));
+\end{verbatim}
+
+\pause
+So:
+\begin{verbatim}
+n = ...;
+Object **objs = malloc(n*sizeof(Object *)); // our objects
+\end{verbatim}
+\pause
+If you don't know \texttt{n} \emph{a priori}, look up the system call \code{realloc}.
+\pause
+There is also \code{calloc} but I never use it --- initialising to \texttt{0x0} is a blunt weapon.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Free}
+\label{sec-5_1_17}
+
+As I said, \code{malloc} returns persistent memory, so it's important to return it to the system
+when you've finished with it:
+\begin{verbatim}
+for (int i = 0; i != n; ++i) {
+   free(objects[i]);
+}
+free(objects);
+\end{verbatim}
+\pause Failure to do so results in a \emph{memory leak}.
+
+\pause
+Freeing a piece of memory more than once usually has catastrophic consequences; don't do it.
+
+\pause
+Another failure mode is that sometimes \code{malloc} can't give you the memory you want.  In this case it
+returns \texttt{0}, conventionally written \texttt{NULL}.  There is not much you can do when this happens, so a reasonable
+response is to abort:
+\begin{verbatim}
+#include <stdlib.h>
+#include <assert.h>
+
+Object *newObject(const int id, const float xcen, const double ycen) {
+   Object @\color{red}*@obj = malloc(sizeof(Object));
+   assert (obj != NULL);
+   ...
+   return obj;
+}
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{\texttt{struct} and \texttt{typedef}}
+\label{sec-5_1_18}
+
+I wrote
+\begin{verbatim}
+struct Object {
+   int id;                              // Object IDs
+   ...
+};
+typedef struct Object Object;
+\end{verbatim}
+\pause
+This can be abbreviated
+\begin{verbatim}
+typedef struct {
+   int id;                              // Object IDs
+   ...
+} Object;
+\end{verbatim}
+
+\pause There are two reasons why you might not always want to omit the name in \code{struct Object \{...\}}:
+
+\begin{itemize}
+\item structs can contain pointers to themselves:
+\begin{verbatim}
+typedef struct List {
+    struct List *prev, *next;
+    ...;
+} List;
+\end{verbatim}
+\end{itemize}
+\pause
+
+\begin{itemize}
+\item If you just want to pass an \texttt{Object} around, you can just say \code{struct Object *obj}; the compiler doesn't need to see the details.  \pause This reduces the need to recompile.
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{CCD Data again}
+\label{sec-5_1_19}
+
+
+You will recall a code fragment that looked like this:
+\begin{verbatim}
+U16 data[4096][2048];
+...
+U16 const peak = data[y][x];            // the (x, y)th pixel
+...
+void debias(U16 data[][2048], const int nrow, const int ncol);
+\end{verbatim}
+
+We are now in a position to do better.
+\end{frame}
+\begin{frame}
+\frametitle{CCD Data again}
+\label{sec-5_1_20}
+
+We need a 2-D \texttt{ncol*nrow} array of type \texttt{U16}
+
+
+\begin{center}
+\begin{tabular}{|*{9}{l|}}
+\hline
+ \null  &     &     &     &     &     &     &     &     \\
+\hline
+ \null  &     &     &     &     &     &     &     &     \\
+\hline
+ \null  &     &     &     &     &     &     &     &     \\
+\hline
+ \null  &     &     &     &     &     &     &     &     \\
+\hline
+ \null  &     &     &     &     &     &     &     &     \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\pause Create an 1-D array \texttt{rows} of type \texttt{U16 *} and dimension \texttt{nrow}
+
+\begin{center}
+\begin{tabular}{|l|}
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+  \\
+\hline
+\end{tabular}
+\pause
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+    &     &    &     &     &     &     &     & \\
+\hline
+\end{tabular}
+\end{center}
+
+Make each element of \texttt{rows} point to the start of a row, e.g. \texttt{rows[1]} points to the first pixel
+in the second row of data.  Then \texttt{rows[1][2]} is the value of the \texttt{(2, 1)} pixel.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{CCD Data again}
+\label{sec-5_1_21}
+
+\begin{verbatim}
+#include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
+  
+typedef uint16_t Pixel_t;
+
+struct Image {
+     Pixel_t **rows;
+     int nrow, ncol;
+};
+typedef struct Image Image;
+
+Image *newImage(const int ncol, int const nrow) {
+     Image *im = malloc(sizeof(Image));   // the Image
+     assert (im != NULL);
+     
+     im->rows = malloc(nrow*sizeof(Pixel_t *)); // pointers to rows
+     assert (im->rows != NULL);
+  
+     for (int i = 0; i != nrow; ++i) {
+        im->rows[i] = malloc(ncol*sizeof(Pixel_t *)); // ith row
+        assert (im->rows[i] != NULL);
+     }
+  
+     im->nrow = nrow;
+     im->ncol = ncol;
+  
+     return im;
+}
+\end{verbatim}
+That's a lot of calls to \texttt{malloc}; an alternative is:
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{CCD Data again}
+\label{sec-5_1_22}
+
+\begin{verbatim}
+#include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
+  
+typedef uint16_t Pixel_t;
+
+struct Image {
+     Pixel_t **rows;
+     int nrow, ncol;
+};
+typedef struct Image Image;
+
+Image *newImage(const int ncol, int const nrow) {
+     Image *im = malloc(sizeof(Image));   // the Image
+     assert (im != NULL);
+     
+     im->rows = malloc(nrow*sizeof(Pixel_t *)); // pointers to rows
+     assert (im->rows != NULL);
+  
+     im->rows[0] = malloc(nrow*ncol*sizeof(Pixel_t *)); // data
+     assert (im->rows[0] != NULL);
+  
+     for (int i = 0; i != nrow; ++i) {
+        im->rows[i] = im->rows[0] + i*ncol;
+     }
+  
+     im->nrow = nrow;
+     im->ncol = ncol;
+  
+     return im;
+}
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Matrices}
+\label{sec-5_1_23}
+
+Now we know enough to write ourselves a matrix library
+\begin{verbatim}
+  typedef struct Matrix {
+     float **data;
+     int nrow;
+     int ncol;
+  };
+  
+  Matrix *newMatrix(int nrow, int ncol);
+...
+  Matrix *A = newMatrix(10, 10);
+  Matrix *B = newMatrix(10, 10);
+\end{verbatim}
+
+\pause
+However, you can't write:
+\begin{verbatim}
+Matrix *sum = A + B;
+\end{verbatim}
+\pause \ldots{} not until you switch to \CPP.
+
+
+
+
+
+
+
+
+[3] In \CPP you'd probably use a \code{const} variable but scoping rules are different in C, so a macro is appropriate
+
+[4] this isn't quite true;  it could pass a limited number of variables by using \textit{register}s
+
+[5] actually you can omit the dimension;
+ it'll be calculated for you. You need to allow an extra character for the \code{'\\0'} that traditionally ends a string in C.
+\end{frame}
+
+\end{document}

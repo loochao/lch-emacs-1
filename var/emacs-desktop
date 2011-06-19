@@ -1,0 +1,18 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Apr 25 17:47:20 2011
+;; Desktop file format version 206
+;; Emacs version 23.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("desktop-bas" "f5" "web" "unix" "uni" "computer" "pro" "el-g" "el-ge" "pp-c" "ido" "caution" "w3m" "wory" "desktop" "publsih"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Dropbox/.emacs.d/var/" "~/.emacs" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/var/" "~/Dropbox/.emacs.d/library/emacs.d/dwa/dwa-emacs/README.mkd" "~/Dropbox/.emacs.d/library/emacs.d/xwl/xwl-emacs.lch/.emacs.d/site-lisp/config/xwl-shell.el" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/rc/lch-web.el" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/Dropbox/.emacs.d/library/emacs.d/jurta/jurta.emacs.lch" "~/Dropbox/.emacs.d/library/emacs.d/kid/kid-dot-emacs-read-only.lch/50shell.el" "~/Dropbox/.emacs.d/library/emacs.d/kid/kid-dot-emacs-read-only.lch/25ui.el" "~/Dropbox/.emacs.d/library/emacs.d/kid/kid-dot-emacs-read-only.lch/01init.el" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/Copy of dotEmacs.emacs" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/dotEmacs.emacs" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/dotemacs.el" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/elisp/README.rdoc" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/elisp/my-skeletons.el" "/Users/LooChao/Dropbox/.emacs.d/library/emacs.d/emacs_conf/init.el" "~/Dropbox/org/org/Unix.org" "~/Dropbox/org/org/Emacs.org" "/Users/LooChao/Dropbox/REPO/CVS/cedet/Makefile" "/Users/LooChao/Dropbox/iPad intro.pdf" "/Users/LooChao/.bash_aliases" "/Users/LooChao/.bashrc" "/Users/LooChao/Dropbox/REPO/SVN/IER/MATLAB/GAIN/trunk/calculate_gain.m" "~/Dropbox/REPO/SVN/IER/MATLAB/units.m" "~/Dropbox/org/private/iLog.org" "~/Dropbox/org/org/ComputerSE.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:

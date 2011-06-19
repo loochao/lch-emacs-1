@@ -1,0 +1,157 @@
+%%
+\NeedsTeXFormat{LaTeX2e}
+\def\fileversion{v.1.0}\def\filedate{2010/06/29}
+\ProvidesPackage{APC524}
+          [\filedate\space\fileversion\space  Slides for APC524]
+%
+\newif\if@quiet\@quietfalse
+\DeclareOption{quiet}{\@quiettrue}
+\newif\if@slide\@slidefalse
+\ExecuteOptions{default}
+\ProcessOptions
+
+% -- Option quiet
+\if@quiet
+  \def\PDFSCR@Warning#1{}
+\fi
+
+%------------------------------------------------------------------------------
+
+\usepackage{color}
+\usepackage{tpslifonts}
+\usepackage{hyperref}
+\hypersetup{plainpages=false} %avoid ``destination with the same identifier'' errors
+\hypersetup{linkcolor=red}
+\usepackage{fixseminar}
+\usepackage{graphicx}
+\usepackage{xspace}
+\IfFileExists{bera.sty}{\usepackage{bera}}{} % use Bitstream Vera fonts
+
+%------------------------------------------------------------------------------
+%
+% Setup the page
+%
+\pagestyle{empty}
+\slideframe{none}
+\centerslidesfalse
+\extraslideheight{10in}
+
+\slidewidth=10in\slideheight=7in
+\renewcommand{\slideleftmargin}{0.75in}
+\renewcommand{\sliderightmargin}{0.75in}
+\renewcommand{\slidetopmargin}{0.75in}
+\renewcommand{\slidebottommargin}{0.75in}
+
+%------------------------------------------------------------------------------
+%
+% Setup listings
+%
+\usepackage{listings}
+
+\definecolor{webgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{0.8,0.2,0.7}
+
+\lstset{language=C++,commentstyle=\color{red},identifierstyle=,keywordstyle=\color{webgreen},basicstyle=\color{blue}\tiny\tt,escapechar=\@,xleftmargin=5mm,aboveskip=5pt,belowskip=-3pt,lineskip=-1pt,showstringspaces=false}
+
+\renewcommand{\code}[1]{\lstinline[basicstyle=\color{blue}]@#1@} % i.e. not \small
+
+\newcommand{\file}[1]{\textbf{#1}}
+
+%------------------------------------------------------------------------------
+%
+% Handle pdflatex/latex transparently
+%
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+    \pdffalse           % we are not running PDFLaTeX
+\else
+    \pdfoutput=1        % we are running PDFLaTeX
+    \pdftrue
+\fi
+
+%----------------------------------------------------------------------
+% Generate the cover slide
+%
+% Arguments: {Author}{Title}{date}
+\newcommand{\coverSlide}[3]{
+\begin{center}
+  \color{red}\Large
+  #2
+\end{center}
+
+\vskip 2cm
+
+\begin{minipage}[t]{\the\hsize}
+\begin{center}
+#1
+\end{center}
+\end{minipage}
+%}
+
+\vfill
+\hrule
+\vskip 0.2in
+\leftline{\small APC 524/MAE 504\hfill #3}
+\vskip 0.2in
+\hrule
+\newslide
+}
+
+%------------------------------------------------------------------------------
+%
+% Sub headings
+%
+\newcommand{\heading}[1]{%
+  \newslide
+  \begin{center}
+    \LARGE\color{red} #1
+  \end{center}
+}
+\newcommand{\subheading}[1]{%
+  \begin{center}
+    \Large\color{blue} #1
+  \end{center}
+}
+\definecolor{DarkOliveGreen4}{rgb}{0.43,0.55,0.24}
+\newcommand{\subsubheading}[1]{%
+  \begin{center}
+    \Large\color{DarkOliveGreen4} #1
+  \end{center}
+}
+%------------------------------------------------------------------------------
+%
+% Useful macros
+%
+\renewcommand{\newpage}{\newslide}      % so emacs will highlight it.  Cheap trick...
+
+\newcommand{\CPP}{C\texttt{++}\xspace}  % C++
+
+\newcommand{\python}{\texttt{python}\xspace}   % python
+
+\newcommand{\showURL}[1]{\href{#1}{#1}} % Show a URL, and also make it live
+
+\newcommand{\srcPrefix}{}               % prefix for files included from ./src
+\newcommand{\includeSrc}[2]{\lstinputlisting[language={#1},title={#2}]{src/\srcPrefix#2}}
+
+\newcommand{\includeAs}[1]{\includeSrc{[x86masm]Assembler}{#1}}
+\newcommand{\includeC}[1]{\includeSrc{}{#1}}
+\newcommand{\includeCPP}[1]{\includeSrc{}{#1}}
+\newcommand{\includeFortran}[1]{\includeSrc{fortran}{#1}}
+\newcommand{\includePython}[1]{\includeSrc{Python}{#1}}
+
+\newcommand{\snippetFile}[2][C++]{
+  \lstset{language=#1}
+  \newcommand{\snipFilename}{#2}
+}
+
+\newcommand{\includeSnippet}[1]{
+  \lstinputlisting{\snipFilename.#1.snip}
+}
+
+\newcommand{\ltapprox}{\mathrel{\hbox to 0pt{\lower 3pt\hbox{$\mathchar"218$}\hss}
+ \raise 2.0pt\hbox{$\mathchar"13C$}}}   % <~
+
+\newcommand{\gtapprox}{\mathrel{\hbox to 0pt{\lower 3pt\hbox{$\mathchar"218$}\hss}
+ \raise 2.0pt\hbox{$\mathchar"13E$}}}   % >~
+
+\endinput

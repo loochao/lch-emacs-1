@@ -1,0 +1,501 @@
+%% Document Setup
+%% ==============
+
+%% Don't like 10pt? Try 11pt or 12pt
+\documentclass[10pt]{article}
+
+%% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+
+%% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+
+%% Paper Size, Page Number, And Document Layout Notes:
+%% ---------------------------------------------------
+%% The next \usepackage line changes the layout for CV style section
+%% headings as marginal notes. It also sets up the paper size as either
+%% letter or A4. By default, letter was used. If A4 paper is desired,
+%% comment out the letterpaper lines and uncomment the a4paper lines.
+%%
+%% As you can see, the margin widths and section title widths can be
+%% easily adjusted.
+%%
+%% ALSO: Notice that the includefoot option can be commented OUT in order
+%% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+%% effective text area larger.
+%%
+%% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+%% see the note about the +LP and -LP lines below. Comment out the +LP
+%% and uncomment the -LP.
+%%
+%% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+%% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+%% below.
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+
+%% Use these lines for A4-sized paper
+%\usepackage[paper=a4paper,
+%            %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=30.5mm,    % Length of section titles
+%            marginparsep=1.5mm,       % Space between titles and text
+%            margin=25mm,              % 25mm margins
+%            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+%% This gives us fun enumeration environments. compactenum will be nice.
+\usepackage{paralist}
+
+%% Reference the last page in the page number
+%%
+%% NOTE: comment the +LP line and uncomment the -LP line to have page
+%%       numbers without the ``of ##'' last page reference)
+%%
+%% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%%       numbers (make sure includefoot is commented out above)
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+
+
+
+
+% The section headings
+%
+% Usage: \section{section name}
+%
+% Follow this section IMMEDIATELY with the first line of the section
+% text. Do not put whitespace in between. That is, do this:
+%
+%       \section{My Information}
+%       Here is my information.
+%
+% and NOT this:
+%
+%       \section{My Information}
+%
+%       Here is my information.
+%
+% Otherwise the top of the section header will not line up with the top
+% of the section. Of course, using a single comment character (%) on
+% empty lines allows for the function of the first example with the
+% readability of the second example.
+\renewcommand{\section}[2]%
+        {\pagebreak[2]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{enumerate}[#1]}{\end{enumerate}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactenum}[#1]}{\end{compactenum}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\makeheading{Chao LU}
+ 
+\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[b]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries Chao LU}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}
+
+\section{Contact}
+%
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table 
+%       (adjust it to your liking; default is 1.85in).
+%
+\newlength{\rcollength}\setlength{\rcollength}{2.7in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+
+1A, Hibben Apt.            & Voice: (609) 712-6527 \\
+Princeton, NJ, 08540         & E-mail: \href{mailto:chaol@princeton.edu}{chaol@princeton.edu}\\
+& \href{http://www.princeton.edu/~chaol}{http://www.princeton.edu/~chaol}\\
+\end{tabular}
+
+\section{Research Interests}
+%
+Quantum Optics; X-Ray Laser; Surface Enhanced Raman Scattering (SERS); SERS fiber sensor.
+
+\section{Education}
+%
+\href{http://www.princeton.edu/}{\textbf{Princeton University}}, Princeton, NJ, USA
+\begin{outerlist}
+\item[] PhD student in MAE Department.
+        \begin{innerlist}
+          \item Majored in applied physics, minor in applied mathematics. 
+          \item Subject components passed. 
+          \item Courses requirements (4 physics and 4 math) finished.
+            \begin{innerlist}
+              \item[] MAE521: \textbf{A} (Optics and Lasers).
+              \item[] CHM501: \textbf{A} (Introduction to Quantum Chemistry).
+              \item[] CHM502: \textbf{A} (Advanced Quantum Chemistry).
+              \item[] MAE527: \textbf{B} (Physics of Gases).
+              \item[] MAE501: \textbf{A} (Mathematical Methods of Engineering Analysis I).
+              \item[] MAE502: \textbf{A} (Mathematical Methods of Engineering Analysis II).
+              \item[] PHY403: \textbf{A} (Mathematical Methods of Physics).
+              \item[] CEE525: \textbf{B} (Applied Numerical Methods).
+            \end{innerlist}
+          \item Working with
+            \href{http://www.princeton.edu/mae/people/faculty/scully/}{Prof. Marlan O.
+              Scully}(Fellow, National Academy of Science, USA)
+        \end{innerlist}
+\end{outerlist}
+
+\blankline
+
+\href{http://www.tsinghua.edu.cn/}{\textbf{Tsinghua University}}, Beijing, PRC
+\begin{outerlist}
+
+\item[] M.S., 
+        \href{http://ioe.pim.tsinghua.edu.cn/}
+             {Optical Engineering}, 2008
+        \begin{innerlist}
+        \item Thesis Topic: SERS Fiber Probe Optimization and Application.
+        \item Advisor: 
+              \href{http://ioe.pim.tsinghua.edu.cn/faculty/jingf/jingf_index.htm}
+                   {Prof. Guofan Jin} (Fellow, National Academy of Engineering, China)
+              and co-advisor:
+              \href{http://www.soe.ucsc.edu/~claire/}
+                   {Prof. Claire Gu}.
+        \end{innerlist}
+
+\item[] B.S., 
+        \href{http://www.pim.tsinghua.edu.cn/}
+             {Mechanical Engineering}, 2005
+        \begin{innerlist}
+        \item Emphasis on Control engineering and Measurements.
+        \end{innerlist}
+
+\end{outerlist}
+
+
+\section{Publications}
+%
+\textbf{Chao LU}, Claire Gu, Guofan Jin, et al.  \href{http://spie.org/x648.xml?product_id=791756&Search_Origin=QuickSearch&Search_Results_URL=http://spie.org/x1636.xml&Alternate_URL=http://spie.org/x18509.xml&Alternate_URL_Name=timeframe&Alternate_URL_Value=Exhibitors&UseJavascript=1&Please_Wait_URL=http://spie.org/x18503.xml&search_text=chao%20lu&category=All&go=submit}
+                         {"Collectible optical power of various specially shaped multimode optical fiber probes for contact sensing"}, Opt. Eng., Vol. 47, 010502 (2008).
+
+\blankline
+
+Chao Shi, \textbf{Chao LU}, Claire Gu, et al.
+\href{http://scitation.aip.org/getabs/servlet/GetabsServlet?prog=normal&id=APPLAB000093000015153101000001&idtype=cvips&gifs=yes:}{"Inner
+  Wall Coated Hollow Core Waveguide Sensor based on Double Substrate
+  Surface Enhanced Raman Scattering"}, Appl. Phys. Lett., Vol. 93, 153101 (2008)  
+
+\section{Conference}
+Poster: "Preliminary data and results on emission and absorption by excited He atoms", Quantum Electrodynamics Conference 2010, Casper, WY.
+
+\blankline
+
+Poster: "Substrates considerations for surface-enhanced CARS", Quantum Electrodynamics Conference 2009, Jacksonhole, WY.
+
+\section{Academic Experience}
+\textbf{2009-Currently} \hfill
+\href{http://www.princeton.edu/main/}{\textbf{Princeton University}}
+\begin{outerlist}
+\item[] \textbf{Using quantum coherence to generate gain in the XUV and X-Ray}
+        \begin{innerlist}
+        \item A strong femto-second laser pulse ($800nm$, $10^{15} W/cm^2$, $100fs$ pulse width) was directed to Helium gas (atom density:$10^{18}cm^{-3}$). The atoms will be fully ionized in this optical field (E: $10^8 V/m$), and plasma is created. Due to collisons, ionized electrons will repopulate all the energy levels of Helium in nanoseond time scale. Then with beams from OPA directed to the gas, whose wavelengh matches the energy difference of levels intersted, the coherence in the atoms are created. With the presence of coherence,the lasing without inversion scheme is created. Finally a transint lasing gain without population inversion between $2^1P$ and $2^1S$ was expected, whose wavelength is $58nm$.
+        \end{innerlist}
+% \item[] \textbf{Surface-enhanced Coherent anti-Stokes Raman Spectrosocpy}
+%         \begin{innerlist}
+%         \item Combine enhancements from surface plasma and coherence by driving laser field, further enhance effects of Raman scattering was explored.
+%         \end{innerlist}
+\end{outerlist}
+
+\blankline
+
+\textbf{2005 - 2008} \hfill \href{http://www.tsinghua.edu.cn}{\textbf{Tsinghua University}}
+\begin{outerlist}
+\item[] \textbf{Variously shaped multimode fiber SERS sensor}
+        \begin{innerlist}
+        \item Multimode fibers with various shapes (conic, parabolic, spherical...) served as a SERS sensor.
+        \item A model was set up to calculate the impact on detection signal by the shape variations.
+        \item Simulation code based on the physical model was developed, and experiments were performed, to verify of the model.
+        \item \href{http://spie.org/x648.xml?product_id=791756&Search_Origin=QuickSearch&Search_Results_URL=http://spie.org/x1636.xml&Alternate_URL=http://spie.org/x18509.xml&Alternate_URL_Name=timeframe&Alternate_URL_Value=Exhibitors&UseJavascript=1&Please_Wait_URL=http://spie.org/x18503.xml&search_text=chao%20lu&category=All&go=submit}{One paper} was published based on this work.
+        \end{innerlist}
+
+
+\item[] \textbf{Liquid Core PCF sensor based on SERS}
+        \begin{innerlist}
+        \item Developed a novel procedure using a fusion splicer to seal the PCF, then the liquid core SERS sensor was prepared based on the sealed fiber.
+        \item A double SERS substrate "sandwich" structure was utilized, with one substrate coated on the inner wall of the PCF and the other mixed in the sample solution.
+        \item The combination of these two novel detection schemes provided a two magnitude of enhancement.
+        \item \href{http://apl.aip.org/resource/1/applab/v93/i15/p153101_s1}{A paper} based on this observation was published.
+        \end{innerlist}
+
+\item[] \textbf{Preparation of tapered SERS fiber}
+        \begin{innerlist}
+          \item The tapered fiber sensors were etched by hydrofluoric acid (HF). Relationships between the desired shapes of the tapered fiber, the etching time and concentrations of HF were explored. We were able to produce a fiber sensor with optimized shape parameters. 
+          \item SERS detections for analyte R6g with tapered Sensors were carried out, results were present and discussed.
+        \end{innerlist}
+
+\item[] \textbf{'Bowl shape' Enhancement}
+        \begin{innerlist}
+        \item A novel bowl shape was fabricated by fusion splicer at one end of the PCF sensor.
+        \item This bowl shape provides an extra 10 times enhancement of the detectable signal.
+        \item \href{http://ab-initio.mit.edu/meep/}{Meep} simulation was employed to calculate the optical field distribution.
+        \item Mie scattering simulation, with code in Fortran was used.
+        \end{innerlist}
+
+% \item[] \textbf{Optical Trapping}
+%         \begin{innerlist}
+%         \item Succeeded to trap silver nanoparticles (SNPs, 20 nm) and observe the aggregation with a pretty low laser power (only 3.5 mW).
+%         \item Designed and achieved the whole optical setup.
+%         \item A confocal optical path was adopted to observe the trapped particles through the CCD. 
+%         \item Hypothesis was raised to give a possible explanation on the aggregation of the SNPs.
+%         \end{innerlist}
+\end{outerlist}
+% \blankline
+
+%\textbf{2005 - 2006} \hfill \href{http://www.tsinghua.edu.cn}{\textbf{Tsinghua University}}
+
+% \begin{outerlist}
+% \item[] \textbf{Participating in the project "Optimization of Compact Holographic Data Storage and Correlation Recognition System"}
+%         \begin{innerlist}
+%         \item This project is funded by the National Research Fund for Fundamental \textbf{Key Project NO. 973.}
+%         \item Investigated and analyzed possible optimization schemes for this holographic system.
+%         \item Built multiple holographic experimental platforms and developed corresponding control software using Dephi.
+%         \end{innerlist}
+% \end{outerlist}
+
+
+% \section{Contests}
+% %\textbf{2001 - 2005} \hfill \href{http://www.tsinghua.edu.cn}{\textbf{Tsinghua University}}
+% \begin{outerlist}
+% \item[] \textbf{Sixth Mechanical Design Contest of Tsinghua} \hfill  \textbf{10/2004}
+%         \begin{innerlist}
+%         \item Goal:Using provided components, including steel material, the electric engine, design and fabricate a pull-up robot, to accomplish as many pull-ups as possible in a certain time range.
+%         \item I Served as the Team leader with 4 partners, the main designer of our robot and my team won the first prize of this contest.
+%         \end{innerlist}
+% \end{outerlist}
+
+% \begin{outerlist}
+% \item[] \textbf{Fifth Electrical Design Contest of Tsinghua} \hfill  \textbf{9/2003}
+%         \begin{innerlist}
+%         \item Make auto-controlled toy car strike the balls into holes at the 4 corners of rectangle area.
+%         \item My team entered the final contest.
+%         \end{innerlist}
+% \end{outerlist}
+
+% \begin{outerlist}
+% \item[] \textbf{Gear Reducer Design} \hfill 06/2004
+%         \begin{innerlist}
+%         \item designed a coaxial two stage spur gear reducer used on an electrical bike as a team leader leading 8 partners. (Product Investigation, Concept Design and Principle Design as a team, Structure Design individually)
+%         \end{innerlist}
+% \end{outerlist}
+
+% \begin{outerlist}
+% \item[] \textbf{Tenth Structure Design Contest} \hfill 05/2004
+%         \begin{innerlist}
+%         \item Designed a wood arc bridge as a team leader with three partners.
+%         \end{innerlist}
+% \end{outerlist}
+
+% \begin{outerlist}
+% \item[] \textbf{Servo System Control} \hfill 05/2004 - 06/2004
+%         \begin{innerlist}
+%         \item Designed the parameters for the velocity servo loop and the position servo loop controlling a DC servo motor.
+%         \end{innerlist}
+% \end{outerlist}
+
+% \begin{outerlist}
+% \item[] \textbf{Major Course Projects}
+%         \begin{innerlist}
+%         \item Microcontrollers project on infrared transmission and reception system. Spring, 2005.
+%         \item Implementation of a speech recognition system using Matlab. Spring, 2005.
+%         \item Design of 32-bit, 5-stage pipelined Beta, RISC processor at the level of logic gate using MIT Jsim tools with 2 partners. Fall, 2004. Our design won the curriculum contest for smallest size.
+%         \item Theoretical analysis and MATLAB simulation on effects on noise by different modulation systems. Fall, 2004.
+%         \item Design and implementation of an advanced CPU on FPGA. Summer, 2004.
+%         \item Implementation of a multifunctional digital thermometer on analog and digital circuits. Summer, 2004.
+%         \item Theoretical analysis and Pspice simulation of oscillator circuits. Fall, 2003.
+%         \end{innerlist}
+% \end{outerlist}
+
+%\section{Awards} 
+%
+% \href{http://www.ucsc.edu}{University of California}, Santa Cruz, CA
+% \begin{innerlist}
+% \item Regent's Fellowship, 2007.9
+% \end{innerlist}
+
+% \blankline
+% \href{http://www.princeton.edu/}{\textbf{Princeton University}}, Princeton, NJ, USA
+% \begin{innerlist}
+% Fellowship, Princeton University, 2009
+% \end{innerlist}
+% \href{http://www.tsinghua.edu.cn}{Tsinghua University}, Beijing, PRC
+% \begin{innerlist}
+% \item Tsinghua - “WeiLun Funding” Scholarship for excellent students, 12/2004.
+% \item National Scholarship for excellent students, (top 5\%), 12/2003.
+% \item Tsinghua - “WeiLun Funding” Scholarship for excellent students, 12/2002.
+% \end{innerlist}
+
+% \section{Professional Experience}
+% % 
+% \href{http://www.ni.com/}{\textbf{National Instruments}}, 
+% Austin, Texas USA
+% \begin{outerlist}
+
+% \item[] \textit{Hardware R\&D Intern for Multifunction DAQ}%
+%   \hfill \textbf{June 2003 to September 2003}
+%   \begin{innerlist}
+%   \item Designed final verification testing fixture for use with STC2 MIO
+%     products.
+%   \item Designed and executed study of the effect of varying burn-in time
+%     on long-term drift of common industry voltage references.
+%   \end{innerlist}
+
+% \item[] \textit{Hardware R\&D Intern for Multifunction DAQ}%
+%   \hfill \textbf{June 2002 to September 2002}
+%   \begin{innerlist}
+%   \item Designed and performed validation tests on new 16-bit 800 kHz
+%     NI-6120 SMIO DAQ board.
+
+%   \item Designed high quality filter/amplifier source for use with NI-5411
+%     arbitrary function generator.
+%   \end{innerlist}
+
+% \end{outerlist}
+
+% \blankline
+
+% \section{Service}
+% %
+% Director of Computers, 
+% \href{http://ec.osu.edu/}{Engineers' Council},
+% \href{http://www.osu.edu/}{The Ohio State University}, 2002
+
+% \blankline
+
+% \href{http://www.osufirst.org/}{OSU FIRST Robotics Team}, 
+% \href{http://www.osu.edu}{The Ohio State University}, 2000--2004
+% \begin{innerlist}
+% \item Introduced middle school and high school students to science and
+%         technology by participating with them in national robotics
+%         competitions.
+% \item Led 2002 team to regional silver medal
+%         \href{http://www.firstwiki.org/Engineering_Inspiration_Award}
+%              {\emph{Engineering Inspiration Award}}.
+% \item \emph{Lead Team Mentor}, 2002--2004 
+% \item \emph{Component Design Team Lead Mentor}, 2001--2002
+% \end{innerlist}
+
+% \blankline
+
+% \href{http://www.linuxvirtualserver.org/}
+%      {Linux Virtual Server Project}, 1999--2000
+% \begin{innerlist}
+% \item Early member of the team that formed the open source project that
+%         is now an important load balancing solution for the Linux
+%         software platform. 
+% \end{innerlist}
+
+% \blankline
+
+% \href{http://www.gcfn.org/}
+%      {Greater Columbus Free-Net}, 1995--1997
+% \begin{innerlist}
+% \item Provided technical support services.
+% \end{innerlist}
+
+% \blankline
+
+% CompuTeen Bulletin Board System, 1993--1995
+% \begin{innerlist}
+% \item Administrated dial-up bulletin board system.
+% \item Founded and administrated TeenLiNK, an international electronic
+%         mail network that spread through the United States, Canada, and
+%         Australia and delivered mail over a series of electronic dial-up
+%         drop offs.
+% \end{innerlist}
+
+\section{Technical Skills} 
+
+\textbf{Programming:} C, Shell scripting, Python, Lisp.\\
+\blankline
+\textbf{Math Tools:} Matlab, Mathematica.\\
+\blankline
+\textbf{Unix Tools:} Emacs, \LaTeX, SVN, Unix toolkits (grep sed etc.)\\
+\blankline
+\textbf{3D Modeling:} AutoCAD, Pro/E, Solidworks.\\
+\blankline
+\textbf{Optical Tools:} Meep(FDTD), Oslo.\\
+\blankline
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

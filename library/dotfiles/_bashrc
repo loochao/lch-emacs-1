@@ -1,0 +1,192 @@
+#-*- coding:utf-8; mode:sh -*-
+
+#========== BASH ========#
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+#---- Source etc conf ----#
+if [ -e /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+#-------- PATH --------#
+function add_to_path {
+  local dir=$1
+  if [ -d $dir ]; then
+    PATH="$dir:${PATH}"
+  fi
+}
+
+add_to_path ~/bin
+add_to_path /opt/local/bin/       #Macports
+add_to_path /opt/local/sbin/      #Macports
+add_to_path /usr/texbin
+
+if [[ `uname` == 'Darwin' ]]; then
+    add_to_path /Applications/Documents/Adobe Acrobat 9 Pro/Adobe Acrobat Pro.app/Contents/MacOS
+    add_to_path /Applications/Network/Firefox.app/Contents/MacOS
+    add_to_path /Applications/Emacs.app/Contents/MacOS/bin
+    add_to_path /Applications/Utilities/MATLAB_R2010b.app/bin/
+fi
+
+export PATH=.:$PATH
+
+# MacPorts Installer addition on 2011-03-09_at_09:26:37: adding an appropriate PATH variable for use with MacPorts.
+#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+#-- MANPATH --#
+function add_to_manpath {
+  local dir=$1
+  if [ -d $dir ]; then
+    MANPATH="$dir:${MANPATH}"
+  fi
+}
+
+add_to_manpath /usr/local/man
+add_to_manpath ~/man
+
+#-------- Terminal behavior --------#
+# case $TERM in
+#   xterm*|rxvt|Eterm|eterm)
+#     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+#     ;;
+#   screen)
+#     PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+#     ;;
+# esac
+
+#-- LSCOLOR --#
+export CLICOLOR=1
+#export LSCOLORS=ExFxCxDxBxegedabagacad
+# use this if you are using a black background:
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+#-- Global Configuration --#
+ARCH=`uname -s`
+CONFIGDIR='/usr/operations/lib/userconfig'
+if [ -f $CONFIGDIR/bash_profile-$ARCH ]; then
+   . $CONFIGDIR/bash_profile-$ARCH
+fi
+
+#-- PATH
+export PAGER="less"
+export EDITOR="vi"
+export SVN_EDITOR=vi
+
+#-- Set the default permission for new files to rwx------.
+umask 077
+
+#-- Set the printer queue.
+# export PRINTER=all_clusters_s
+
+#-- Set the terminal type so applications (e.g. emacs) use color.
+export TERM=xterm-color
+
+#-- Make the command line history ignore duplicate command lines.
+history_control=ignoredups
+
+#-- Set the shell prompt.  See the bash man page for a description 
+# of special characters.
+bash_prompt() {
+
+    local NONE='\[\033[0m\]'    # unsets color to term's fg color
+
+        # regular colors
+	local K='\[\033[0;30m\]'    # black
+	local R='\[\033[0;31m\]'    # red
+	local G='\[\033[0;32m\]'    # green
+	local Y='\[\033[0;33m\]'    # yellow
+	local B='\[\033[0;34m\]'    # blue
+	local M='\[\033[0;35m\]'    # magenta
+	local C='\[\033[0;36m\]'    # cyan
+	local W='\[\033[0;37m\]'    # white
+						    
+	# empahsized (bolded) colors
+	local EMK='\[\033[1;30m\]'
+	local EMR='\[\033[1;31m\]'
+	local EMG='\[\033[1;32m\]'
+	local EMY='\[\033[1;33m\]'
+	local EMB='\[\033[1;34m\]'
+	local EMM='\[\033[1;35m\]'
+	local EMC='\[\033[1;36m\]'
+	local EMW='\[\033[1;37m\]'
+										        
+	# background colors
+	local BGK='\[\033[40m\]'
+	local BGR='\[\033[41m\]'
+	local BGG='\[\033[42m\]'
+	local BGY='\[\033[43m\]'
+	local BGB='\[\033[44m\]'
+	local BGM='\[\033[45m\]'
+	local BGC='\[\033[46m\]'
+	local BGW='\[\033[47m\]'
+															    
+	local UC=$C                 # user's color
+        [ $UID -eq "0" ] && UC=$R   # root's color
+
+	# if [ ! "$LOGIN_SHELL" ]; then
+	#     PS1="\[\e[0m\]\h:\w\\[\e[0m\]$ " 
+	# fi
+	# PS1="\[\e[0m\]\h:\w\\[\e[0m\]$ "
+
+        # \h: Hostname; \w: Current working dir(full path);
+	# \\: \ itself; \\$: $ itself
+	# ${W} white
+	PS1="${W}\h:\w\$ "
+} 
+
+bash_prompt
+	
+#-- Establish a safe environment.
+set -o ignoreeof         # Do not log out with <ctrl-d>
+set -o noclobber         # Do not overwrite files via '>'
+
+#-- Create aliases for commonly used commands. 
+#alias ls="ls -a --color=tty"
+if [[ `uname` == 'Darwin' ]]; then
+  alias ls="ls -G -v"     # -v to display chs
+  # good for dark backgrounds
+  export LSCOLORS=gxfxcxdxbxegedabagacad
+else
+  alias ls="ls --color=auto"
+  # good for dark backgrounds
+  export LS_COLORS='no=00:fi=00:di=00;36:ln=00;35:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;31:'
+  # For LS_COLORS template: $ dircolors /etc/DIR_COLORS
+fi
+
+alias l="ls"
+alias ll="ls -lh"
+alias la="ls -a"
+alias lal="ls -alh"
+alias ec="emacsclient"
+#alias emacs="emacs -nw"
+
+#-- Make the sort program behave in the traditional way.
+export LC_ALL=C
+
+#---- Aliases ----#
+if [ -e ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+#---- History ----#
+# When you exit a shell, the history from that session is appended to
+# ~/.bash_history.  Without this, you might very well lose the history of entire
+# sessions (weird that this is not enabled by default).
+shopt -s histappend
+
+export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+# remove duplicates from the history (when a new item is added)
+export HISTCONTROL=erasedups
+# increase the default size from only 1,000 items
+export HISTSIZE=10000
+
+#---- Bash Completion, if available ----#
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
+elif  [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+elif  [ -f /etc/profile.d/bash_completion ]; then
+  . /etc/profile.d/bash_completion
+fi

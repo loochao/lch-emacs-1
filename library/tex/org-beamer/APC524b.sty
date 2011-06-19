@@ -1,0 +1,102 @@
+%%
+\NeedsTeXFormat{LaTeX2e}
+\def\fileversion{v.1.0}\def\filedate{2010/06/29}
+\ProvidesPackage{APC524b}
+          [\filedate\space\fileversion\space  Slides for APC524]
+%
+\newif\if@quiet\@quietfalse
+\DeclareOption{quiet}{\@quiettrue}
+\newif\if@slide\@slidefalse
+\ExecuteOptions{default}
+\ProcessOptions
+
+% -- Option quiet
+\if@quiet
+  \def\PDFSCR@Warning#1{}
+\fi
+
+%------------------------------------------------------------------------------
+%
+% Load packages
+
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{plainpages=false} %avoid ``destination with the same identifier'' errors
+\hypersetup{linkcolor=red}
+\usepackage{graphicx}
+\usepackage{xspace}
+\IfFileExists{tpslifonts.sty}{\usepackage{tpslifonts}}{} % use tpslifonts fonts
+%\IfFileExists{bera.sty}{\usepackage{bera}}{} % use Bitstream Vera fonts
+
+%------------------------------------------------------------------------------
+%
+% Setup listings
+%
+\usepackage{listings}
+
+\definecolor{webgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{0.8,0.2,0.7}
+
+\lstset{language=C++,commentstyle=\color{red},identifierstyle=,keywordstyle=\color{webgreen},stringstyle=\color{purple},basicstyle=\color{blue}\scriptsize\tt,escapechar=\@,xleftmargin=5mm,aboveskip=5pt,belowskip=0pt,lineskip=-1pt,showstringspaces=false}
+
+\newcommand{\code}[1]{\lstinline[basicstyle=\color{blue}]@#1@} % i.e. not \small
+
+\newcommand{\file}[1]{\textbf{#1}}
+
+%------------------------------------------------------------------------------
+%
+% Handle pdflatex/latex transparently
+%
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+    \pdffalse           % we are not running PDFLaTeX
+\else
+    \pdfoutput=1        % we are running PDFLaTeX
+    \pdftrue
+\fi
+
+%------------------------------------------------------------------------------
+%
+% Beamer style
+%
+\usetheme{Frankfurt}
+%\usetheme{Warsaw}
+%\usetheme{CambridgeUS}
+\usecolortheme{tiger}
+%------------------------------------------------------------------------------
+%
+% Useful macros
+%
+
+\newcommand{\CPP}{C\texttt{++}\xspace}  % C++
+
+\newcommand{\python}{\texttt{python}\xspace}   % python
+
+\newcommand{\showURL}[1]{\href{#1}{#1}} % Show a URL, and also make it live
+
+\newcommand{\srcPrefix}{}               % prefix for files included from ./src
+\newcommand{\includeSrc}[2]{\\\lstinputlisting[language={#1},title={#2}]{src/\srcPrefix#2}}
+
+\newcommand{\includeAs}[1]{\includeSrc{[x86masm]Assembler}{#1}}
+\newcommand{\includeC}[1]{\includeSrc{C}{#1}}
+\newcommand{\includeCPP}[1]{\includeSrc{}{#1}}
+\newcommand{\includeFortran}[1]{\includeSrc{fortran}{#1}}
+\newcommand{\includePython}[1]{\includeSrc{Python}{#1}}
+
+\newcommand{\snippetFile}[2][C++]{
+  \lstset{language=#1}
+  \xdef\snipFilename{#2}                % extend definition beyond this frame
+}
+
+\newcommand{\includeSnippet}[1]{
+  \lstinputlisting{\snipFilename.#1.snip}
+}
+
+\newcommand{\ltapprox}{\mathrel{\hbox to 0pt{\lower 3pt\hbox{$\mathchar"218$}\hss}
+ \raise 2.0pt\hbox{$\mathchar"13C$}}}   % <~
+
+\newcommand{\gtapprox}{\mathrel{\hbox to 0pt{\lower 3pt\hbox{$\mathchar"218$}\hss}
+ \raise 2.0pt\hbox{$\mathchar"13E$}}}   % >~
+
+\endinput

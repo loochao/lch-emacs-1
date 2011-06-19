@@ -1,0 +1,51 @@
+#
+# Bourne Again SHell init file.
+#
+
+# Do global configuration.
+ARCH=`uname -s`
+CONFIGDIR='/usr/operations/lib/userconfig'
+if [ -f $CONFIGDIR/bash_profile-$ARCH ]; then
+   . $CONFIGDIR/bash_profile-$ARCH
+fi
+
+# Set the PATH environment variable.
+export PATH=/u/cos217/bin/i686/meminfo:$PATH
+export PATH=/u/cos217/bin/i686/memstat:$PATH
+export PATH=/u/cos217/bin/i686:$PATH
+export PATH=/u/cos217/bin:$PATH
+export PATH=$PATH:.
+
+# Set the default permission for new files to rwx------.
+umask 077
+
+# Set the printer queue.
+export PRINTER=all_clusters_d
+# export PRINTER=all_clusters_s
+
+# Set the terminal type so applications (e.g. emacs) use color.
+export TERM=xterm-color
+
+# Make the command line history ignore duplicate command lines.
+history_control=ignoredups
+
+# Set the shell prompt.  See the bash man page for a description 
+# of special characters.
+if [ ! "$LOGIN_SHELL" ]; then
+   PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
+fi
+
+# Establish a safe environment.
+set -o ignoreeof         # Do not log out with <ctrl-d>
+set -o noclobber         # Do not overwrite files via '>'
+alias rm="rm -i"         # Prompt before removing files via rm
+alias cp="cp -i"         # Prompt before overwriting files via cp
+alias mv="mv -i"         # Prompt before overwriting files via mv
+
+# Create aliases for commonly used commands. 
+alias ls="ls -a --color=tty" 
+alias ll="ls -al --color=tty"
+alias emacs="emacs -nw"
+
+# Make the sort program behave in the traditional way.
+export LC_ALL=C

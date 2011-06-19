@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{types}{3}{0}{1}
+\beamer@sectionintoc {2}{Program Structure}{22}{0}{2}
+\beamer@subsectionintoc {2}{1}{\texttt {for}, \texttt {if}, \ldots {}}{22}{0}{2}
+\beamer@sectionintoc {3}{Functions}{35}{0}{3}
+\beamer@subsectionintoc {3}{1}{subroutines, arrays, operators}{35}{0}{3}
+\beamer@sectionintoc {4}{Macros}{56}{0}{4}
+\beamer@subsectionintoc {4}{1}{\texttt {\#if}, \texttt {\#define}}{56}{0}{4}
+\beamer@sectionintoc {5}{Structs and Memory}{75}{0}{5}
+\beamer@subsectionintoc {5}{1}{\texttt {struct}, the stack, \texttt {malloc}}{75}{0}{5}
