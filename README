@@ -4,6 +4,7 @@ Quite a few codes are adopted from internet, whose copyrights belongs
 to the origin authors. 
 
 To install
+----------
 - $git clone git@github.com:loochao/loochao-emacs-configuration.git
 this command will download loochao-emacs-configuration which contains
 all the files needed. 

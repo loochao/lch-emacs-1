@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Jun 18 20:59:53 2011
+;; Created Sat Jun 18 23:45:23 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -13,9 +13,42 @@
 (setq search-ring '("el-get" "dea" "xwl" "tramp" "default-directory" "var" "history" "default" "ps" "ps1" "lifet" "complete" "travel" "life" "lif" "mobile	"))
 (setq regexp-search-ring nil)
 (setq register-alist '((48 . "")))
-(setq file-name-history '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/README.md" "~/Dropbox/.emacs.d/rc/lch-conf.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/50magit.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/smex-1.1.1/smex.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/rc/lch-el-get.el" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/.gitignore" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/dotfiles/" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/_gitignore" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/.gitignore" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/README" "~/Dropbox/.emacs.d/README" "/Users/LooChao/.bashrc" "~/Dropbox/.emacs.d/var/tramp" "~/Dropbox/.emacs.lib/dotEmacs/dea/dea-read-only/my-lisps/tramp-settings.el" "~/Dropbox/.emacs.lib/dotEmacs/xwl/xwl-emacs-config/.emacs.d/site-lisp/config/xwl-misc.el" "~/Dropbox/Org/org/fashion.stylist.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/tramp" "/ssh:192.55.106.109:" "~/Dropbox/.emacs.d/rc/lch-tramp.el" "~/Repository/GIT/aquamacs-emacs/lisp/net/tramp.el" "~/Dropbox/.emacs.d/rc/lch-z-var.el" "~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/rc/lch-alias.el" "/sudo:root@localhost:/Users/LooChao/Dropbox/.emacs.d/rc/lch-tramp.el" "/sudo:root@localhost:/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui-bak" "~/Dropbox/.emacs.d/rc/lch-ui-bak" "/sudo:root@localhost:/sudo:root@localhost:/Users/LooChao/Dropbox/.emacs.d/rc/lch-tramp.el" "/sudo:localhost:"))
+(setq file-name-history '("~/Dropbox/Org/org/fashion.stylist.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/.emacs.d/README" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/README" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/README.md" "~/Dropbox/.emacs.d/rc/lch-conf.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/magit-1.0.0/50magit.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/smex-1.1.1/smex.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/rc/lch-el-get.el" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/.gitignore" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/dotfiles/" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/_gitignore" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/.gitignore" "~/Dropbox/.emacs.d/README" "/Users/LooChao/.bashrc" "~/Dropbox/.emacs.d/var/tramp" "~/Dropbox/.emacs.lib/dotEmacs/dea/dea-read-only/my-lisps/tramp-settings.el" "~/Dropbox/.emacs.lib/dotEmacs/xwl/xwl-emacs-config/.emacs.d/site-lisp/config/xwl-misc.el" "~/Dropbox/Org/org/fashion.stylist.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/tramp" "/ssh:192.55.106.109:" "~/Dropbox/.emacs.d/rc/lch-tramp.el" "~/Repository/GIT/aquamacs-emacs/lisp/net/tramp.el" "~/Dropbox/.emacs.d/rc/lch-z-var.el" "~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/rc/lch-alias.el" "/sudo:root@localhost:/Users/LooChao/Dropbox/.emacs.d/rc/lch-tramp.el" "/sudo:root@localhost:/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui-bak" "~/Dropbox/.emacs.d/rc/lch-ui-bak"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  311
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/fashion.stylist.org"
+  "fashion.stylist.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode flyspell-mode text-scale-mode)
+  9014
+  '(9014 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/.emacs.d/README"
+  "README"
+  'org-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
+
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
   "lch-elisp.el"
@@ -61,17 +94,6 @@
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
-  nil
-  "rc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  1444
-  '(3470 nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
-  nil)
-
-(desktop-create-buffer 206
   "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/smex-1.1.1/smex.el"
   "smex.el"
   'emacs-lisp-mode
@@ -83,17 +105,6 @@
   '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  nil
-  "org"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  4003
-  '(138 nil)
-  t
-  '("/Users/LooChao/Dropbox/Org/org/")
-  nil)
-
-(desktop-create-buffer 206
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-init.el"
   "lch-init.el"
   'emacs-lisp-mode
@@ -103,28 +114,6 @@
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/README"
-  "README"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  130
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  ".emacs.d"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  288
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/")
-  nil)
 
 (desktop-create-buffer 206
   nil
@@ -309,17 +298,6 @@
   '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode flyspell-mode)
   76612
   '(98301 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/Lifetip.org"
-  "Lifetip.org"
-  'org-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  3150
-  '(3084 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))

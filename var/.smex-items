@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ flyspell-mode
+ auto-fill-mode
  cd
  lm
  5x5
  afm
  arp
- dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (auto-fill-mode . 1)
+ (flyspell-mode . 1)
 )
