@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Jun 25 15:18:13 2011
+;; Created Sat Jun 25 15:43:29 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -13,7 +13,7 @@
 (setq search-ring '("C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs" "el-get" "dea" "xwl" "tramp" "default-directory" "var" "history" "default"))
 (setq regexp-search-ring nil)
 (setq register-alist '((48 . "")))
-(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-conf.el" "~/Dropbox/.emacs.d/rc/lch-binding.el" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/author" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/html-mode/body" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/time" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/email" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/README" "/Users/LooChao/.wine/dosdevices/h:/Dropbox/Education/PU_Master_Thesis/README" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Repository/src/uk-tex-faq/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/tex/L03-C.org" "/Users/LooChao/Dropbox/Education/PU Master Thesis/Master" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/thesis.tex" "/Users/LooChao/Dropbox/Education/PU Master Thesis/Thesis/thesis.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/CHM501.pdf" "/Users/LooChao/Dropbox/Education/PU Master Thesis/Thesis/thesis.tex" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/thesis.prj" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/thesis.bib" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/puthesis.cls" "/Applications/Documents/Emacs.app/Contents/Resources/etc/MORE.STUFF" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/thesis.tex" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex-11.86/INSTALL" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/iDea.org" "~/Downloads/sylvester.keil.or.at/robots.txt" "~/Downloads/sylvester.keil.or.at/index.html" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/Org/org/iPrv.org_archive" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/ch-pastwork/topic1.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/ch-pastwork/figures/titlepage.png" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/thesis.bib" "~/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/thesis.log" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/multirow.sty"))
+(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-binding.el" "~/Dropbox/.emacs.d/rc/lch-conf.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-binding.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/author" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/html-mode/body" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/time" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/email" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/README" "/Users/LooChao/.wine/dosdevices/h:/Dropbox/Education/PU_Master_Thesis/README" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Repository/src/uk-tex-faq/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/tex/L03-C.org" "/Users/LooChao/Dropbox/Education/PU Master Thesis/Master" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/thesis.tex" "/Users/LooChao/Dropbox/Education/PU Master Thesis/Thesis/thesis.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/CHM501.pdf" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/thesis.prj" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/thesis.bib" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/template/puthesis.cls" "/Applications/Documents/Emacs.app/Contents/Resources/etc/MORE.STUFF" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/THESIS/template/thesis.tex" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex-11.86/INSTALL" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/iDea.org" "~/Downloads/sylvester.keil.or.at/robots.txt" "~/Downloads/sylvester.keil.or.at/index.html" "~/Dropbox/Org/org/iLog.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
@@ -21,32 +21,54 @@
   "lch-binding.el"
   'emacs-lisp-mode
   '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode outline-minor-mode yas/minor-mode)
-  1
-  '(564 nil)
+  42
+  '(41 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
-  "text-mode"
+  "rc"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  842
+  601
   '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/")
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
   nil)
 
 (desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el"
+  "lch-conf.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  258
+  '(nil nil)
   nil
-  "org-mode"
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex"
+  "lch-pums-thesis.tex"
+  'latex-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  nil
+  "PU_Master_Thesis"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  226
+  247
   '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/")
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/")
   nil)
 
 (desktop-create-buffer 206
@@ -54,7 +76,7 @@
   "README"
   'org-mode
   '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  28
+  57
   '(nil nil)
   nil
   nil
@@ -116,28 +138,6 @@
   '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
-  nil
-  "PU_Master_Thesis"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  189
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/thesis.tex"
-  "thesis.tex"
-  'latex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  8606
-  '(3151 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
-
-(desktop-create-buffer 206
   "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Repository/src/uk-tex-faq/Makefile"
   "Makefile"
   'makefile-mode
@@ -168,17 +168,6 @@
   '(nil nil)
   t
   '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "make"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  95
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/library/programming/make/")
   nil)
 
 (desktop-create-buffer 206
@@ -334,26 +323,4 @@
   nil
   nil
   '((buffer-file-coding-system . utf-8-dos) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU Master Thesis/Thesis/thesis.tex"
-  "thesis.tex"
-  'fundamental-mode
-  '(global-auto-revert-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU Master Thesis/Master"
-  "Master"
-  'fundamental-mode
-  '(global-auto-revert-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  nil)
 
