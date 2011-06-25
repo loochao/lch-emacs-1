@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ print-buffer
  cd
  lm
  5x5
  afm
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (print-buffer . 3)
 )

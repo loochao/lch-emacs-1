@@ -58,10 +58,10 @@
  (rear-context-string . "2B Mar 21 15:54 ")
  (position . 146))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** 戛纳电影 \n[2011-")
- (rear-context-string . " :IDEA:\n** IDEA\n")
- (position . 249))
+ (filename . "~/Dropbox/Org/org/iPrv.org")
+ (front-context-string . "*** New version ")
+ (rear-context-string . "   :#C:\n** TODO\n")
+ (position . 997))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/org/private/iDea.org")
  (front-context-string . "*** 看了那个自己做乐器的农民")
