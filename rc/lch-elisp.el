@@ -8,8 +8,9 @@
 ;	 "~/Dropbox/.emacs.d/site-lisp/org-mode/doc")
 ;       Info-directory-list))
 
-;; (load "auctex.el" nil t t)
-;; (load "preview-latex.el" nil t t)
+;>---- AucTeX ----<;
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
 
 ;>---- Magit ----<;
 (require 'magit)

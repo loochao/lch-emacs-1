@@ -1,0 +1,15 @@
+#!/bin/sh
+# Download auctex package, extract it to the same dir with auctex-build
+# Need to modify the prefix and lispdir
+
+EMACS=/Applications/Documents/Emacs.app/Contents/MacOS/Emacs
+EMACSLISP=/Users/LooChao/Dropbox/.emacs.d/site-lisp
+cd auctex*
+chmod 755 configure mkinstalldirs
+./configure --prefix="${EMACSLISP}/auctex-11.86" --without-texmf-dir --with-emacs="${EMACS}" --with-lispdir="${EMACSLISP}/auctex-11.86"
+
+make
+
+#rm -r "${EMACSLISP/auctex-11.86}"
+
+make install
