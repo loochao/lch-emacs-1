@@ -1,5 +1,5 @@
 VERSION=1.0.0
-EMACS=emacs
+EMACS=/Applications/Documents/Emacs.app/Contents/MacOS/Emacs
 PREFIX=/usr/local
 ELS=magit.el magit-svn.el magit-topgit.el magit-key-mode.el
 ELCS=$(ELS:.el=.elc)
