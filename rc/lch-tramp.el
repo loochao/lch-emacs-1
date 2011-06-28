@@ -34,18 +34,6 @@
 ;; (add-to-list 'tramp-default-user-alist
 ;;              '("" "hats.princeton.edu" "root"))
 
-;;; FIXME need to debug
-;; (defun kid-find-alternative-file-with-sudo ()
-;;   (interactive)
-;;   (when buffer-file-name
-;;     (let ((point (point)))
-;;       (find-alternate-file
-;;        (concat "/sudo:root@localhost:"
-;;                buffer-file-name))
-;;       (goto-char point))))
-;; (global-unset-key (kbd "C-c C-r"))
-;; (define-key global-map (kbd "C-c C-r") 'kid-find-alternative-file-with-sudo)
-
 ;- Default transfer method (info "(tramp)Default Method")
 ;; You might try out the `rsync' method, which saves the remote files
 ;; quite a bit faster than SSH. It's based on SSH, so it works the same,
@@ -80,6 +68,7 @@
 
 ;; faster auto saves (info "(tramp)Auto-save and Backup") configuration
 (setq tramp-auto-save-directory temporary-file-directory)
+;(setq tramp-remote-path (quote ("/usr/xpg4/bin" "/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin" "/usr/ccs/bin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/p/perl/bin")))
 
 ;- (info "(tramp)Traces and Profiles")
 ;; help debugging

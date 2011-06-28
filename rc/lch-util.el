@@ -45,6 +45,19 @@
   (interactive)
   (message (format "%d" (- (region-end) (region-beginning)))))
 
+(defun count-words (start end)
+  "Print number of words in the region."
+  (interactive "r")
+  (save-excursion
+    (let ((n 0))
+      (goto-char start)
+      (while (< (point) end)
+        (when (forward-word 1)
+          (setq n (1+ n))))
+      (message "Region has %d words" n)
+      n)))
+
+
 ;; Show ascii table
 (defun ascii-table ()
   "Print the ascii table. Based on a defun by Alex Schroeder <asc@bsiag.com>"

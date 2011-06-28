@@ -59,9 +59,9 @@
  (position . 146))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/Org/org/iPrv.org")
- (front-context-string . "*** New version ")
+ (front-context-string . "*** dotEmacs pri")
  (rear-context-string . "   :#C:\n** TODO\n")
- (position . 997))
+ (position . 1229))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/org/private/iDea.org")
  (front-context-string . "*** 看了那个自己做乐器的农民")

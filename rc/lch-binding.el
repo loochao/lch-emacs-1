@@ -11,7 +11,7 @@
 ;>-------- F2 --------<;
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
 (define-key global-map (kbd "C-<f2>") 'shell)
-(define-key global-map (kbd "S-<f2>") 'eshell)
+;(define-key global-map (kbd "S-<f2>") 'eshell)
 ;(define-key global-map (kbd "C-S-<f2>") 'cmd-shell)                          ;; => lch-util.el
 ;(define-key global-map (kbd "C-M-<f2>") 'msys-shell)                         ;; => lch-util.el
 ;(define-key global-map (kbd "M-<f2>") 'call-last-kbd-macro)
@@ -156,6 +156,9 @@
 (define-key global-map (kbd "<f10> 3") (lambda() (interactive) (dired emacs-site-lisp)))
 (define-key global-map (kbd "<f10> 4") (lambda() (interactive) (dired emacs-lib-dir)))
 (define-key global-map (kbd "<f10> 5") (lambda() (interactive) (dired (concat emacs-lib-dir "/dotEmacs"))))
+(define-key global-map (kbd "<f10> 9") (lambda() (interactive) (find-file "/ssh:chaol@hats.princeton.edu:/u/chaol")))
+(define-key global-map (kbd "<f10> 0") (lambda() (interactive) (find-file "/sudo::/")))
+
 (if lch-win32-p (define-key global-map (kbd "<f10> a")
 		  (lambda() (interactive) (find-file "d:/SYS/WINMNGR/AHK/AutoHotKey.ini"))))
 (define-key global-map (kbd "<f10> b") (lambda() (interactive) (find-file (concat emacs-dir "/rc/lch-binding.el"))))(define-key global-map (kbd "<f10> B") (lambda() (interactive) (find-file (concat emacs-dir "/rc/lch-bmk.el"))))
@@ -333,7 +336,11 @@
         (define-key view-mode-map "h" 'backward-char)
         (define-key view-mode-map "l" 'forward-char)
         (define-key view-mode-map "j" 'next-line)
-        (define-key view-mode-map "k" 'previous-line)))
+        (define-key view-mode-map "k" 'previous-line)
+	(define-key view-mode-map "q" 'bury-buffer)
+	(define-key view-mode-map "u" 'view-scroll-page-backward)
+	))
+
 ;(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)          ;; => lch-util.el
 (define-key global-map (kbd "<f1> W") 'widen)
 (define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
@@ -354,9 +361,9 @@
 ;>-------- Ctrl X Map --------<;
 ;(define-key global-map (kbd "C-x b") 'ibuffer)                               ;; => lch-elisp.el
 ;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)                          ;; => lch-elisp.el
-(global-set-key [(control c) (control r)] (lambda () (interactive) (find-file
-                (read-file-name "sudo find file: " "/sudo::/"))))
-
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-x g") 'goto-line)
 
 ;>>> lch-dict.el
 ;; (define-key global-map (kbd "M-s") '(lambda ()   

@@ -9,14 +9,30 @@
       undo-limit 100000
       blink-matching-paren-distance 32768
       tab-width 8
+      read-file-name-completion-ignore-case t
+      completion-ignore-case t
       inhibit-startup-message t         ; Turn off the picture startup
       mark-ring-max 200                 ; # of marks kept in the mark ring.
       kill-whole-line t                 ; Remove the newlines as well.
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
       scroll-step 1                     ; Move down 1 line instead of multi.
       next-line-add-newlines nil        ; Don't add newlines at the end.
+      message-log-max 500               ; Show lots of *message*.
       )
 
+(setq sentence-end "\\([。！？。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
+
+;(setq safe-local-variable-values (quote ((unibyte . t) (flyspell-mode . -1) (allout-layout * 0 :))))
+
+(setq tab-stop-list
+      (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
+		64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
+
+;; Trailing whitespace is unnecessary
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+;; Explicitly show the end of a buffer
+;(set-default 'indicate-empty-lines t)
 
 ;; Default major mode for new buffers and any files with unspecified mode
 (when (locate-library "org.el")
@@ -37,7 +53,8 @@
 ;(setq left-fringe-width 12)
 
 ;>---- Mouse Jump away ----<;
-(mouse-avoidance-mode 'jump)
+(mouse-avoidance-mode 'animate)
+;(mouse-avoidance-mode 'jump)
 
 ;>---- Turn on the functions disabled by default ----<;
 (put 'upcase-region    'disabled nil)
@@ -58,14 +75,13 @@
 (setq initial-scratch-message "")
 ;(setq initial-scratch-message "Welcome to the world of Emacs")
 
-
 ;>---- Don't beep at me ----<;
-;(setq visible-bell t)
+(setq visible-bell t)
 ;>~ No ring no screen shaking.
-(setq ring-bell-function 'ignore)
+;(setq ring-bell-function 'ignore)
 
 ;>---- Line trancation enable ----<;
-(setq truncate-partial-width-windows nil) 
+(setq truncate-partial-width-windows nil)
 
 ;>---- Display column & line number ----<;
 (when (fboundp 'line-number-mode)
@@ -260,11 +276,7 @@
 ;; Run grep via find, with user-specified arguments
 (define-key global-map (kbd "C-c 3") 'grep-find)
 
-;; ignore `.svn' and `CVS' directories
-;; FIXME
-;; (setq grep-find-command
-;;       (concat "find . \\( -path '*/.svn' -o -path '*/CVS' \\) -prune -o -type f "
-;; 	      "-print0 | " "xargs -0 -e grep -i -n -e "))
+(setq grep-find-command "find . -type f ! -regex \".*/\\({arch}\\|\\.arch-ids\\|\\.svn\\|_darcs\\|\\.bzr\\|\\.git\\|\\.hg\\)/.*\" -print0 | xargs -0 grep -nH -e ")
 
 ;>-------- AUTO SAVE FILES IN ONE PLACE --------<;
 ;- Put autosave files (i.e. #foo#) in one place, *NOT*

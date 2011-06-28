@@ -2,12 +2,6 @@
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
 
-;(setq Info-directory-list
-;      (append
-;       '("~/Dropbox/.emacs.d/site-lisp/emacs-w3m/doc"
-;	 "~/Dropbox/.emacs.d/site-lisp/org-mode/doc")
-;       Info-directory-list))
-
 ;>---- AucTeX ----<;
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)

@@ -29,8 +29,8 @@
       (setenv "PATH" (concat (getenv "PATH")
 			     ":/usr/texbin"
 			     ":/opt/local/bin"
-			     "/Applications/Emacs.app/Contents/MacOS/bin:"
-			     "/Applications/Utilities/MATLAB_R2010b.app/bin/"
+			     ":/Applications/Emacs.app/Contents/MacOS/bin"
+			     ":1/Applications/Utilities/MATLAB_R2010b.app/bin/"
 			     ))
       (setq exec-path (append exec-path
 			      '("/usr/texbin"
@@ -39,9 +39,8 @@
 				"/usr/local/bin"
 				"/Applications/Emacs.app/Contents/MacOS/bin")))))
 
-(setq Info-additional-directory-list
-      '("/usr/share/info/emacs-snapshot-unicode/"
-	))
+
+
 
 ;>---------- FLAGs ----------<;
 (defconst lch-cygwin-p (eq system-type 'cygwin) "Are we on cygwin")
@@ -56,13 +55,12 @@
 
 ;>---------- VAR ----------<;
 (defvar emacs-lib-dir (concat emacs-dir "/library"))
-(defvar emacs-info-dir (concat emacs-lib-dir "/info"))
-(add-to-list 'Info-default-directory-list emacs-info-dir)
 (defvar git-dir (concat dropbox-path "/REPO/GIT") "git dir")
 (setq emacs-var-dir (concat emacs-path "/.emacs.d/var"))
 (if lch-aquamacs-p
     (setq custom-file (concat emacs-dir "/rc/lch-aqua-custom.el"))
     (setq custom-file (concat emacs-dir "/rc/lch-custom.el")))
+(if (file-exists-p custom-file) (load-file custom-file))
 
 (defvar org-dir (concat emacs-path "/Org") "org dir")
 (defvar org-source-dir (concat org-dir "/org")  "org source dir")
@@ -78,6 +76,15 @@
 
 ;(load (concat emacs-lib-dir "/emacs-starter-kit/init.el"))
 ;(load (concat emacs-lib-dir "/conf/dea-read-only/.emacs"))
+
+;>---- INFO ----<;
+(defvar emacs-info-dir (concat emacs-dir "/info"))
+;(add-to-list 'Info-default-directory-list emacs-info-dir)
+(dolist (dir `(,emacs-info-dir
+	       "/usr/share/lib/info"
+	       "/usr/local/share/lib/info"
+	       "~/local/share/info"))
+  (add-to-list 'Info-default-directory-list dir))
 
 ;>-------- KEY MAPS --------<;
 (define-prefix-command 'f1-map)      

@@ -17,17 +17,18 @@
 ;; * g: grep-find;
 
 (require 'dired)
-(require 'ansi-color)
-(require 'dired-aux)
 (require 'dired-x)
+(require 'dired-aux)
 (require 'dired-single)
 (require 'wdired)         ;Part of Emacs since 22, treat dired buffer as file, easy to rename
+(require 'ansi-color)
 (require 'xwl-util)       ;To load xwl-shell-command-asynchronously etc.
 (ignore-errors (require 'emms-player-mplayer))
 ;(require 'dired-sort-menu)
 
 ;>-- Allows recursive deletes --<;
-(setq dired-recursive-deletes 'top)
+;(setq dired-recursive-deletes 'top)
+(setq dired-recursive-deletes 'always)
 
 ;>---- Switch infos on/off ----<;
 ;(require 'dired-details)
@@ -119,7 +120,7 @@ end tell" d)))
          (ywb-convert-cygwin-path file)
        (concat "file://" file)))))
 
-;> Use W to get filename.
+;; Use W to get filename.
 ;; C-1 W to get Windows path.
 ;; C-2 W to get Cygwin path.
 ;; C-3 W to get Windows dir path.
@@ -141,7 +142,7 @@ end tell" d)))
       (kill-new file))
     (message "%s" file)))
 
-;> Cygwin path conversion
+;; Cygwin path conversion
 (defun ywb-convert-to-cygwin-path (path)
   (concat "file:///cygdrive/" (substring path 0 1) (substring path 2)))
 (defun ywb-convert-cygwin-path (path)

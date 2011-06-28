@@ -16,10 +16,7 @@
 ;(setq emacs-dir "~/Dropbox/.emacs.d") -> dotEmacs
 ;(setq emacs-var-dir "~/Dropbox/.emacs.d/var") -> dotEmacs
 
-(setq custom-file (concat emacs-var-dir "/emacs-custom-file"))
-(if (file-exists-p custom-file)
-    (load-file custom-file))
-
+;(setq semanticdb-default-save-directory "~/.emacs.d/.semantic")
 (setq tetris-score-file (concat emacs-var-dir "/tetris-scores"))
 (setq session-save-file (concat emacs-var-dir "/emacs-session"))
 ;(setq recentf-save-file (concat emacs-var-dir "/emacs-recentf")) => lch-org.el

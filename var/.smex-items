@@ -1,7 +1,7 @@
 
 ;; ----- smex-history -----
 (
- magit-status
+ info
  cd
  lm
  5x5
@@ -12,5 +12,5 @@
 
 ;; ----- smex-data -----
 (
- (magit-status . 1)
+ (info . 2)
 )
