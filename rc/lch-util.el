@@ -2,6 +2,62 @@
 
 ;>======== UTIL.EL ========<;
 
+;; It is better to go to the next line here because this way we can
+;; call this with a numeric argument.
+(defun delete-trailing-spaces (arg)
+  "Remove all the tabs and spaces at the end of lines."
+  (interactive "p")
+   (while (> arg 0)
+     (end-of-line nil)
+     (delete-horizontal-space)
+     (forward-line 1)
+     (decf arg 1)))
+
+;; Remove all the tabs and spaces at the end of the lines.
+(defun buffer-delete-trailing-spaces ()
+  "Remove all the tabs and spaces at the end of all the lines in the buffer."
+  (interactive)
+  (message "Deleting trailing spaces...")
+  (save-excursion
+    (goto-char (point-min))
+    (while (not (eobp))
+      (delete-trailing-spaces 1)))
+  (message "Deleting trailing spaces... done"))
+
+(defun buffer-untabify ()
+  "Convert all tabs in buffer with multiple spaces, preserving columns."
+  (interactive)
+  (message "Untabifying buffer...")
+  (untabify (point-min) (point-max))
+  (message "Untabifying buffer... done"))
+
+(defun buffer-beautify ()
+  "Calls both buffer-delete-trailing-spaces and buffer-smart-tabify."
+  (interactive)
+  (message "Cleaning up buffer...")
+  (buffer-delete-trailing-spaces)
+  (buffer-smart-tabify)
+  (message "Cleaning up buffer... done"))
+
+;; Compute the length of the marked region
+(defun region-length ()
+  "length of a region"
+  (interactive)
+  (message (format "%d" (- (region-end) (region-beginning)))))
+
+;; Show ascii table
+(defun ascii-table ()
+  "Print the ascii table. Based on a defun by Alex Schroeder <asc@bsiag.com>"
+  (interactive)
+  (switch-to-buffer "*ASCII*")
+  (erase-buffer)
+  (insert (format "ASCII characters up to number %d.\n" 254))
+  (let ((i 0))
+    (while (< i 254)
+      (setq i (+ i 1))
+      (insert (format "%4d %c\n" i i))))
+  (goto-char (point-min)))
+
 (defun indent-whole-buffer ()
   (interactive)
   (save-excursion
@@ -29,7 +85,7 @@ time."
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format))))
 
-(defun dos-to-unix ()
+(defun dos2unix ()
   "Cut all visible ^M from the current buffer."
   (interactive)
   (save-excursion
@@ -38,7 +94,7 @@ time."
       (replace-match ""))))
 
 ;; convert a buffer from Unix end of lines to DOS `^M' end of lines
-(defun unix-to-dos ()
+(defun unix2dos ()
   (interactive)
   (save-excursion
     (goto-char (point-min))
@@ -291,7 +347,7 @@ to browser. If a region is active (a phrase), lookup that phrase."
   (browse-url myurl)
    ))
 
-(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)					  
+(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)
 
 (defun lookup-google ()
   "Look up the word under cursor in Wikipedia.
@@ -380,7 +436,7 @@ arg switches to the specified session, creating it if necessary."
   (interactive "P")
   (let ((buf-name (cond ((numberp arg)
                          (format "*cmd<%s>*" arg))
-                        (arg 
+                        (arg
                          (generate-new-buffer-name "*cmd*"))
                         (t
                          "*cmd*")))
@@ -439,7 +495,7 @@ it if necessary."
            (characters (- (point-max) (point-min))) (line 1)
            b e column)
        (while (not (eobp))
-	 (goto-line line)
+         (goto-line line)
          (beginning-of-line)
          (when (looking-at "[ \t]*")
            (setq b (match-beginning 0)

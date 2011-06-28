@@ -1,13 +1,28 @@
 ;-*- coding: utf-8 -*-
+
 ;>======== INIT.EL  ========<;
-;- (info "(emacs)Customization")
+;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
 
-;- Default major mode for new buffers and any files with unspecified mode
+(setq enable-local-eval t
+      modeline-click-swaps-buffers t
+      undo-limit 100000
+      blink-matching-paren-distance 32768
+      tab-width 8
+      inhibit-startup-message t         ; Turn off the picture startup
+      mark-ring-max 200                 ; # of marks kept in the mark ring.
+      kill-whole-line t                 ; Remove the newlines as well.
+      enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
+      scroll-step 1                     ; Move down 1 line instead of multi.
+      next-line-add-newlines nil        ; Don't add newlines at the end.
+      )
+
+
+;; Default major mode for new buffers and any files with unspecified mode
 (when (locate-library "org.el")
      (setq-default major-mode 'org-mode))
 
-;- Auto-reload file when modified from external app
+;; Auto-reload file when modified from external app
 ;; whenever an external process changes a file underneath emacs, and there
 ;; was no unsaved changes in the corresponding buffer, just revert its
 ;; content to reflect what's on-disk.
@@ -39,18 +54,10 @@
 ;>---- 'y' for 'yes', 'n' for 'no' ----<;
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;>---- Bigger kill-ring ----<;
-(setq kill-ring-max 200)
-
-;>---- Close the picture startup ----<;
-(setq inhibit-startup-message t)
-
 ;>---- Alter the scratch message ----<;
 (setq initial-scratch-message "")
 ;(setq initial-scratch-message "Welcome to the world of Emacs")
 
-;>---- Setup for newline auto-appending support ----<;
-(setq next-line-add-newline t)
 
 ;>---- Don't beep at me ----<;
 ;(setq visible-bell t)
@@ -61,8 +68,10 @@
 (setq truncate-partial-width-windows nil) 
 
 ;>---- Display column & line number ----<;
-(column-number-mode 1)
-(line-number-mode 1)
+(when (fboundp 'line-number-mode)
+  (line-number-mode 1))
+(when (fboundp 'column-number-mode)
+  (column-number-mode 1))
 
 ;>---- Time stamp support ----<;
 (setq time-stamp-active t)

@@ -39,8 +39,9 @@
 				"/usr/local/bin"
 				"/Applications/Emacs.app/Contents/MacOS/bin")))))
 
-;(setq Info-additional-directory-list
-;      '("/usr/share/info/emacs-snapshot-unicode/"))
+(setq Info-additional-directory-list
+      '("/usr/share/info/emacs-snapshot-unicode/"
+	))
 
 ;>---------- FLAGs ----------<;
 (defconst lch-cygwin-p (eq system-type 'cygwin) "Are we on cygwin")
@@ -59,7 +60,9 @@
 (add-to-list 'Info-default-directory-list emacs-info-dir)
 (defvar git-dir (concat dropbox-path "/REPO/GIT") "git dir")
 (setq emacs-var-dir (concat emacs-path "/.emacs.d/var"))
-(setq custom-file (concat emacs-dir "/rc/lch-custom.el"))
+(if lch-aquamacs-p
+    (setq custom-file (concat emacs-dir "/rc/lch-aqua-custom.el"))
+    (setq custom-file (concat emacs-dir "/rc/lch-custom.el")))
 
 (defvar org-dir (concat emacs-path "/Org") "org dir")
 (defvar org-source-dir (concat org-dir "/org")  "org source dir")

@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Jun 27 16:18:14 2011
+;; Created Tue Jun 28 11:23:49 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -13,9 +13,42 @@
 (setq search-ring '("install-el:" "mkin" "install:" "install" "build" "tar" "hist" "C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs" "el-get"))
 (setq regexp-search-ring nil)
 (setq register-alist '((48 . "")))
-(setq file-name-history '("~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/_region_.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/_region_.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-build" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/auctex.el" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/mkinstalldirs" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-build" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/FAQ" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/README" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/Makefile.in" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/bashrc" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Repository/git/aquamacs-emacs/aquamacs/build/make-auctex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/../" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/auctex-build" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Repository/src/uk-tex-faq/Makefile" "~/Dropbox/Education/PU_Master_Thesis/Makefile" "~/Repository/git/aquamacs-emacs/aquamacs/build/copy-build-to-server.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/update-ess" "~/Repository/git/aquamacs-emacs/aquamacs/build/startup-time.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/pull-nightly.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/make-auctex" "~/Repository/git/aquamacs-emacs/aquamacs/build/build23.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/build-auctex.sh" "~/Dropbox/.emacs.d/rc/lch-alias.el" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iPrv.org_archive" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/Life.org"))
+(setq file-name-history '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d_bak/rc/dotEmacs" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/_region_.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-build" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/auctex.el" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/mkinstalldirs" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/FAQ" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/README" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/Makefile.in" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-11.86/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/bashrc" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Repository/git/aquamacs-emacs/aquamacs/build/make-auctex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/../" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/auctex-build" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/auctex-11.86/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Repository/src/uk-tex-faq/Makefile" "~/Dropbox/Education/PU_Master_Thesis/Makefile" "~/Repository/git/aquamacs-emacs/aquamacs/build/copy-build-to-server.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/update-ess" "~/Repository/git/aquamacs-emacs/aquamacs/build/startup-time.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/pull-nightly.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/make-auctex" "~/Repository/git/aquamacs-emacs/aquamacs/build/build23.sh" "~/Repository/git/aquamacs-emacs/aquamacs/build/build-auctex.sh" "~/Dropbox/.emacs.d/rc/lch-alias.el" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iPrv.org_archive" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/Life.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  nil
+  ".emacs.d_bak"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  645
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d_bak/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "rc"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  178
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d_bak/rc/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d_bak/rc/dotEmacs"
+  "dotEmacs"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
 (desktop-create-buffer 206
   "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/lch-pums-thesis.tex"
   "lch-pums-thesis.tex"
@@ -37,17 +70,6 @@
   t
   '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/")
   nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/auctex/auctex-build"
-  "auctex-build"
-  'sh-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode)
-  169
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   "/Users/LooChao/Repository/git/aquamacs-emacs/aquamacs/build/make-auctex"
@@ -240,21 +262,10 @@
   "/Users/LooChao/Repository/git/aquamacs-emacs/aquamacs/build/build-auctex.sh"
   "build-auctex.sh"
   'sh-mode
-  '(global-auto-revert-mode highlight-parentheses-mode view-mode auto-complete-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode view-mode)
   327
   '(nil nil)
   t
   nil
   '((tab-width . 8) (buffer-file-coding-system . undecided-unix) (fill-column . 70)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/PU_Master_Thesis/_region_.tex"
-  "_region_.tex"
-  'latex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  8828
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
 

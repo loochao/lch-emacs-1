@@ -29,7 +29,8 @@
 	)
 
 ; Frame and window management:
-
+(setq cursor-type 'box)
+(setq mac-command-modifier 'meta)
 (tabbar-mode -1)		     ; no tabbar
 (one-buffer-one-frame-mode -1)       ; no one-buffer-per-frame
 (setq special-display-regexps nil)   ; do not open certain buffers in special windows/frames
