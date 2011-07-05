@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
- info
  cd
  lm
  5x5
  afm
  arp
  dbx
+ dig
 )
 
 ;; ----- smex-data -----
 (
- (info . 2)
+ 
 )

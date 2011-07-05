@@ -106,7 +106,7 @@ time."
     (while (search-forward "\r" nil t)
       (replace-match ""))))
 
-;; convert a buffer from Unix end of lines to DOS `^M' end of lines
+;; convert a buffer from Unix end of lines to DOS `^M(\n)' end of lines
 (defun unix2dos ()
   (interactive)
   (save-excursion

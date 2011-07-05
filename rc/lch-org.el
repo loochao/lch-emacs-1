@@ -21,11 +21,11 @@
 ;(define-key global-map (kbd "C-c a") 'org-agenda)                     ;; conflict with others, so disabled
 
 (setq org-completion-use-ido t)
-(setq org-hide-leading-stars t)        ;- Hide the first N-1 stars in a headline.
+(setq org-hide-leading-stars t)        ;; Hide the first N-1 stars in a headline.
 (setq org-log-done t)
 (setq org-export-email-info t)
-(setq org-reverse-note-order t)        ;- New notes on top.
-(setq org-deadline-warning-days 14)    ;- No. of days to display before expiration of a deadline.
+(setq org-reverse-note-order t)        ;; New notes on top.
+(setq org-deadline-warning-days 14)    ;; No. of days to display before expiration of a deadline.
 
 (setq org-directory org-private-dir)
 (setq org-agenda-files
@@ -50,12 +50,12 @@
 			  (type "TOSORT(S)")
 			  (type "DELEGATED(d@!)")
 			  (type "WAITING(w@/!)")
-			  (type "SCHEDULED(s@/!)")			  
+			  (type "SCHEDULED(s@/!)")
  ))
 
 (setq org-todo-keyword-faces '(
 		       ("QUEUE" :foreground "Lavender" :weight bold)
-		       ("ACTIVE" :foreground "Cyan" :weight bold)		       
+		       ("ACTIVE" :foreground "Cyan" :weight bold)
 		       ("DONE" :foreground "PeachPuff2" :weight bold)
 		      ;("WAITING" :foreground "medium blue" :weight bold)
 		       ("APPT" :foreground "medium blue" :weight bold)
@@ -65,7 +65,7 @@
 		       ("DELEGATED" :foreground "dark violet" :weight bold)
 		       ("DEFERRED" :foreground "dark blue" :weight bold)
 		       ("SOMEDAY" :foreground "dark blue" :weight bold)
-		       ("PROJECT" :height 1.5 :weight bold :foreground "black")		       
+		       ("PROJECT" :height 1.5 :weight bold :foreground "black")
 		       ))
 
 ;; (setq org-todo-state-tags-triggers
@@ -83,24 +83,24 @@
 		      ("#A" . ?[)
 		      ("#B" . ?])
 		      ("#C" . ?\\)
-		      
+
 		      ("Audio" . ?a)
 		      ("Book" . ?b)
-		      ("BIB" . ?B)		      
+		      ("BIB" . ?B)
 		      ("Culture" . ?c)
       		      ("ComputerSE" . ?C)
-      		      ("Doc" . ?d)		      
+      		      ("Doc" . ?d)
 ;		      ("Cookery" . ?)
 		      ("EBook" . ?e)
 ;		      ("English" . ?E)
-		      ("EDU" . ?E)		      
+		      ("EDU" . ?E)
 		      ("GuoXue" . ?g)
       		      ("Humor" . ?h)
-		      ("HDoc" . ?H)		      		      
+		      ("HDoc" . ?H)
 		      ("IDEA" . ?i)
 		      ("Library" . ?l)
 		      ("Life" . ?L)
-;		      ("Love" . ?)		      
+;		      ("Love" . ?)
 ;		      ("List" . ?)
 		      ("Mathematics" . ?m)
 		      ("OBTAIN" . ?o)
@@ -112,7 +112,7 @@
 
 		      ("Video" . ?v)
 		      ("Web" . ?w)
-		      
+
 		      ("ACTIVE" . ?1)
 		      ("MOBILE" . ?2)
 		      ("AUDIO" . ?3)
@@ -120,15 +120,15 @@
 
 		      (:startgroup . nil)
 		      ("BIB" . ?0)
-		      ("STAR3" . ?,)		      
-		      ("STAR4" . ?.)		      
+		      ("STAR3" . ?,)
+		      ("STAR4" . ?.)
 		      ("STAR5" . ?/)
 		      (:endgroup . nil)
 		      ))
 
 (setq org-tag-faces
       '(
-	("Audio" . (:foreground "Noccasin" :weight bold))	
+	("Audio" . (:foreground "Noccasin" :weight bold))
 	("Book" . (:foreground "Siennal1" :weight bold))
 	("Doc" . (:foreground "PaleGreen" :weight bold))
 	("EBook" . (:foreground "Gold1" :weight bold))
@@ -154,7 +154,7 @@
 	("QUEUE" . (:foreground "Lavender" :weight bold))
 	("ACTIVE" . (:foreground "Cyan" :weight bold))
 	("DONE" . (:foreground "PeachPuff2" :weight bold))
-	
+
 	("AUDIO" . (:foreground "Cyan" :weight bold))
 	("MOBILE" . (:foreground "Cyan" :weight bold))
 	("CAR" . (:foreground "Cyan" :weight bold))
@@ -166,14 +166,13 @@
 	))
 
 (setq org-fast-tag-selection-single-key t)
-
 (setq org-export-with-LaTeX-fragments t)
 
 (add-hook 'org-mode-hook
 	  (lambda()
-;	    (auto-fill-mode t)
-;	    (set-fill-column 100)
-;	    (flyspell-mode 1)
+            ;(auto-fill-mode t)
+	    ;(set-fill-column 100)
+	    ;(flyspell-mode 1)
 	    (setq truncate-lines nil)
 	    ))
 
@@ -208,16 +207,18 @@
 
 
 
-(setq org-refile-targets (quote (
-                              ("iPrv.org" :level . 2)
-			      ("iDea.org" :level . 2)
-			      ("Emacs.org" :level . 1))))
+(setq org-refile-targets '(
+                           ("iPrv.org" :level . 2)
+                           ("iDea.org" :level . 2)
+                           ("Emacs.org" :level . 1)))
 
 ;; (setq org-refile-targets '((nil :maxlevel . 2)
 ;;                                         ; all top-level headlines in the
 ;;                                         ; current buffer are used (first) as a
 ;;                                         ; refile target
-;; 			   (org-agenda-files :maxlevel . 2)))
+;; 			   (org-agenda-files :maxlevel . 2)
+;;                            ))
+
 ;(add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
 
@@ -250,21 +251,26 @@
 
 (setq org-capture-templates
       '(
-	("e" "EMACS" entry (file+olp (concat org-source-dir "/Emacs.org") "EMACSs" "INBOX") "* %?" :prepend t)
-	("c" "COUNT" entry (file+datetree (concat org-private-dir "/iCount.org")) "* %? \n%U" :prepend t)	
-;	("c" "COMPUTER" entry (file+olp (concat org-source-dir "/ComputerSE.org") "IDEAs" "IDEA") "* %?" :prepend t)	       ;       ("l" "LOG" entry (file+olp (concat org-private-dir "/iLog.org") "LOG" "-iLOG-") "* %U \n%?" :prepend t)
+	("a" "TODO-#A" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#A" "TODO-#A-") "* %? :#A:\n%U" :prepend t)
+	("A" "TODO-#A~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#A") "* %? :#A:\n%U" :prepend t)
+	("b" "TODO-#B" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#B" "TODO-#B-") "* %? :#B:\n%U" :prepend t)
+	("B" "TODO-#B~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#B") "* %? :#B:\n%U" :prepend t)
+	("c" "TODO-#C" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#C" "TODO-#C-") "* %? :#C:\n%U" :prepend t)
+	("C" "TODO-#C~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#C") "* %? :#C:\n%U" :prepend t)
+	;("c" "COUNT" entry (file+datetree (concat org-private-dir "/iCount.org")) "* %? \n%U" :prepend t)
 	("d" "IDEA" entry (file+olp (concat org-private-dir "/iDea.org") "IDEAs" "IDEA") "* %? \n%U" :prepend t)
-	("i" "INBOX" entry (file+olp (concat org-private-dir "/iPrv.org") "INBOX" "-INBOX-") "* %? \n%U" :prepend t)
-	("t" "TODO" entry (file+olp (concat org-private-dir "/iPrv.org") "TODOs" "TODO") "* %? \n%U" :prepend t)	
+	("i" "INBOX" entry (file+olp (concat org-private-dir "/Refile.org") "INBOXs" "INBOX") "* %? \n%U" :prepend t)
+	("n" "NOTES" entry (file+olp (concat org-private-dir "/Refile.org") "NOTEs" "NOTE") "* %? \n%U" :prepend t)
 	("q" "QUESTION" entry (file+olp (concat org-private-dir "/iPrv.org") "QUESTIONs" "QUESTION") "* %? \n%U" :prepend t)
 	("l" "LOG" entry (file+datetree (concat org-private-dir "/iLog.org")) "* %? \n%U" :prepend t)
+	("t" "TODO" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO") "* %? \n%U" :prepend t)
 	("o" "OBTAIN" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#B" "OBTAINs") "* %? \n%U" :prepend t)
 	("p" "PLAN" entry (file+olp (concat org-private-dir "/iLog.org") "PLANs" "PLAN") "* %? \t%U" :prepend t)
-	("a" "AGENDA" )
-	("n" "note" entry (file (concat org-private-dir "/iPrv.org")) "* %? :NOTE: %U %a :CLOCK: :END:" :clock-in t :clock-resume t)
-	("f" "appointment" entry (file+datetree (concat org-private-dir "/iPrv.org")) "* %? %U" :clock-in t :clock-resume t)
-	("p" "Phone call" entry (file (concat org-private-dir "iPrv.org")) "* Phone %(bh/phone-call) - %(gjg/bbdb-company) :PHONE:\n%U\n\n%?" :clock-in t :clock-resume t)
-	("w" "org-protocol" entry (file (concat org-private-dir "iPrv.org")) "* TODO Review %c %U" :immediate-finish t :clock-in t :clock-resume t)))
+	;("n" "note" entry (file (concat org-private-dir "/iPrv.org")) "* %? :NOTE: %U %a :CLOCK: :END:" :clock-in t :clock-resume t)
+	;("f" "appointment" entry (file+datetree (concat org-private-dir "/iPrv.org")) "* %? %U" :clock-in t :clock-resume t)
+	;("p" "Phone call" entry (file (concat org-private-dir "iPrv.org")) "* Phone %(bh/phone-call) - %(gjg/bbdb-company) :PHONE:\n%U\n\n%?" :clock-in t :clock-resume t)
+	;("w" "org-protocol" entry (file (concat org-private-dir "iPrv.org")) "* TODO Review %c %U" :immediate-finish t :clock-in t :clock-resume t)
+        ))
 
 (define-key global-map (kbd "<f7> e") (lambda () (interactive) (org-capture nil "e")))
 (define-key global-map (kbd "<f7> i") (lambda () (interactive) (org-capture nil "i")))
@@ -302,7 +308,7 @@
 ;;   (insert ":CATEGORY: \n")
 ;;   (insert ":END:\n")
 ;;   )
-    
+
 ;>-------- Org-Library --------<;
 ;; (defun lch-pdf-check-in (fname)
 ;;   (interactive "sEnter name of the pdf to check in: ")
@@ -341,7 +347,7 @@
 ;> #+TITLE:     The title to be shown (default is the buffer name)
 ;> #+AUTHOR:    The author (default taken from user-full-name) LooChao
 ;> #+EMAIL:     LooChao@gmail.com
-;> #+DATE:      
+;> #+DATE:
 ;> #+LANGUAGE:  Language for HTML
 ;> #+TEXT:
 ;> #+TODO:

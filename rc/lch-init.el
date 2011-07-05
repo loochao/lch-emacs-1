@@ -20,6 +20,8 @@
       message-log-max 500               ; Show lots of *message*.
       )
 
+(setq-default indent-tabs-mode nil)
+
 (setq sentence-end "\\([。！？。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
 
 ;(setq safe-local-variable-values (quote ((unibyte . t) (flyspell-mode . -1) (allout-layout * 0 :))))
@@ -168,7 +170,7 @@
 ;> Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
 ;> Auto fill length
-(set-fill-column 100)
+(set-fill-column 78)
 ;> Automatically turn on auto-fill-mode when editing text files
 ;(add-hook 'text-mode-hook 'turn-on-auto-fill)
 

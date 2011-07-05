@@ -52,7 +52,7 @@
 (define-key global-map (kbd "<f4> o t") 'org-todo-list)
 
 ;(if lch-win32-p                                                              ;; => lch-util.el
-;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer)) 
+;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer))
 
 ;>-------- F4 --------<;
 
@@ -73,11 +73,11 @@
 
 
 ;>-------- F6 --------<;
-;(define-key global-map (kbd "<f6> e") 'org-export-as-html)                   ;; => lch-org.el 
-;(define-key global-map (kbd "<f6> o") 'org-publish)                          ;; => lch-org.el 
+;(define-key global-map (kbd "<f6> e") 'org-export-as-html)                   ;; => lch-org.el
+;(define-key global-map (kbd "<f6> o") 'org-publish)                          ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> p") 'lch-org-publish-org)                  ;; => lch-org.el
-;(define-key global-map (kbd "<f6> P") 'lch-org-publish-prv)                  ;; => lch-org.el 
-;(define-key global-map (kbd "<f6> w") 'lch-org-publish-worg)                 ;; => lch-org.el 
+;(define-key global-map (kbd "<f6> P") 'lch-org-publish-prv)                  ;; => lch-org.el
+;(define-key global-map (kbd "<f6> w") 'lch-org-publish-worg)                 ;; => lch-org.el
 
 
 ;>-------- F7 --------<;
@@ -131,6 +131,7 @@
 (define-key global-map (kbd "<f9> P") (lambda() (interactive) (find-file (concat org-source-dir "/Programming.org"))))
 (define-key global-map (kbd "<f9> C-p") (lambda() (interactive) (find-file (concat org-source-dir "/iPU.org"))))
 (define-key global-map (kbd "<f9> M-p") (lambda() (interactive) (find-file (concat org-source-dir "/Physics.org"))))
+(define-key global-map (kbd "<f9> r") (lambda() (interactive) (find-file (concat org-source-dir "/Refile.org"))))
 (define-key global-map (kbd "<f9> s") (lambda() (interactive) (find-file (concat org-source-dir "/Softip.org"))))
 (define-key global-map (kbd "<f9> S") (lambda() (interactive) (find-file (concat org-source-dir "/Sitemap.org"))))
 (define-key global-map (kbd "<f9> u") (lambda() (interactive) (find-file (concat org-source-dir "/Unix.org"))))
@@ -245,7 +246,7 @@
 
 ;>-------- F12 --------<;
 ;> EMMS
-;; (define-key global-map (kbd "<f12> <f12>") 'emms-pause)                     ;; => All in lch-emms.el 
+;; (define-key global-map (kbd "<f12> <f12>") 'emms-pause)                     ;; => All in lch-emms.el
 ;; (define-key global-map (kbd "<f12> c")   'emms-start)
 ;; (define-key global-map (kbd "<f12> x")   'emms-stop)
 
@@ -366,7 +367,7 @@
 (global-set-key (kbd "C-x g") 'goto-line)
 
 ;>>> lch-dict.el
-;; (define-key global-map (kbd "M-s") '(lambda ()   
+;; (define-key global-map (kbd "M-s") '(lambda ()
 ;;                                (interactive)
 ;;                                (require 'xwl-dictionary)
 ;;                                (call-interactively 'dictionary-search)))

@@ -58,13 +58,13 @@
  (rear-context-string . "2B Mar 21 15:54 ")
  (position . 146))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/iPrv.org")
- (front-context-string . "*** dotEmacs pri")
- (rear-context-string . "   :#C:\n** TODO\n")
- (position . 1229))
+ (filename . "~/Dropbox/Org/org/iLog.org")
+ (front-context-string . "**** 今天起得很早, 上午看")
+ (rear-context-string . "1-07-05 Tuesday\n")
+ (position . 7691))
 ("org-refile-last-stored"
- (filename . "~/Dropbox/org/private/iDea.org")
- (front-context-string . "*** 看了那个自己做乐器的农民")
+ (filename . "~/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** Todo可以重复, 重复")
  (rear-context-string . " :IDEA:\n** IDEA\n")
  (position . 249))
 ("Downloads"
