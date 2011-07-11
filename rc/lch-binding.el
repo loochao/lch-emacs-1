@@ -156,7 +156,7 @@
 (define-key global-map (kbd "<f10> 2") (lambda() (interactive) (dired (concat emacs-lib-dir "/dotfiles"))))
 (define-key global-map (kbd "<f10> 3") (lambda() (interactive) (dired emacs-site-lisp)))
 (define-key global-map (kbd "<f10> 4") (lambda() (interactive) (dired emacs-lib-dir)))
-(define-key global-map (kbd "<f10> 5") (lambda() (interactive) (dired (concat emacs-lib-dir "/dotEmacs"))))
+(define-key global-map (kbd "<f10> 5") (lambda() (interactive) (dired (concat dropbox-path "/Repository/git/Worg"))))
 (define-key global-map (kbd "<f10> 9") (lambda() (interactive) (find-file "/ssh:chaol@hats.princeton.edu:/u/chaol")))
 (define-key global-map (kbd "<f10> 0") (lambda() (interactive) (find-file "/sudo::/")))
 

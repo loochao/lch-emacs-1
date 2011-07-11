@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ lch-punctuation-buffer
+ replace-paren
  cd
  lm
  5x5
  afm
  arp
- dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (lch-punctuation-buffer . 3)
+ (replace-paren . 3)
 )

@@ -58,10 +58,10 @@
  (rear-context-string . "2B Mar 21 15:54 ")
  (position . 146))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/iLog.org")
- (front-context-string . "**** 今天起得很早, 上午看")
- (rear-context-string . "1-07-05 Tuesday\n")
- (position . 7691))
+ (filename . "~/Dropbox/Org/org/iPrv.org")
+ (front-context-string . "*** punctuate op")
+ (rear-context-string . "ND:\n** TODO-#B-\n")
+ (position . 11831))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
  (front-context-string . "*** Todo可以重复, 重复")

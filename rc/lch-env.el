@@ -39,9 +39,6 @@
 				"/usr/local/bin"
 				"/Applications/Emacs.app/Contents/MacOS/bin")))))
 
-
-
-
 ;>---------- FLAGs ----------<;
 (defconst lch-cygwin-p (eq system-type 'cygwin) "Are we on cygwin")
 (defconst lch-mbp-win (and (eq system-type 'windows-nt) (string-match (system-name) "LCH-MBP")) "Are we on MBP-WIN?")
@@ -87,10 +84,10 @@
   (add-to-list 'Info-default-directory-list dir))
 
 ;>-------- KEY MAPS --------<;
-(define-prefix-command 'f1-map)      
+(define-prefix-command 'f1-map)
 (define-key global-map (kbd "<f1>") 'f1-map)
 
-(define-prefix-command 'f2-map)      
+(define-prefix-command 'f2-map)
 (define-key global-map (kbd "<f2>") 'f2-map)
 
 (define-prefix-command 'f3-map)

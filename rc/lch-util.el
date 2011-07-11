@@ -2,6 +2,23 @@
 
 ;>======== UTIL.EL ========<;
 
+(defun lch-punctuate-buffer ()
+  (interactive)
+  (save-restriction
+    (goto-char (point-min))
+    (while (search-forward "。" nil t)
+      (replace-match ". " nil t))
+    (goto-char (point-min))
+    (while (search-forward "，" nil t)
+      (replace-match ", " nil t))
+    (goto-char (point-min))
+    (while (search-forward "”" nil t)
+      (replace-match "\"" nil t))
+    (goto-char (point-min))
+    (while (search-forward "”" nil t)
+      (replace-match "\"" nil t))
+    ))
+
 ;; It is better to go to the next line here because this way we can
 ;; call this with a numeric argument.
 (defun delete-trailing-spaces (arg)

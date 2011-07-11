@@ -1,6 +1,9 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
+;>---- Calfw ----<;
+(require 'calfw)
+(require 'calfw-org)
 
 ;>---- AucTeX ----<;
 (load "auctex.el" nil t t)
@@ -19,11 +22,6 @@
 (setq smex-save-file (concat emacs-var-dir "/.smex-items"))
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;>---- Anything ----<;
-;; FIXME
-;(require 'anything)
-;(require 'anything-config)
 
 ;>---- FFAP ----<;
 (require 'ffap)
@@ -134,13 +132,13 @@
 (when (require 'ibuffer)
     ;; completely replaces `list-buffer'
     (defalias 'ibuffer-list-buffers 'list-buffer)
-    
+
     (setq ibuffer-shrink-to-minimum-size t)
     (setq ibuffer-always-show-last-buffer nil)
     (setq ibuffer-sorting-mode 'recency)
     (setq ibuffer-use-header-line t)
-    
-    (define-key global-map (kbd "C-x C-b") 'ibuffer)    
+
+    (define-key global-map (kbd "C-x C-b") 'ibuffer)
     )
 
 ;>-------- iDo --------<;
@@ -212,7 +210,7 @@
 ;; (require 'ac-company)
 ;; (ac-company-define-source ac-source-company-elisp company-elisp)
 ;; (add-hook 'emacs-lisp-mode-hook
-;;        (lambda () 
+;;        (lambda ()
 ;;          (add-to-list 'ac-sources 'ac-source-company-elisp)))
 
 ;>-------- Vimpulse --------<;
@@ -238,8 +236,8 @@
 ;>-------- Bat-mode --------<;
 (when (string-equal system-type "windows-nt")
   (progn
-    (setq auto-mode-alist 
-      (append 
+    (setq auto-mode-alist
+      (append
        (list (cons "\\.[bB][aA][tT]$" 'bat-mode))
        ;; For DOS init files
        (list (cons "CONFIG\\."   'bat-mode))
@@ -277,13 +275,13 @@
 ;- Make whitespace-mode and whitespace-newline-mode use “¶” for end of line char and ▷ for tab.
 (setq
  whitespace-display-mappings
- '( 
+ '(
    (space-mark 32 [183] [46]) ; normal space, MIDDLE DOT, FULL STOP.
-   (space-mark 160 [164] [95]) 
-   (space-mark 2208 [2212] [95]) 
-   (space-mark 2336 [2340] [95]) 
-   (space-mark 3616 [3620] [95]) 
-   (space-mark 3872 [3876] [95]) 
+   (space-mark 160 [164] [95])
+   (space-mark 2208 [2212] [95])
+   (space-mark 2336 [2340] [95])
+   (space-mark 3616 [3620] [95])
+   (space-mark 3872 [3876] [95])
    (newline-mark 10 [182 10]) ; newlne
    (tab-mark 9 [9655 9] [92 9]) ; tab
 ))
@@ -322,7 +320,7 @@
 ;;                    (concat (file-name-directory (or load-file-name buffer-file-name)) "../site-lisp/rw-hunspell/") )
 ;;       (require 'rw-hunspell)
 ;;       (rw-hunspell-setup)
-;;       ) ) ) 
+;;       ) ) )
 
 ;>-------- Desktop --------<;
 ;- Make emacs open all files in last emacs session.
