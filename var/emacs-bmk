@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("lch-emacs-rc"
+(("leisureread"
+ (filename . "~/Dropbox/Library/Miscellaneous/TXT/Culture/Anthology/亦舒/亦舒_喜宝.txt")
+ (front-context-string . "    邻座的人都被吵醒。皱眉头")
+ (rear-context-string . "    “哈哈哈。”她大笑。\n\n")
+ (position . 880))
+("lch-emacs-rc"
  (filename . "~/Dropbox/.emacs.d/rc/")
  (front-context-string . "lch-alias.el\n  -")
  (rear-context-string . "4K Apr 13 16:14 ")
@@ -58,10 +63,10 @@
  (rear-context-string . "2B Mar 21 15:54 ")
  (position . 146))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/iPrv.org")
- (front-context-string . "*** punctuate op")
- (rear-context-string . "ND:\n** TODO-#B-\n")
- (position . 11831))
+ (filename . "~/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** 尽量不要改Emacs p")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
  (front-context-string . "*** Todo可以重复, 重复")

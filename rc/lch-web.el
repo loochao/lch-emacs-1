@@ -2,15 +2,15 @@
 
 ;>======== WEB.EL ========<;
 
-;- Under MAC, has to install w3m through port, and add /opt/local to PATH
+;; Under MAC, has to install w3m through port, and add /opt/local to PATH
 ;; Have to use the CVS version of w3m for Emacs23
 ;; % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
 ;; CVS password: # No password is set.  Just hit Enter/Return key.
 ;; % cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
 
-;- `w3m-browse-url' asks Emacs-w3m to browse a URL.
+;; `w3m-browse-url' asks Emacs-w3m to browse a URL.
 
-;- When JavaScript is needed or the "design" is just too bad, use another
+;; When JavaScript is needed or the "design" is just too bad, use another
 ;; browser: you can open the page in your graphical browser (at your own
 ;; risk) by hitting `M' (`w3m-view-url-with-external-browser').
 ;; For what "risk" means, please see: (info "(emacs-w3m)Gnus")
@@ -46,6 +46,7 @@
   (define-key w3m-mode-map (kbd "<down>") 'next-line)
   (define-key w3m-mode-map (kbd "<left>") 'backward-char)
   (define-key w3m-mode-map (kbd "<right>") 'forward-char)
+  (define-key w3m-mode-map (kbd "d") 'w3m-delete-buffer)
   (define-key w3m-mode-map (kbd "<tab>") 'w3m-next-anchor)
   (setq truncate-lines nil))
 (add-hook 'w3m-mode-hook 'lch-w3m-mode-hook)
@@ -60,7 +61,6 @@
 
 (define-key w3m-mode-map (kbd "C-t") 'w3m-new-tab)
 (define-key w3m-mode-map (kbd "C-w") 'w3m-delete-buffer)
-
 
 (defvar w3m-dir (concat emacs-dir "/site-lisp/w3m/") "Dir of w3m.")
 (setq w3m-icon-directory (concat w3m-dir "icons"))
@@ -82,6 +82,7 @@
   (let ((w3m-current-url ""))
     (call-interactively 'w3m-goto-url)))
 (define-key w3m-mode-map (kbd "U") 'lch-w3m-goto-url)
+(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)
 
 ;>---- General Variable ----<;
 (setq w3m-home-page "http://www.princeton.edu/~chaol")
@@ -91,6 +92,20 @@
 (setq w3m-horizontal-shift-columns 1)  ; 2
 
 (setq w3m-default-save-directory "~/Downloads/")
+
+(if lch-mac-p
+    (progn
+      (defun browse-url-firefox-macosx (url &optional new-window)
+        (interactive (browse-url-interactive-arg "URL: "))
+        (start-process (concat "open -a Firefox" url) nil "open" url))
+      (setq browse-url-browser-function 'browse-url-firefox-macosx)))
+
+;; (if lch-mac-p
+;;     (defun browse-url-macosx (url &optional new-window)
+;;       (start-process (concat "open firefox -a" url) nil "open" url)
+;;       )
+;;   (setq browse-url-browser-function 'browse-url-macosx))
+;; (browse-url "http://www.princeton.edu")
 
 ;; proxy settings example, just uncomment to use.
 ;; (when (string= (upcase (system-name)) "PC3701")
@@ -111,6 +126,9 @@
 
 ;>---- Cookie Variables ----<;
 
+;; enable cookies (to use sites such as Gmail)
+(setq w3m-use-cookies t)
+
 ;; functions for cookie processing
 (when (require 'w3m-cookie)
   ;; ask user whether accept bad cookies or not
@@ -123,48 +141,122 @@
 	  "groups.yahoo.com"
 	  )))
 
-;; enable cookies (to use sites such as Gmail)
-(setq w3m-use-cookies t)
-
-
 ;; Search
 (when (require 'w3m-search)
   (define-key global-map (kbd "<f3> s") 'w3m-search)
   (add-to-list 'w3m-search-engine-alist
 	       '("teoma" "http://www.teoma.com/search.asp?t=%s" nil)))
 
-(defun google (what)
-  "Use google to search for WHAT."
-  (interactive "sSearch: ")
-  (save-window-excursion
-    (delete-other-windows)
-    (let ((dir default-directory))
-      (w3m-browse-url (concat "http://www.google.com/search?q="
-			      (w3m-url-encode-string what)))
-      (cd dir)
-      (recursive-edit))))
-(global-set-key (kbd "<f3> g") 'google)
+;; FIXME toggle a minor mode showing link numbers
+;; (when (require 'w3m-lnum)
 
-;; toggle a minor mode showing link numbers
-(when (require 'w3m-lnum)
+;;   (defun my-w3m-go-to-linknum ()
+;;     "Turn on link numbers and ask for one to go to."
+;;     (interactive)
+;;     (let ((active w3m-link-numbering-mode))
+;;       (when (not active) (w3m-link-numbering-mode))
+;;       (unwind-protect
+;; 	  (w3m-move-numbered-anchor (read-number "Anchor number: "))
+;; 	(when (not active) (w3m-link-numbering-mode))
+;; 	(w3m-view-this-url))))
 
-  (defun my-w3m-go-to-linknum ()
-    "Turn on link numbers and ask for one to go to."
-    (interactive)
-    (let ((active w3m-link-numbering-mode))
-      (when (not active) (w3m-link-numbering-mode))
-      (unwind-protect
-	  (w3m-move-numbered-anchor (read-number "Anchor number: "))
-	(when (not active) (w3m-link-numbering-mode))
-	(w3m-view-this-url))))
+;;   (define-key w3m-mode-map (kbd "f") 'my-w3m-go-to-linknum)
 
-  (define-key w3m-mode-map (kbd "f") 'my-w3m-go-to-linknum)
-
-  ;; enable link numbering mode by default
-  (add-hook 'w3m-mode-hook 'w3m-link-numbering-mode))
-
+;;   ;; enable link numbering mode by default
+;;   (add-hook 'w3m-mode-hook 'w3m-link-numbering-mode))
 
 ;>---- wget ----<;
 (setq wget-download-directory "~/Downloads")
+
+;>---- Search ----<;
+(defvar lch-search-engine-alist
+      '(("google" . "http://www.google.com/search?q=")
+        ("wikipedia" . "http://en.wikipedia.org/wiki/")
+        ("baidu" . "http://www.baidu.com/s?wd=")
+        ("definition" . "http://www.answers.com/main/ntquery?s=")
+        ("google-file" . "http://www.google.com/search?q=+intitle:\"index+of\" -inurl:htm -inurl:html -inurl:php")
+        ("ciba" . "http://www.iciba.com/")
+        ))
+
+(defun lch-search-by (engine browser &optional symbolp)
+  "search by various engine in browsers.
+   When symbolp is nil, search by input; true, search by symbol-at-point"
+ (interactive)
+ (let (myword myengine myurl)
+   (if symbolp
+       (progn
+            (setq myword
+                  (if (and transient-mark-mode mark-active)
+                      (buffer-substring-no-properties (region-beginning) (region-end))
+                    (thing-at-point 'symbol)))
+            (cond ((string= engine "definition") (setq myword (replace-regexp-in-string " " "%20" myword)))
+                  (t (setq myword (replace-regexp-in-string " " "_" myword)))))
+     (progn (setq myword (read-string "Search: "))))
+
+   (setq myengine (cdr (assoc engine lch-search-engine-alist)))
+   (setq myurl (concat myengine myword))
+
+   (cond ((string= browser "ffx") (browse-url myurl))
+         ((string= browser "w3m") (w3m-browse-url myurl))
+         (t (w3m-browse-url myurl))
+   )))
+
+;; (defvar lch-engine-key-alist
+;;   '(("1" . "google")
+;;     ("2" . "wikipedia")
+;;     ("3" . "badidu")
+;;     ("4" . "ffx")
+;;     ("7" . "ciba")))
+
+;; (defvar lch-browser-key-alist
+;;   '(("1" . "ffx")
+;;     ("2" . "w3m")
+;;     ))
+
+;; FIXME (kbd var) won't work, kbd won't accept variable
+;; (dolist (lch-engine lch-engine-key-alist)
+;;   (dolist (lch-browser lch-browser-key-alist)
+;;     (let ((engine-key  (car lch-engine))
+;;           (engine-name (cdr lch-engine))
+;;           (browser-key (car lch-browser))
+;;           (browser-name (cdr lch-browser)))
+;;       (cond ((string= browser-name "ffx") (setq lch-search-key-prefix "<f1>"))
+;;             ((string= browser-name "w3m") (setq lch-search-key-prefix "<f2>"))
+;;             (t (setq lch-search-key-prefix "<f2>")))
+;;       (setq lch-direct-search-key (concat lch-search-key-prefix " " "<f" engine-key ">")
+;;             lch-symbol-search-key (concat lch-search-key-prefix " " engine-key))
+;;       (define-key global-map (kbd (eval lch-direct-search-key)) '(lambda() (interactive) (lch-search-by engine-name browser-name nil)))
+;;       (define-key global-map (kbd lch-symbol-search-key) '(lambda() (interactive) (lch-search-by engine-name browser-name nil)))
+;;       )))
+
+
+(define-key global-map (kbd "<f1> <f1>") '(lambda() (interactive) (lch-search-by "google" "ffx" nil)))
+(define-key global-map (kbd "C-c C-g") '(lambda() (interactive) (lch-search-by "google" "ffx" nil)))
+(define-key global-map (kbd "<f1> <f2>") '(lambda() (interactive) (lch-search-by "wikipedia" "ffx" nil)))
+(define-key global-map (kbd "<f1> <f3>") '(lambda() (interactive) (lch-search-by "baidu" "ffx" nil)))
+(define-key global-map (kbd "<f1> <f4>") '(lambda() (interactive) (lch-search-by "definition" "ffx" nil)))
+(define-key global-map (kbd "<f1> <f5>") '(lambda() (interactive) (lch-search-by "google-file" "ffx" nil)))
+(define-key global-map (kbd "<f1> <f7>") '(lambda() (interactive) (lch-search-by "ciba" "ffx" nil)))
+
+(define-key global-map (kbd "<f1> 1") '(lambda() (interactive) (lch-search-by "google" "ffx" t)))
+(define-key global-map (kbd "<f1> 2") '(lambda() (interactive) (lch-search-by "wikipedia" "ffx" t)))
+(define-key global-map (kbd "<f1> 3") '(lambda() (interactive) (lch-search-by "baidu" "ffx" t)))
+(define-key global-map (kbd "<f1> 4") '(lambda() (interactive) (lch-search-by "definition" "ffx" t)))
+(define-key global-map (kbd "<f1> 5") '(lambda() (interactive) (lch-search-by "google-file" "ffx" t)))
+(define-key global-map (kbd "<f1> 7") '(lambda() (interactive) (lch-search-by "ciba" "ffx" t)))
+
+(define-key global-map (kbd "<f2> <f1>") '(lambda() (interactive) (lch-search-by "google" "w3m" nil)))
+(define-key global-map (kbd "<f2> <f2>") '(lambda() (interactive) (lch-search-by "wikipedia" "w3m" nil)))
+(define-key global-map (kbd "<f2> <f3>") '(lambda() (interactive) (lch-search-by "baidu" "w3m" nil)))
+(define-key global-map (kbd "<f2> <f4>") '(lambda() (interactive) (lch-search-by "definition" "w3m" nil)))
+(define-key global-map (kbd "<f2> <f5>") '(lambda() (interactive) (lch-search-by "google-file" "w3m" nil)))
+(define-key global-map (kbd "<f2> <f7>") '(lambda() (interactive) (lch-search-by "ciba" "w3m" nil)))
+
+(define-key global-map (kbd "<f2> 1") '(lambda() (interactive) (lch-search-by "google" "w3m" t)))
+(define-key global-map (kbd "<f2> 2") '(lambda() (interactive) (lch-search-by "wikipedia" "w3m" t)))
+(define-key global-map (kbd "<f2> 3") '(lambda() (interactive) (lch-search-by "baidu" "w3m" t)))
+(define-key global-map (kbd "<f2> 4") '(lambda() (interactive) (lch-search-by "definition" "w3m" t)))
+(define-key global-map (kbd "<f2> 5") '(lambda() (interactive) (lch-search-by "google-file" "w3m" t)))
+(define-key global-map (kbd "<f2> 7") '(lambda() (interactive) (lch-search-by "ciba" "w3m" t)))
 
 (provide 'lch-web)

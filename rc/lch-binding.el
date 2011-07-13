@@ -50,7 +50,6 @@
 (define-key global-map (kbd "<f4> o r") 'org-remember)
 (define-key global-map (kbd "<f4> o s") 'org-schedule)
 (define-key global-map (kbd "<f4> o t") 'org-todo-list)
-
 ;(if lch-win32-p                                                              ;; => lch-util.el
 ;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer))
 
@@ -81,9 +80,6 @@
 
 
 ;>-------- F7 --------<;
-;(define-key global-map (kbd "<f7> <f7>") 'highlight-symbol-at-point)         ;; => lch-util.el
-;(define-key global-map (kbd "C-<f7>") 'highlight-symbol-next)                ;; => lch-util.el
-;(define-key global-map (kbd "S-<f7>") 'highlight-symbol-prev)                ;; => lch- util.el
 
 ;(define-key global-map (kbd "C-0") 'org-capture)                             ;; => lch-org.el
 ;<f7> i 'org-capture --> INBOX                                                ;; => lch-org.el
@@ -94,15 +90,22 @@
 ;>-------- F9 --------<;
 ;> 0 ;> =: Bookmark related stuffs.
 ;> alpha:  org files.
-;(defvar org-source-dir "~/Dropbox/org/org" "org source dir") ;> dotEmacs
-;(defvar pub-html-dir "~/Dropbox/org/public_html" "html dir") ;> dotEmacs
+;(defvar org-source-dir "~/Dropbox/org/org" "org source dir") ;; => dotEmacs
+;(defvar pub-html-dir "~/Dropbox/org/public_html" "html dir") ;; => dotEmacs
+
+;(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point)         ;; => lch-util.el
+;(define-key global-map (kbd "C-<f9>") 'highlight-symbol-next)                ;; => lch-util.el
+;(define-key global-map (kbd "S-<f9>") 'highlight-symbol-prev)                ;; => lch- util.el
+
+
 (define-key global-map (kbd "<f9> 1") (lambda() (interactive) (dired org-source-dir)))
 (define-key global-map (kbd "<f9> 2") (lambda() (interactive) (dired org-private-dir)))
 (define-key global-map (kbd "<f9> 3") (lambda() (interactive) (dired (concat org-source-dir "/public_html"))))
 (if (boundp 'dropbox-path)
     (define-key global-map (kbd "<f9> 4") (lambda() (interactive) (dired dropbox-path))))
 (define-key global-map (kbd "<f9> a") (lambda() (interactive) (find-file (concat org-source-dir "/Art-Ent.org"))))
-(define-key global-map (kbd "<f9> b") (lambda() (interactive) (find-file (concat org-source-dir "/Bib-Edu.org"))))
+(define-key global-map (kbd "<f9> b") (lambda() (interactive) (find-file (concat dropbox-path "/Library/LCH_LIB.bib"))))
+(define-key global-map (kbd "<f9> B") (lambda() (interactive) (find-file (concat org-source-dir "/Bib-Edu.org"))))
 (define-key global-map (kbd "<f9> c") (lambda() (interactive) (find-file (concat org-source-dir "/Culture.org"))))
 (define-key global-map (kbd "<f9> C") (lambda() (interactive) (find-file (concat org-source-dir "/ComputerSE.org"))))
 (define-key global-map (kbd "<f9> e") (lambda() (interactive) (find-file (concat org-source-dir "/Emacs.org"))))
@@ -157,6 +160,7 @@
 (define-key global-map (kbd "<f10> 3") (lambda() (interactive) (dired emacs-site-lisp)))
 (define-key global-map (kbd "<f10> 4") (lambda() (interactive) (dired emacs-lib-dir)))
 (define-key global-map (kbd "<f10> 5") (lambda() (interactive) (dired (concat dropbox-path "/Repository/git/Worg"))))
+(define-key global-map (kbd "<f10> 6") (lambda() (interactive) (dired "~/Downloads")))
 (define-key global-map (kbd "<f10> 9") (lambda() (interactive) (find-file "/ssh:chaol@hats.princeton.edu:/u/chaol")))
 (define-key global-map (kbd "<f10> 0") (lambda() (interactive) (find-file "/sudo::/")))
 
@@ -228,10 +232,10 @@
 
 ;(define-key global-map (kbd "<f11> u")
 ;  (set-language-environment "UTF-8"))                                         ;; => lch-coding.el
-; <f11> U ->>> revert buffer with utf-8                                        ;; => lch-coding.el
+; <f11> U => revert buffer with utf-8                                        ;; => lch-coding.el
 ;(define-key global-map (kbd "<f11> c")
 ;  (set-language-environment "Chinese-GB18030"))  ;; => lch-coding.el
-; <f11> C ->>> revert buffer with gb18030                                      ;; => lch-coding.el
+; <f11> C => revert buffer with gb18030                                      ;; => lch-coding.el
 
 (define-key global-map (kbd "<f11> h") 'hl-line-mode)
 ;(define-key global-map (kbd "<f11> l") 'toggle-line-spacing)                  ;; => lch-ui.el
@@ -282,6 +286,7 @@
 ;>-------- Ctrl+C && F1 Map --------<;
 ;; => User defined functions.
 ;(define-key global-map (kbd "<f1> <f1>") 'lookup-google)                     ;; => lch-util.el
+;(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> a") 'wy-go-to-char)                        ;; => lch-util.el
 ; (<f1> 4 'newsmth)                                                           ;; => lch-shell.el
 
@@ -299,13 +304,13 @@
 (define-key global-map (kbd "<f1> E") 'erase-buffer)
 (define-key global-map (kbd "<f1> f") 'find-dired)
 (define-key global-map (kbd "C-c f") 'find-dired)
+;(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
 (define-key global-map (kbd "<f1> C-f") 'fill-region)
-;(define-key global-map (kbd "<f1> C-f") 'my-find-thing-at-point)             ;; => lch-util.el
 (define-key global-map (kbd "<f1> g") 'grep-find)
 (define-key global-map (kbd "C-c g") 'grep-find)
-;(define-key global-map (kbd "<f1> C-g") 'lookup-google)                      ;; => lch-util.el
+;(global-set-key (kbd "C-c C-g") 'lch-google-search-w3m)                      ;; => lch-web.el
+;(global-set-key (kbd "<f1> C-g") 'lch-google-search-w3m)                     ;; => lch-web.el
 (define-key global-map (kbd "<f1> G") 'find-grep-dired)
-(define-key global-map (kbd "<f1> j") 'ffap)
 (define-key global-map (kbd "<f1> i") 'indent-region)
 ;(define-key global-map (kbd "<f1> C-m") 'switch-major-mode)                  ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> n") 'nuke-some-buffers)                    ;; => lch-util.el

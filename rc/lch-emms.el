@@ -7,7 +7,7 @@
 (emms-standard)
 (emms-default-players)
 ;> NEWEST FEATURE. Use this if you like living on the edge.
-(emms-devel)                 
+(emms-devel)
 
 (setq emms-lyric-display-p nil)
 (setq emms-playlist-buffer-name "*EMMS Playlist*")
@@ -16,6 +16,7 @@
 (when (eq system-type 'windows-nt)
   (setq emms-player-mplayer-command-name
 	"d:/MM/MPLAYER/MPlayer/MPLAYER.EXE"))
+(setq emms-history-file (concat emacs-var-dir "/.emms-history"))
 
 ;(set-face-foreground 'emms-playlist-selected-face "magenta")
 ;(set-face-foreground 'emms-playlist-track-face  "green")

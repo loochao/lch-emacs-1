@@ -1,6 +1,33 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
+
+;>---- One-key ----<;
+(require 'one-key)
+(defvar one-key-menu-emms-alist nil
+  "`One-Key' menu list for EMMS.")
+
+(setq one-key-menu-emms-alist
+      '(
+        (("g" . "Playlist Go") . emms-playlist-mode-go)
+        (("d" . "Play Directory Tree") . emms-play-directory-tree)
+        (("f" . "Play File") . emms-play-file)
+        (("i" . "Play Playlist") . emms-play-playlist)
+        (("t" . "Add Directory Tree") . emms-add-directory-tree)
+        (("c" . "Toggle Repeat Track") . emms-toggle-repeat-track)
+        (("w" . "Toggle Repeat Playlist") . emms-toggle-repeat-playlist)
+        (("u" . "Play Now") . emms-play-now)
+        (("z" . "Show") . emms-show)
+        (("s" . "Emms Streams") . emms-streams)
+        (("b" . "Emms Browser") . emms-browser)))
+
+(defun one-key-menu-emms ()
+  "`One-Key' menu for EMMS."
+  (interactive)
+  (one-key-menu "emms" one-key-menu-emms-alist t))
+
+(global-set-key (kbd "<f12> <f11>") 'one-key-menu-emms)
+
 ;>---- Calfw ----<;
 (require 'calfw)
 (require 'calfw-org)
@@ -291,9 +318,9 @@
 ;> see http://xahlee.org/emacs/modernization_isearch.html
 (require 'highlight-symbol)
 ;; temp hotkeys
-(define-key global-map (kbd "<f7> <f7>") 'highlight-symbol-at-point) ; this is a toggle
-(define-key global-map (kbd "C-<f7>") 'highlight-symbol-next)
-(define-key global-map (kbd "S-<f7>") 'highlight-symbol-prev)
+(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point) ; this is a toggle
+(define-key global-map (kbd "<f9> <f8>") 'highlight-symbol-next)
+(define-key global-map (kbd "<f9> <f10>") 'highlight-symbol-prev)
 
 
 ;>-------- Bat Mode --------<;

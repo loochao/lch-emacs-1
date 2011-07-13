@@ -2,7 +2,29 @@
 
 ;>======== UTIL.EL ========<;
 
+
+(defun lch-search ()
+  (interactive)
+  (split-window)
+  (other-window 1)
+  (switch-to-buffer "*Search*"))
+
+(defun lch-chmod-x ()
+   (and (save-excursion
+          (save-restriction
+            (widen)
+            (goto-char (point-min))
+            (save-match-data
+              (looking-at "^#!"))))
+        (not (file-executable-p buffer-file-name))
+        (shell-command (concat "chmod u+x " buffer-file-name))
+        (message
+         (concat "Saved as script: " buffer-file-name))))
+
+(add-hook 'after-save-hook 'lch-chmod-x)
+
 (defun lch-punctuate-buffer ()
+  "Substitute Chinese punctuation to English ones"
   (interactive)
   (save-restriction
     (goto-char (point-min))
@@ -340,61 +362,6 @@ With C-u, C-0 or M-0, cancel the timer."
         ((function-called-at-point)
          (call-interactively 'describe-function))
         (t (find-file-at-point))))
-
-(define-key global-map (kbd "<f1> C-f") 'my-find-thing-at-point)
-
-(defun lookup-word-definition ()
-  "Look up the current word's definition in a browser.
-If a region is active (a phrase), lookup that phrase."
- (interactive)
- (let (myword myurl)
-   (setq myword
-         (if (and transient-mark-mode mark-active)
-             (buffer-substring-no-properties (region-beginning) (region-end))
-           (thing-at-point 'symbol)))
-
-  (setq myword (replace-regexp-in-string " " "%20" myword))
-  (setq myurl (concat "http://www.answers.com/main/ntquery?s=" myword))
-
-  (browse-url myurl)
-  ;; (w3m-browse-url myurl) ;; if you want to browse using w3m
-   ))
-
-(define-key global-map (kbd "<f1> C-a") 'lookup-word-definition)
-
-(defun lookup-wikipedia ()
-  "Look up the word under cursor in Wikipedia.
-This command generates a url for Wikipedia.com and switches you
-to browser. If a region is active (a phrase), lookup that phrase."
- (interactive)
- (let (myword myurl)
-   (setq myword
-         (if (and transient-mark-mode mark-active)
-             (buffer-substring-no-properties (region-beginning) (region-end))
-           (thing-at-point 'symbol)))
-  (setq myword (replace-regexp-in-string " " "_" myword))
-  (setq myurl (concat "http://en.wikipedia.org/wiki/" myword))
-  (browse-url myurl)
-   ))
-
-(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)
-
-(defun lookup-google ()
-  "Look up the word under cursor in Wikipedia.
-This command generates a url for Wikipedia.com and switches you
-to browser. If a region is active (a phrase), lookup that phrase."
- (interactive)
- (let (myword myurl)
-   (setq myword
-         (if (and transient-mark-mode mark-active)
-             (buffer-substring-no-properties (region-beginning) (region-end))
-           (thing-at-point 'symbol)))
-
-  (setq myword (replace-regexp-in-string " " "_" myword))
-  (setq myurl (concat "http://www.google.com/search?q=" myword))
-  (browse-url myurl)
-   ))
-(define-key global-map (kbd "<f1> <f1>") 'lookup-google)
 
 ;>---- Inserts the user name ----<;
 (defun insert-userid ()
