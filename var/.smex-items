@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ indent-region
  cd
  lm
  5x5
  afm
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (indent-region . 1)
 )

@@ -17,16 +17,17 @@
             (save-match-data
               (looking-at "^#!"))))
         (not (file-executable-p buffer-file-name))
-        (shell-command (concat "chmod u+x " buffer-file-name))
-        (message
-         (concat "Saved as script: " buffer-file-name))))
+        (if (= 0 (shell-command (concat "chmod u+x " buffer-file-name)))
+            (message
+             (concat "Saved as script: " buffer-file-name)))))
 
 (add-hook 'after-save-hook 'lch-chmod-x)
 
+;; Punctuation substitution
 (defun lch-punctuate-buffer ()
   "Substitute Chinese punctuation to English ones"
   (interactive)
-  (save-restriction
+  (save-excursion
     (goto-char (point-min))
     (while (search-forward "。" nil t)
       (replace-match ". " nil t))
@@ -98,17 +99,25 @@
 
 
 ;; Show ascii table
-(defun ascii-table ()
-  "Print the ascii table. Based on a defun by Alex Schroeder <asc@bsiag.com>"
+(defun lch-ascii-table ()
   (interactive)
-  (switch-to-buffer "*ASCII*")
+  (switch-to-buffer "*ascii*")
+  (setq buffer-read-only nil)
+  (local-set-key "q" 'bury-buffer)
   (erase-buffer)
-  (insert (format "ASCII characters up to number %d.\n" 254))
-  (let ((i 0))
-    (while (< i 254)
-      (setq i (+ i 1))
-      (insert (format "%4d %c\n" i i))))
-  (goto-char (point-min)))
+  (save-excursion
+    (let ((i -1))
+    (insert "                   ASCII chars from 0 to 127 \n")
+    (insert "----------------------------------------------------------------- \n")
+    (insert " HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR\n")
+    (while (< i 31)
+      (insert (format "%4x %4d %4s | %4x %4d %4s | %4x %4d %4s | %4x %4d %4s\n"
+                      (setq i (+ 1 i)) i (single-key-description i)
+                      (setq i (+ 32 i)) i (single-key-description i)
+                      (setq i (+ 32 i)) i (single-key-description i)
+                      (setq i (+ 32 i)) i (single-key-description i)))
+      (setq i (- i 96))
+      ))))
 
 (defun indent-whole-buffer ()
   (interactive)

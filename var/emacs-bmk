@@ -64,7 +64,7 @@
  (position . 146))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** 尽量不要改Emacs p")
+ (front-context-string . "*** \"Emacs支持blab")
  (rear-context-string . " :IDEA:\n** IDEA\n")
  (position . 249))
 ("org-refile-last-stored"
