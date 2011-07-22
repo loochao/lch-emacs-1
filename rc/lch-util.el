@@ -1,7 +1,15 @@
 ;-*- coding:utf-8 -*-
 
 ;>======== UTIL.EL ========<;
-
+(defun lch-insert-date (&optional prefix)
+  "Insert the current date in ISO format. With prefix-argument,
+add day of week. With two prefix arguments, add day of week and
+time."
+  (interactive "P")
+  (let ((format (cond ((not prefix) "%Y/%m/%d")
+                      ((equal prefix '(4)) "%Y-%m-%d %a")
+                      ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
+    (insert (format-time-string format (current-time)))))
 
 (defun lch-search ()
   (interactive)
@@ -9,6 +17,28 @@
   (other-window 1)
   (switch-to-buffer "*Search*"))
 
+
+;; Automatically change buffer name of shell into current directory name.
+(make-variable-buffer-local 'wcy-shell-mode-directory-changed)
+(setq wcy-shell-mode-directory-changed t)
+
+(defun wcy-shell-mode-auto-rename-buffer-output-filter (text)
+  (if (and (eq major-mode 'shell-mode)
+           wcy-shell-mode-directory-changed)
+      (progn
+        (let ((bn  (concat "sh:" default-directory)))
+          (if (not (string= (buffer-name) bn))
+              (rename-buffer bn t)))
+        (setq wcy-shell-mode-directory-changed nil))))
+
+(defun wcy-shell-mode-auto-rename-buffer-input-filter (text)
+  (if (eq major-mode 'shell-mode)
+      (if ( string-match "^[ \t]*cd *" text)
+          (setq wcy-shell-mode-directory-changed t))))
+(add-hook 'comint-output-filter-functions 'wcy-shell-mode-auto-rename-buffer-output-filter)
+(add-hook 'comint-input-filter-functions 'wcy-shell-mode-auto-rename-buffer-input-filter )
+
+;; Automatically add execute permission to a script file.
 (defun lch-chmod-x ()
    (and (save-excursion
           (save-restriction
@@ -23,6 +53,37 @@
 
 (add-hook 'after-save-hook 'lch-chmod-x)
 
+(defun lch-start-file-browser ()
+  "Open current pwd with file browser.
+   Currently, just work under Mac OSX."
+  (interactive)
+  (let (mydir)
+  (setq mydir (pwd))
+  (string-match "Directory " mydir)
+  (setq mydir (replace-match "" nil nil mydir 0))
+  (when lch-mac-p (shell-command (format "open -a Finder %s" mydir)))
+  ))
+(define-key global-map (kbd "<f4> <f4>") 'lch-start-file-browser)
+
+(defun lch-start-terminal ()
+  "Open current pwd with terminal.
+   Currently, just work under Mac OSX."
+  (interactive)
+  (let (mydir)
+  (setq mydir (pwd))
+  (string-match "Directory " mydir)
+  (setq mydir (replace-match "" nil nil mydir 0))
+  (when lch-mac-p
+    (do-applescript
+     (format
+      "tell application \"Terminal\"
+activate
+do script \"cd '%s'; bash \"
+end tell" mydir)))
+  ))
+(define-key global-map (kbd "<f6> <f6>") 'lch-start-terminal)
+
+
 ;; Punctuation substitution
 (defun lch-punctuate-buffer ()
   "Substitute Chinese punctuation to English ones"
@@ -35,7 +96,7 @@
     (while (search-forward "，" nil t)
       (replace-match ", " nil t))
     (goto-char (point-min))
-    (while (search-forward "”" nil t)
+    (while (search-forward "“" nil t)
       (replace-match "\"" nil t))
     (goto-char (point-min))
     (while (search-forward "”" nil t)
@@ -135,16 +196,6 @@
                   (format-time-string "%Y-%m-%d")
                   (user-login-name)
                   comment-end)))
-
-(defun lch-insert-date (prefix)
-  "Insert the current date in ISO format. With prefix-argument,
-add day of week. With two prefix arguments, add day of week and
-time."
-  (interactive "P")
-  (let ((format (cond ((not prefix) "%Y-%m-%d")
-                      ((equal prefix '(4)) "%Y-%m-%d %a")
-                      ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
-    (insert (format-time-string format))))
 
 (defun dos2unix ()
   "Cut all visible ^M from the current buffer."

@@ -52,7 +52,7 @@
 
 ;>---- FFAP ----<;
 (require 'ffap)
-(define-key global-map (kbd "<f4> <f4>") 'find-file-at-point)
+(define-key global-map (kbd "C-x f") 'find-file-at-point)
 
 ;>---- Recentf ----<;
 (require 'recentf)

@@ -177,6 +177,14 @@ end tell" d)))
         ".p_hi-boot" ".hs-boot" ".obj" ".ncb" ".suo" ".user" ".idb"
         ".pdb" ".moc" ".manifest" ".ilk"))
 
+
+(setq dired-guess-shell-alist-user
+      (case system-type
+        (windows-nt '())
+        (darwin '((".*" "open")))
+        (t '())
+        ))
+
 ;>-------- Sort --------<;
 (setq dired-listing-switches "-lh")
 
@@ -264,7 +272,7 @@ end tell" d)))
   ;; lets you hide uninteresting files
   ;; such as backup files and AutoSave  files
   (dired-omit-mode 1)
-  
+
   (local-unset-key (kbd "<up>"))
   (local-unset-key (kbd "<down>"))
   (local-unset-key (kbd "<left>"))

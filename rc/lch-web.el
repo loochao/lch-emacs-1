@@ -24,6 +24,32 @@
 (defvar w3m-buffer-name (concat w3m-buffer-name-prefix "*") "Name of w3m buffer")
 (defvar w3m-bookmark-buffer-name (concat w3m-buffer-name-prefix "-bookmark*") "Name of w3m buffer")
 
+;>---- General Variable ----<;
+(setq w3m-home-page   "http://www.emacswiki.org/"         ; "http://localhost/"
+      w3m-use-favicon nil
+      w3m-horizontal-shift-columns        1               ; columns used when scrolling a window horizontally
+      w3m-default-save-directory          "~/Downloads/"
+      w3m-default-display-inline-images   t               ; always display images
+      )
+
+
+(if lch-mac-p
+    (progn
+      (defun browse-url-firefox-macosx (url &optional new-window)
+        (interactive (browse-url-interactive-arg "URL: "))
+        (start-process (concat "open -a Firefox" url) nil "open" url))
+      (setq browse-url-browser-function 'browse-url-firefox-macosx)))
+
+;; proxy settings example, just uncomment to use.
+;; (when (string= (upcase (system-name)) "PC3701")
+;;   (eval-after-load "w3m"
+;;     '(setq w3m-command-arguments
+;; 	   (nconc w3m-command-arguments
+;; 		  '("-o" "http_proxy=http://proxy:8080"))))
+;;                                         ; FIXME https_proxy for HTTPS support
+;;   (setq w3m-no-proxy-domains '("local.com" "sysdoc")))
+
+
 (setq w3m-command-arguments '("-cookie" "-F")
       ;; w3m-command-arguments
       ;;       (append w3m-command-arguments
@@ -33,23 +59,6 @@
         )
 
 (setq w3m-process-modeline-format " loaded: %s")
-
-(defun lch-w3m-mode-hook ()
-  (define-key w3m-mode-map (kbd "t") 'w3m-view-this-url-new-session)
-  (define-key w3m-mode-map (kbd "p") 'w3m-view-previous-page)
-  (define-key w3m-mode-map (kbd "n") 'w3m-view-next-page)
-  (define-key w3m-mode-map (kbd "B") 'w3m-view-previous-page)
-  (define-key w3m-mode-map (kbd "F") 'w3m-view-next-page)
-  (define-key w3m-mode-map (kbd "o") 'w3m-goto-url)
-  (define-key w3m-mode-map (kbd "O") 'w3m-goto-url-new-session)
-  (define-key w3m-mode-map (kbd "<up>") 'previous-line)
-  (define-key w3m-mode-map (kbd "<down>") 'next-line)
-  (define-key w3m-mode-map (kbd "<left>") 'backward-char)
-  (define-key w3m-mode-map (kbd "<right>") 'forward-char)
-  (define-key w3m-mode-map (kbd "d") 'w3m-delete-buffer)
-  (define-key w3m-mode-map (kbd "<tab>") 'w3m-next-anchor)
-  (setq truncate-lines nil))
-(add-hook 'w3m-mode-hook 'lch-w3m-mode-hook)
 
 ;>-- Using Tab --<;
 (define-key w3m-mode-map (kbd "<C-tab>") 'w3m-next-buffer)
@@ -65,7 +74,7 @@
 (defvar w3m-dir (concat emacs-dir "/site-lisp/w3m/") "Dir of w3m.")
 (setq w3m-icon-directory (concat w3m-dir "icons"))
 
-(defun lch-w3m-go ()
+(defun lch-switch-to-w3m ()
   "Switch to an existing w3m buffer or look at bookmarks."
   (interactive)
   (let ((buf (get-buffer "*w3m*")))
@@ -74,58 +83,59 @@
        (w3m)
 ;      (w3m-bookmark-view)
       )))
-(define-key global-map (kbd "<f3> <f3>") 'lch-w3m-go)
+(define-key global-map (kbd "<f3> <f2>") 'lch-switch-to-w3m)
 
 (defun lch-w3m-goto-url ()
   "Type in directly the URL I would like to visit (avoiding to hit `C-k')."
   (interactive)
   (let ((w3m-current-url ""))
     (call-interactively 'w3m-goto-url)))
-(define-key w3m-mode-map (kbd "U") 'lch-w3m-goto-url)
-(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)
 
-;>---- General Variable ----<;
-(setq w3m-home-page "http://www.princeton.edu/~chaol")
-					;-"http://localhost/" ;-"http://www.emacswiki.org/"
+(defun lch-switch-to-w3m-goto-url ()
+  (interactive)
+  (let ((buf (get-buffer "*w3m*"))
+        (w3m-current-url ""))
+    (if buf
+        (switch-to-buffer buf)
+      (w3m))
+    (w3m-new-tab)
+    (call-interactively 'w3m-goto-url)
+    ))
+(define-key global-map (kbd "C-c C-f") 'lch-switch-to-w3m-goto-url)
+(define-key global-map (kbd "<f3> <f3>") 'lch-switch-to-w3m-goto-url)
 
-;; number of steps in columns used when scrolling a window horizontally
-(setq w3m-horizontal-shift-columns 1)  ; 2
+(defun lch-w3m-goto-location ()
+  (interactive)
+  (let (mylocation)
+  (setq mylocation (read-string "Goto URL: "))
+  (w3m-browse-url mylocation)
+  ))
 
-(setq w3m-default-save-directory "~/Downloads/")
+(defun lch-w3m-mode-hook ()
+  (define-key w3m-mode-map (kbd "t") '(lambda() (interactive) (w3m-new-tab) (lch-w3m-goto-url)))
+  (define-key w3m-mode-map (kbd "C-t") 'w3m-new-tab)
+;  (define-key w3m-mode-map (kbd "g") 'lch-w3m-goto-location)
+  (define-key w3m-mode-map (kbd "p") 'w3m-view-previous-page)
+  (define-key w3m-mode-map (kbd "n") 'w3m-view-next-page)
+  (define-key w3m-mode-map (kbd "b") 'w3m-view-previous-page)
+  (define-key w3m-mode-map (kbd "f") 'w3m-view-next-page)
+  (define-key w3m-mode-map (kbd "d") 'w3m-delete-buffer)
+  (define-key w3m-mode-map (kbd "B") '(lambda() (interactive) (w3m-new-tab) (w3m-bookmark-view)))
+  (define-key w3m-mode-map (kbd "H") 'w3m-history)
+  (define-key w3m-mode-map (kbd "o") 'w3m-goto-url)
+  (define-key w3m-mode-map (kbd "O") 'w3m-goto-url-new-session)
+  (define-key w3m-mode-map (kbd "<up>") 'previous-line)
+  (define-key w3m-mode-map (kbd "<down>") 'next-line)
+  (define-key w3m-mode-map (kbd "<left>") 'backward-char)
+  (define-key w3m-mode-map (kbd "<right>") 'forward-char)
+  (define-key w3m-mode-map (kbd "<tab>") 'w3m-next-anchor)
+  (setq truncate-lines nil))
+(add-hook 'w3m-mode-hook 'lch-w3m-mode-hook)
 
-(if lch-mac-p
-    (progn
-      (defun browse-url-firefox-macosx (url &optional new-window)
-        (interactive (browse-url-interactive-arg "URL: "))
-        (start-process (concat "open -a Firefox" url) nil "open" url))
-      (setq browse-url-browser-function 'browse-url-firefox-macosx)))
 
-;; (if lch-mac-p
-;;     (defun browse-url-macosx (url &optional new-window)
-;;       (start-process (concat "open firefox -a" url) nil "open" url)
-;;       )
-;;   (setq browse-url-browser-function 'browse-url-macosx))
-;; (browse-url "http://www.princeton.edu")
 
-;; proxy settings example, just uncomment to use.
-;; (when (string= (upcase (system-name)) "PC3701")
-;;   (eval-after-load "w3m"
-;;     '(setq w3m-command-arguments
-;; 	   (nconc w3m-command-arguments
-;; 		  '("-o" "http_proxy=http://proxy:8080"))))
-;;                                         ; FIXME https_proxy for HTTPS support
-;;   (setq w3m-no-proxy-domains '("local.com" "sysdoc")))
-
-;>---- Image Variables ----<;
-
-;; always display images
-(setq w3m-default-display-inline-images t)
-
-;; show favicon images if they are available
-(setq w3m-use-favicon t)
 
 ;>---- Cookie Variables ----<;
-
 ;; enable cookies (to use sites such as Gmail)
 (setq w3m-use-cookies t)
 
@@ -141,11 +151,7 @@
 	  "groups.yahoo.com"
 	  )))
 
-;; Search
-(when (require 'w3m-search)
-  (define-key global-map (kbd "<f3> s") 'w3m-search)
-  (add-to-list 'w3m-search-engine-alist
-	       '("teoma" "http://www.teoma.com/search.asp?t=%s" nil)))
+
 
 ;; FIXME toggle a minor mode showing link numbers
 ;; (when (require 'w3m-lnum)
@@ -169,6 +175,11 @@
 (setq wget-download-directory "~/Downloads")
 
 ;>---- Search ----<;
+(when (require 'w3m-search)
+  (define-key global-map (kbd "<f3> s") 'w3m-search)
+  (add-to-list 'w3m-search-engine-alist
+	       '("teoma" "http://www.teoma.com/search.asp?t=%s" nil)))
+
 (defvar lch-search-engine-alist
       '(("google" . "http://www.google.com/search?q=")
         ("wikipedia" . "http://en.wikipedia.org/wiki/")
@@ -177,6 +188,17 @@
         ("google-file" . "http://www.google.com/search?q=+intitle:\"index+of\" -inurl:htm -inurl:html -inurl:php")
         ("ciba" . "http://www.iciba.com/")
         ))
+
+(defun lch-w3m-browse-url (myurl)
+  (interactive)
+  (let ((buf (get-buffer "*w3m*"))
+        (w3m-current-url ""))
+    (if buf
+        (switch-to-buffer buf)
+      (w3m))
+    (w3m-new-tab)
+    (w3m-browse-url myurl)
+    ))
 
 (defun lch-search-by (engine browser &optional symbolp)
   "search by various engine in browsers.
@@ -191,14 +213,14 @@
                     (thing-at-point 'symbol)))
             (cond ((string= engine "definition") (setq myword (replace-regexp-in-string " " "%20" myword)))
                   (t (setq myword (replace-regexp-in-string " " "_" myword)))))
-     (progn (setq myword (read-string "Search: "))))
+     (progn (setq myword (read-string (concat engine "(" browser "): ")))))
 
    (setq myengine (cdr (assoc engine lch-search-engine-alist)))
    (setq myurl (concat myengine myword))
 
    (cond ((string= browser "ffx") (browse-url myurl))
-         ((string= browser "w3m") (w3m-browse-url myurl))
-         (t (w3m-browse-url myurl))
+         ((string= browser "w3m") (lch-w3m-browse-url myurl))
+         (t (lch-w3m-browse-url myurl))
    )))
 
 ;; (defvar lch-engine-key-alist
@@ -231,7 +253,6 @@
 
 
 (define-key global-map (kbd "<f1> <f1>") '(lambda() (interactive) (lch-search-by "google" "ffx" nil)))
-(define-key global-map (kbd "C-c C-g") '(lambda() (interactive) (lch-search-by "google" "ffx" nil)))
 (define-key global-map (kbd "<f1> <f2>") '(lambda() (interactive) (lch-search-by "wikipedia" "ffx" nil)))
 (define-key global-map (kbd "<f1> <f3>") '(lambda() (interactive) (lch-search-by "baidu" "ffx" nil)))
 (define-key global-map (kbd "<f1> <f4>") '(lambda() (interactive) (lch-search-by "definition" "ffx" nil)))

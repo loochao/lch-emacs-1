@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ revert-buffer-with-coding-system
  indent-region
  cd
  lm
  5x5
  afm
  arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
- (indent-region . 1)
+ (indent-region . 2)
+ (revert-buffer-with-coding-system . 2)
 )

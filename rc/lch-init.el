@@ -172,7 +172,7 @@
 ;> Auto fill length
 (set-fill-column 78)
 ;> Automatically turn on auto-fill-mode when editing text files
-;(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;>-------- TRUNCATE-LINES --------<;
 ;> t means aaaaa->

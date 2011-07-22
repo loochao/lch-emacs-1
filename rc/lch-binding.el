@@ -8,17 +8,20 @@
 (define-key global-map (kbd "<home>") 'beginning-of-buffer)
 (define-key global-map (kbd "<end>") 'end-of-buffer)
 
+;>-------- F1 --------<;
+
 ;>-------- F2 --------<;
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
 (define-key global-map (kbd "C-<f2>") 'shell)
+(define-key global-map (kbd "M-1") 'shell)
 ;(define-key global-map (kbd "S-<f2>") 'eshell)
 ;(define-key global-map (kbd "C-S-<f2>") 'cmd-shell)                          ;; => lch-util.el
 ;(define-key global-map (kbd "C-M-<f2>") 'msys-shell)                         ;; => lch-util.el
 ;(define-key global-map (kbd "M-<f2>") 'call-last-kbd-macro)
 
+(define-key global-map (kbd "<f2> c") 'calendar)
 (define-key global-map (kbd "<f2> d") 'dired)
 (define-key global-map (kbd "<f2> f") 'auto-fill-mode)
-;(<f2> c: 'calendar)                                                          ;; => xwl-calendar
 (define-key global-map (kbd "<f2> l") 'lisp-mode)
 (define-key global-map (kbd "<f2> o") 'org-mode)
 (define-key global-map (kbd "<f2> O") 'outline-minor-mode)
@@ -40,6 +43,8 @@
 
 ;>-------- F4 --------<;
 ;> Binding to Namespace (Such as Org, w3m...)
+;(define-key global-map (kbd "<f4> <f4>") 'lch-open-file-browser)                ;; => lch-util.el
+;C-x f ffap
 
 ;; Org
 (define-key global-map (kbd "<f4> o a") 'org-agenda-list)
@@ -52,8 +57,6 @@
 (define-key global-map (kbd "<f4> o t") 'org-todo-list)
 ;(if lch-win32-p                                                              ;; => lch-util.el
 ;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer))
-
-;>-------- F4 --------<;
 
 ;>-------- F5 --------<;
 ;> Skeleton related stuff
@@ -333,6 +336,7 @@
 ;(define-key global-map (kbd "<f1> s") 'ywb-create/switch-scratch)            ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> C-s") 'dictionary-search)                  ;; => lch-elisp.el
 (define-key global-map (kbd "<f1> u") 'uncomment-region)
+(define-key global-map (kbd "C-c u") 'uncomment-region)
 (define-key global-map (kbd "<f1> C-u") 'revert-buffer)
 (define-key global-map (kbd "<f1> v") 'view-mode)
 (define-key global-map (kbd "C-c v") 'view-mode)
@@ -504,7 +508,6 @@
     (insert data)
     (goto-char (point-min))
     (values)))
-
 
 (message "~~ lch-binding: done.")
 (provide 'lch-binding)
