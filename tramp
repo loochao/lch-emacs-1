@@ -43,4 +43,16 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
-  ("file-exists" "test -e")))
+  ("file-exists" "test -e"))
+ (["scpc" "chaol" "fedora.princeton.edu" nil]
+  ("uname" "Linux 2.6.18-238.5.1.0.1.el5")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("file-exists" "test -e")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 37)))

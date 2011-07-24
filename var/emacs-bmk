@@ -32,11 +32,6 @@
  (front-context-string . "110403_Spring.To")
  (rear-context-string . "3B Apr  7 12:57 ")
  (position . 1581))
-("EmacsD"
- (filename . "~/Dropbox/.emacs.d/library/_emacs.d/")
- (front-context-string . "Copy of dotEmacs")
- (rear-context-string . "9K Feb 22 01:20 ")
- (position . 151))
 ("site-lisp"
  (filename . "~/Dropbox/.emacs.d/site-lisp/")
  (front-context-string . "ac-company.el\n  ")
@@ -47,21 +42,11 @@
  (front-context-string . "ChangeLog\n  -rw-")
  (rear-context-string . "5K Mar 21 02:13 ")
  (position . 146))
-("REPO"
- (filename . "~/Dropbox/REPO/")
- (front-context-string . "CVS\n  drwxr-xr-x")
- (rear-context-string . "8B Feb 23 18:41 ")
- (position . 131))
 ("FLV"
  (filename . "~/Dropbox/FLV/")
  (front-context-string . "Classical\n  drwx")
  (rear-context-string . "8B Mar 20 22:41 ")
  (position . 130))
-("Research"
- (filename . "~/Dropbox/RESEARCH/Research/")
- (front-context-string . "Bibtex\n  drwxr-x")
- (rear-context-string . "2B Mar 21 15:54 ")
- (position . 146))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/Org/org/iPrv.org")
  (front-context-string . "*** Revtex4 pack")
@@ -77,9 +62,4 @@
  (front-context-string . "Emacs-23.3-unive")
  (rear-context-string . "1M Mar 10 16:52 ")
  (position . 132))
-("Dropbox"
- (filename . "~/Dropbox/")
- (front-context-string . "Lecture\n  drwxr-")
- (rear-context-string . "6B Nov 17 15:37 ")
- (position . 437))
 )

@@ -51,11 +51,11 @@
 
 (if lch-win32-p
     (defconst emacs-path "~/Dropbox")
-  (defconst emacs-path "~/Dropbox"))
+  (defconst emacs-path "/Volumes/DATA/Dropbox"))
 
 (if lch-win32-p
     (defconst dropbox-path "~/Dropbox")
-  (defconst dropbox-path "~/Dropbox"))
+  (defconst dropbox-path "/Volumes/DATA/Dropbox"))
 
 (defvar emacs-dir (concat emacs-path "/.emacs.d"))
 (setq user-emacs-directory (concat emacs-dir "/"))

@@ -1,17 +1,21 @@
 
 ;; ----- smex-history -----
 (
- revert-buffer-with-coding-system
- indent-region
+ whitespace-mode
+ follow-mode
+ flymake-mode
+ flyspell-buffer
+ make-frame
+ dos2unix
  cd
- lm
- 5x5
- afm
- arp
 )
 
 ;; ----- smex-data -----
 (
- (indent-region . 2)
- (revert-buffer-with-coding-system . 2)
+ (dos2unix . 1)
+ (make-frame . 1)
+ (flyspell-buffer . 1)
+ (flymake-mode . 1)
+ (follow-mode . 1)
+ (whitespace-mode . 1)
 )

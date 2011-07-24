@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Jul 19 21:36:48 2011
+;; Created Sun Jul 24 00:22:21 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,8 +11,217 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("install-el:" "mkin" "install:" "install" "build" "tar" "hist" "C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs" "el-get"))
-(setq regexp-search-ring '("set" "capture" "lch-sea" "lch-sw" "sear" "lch-ins" "xwl" "music" "f2" "f4" "finder" "read" "read-s" "lch-w3m" "w3m-mode-map" "lch-w3m-go"))
-(setq register-alist '((48 . "")))
-(setq file-name-history '("~/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Python/‘ÃÎ‘ÖÐ‘Çé‘ÈË‘Óë‘Ôã‘¿·‘Ö®‘ÆÞ(Python‘ÓëPerl‘±È‘½Ï‘Ö®‘ÊÖ‘¼Ç).txt" "~/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Python/‘ÃÎ‘ÖÐ‘Çé‘ÈË‘Óë‘Ôã‘¿·‘Ö®‘ÆÞ(Python‘ÓëPerl‘±È‘½Ï‘Ö®‘ÊÖ‘¼Ç).txt" "~/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Python/‘ÃÎ‘ÖÐ‘Çé‘ÈË‘Óë‘Ôã‘¿·‘Ö®‘ÆÞ(Python‘ÓëPerl‘±È‘½Ï‘Ö®‘ÊÖ‘¼Ç).txt" "~/Dropbox/Library/LCH_LIB.bib" "~/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Python/‘ÃÎ‘ÖÐ‘Çé‘ÈË‘Óë‘Ôã‘¿·‘Ö®‘ÆÞ(Python‘ÓëPerl‘±È‘½Ï‘Ö®‘ÊÖ‘¼Ç).txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Python/SMTH-Python-‘ÃÎ‘ÖÐ‘Çé‘ÈË‘Óë‘Ôã‘¿·‘Ö®‘ÆÞ--Python‘ÓëPerl‘±È‘½Ï‘Ö®‘ÊÖ‘¼Ç.TXT" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB2/LIB_TEMP/Technology/ComputerSE/Programming/Java/INBOX/‘Ëï‘öÎ_Java/Contents.txt" "/Users/LooChao/Dropbox/Temporary/Java/Rectangle.java" "/Users/LooChao/Dropbox/Temporary/Java/Animal.java" "~/Dropbox/Temporary/Java/Point.java" "~/Dropbox/Temporary/Java/Pointlc.java" "~/Dropbox/Temporary/Java/Pointlc" "/Users/LooChao/Dropbox/Temporary/Java/Point.java" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/.emacs.d/library/dotfiles/_bashrc" "/Users/LooChao/.bashrc" "~/Dropbox/Temporary/Java/hello.java" "/Users/LooChao/Dropbox/Temporary/Java/Hello.java" "~/Dropbox/Temporary/loochao.pl" "~/screenshot.png" "/Users/LooChao/.wine/drive_c/loochao/filetype.reg" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/Refile.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Readme" "~/Repository/git/warrenb213s-hastarins-linux_on_wince_htc/Makefile" "~/Repository/git/warrenb213s-hastarins-linux_on_wince_htc/README" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Android/update/update.kernel.sh" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Android/firstrun" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Android/initrd.gz" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Android/startup.txt" "~/Dropbox/.emacs.d/var/emacs-bmk" "/Users/LooChao/.wine/dosdevices/z:/Volumes/HDSD/66.txt" "~/Dropbox/.emacs.lib/dotEmacs/dea/dea-read-only.lch/my-lisps/recent-jump-settings.el"))
+(setq regexp-search-ring '("arti" "anat" "Research/" "Researchn" "unpu" "tech" "quantum" "texlive-bin" "stuff" "goto-line" "58n" "text{" "first, we" "triplet" "fill" "figure"))
+(setq register-alist '((98 file-query "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" 1756) (97 . "bd \"C-x f\") 'find-file-at-point)") (48 . "")))
+(setq file-name-history '("/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el.~484cb64a4f9b4e1d352fad420c873e20e7ce9400~" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/chaol/Python/test.py2" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/t2.tex" "/Volumes/DATA/Dropbox/Org/org/Pearl.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/MEDIA/Anatoly_Wyoming10_LWI.pptx" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Library.bib" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Science/Physics/Statistical" "/Volumes/DATA/Dropbox/Library/Science/Physics/Statistical Mechanics/Mechanics/‘Áõ‘´¨_‘Æ½‘ºâ‘Ì¬‘Í³‘¼Æ‘Îï‘Àí.pdf" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Library.bib" "/Users/LooChao/.wine/dosdevices/z:/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/XUV" "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/LWI" "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/Workshop" "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/Princeton.pdf" "/Users/LooChao/.wine/dosdevices/z:/Volumes/MEDIA/100714_LWI_He_Poster.ppt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Research/Research.bib" "/Users/LooChao/.wine/dosdevices/z:/Volumes/MEDIA/Boron/Boron-Plasma-SetUP.pptx" "~/.wine/drive_c/loochao/tcopen.sh" "/Users/LooChao/.wine/drive_c/loochao/tcfinder.sh" "/Users/LooChao/.wine/drive_c/loochao/tcview.sh" "/Users/LooChao/.wine/drive_c/loochao/tcedit.sh" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Library.bib" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/LCH_LIB.bib" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Research/Papers2/Library.papers2/Thumbnails/0B2AB2E1-E613-4D0E-B299-D8CE9A0D6DEB.jpg" "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-usage/chapter-usage.tex" "/Volumes/DATA/Library_ToCheckIN/" "/Volumes/DATA/Dropbox/Org/org/iPU.org" "/Volumes/DATA/Dropbox/Org/org/iStuff.org" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Users/LooChao/.bashrc" "/Users/LooChao/.profile" "/Users/LooChao/.wine/dosdevices/h:/macport.txt"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el"
+  "lch-binding.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  23694
+  '(23719 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el"
+  "lch-org.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode flymake-mode)
+  6880
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-usage/chapter-usage.tex"
+  "chapter-usage.tex"
+  'latex-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode flyspell-mode)
+  656
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/org/Pearl.org"
+  "Pearl.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  49
+  '(35110 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  nil
+  "ch-usage"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  162
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-usage/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Education"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  138
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/Education/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Thesis"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  303
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Thesis/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Org"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  130
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/Org/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "org"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  3822
+  '(333 nil)
+  t
+  '("/Volumes/DATA/Dropbox/Org/org/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-env.el"
+  "lch-env.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  1060
+  '(891 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-web.el"
+  "lch-web.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  874
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Library/Application Support/Firefox/profiles.ini"
+  "profiles.ini"
+  'conf-unix-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  140
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "Downloads"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  63
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "/"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  661
+  '(nil nil)
+  t
+  '("/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Users"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  111
+  '(nil nil)
+  t
+  '("/Users/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "LooChao"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  368
+  '(nil nil)
+  t
+  '("/Users/LooChao/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/Princeton.pdf"
+  "Princeton.pdf"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/Workshop"
+  "Workshop"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Volumes/MEDIA/XRay.Princeton.Workshop_Nov17-2010/LWI"
+  "LWI"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((truncate-lines)))
+

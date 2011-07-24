@@ -373,7 +373,8 @@
 ;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)                          ;; => lch-elisp.el
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-x g") 'goto-line)
+;(global-set-key (kbd "C-x g") 'goto-line)
+;(define-key global-map (kbd "C-x g") 'magit-status)                          ;; => lch-elisp.el
 
 ;>>> lch-dict.el
 ;; (define-key global-map (kbd "M-s") '(lambda ()

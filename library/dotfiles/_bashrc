@@ -1,6 +1,24 @@
 #-*- coding:utf-8; mode:sh -*-
 
 #========== BASH ========#
+#---- Possible Variables ----#
+# MANPATH=
+# TERM_PROGRAM=Apple_Terminal
+# TERM=xterm-color
+# SHELL=/bin/bash
+# TERM_PROGRAM_VERSION=237
+# USER=joebob
+# __CF_USER_TEXT_ENCODING=0x1FC:0:0
+# PATH=/opt/local/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+# PWD=/Users/joebob
+# EDITOR=/usr/bin/pico
+# SHLVL=1
+# HOME=/Users/joebob
+# LOGNAME=joebob
+# DISPLAY=:0.0
+# SECURITYSESSIONID=b0cea0
+# _=/usr/bin/env
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -18,8 +36,6 @@ function add_to_path {
 }
 
 add_to_path ~/bin
-add_to_path /opt/local/bin/       #Macports
-add_to_path /opt/local/sbin/      #Macports
 add_to_path /usr/texbin
 
 if [[ `uname` == 'Darwin' ]]; then
@@ -27,13 +43,12 @@ if [[ `uname` == 'Darwin' ]]; then
     add_to_path /Applications/Network/Firefox.app/Contents/MacOS
     add_to_path /Applications/Emacs.app/Contents/MacOS/bin
     add_to_path /Applications/Utilities/MATLAB_R2010b.app/bin/
+    add_to_path /Volumes/DATA/Macports/bin       #Macports
+    add_to_path /Volumes/DATA/Macports/sbin       #Macports
+
 fi
 
 export PATH=.:$PATH
-
-# MacPorts Installer addition on 2011-03-09_at_09:26:37: adding an appropriate PATH variable for use with MacPorts.
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
 
 #-- MANPATH --#
 function add_to_manpath {
@@ -43,8 +58,11 @@ function add_to_manpath {
   fi
 }
 
-add_to_manpath /usr/local/man
-add_to_manpath ~/man
+if [[ `uname` == 'Darwin' ]]; then
+    add_to_manpath /Volumes/DATA/Macports/share/man
+
+fi
+export MANPATH=.:$MANPATH
 
 #-------- Terminal behavior --------#
 # case $TERM in
@@ -86,7 +104,7 @@ export TERM=xterm-color
 #-- Make the command line history ignore duplicate command lines.
 history_control=ignoredups
 
-#-- Set the shell prompt.  See the bash man page for a description 
+#-- Set the shell prompt.  See the bash man page for a description
 # of special characters.
 if [ ! "$LOGIN_SHELL" ]; then
    PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
@@ -97,18 +115,46 @@ fi
 set -o ignoreeof         # Do not log out with <ctrl-d>
 set -o noclobber         # Do not overwrite files via '>'
 
-#-- Create aliases for commonly used commands. 
+#-- Create aliases for commonly used commands.
 #alias ls="ls -a --color=tty"
 if [[ `uname` == 'Darwin' ]]; then
   alias ls="ls -G -v"     # -v to display chs
   # good for dark backgrounds
-  export LSCOLORS=gxfxcxdxbxegedabagacad
+  export LSCOLORS=cxfxcxdxbxegedabagacad
 else
+  # For linux
   alias ls="ls --color=auto"
   # good for dark backgrounds
-  export LS_COLORS='no=00:fi=00:di=00;36:ln=00;35:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;31:'
+  export LS_COLORS='di=32;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
   # For LS_COLORS template: $ dircolors /etc/DIR_COLORS
 fi
+
+#-- Sequence --#
+# 1-directory                     drwxr-xr-x
+# 2-system_link -> /dev/null      lrwxr-xr-x
+# 3-socket                        srw-r--r--
+# 4-pipe                          prw-r--r--
+# 5-executable                    -rwxrwxrwx
+# 6-block_special                 brw-r--r--
+# 7-char_special                  crw-r--r--
+# 8-exe_setuid                    -rwsrwxrwx
+# 9-exe_setgid                    -rwxrwsrwx
+# a-dir_writeothers_sticky        drwxrwxrwt
+# b-dir_writeothers_NOsticky      drwxrwxrwx
+
+#-- Color --#
+# | Mac | Linux | Color |
+# | a   |     0 | Black |
+# | b   |    31 | Red   |
+# | c   |    32 | Green |
+# | d   |    33 | Brown |
+# | e   |    34 | Blue  |
+# | f   |    35 | Pink  |
+# | g   |    36 | Cyan  |
+# | h   |    37 | Grey  |
+# | x   |     0 | Bkgd  |
+
+
 
 alias l="ls"
 alias ll="ls -lh"

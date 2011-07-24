@@ -28,12 +28,14 @@
     (progn
       (setenv "PATH" (concat (getenv "PATH")
 			     ":/usr/texbin"
-			     ":/opt/local/bin"
+			     ":/Volumes/DATA/Macports/bin"
+                             ":/opt/local/bin"
 			     ":/Applications/Emacs.app/Contents/MacOS/bin"
-			     ":1/Applications/Utilities/MATLAB_R2010b.app/bin/"
+			     ":/Applications/Utilities/MATLAB_R2010b.app/bin/"
 			     ))
       (setq exec-path (append exec-path
 			      '("/usr/texbin"
+                                "/Volumes/DATA/Macports/bin"
 				"/opt/local/bin"
 				"/Applications/Utilities/MATLAB_R2010b.app/bin/"
 				"/usr/local/bin"

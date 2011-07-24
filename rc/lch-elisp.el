@@ -38,6 +38,7 @@
 
 ;>---- Magit ----<;
 (require 'magit)
+(define-key global-map (kbd "C-x g") 'magit-status)
 
 ;>---- Goto-last-change ----<;
 (require 'goto-last-change)
