@@ -1,21 +1,16 @@
 
 ;; ----- smex-history -----
 (
- whitespace-mode
- follow-mode
- flymake-mode
- flyspell-buffer
- make-frame
- dos2unix
  cd
+ lm
+ 5x5
+ afm
+ arp
+ dbx
+ dig
 )
 
 ;; ----- smex-data -----
 (
- (dos2unix . 1)
- (make-frame . 1)
- (flyspell-buffer . 1)
- (flymake-mode . 1)
- (follow-mode . 1)
- (whitespace-mode . 1)
+ 
 )

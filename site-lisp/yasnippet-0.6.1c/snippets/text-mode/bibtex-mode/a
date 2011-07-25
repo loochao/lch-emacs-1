@@ -1,0 +1,7 @@
+#name : a stands for article
+# ----
+@article{$1,
+	Author = {$2,},
+	Keywords = {$5},
+	Title = {$6},
+        }

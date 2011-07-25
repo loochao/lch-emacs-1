@@ -48,10 +48,10 @@
  (rear-context-string . "8B Mar 20 22:41 ")
  (position . 130))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/iPrv.org")
- (front-context-string . "*** Revtex4 pack")
- (rear-context-string . "ND:\n** TODO-#C-\n")
- (position . 18288))
+ (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** 去Youtube上看视频")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
  (front-context-string . "*** Todo可以重复, 重复")
