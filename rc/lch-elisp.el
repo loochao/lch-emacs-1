@@ -2,6 +2,34 @@
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
 
+;>---- Evernote mode ----<;
+(require 'evernote-mode)
+(setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
+(define-prefix-command 'M0-map)
+(add-to-list 'exec-path "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin")
+(setenv "PATH" (concat "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin:" (getenv "PATH")))
+(define-key global-map (kbd "M-0") 'M0-map)
+(define-key global-map (kbd "M-0 c") 'evernote-create-note)
+(define-key global-map (kbd "M-0 o") 'evernote-open-note)
+(define-key global-map (kbd "M-0 s") 'evernote-search-notes)
+(define-key global-map (kbd "M-0 S") 'evernote-do-saved-search)
+(define-key global-map (kbd "M-0 w") 'evernote-write-note)
+(define-key global-map (kbd "M-0 p") 'evernote-post-region)
+(define-key global-map (kbd "M-0 b") 'evernote-browser)
+
+;>---- Outline mode ----<;
+;; bind the outline-minor-mode-prefix C-c @ to C-o
+(global-unset-key (kbd "C-o"))
+(define-key global-map (kbd "M-o") 'open-line)
+;; Set the minor mode prefix to C-o
+(setq outline-minor-mode-prefix (kbd "C-o"))
+
+;; Add hook to the following major modes so that the outline minor mode starts automatically.
+;; Outline mode is better to be enabled only in document modes.
+(add-hook 'muse-mode-hook 'outline-minor-mode)
+(add-hook 'html-mode-hook 'outline-minor-mode)
+(add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+
 ;>---- One-key ----<;
 (require 'one-key)
 (defvar one-key-menu-emms-alist nil
@@ -26,7 +54,7 @@
   (interactive)
   (one-key-menu "emms" one-key-menu-emms-alist t))
 
-(global-set-key (kbd "<f12> <f11>") 'one-key-menu-emms)
+(define-key global-map (kbd "<f12> <f11>") 'one-key-menu-emms)
 
 ;>---- Calfw ----<;
 (require 'calfw)
@@ -42,14 +70,14 @@
 
 ;>---- Goto-last-change ----<;
 (require 'goto-last-change)
-(global-set-key (kbd "C-x C-/") 'goto-last-change)
+(define-key global-map (kbd "C-x C-/") 'goto-last-change)
 
 ;>---- Smex ----<;
 (require 'smex)
 (smex-initialize)
 (setq smex-save-file (concat emacs-var-dir "/.smex-items"))
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(define-key global-map (kbd "M-x") 'smex)
+(define-key global-map (kbd "M-X") 'smex-major-mode-commands)
 
 ;>---- FFAP ----<;
 (require 'ffap)
@@ -83,9 +111,10 @@
 
 ;>---- iSpell ----<;
 ;; By default, it's iSpell, but if aspell is installed:
-;(when (featurep 'aspell) (setq ispell-program-name "aspell"))
+(when (featurep 'aspell) (setq ispell-program-name "aspell"))
 ;; Omit tex keywords
-;(add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
+(add-hook 'LaTeX-mode-hook 'flyspell-mode-on)
+(add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
 
 ;>---- Python ----<;
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
@@ -300,7 +329,7 @@
 ;- Make whitespace-mode with very basic background coloring for whitespaces
 (defvar whitespace-style (quote ( spaces tabs newline space-mark tab-mark newline-mark )))
 
-;- Make whitespace-mode and whitespace-newline-mode use “¶” for end of line char and ▷ for tab.
+;- Make whitespace-mode and whitespace-newline-mode use "¶" for end of line char and ▷ for tab.
 (setq
  whitespace-display-mappings
  '(
@@ -325,7 +354,7 @@
 
 
 ;>-------- Bat Mode --------<;
-;> For editing Windows's cmd.exe's script; batch, “.bat” file mode.
+;> For editing Windows's cmd.exe's script; batch, ".bat" file mode.
 (autoload 'dos-mode "dos" "A mode for editing Windows cmd.exe batch scripts." t)
 (add-to-list 'auto-mode-alist '("\\.bat\\'" . dos-mode))
 (add-to-list 'auto-mode-alist '("\\.cmd\\'" . dos-mode))
@@ -353,8 +382,8 @@
 ;>-------- Desktop --------<;
 ;- Make emacs open all files in last emacs session.
 ;- Desktop is already part of Emacs.
-;- This functionality is provided by desktop-save-mode (“feature”
-;- name: “desktop”). The mode is not on by default in emacs 23, and
+;- This functionality is provided by desktop-save-mode ("feature"
+;- name: "desktop"). The mode is not on by default in emacs 23, and
 ;- has a lot options.
 
 ;- By default, it read .emacs.desktop.lock file from the
@@ -363,14 +392,14 @@
 
 ;- Goal: have emacs always auto open the set of opend files in last
 ;- session, even if emacs crashed in last session or the OS crashed in
-;- last session. Also, don't bother users by asking questions like “do
-;- you want to save desktop?” or “do you want to override last session
-;- file?”, because these are annoying and terms like “session” or
-;- “desktop” are confusing to most users because it can have many
+;- last session. Also, don't bother users by asking questions like "do
+;- you want to save desktop?" or "do you want to override last session
+;- file?", because these are annoying and terms like "session" or
+;- "desktop" are confusing to most users because it can have many
 ;- meanings.
 
 ;- Some tech detail: set the desktop session file at
-;- user-emacs-directory (default is “~/.emacs.d/.emacs.desktop”).  This file
+;- user-emacs-directory (default is "~/.emacs.d/.emacs.desktop").  This file
 ;- is our desktop file. It will be auto created and or over-written.
 ;- if a emacs expert has other desktop session files elsewhere, he can
 ;- still use or manage those.

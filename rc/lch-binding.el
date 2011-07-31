@@ -359,9 +359,9 @@
 (define-key global-map (kbd "<f1> ^") 'lch-toggle-line-wrapping)             ;; => lch-init.el
 
 ;>-------- Alt Map --------<;
-(define-key global-map (kbd "M-o") '(lambda ()
-                               (interactive)
-                               (other-window -1)))
+;; (define-key global-map (kbd "M-o") '(lambda ()
+;;                                (interactive)
+;;                                (other-window -1)))
 (eval-after-load 'dired
   '(progn
      (define-key dired-mode-map (kbd "C-o") nil)

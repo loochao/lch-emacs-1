@@ -18,25 +18,25 @@ time."
   (switch-to-buffer "*Search*"))
 
 
-;; Automatically change buffer name of shell into current directory name.
-(make-variable-buffer-local 'wcy-shell-mode-directory-changed)
-(setq wcy-shell-mode-directory-changed t)
+;; ;; Automatically change buffer name of shell into current directory name.
+;; (make-variable-buffer-local 'wcy-shell-mode-directory-changed)
+;; (setq wcy-shell-mode-directory-changed t)
 
-(defun wcy-shell-mode-auto-rename-buffer-output-filter (text)
-  (if (and (eq major-mode 'shell-mode)
-           wcy-shell-mode-directory-changed)
-      (progn
-        (let ((bn  (concat "sh:" default-directory)))
-          (if (not (string= (buffer-name) bn))
-              (rename-buffer bn t)))
-        (setq wcy-shell-mode-directory-changed nil))))
+;; (defun wcy-shell-mode-auto-rename-buffer-output-filter (text)
+;;   (if (and (eq major-mode 'shell-mode)
+;;            wcy-shell-mode-directory-changed)
+;;       (progn
+;;         (let ((bn  (concat "sh:" default-directory)))
+;;           (if (not (string= (buffer-name) bn))
+;;               (rename-buffer bn t)))
+;;         (setq wcy-shell-mode-directory-changed nil))))
 
-(defun wcy-shell-mode-auto-rename-buffer-input-filter (text)
-  (if (eq major-mode 'shell-mode)
-      (if ( string-match "^[ \t]*cd *" text)
-          (setq wcy-shell-mode-directory-changed t))))
-(add-hook 'comint-output-filter-functions 'wcy-shell-mode-auto-rename-buffer-output-filter)
-(add-hook 'comint-input-filter-functions 'wcy-shell-mode-auto-rename-buffer-input-filter )
+;; (defun wcy-shell-mode-auto-rename-buffer-input-filter (text)
+;;   (if (eq major-mode 'shell-mode)
+;;       (if ( string-match "^[ \t]*cd *" text)
+;;           (setq wcy-shell-mode-directory-changed t))))
+;; (add-hook 'comint-output-filter-functions 'wcy-shell-mode-auto-rename-buffer-output-filter)
+;; (add-hook 'comint-input-filter-functions 'wcy-shell-mode-auto-rename-buffer-input-filter )
 
 ;; Automatically add execute permission to a script file.
 (defun lch-chmod-x ()
