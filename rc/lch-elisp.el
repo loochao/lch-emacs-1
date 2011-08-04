@@ -3,19 +3,19 @@
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
 
 ;>---- Evernote mode ----<;
-(require 'evernote-mode)
-(setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
-(define-prefix-command 'M0-map)
-(add-to-list 'exec-path "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin")
-(setenv "PATH" (concat "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin:" (getenv "PATH")))
-(define-key global-map (kbd "M-0") 'M0-map)
-(define-key global-map (kbd "M-0 c") 'evernote-create-note)
-(define-key global-map (kbd "M-0 o") 'evernote-open-note)
-(define-key global-map (kbd "M-0 s") 'evernote-search-notes)
-(define-key global-map (kbd "M-0 S") 'evernote-do-saved-search)
-(define-key global-map (kbd "M-0 w") 'evernote-write-note)
-(define-key global-map (kbd "M-0 p") 'evernote-post-region)
-(define-key global-map (kbd "M-0 b") 'evernote-browser)
+;; (require 'evernote-mode)
+;; (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
+;; (define-prefix-command 'M0-map)
+;; (add-to-list 'exec-path "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin")
+;; (setenv "PATH" (concat "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin:" (getenv "PATH")))
+;; (define-key global-map (kbd "M-0") 'M0-map)
+;; (define-key global-map (kbd "M-0 c") 'evernote-create-note)
+;; (define-key global-map (kbd "M-0 o") 'evernote-open-note)
+;; (define-key global-map (kbd "M-0 s") 'evernote-search-notes)
+;; (define-key global-map (kbd "M-0 S") 'evernote-do-saved-search)
+;; (define-key global-map (kbd "M-0 w") 'evernote-write-note)
+;; (define-key global-map (kbd "M-0 p") 'evernote-post-region)
+;; (define-key global-map (kbd "M-0 b") 'evernote-browser)
 
 ;>---- Outline mode ----<;
 ;; bind the outline-minor-mode-prefix C-c @ to C-o

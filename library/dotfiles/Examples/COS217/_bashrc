@@ -29,7 +29,7 @@ export TERM=xterm-color
 # Make the command line history ignore duplicate command lines.
 history_control=ignoredups
 
-# Set the shell prompt.  See the bash man page for a description 
+# Set the shell prompt.  See the bash man page for a description
 # of special characters.
 if [ ! "$LOGIN_SHELL" ]; then
    PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
@@ -42,8 +42,8 @@ alias rm="rm -i"         # Prompt before removing files via rm
 alias cp="cp -i"         # Prompt before overwriting files via cp
 alias mv="mv -i"         # Prompt before overwriting files via mv
 
-# Create aliases for commonly used commands. 
-alias ls="ls -a --color=tty" 
+# Create aliases for commonly used commands.
+alias ls="ls -a --color=tty"
 alias ll="ls -al --color=tty"
 alias emacs="emacs -nw"
 

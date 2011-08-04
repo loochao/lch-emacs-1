@@ -19,6 +19,13 @@
 # SECURITYSESSIONID=b0cea0
 # _=/usr/bin/env
 
+ARCH=`uname -s`
+
+# CONFIGDIR='/usr/operations/lib/userconfig'
+# if [ -f $CONFIGDIR/bash_profile-$ARCH ]; then
+#    . $CONFIGDIR/bash_profile-$ARCH
+# fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -28,27 +35,26 @@ if [ -e /etc/bashrc ]; then
 fi
 
 #-------- PATH --------#
+
 function add_to_path {
   local dir=$1
   if [ -d $dir ]; then
-    PATH="$dir:${PATH}"
+    export PATH="$dir:${PATH}"
   fi
 }
 
 add_to_path ~/bin
 add_to_path /usr/texbin
 
-if [[ `uname` == 'Darwin' ]]; then
-    add_to_path /Applications/Documents/Adobe Acrobat 9 Pro/Adobe Acrobat Pro.app/Contents/MacOS
-    add_to_path /Applications/Network/Firefox.app/Contents/MacOS
-    add_to_path /Applications/Emacs.app/Contents/MacOS/bin
-    add_to_path /Applications/Utilities/MATLAB_R2010b.app/bin/
-    add_to_path /Volumes/DATA/Macports/bin       #Macports
-    add_to_path /Volumes/DATA/Macports/sbin       #Macports
-
+if [[ $ARCH == 'Darwin' ]]; then
+    add_to_path /Volumes/DATA/Applications/Network/Firefox.app/Contents/MacOS
+    add_to_path /Volumes/DATA/Applications/Utilities/MATLAB_R2010b.app/bin
+    add_to_path /Volumes/DATA/Macports/bin #Macports
+    add_to_path /Volumes/DATA/Macports/sbin #Macports
+    add_to_path /Volumes/DATA/Applications/Emacs.app/Contents/MacOS/bin
 fi
 
-export PATH=.:$PATH
+export PATH=$PATH:.
 
 #-- MANPATH --#
 function add_to_manpath {
@@ -58,7 +64,7 @@ function add_to_manpath {
   fi
 }
 
-if [[ `uname` == 'Darwin' ]]; then
+if [[ $ARCH == 'Darwin' ]]; then
     add_to_manpath /Volumes/DATA/Macports/share/man
 
 fi
@@ -81,13 +87,6 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 #-- Global Configuration --#
-ARCH=`uname -s`
-CONFIGDIR='/usr/operations/lib/userconfig'
-if [ -f $CONFIGDIR/bash_profile-$ARCH ]; then
-   . $CONFIGDIR/bash_profile-$ARCH
-fi
-
-#-- PATH
 export PAGER="less"
 export EDITOR="vi"
 export SVN_EDITOR=vi
@@ -117,7 +116,7 @@ set -o noclobber         # Do not overwrite files via '>'
 
 #-- Create aliases for commonly used commands.
 #alias ls="ls -a --color=tty"
-if [[ `uname` == 'Darwin' ]]; then
+if [[ $ARCH == 'Darwin' ]]; then
   alias ls="ls -G -v"     # -v to display chs
   # good for dark backgrounds
   export LSCOLORS=cxfxcxdxbxegedabagacad
@@ -153,8 +152,6 @@ fi
 # | g   |    36 | Cyan  |
 # | h   |    37 | Grey  |
 # | x   |     0 | Bkgd  |
-
-
 
 alias l="ls"
 alias ll="ls -lh"

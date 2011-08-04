@@ -48,10 +48,10 @@
  (rear-context-string . "8B Mar 20 22:41 ")
  (position . 130))
 ("org-capture-last-stored"
- (filename . "/Volumes/DATA/Dropbox/Org/org/iLog.org")
- (front-context-string . "**** 碰上了一个专业的lat")
- (rear-context-string . "11-07-31 Sunday\n")
- (position . 8183))
+ (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** CJK stands f")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
 ("org-refile-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
  (front-context-string . "*** Todo可以重复, 重复")
