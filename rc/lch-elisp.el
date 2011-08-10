@@ -2,6 +2,36 @@
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
 
+;>---- bm mode ----<;
+(setq bm-restore-repository-on-load t)
+(setq bm-repository-file (concat emacs-var-dir "/.bm-repository"))
+(require 'bm)
+(global-set-key (kbd "C-<f6>") 'bm-toggle)
+(global-set-key (kbd "<f6> <f6>") 'bm-next)
+(global-set-key (kbd "<f6> <f5>") 'bm-previous)
+(global-set-key (kbd "M-<f6>") 'bm-previous)
+
+;; make bookmarks persistent as default
+(setq-default bm-buffer-persistence t)
+
+;; Loading the repository from file when on start up.
+(add-hook' after-init-hook 'bm-repository-load)
+
+;; Restoring bookmarks when on file find.
+(add-hook 'find-file-hooks 'bm-buffer-restore)
+
+;; Saving bookmark data on killing a buffer
+(add-hook 'kill-buffer-hook 'bm-buffer-save)
+
+;; Saving the repository to file when on exit.
+;; kill-buffer-hook is not called when emacs is killed, so we
+;; must save all bookmarks first.
+(add-hook 'kill-emacs-hook '(lambda nil
+                              (bm-buffer-save-all)
+                              (bm-repository-save)))
+;>---- bookmark+ mode ----<;
+(require 'bookmark+)
+
 ;>---- Evernote mode ----<;
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
@@ -71,6 +101,7 @@
 ;>---- Goto-last-change ----<;
 (require 'goto-last-change)
 (define-key global-map (kbd "C-x C-/") 'goto-last-change)
+(define-key global-map (kbd "<f2> <f2>") 'goto-last-change)
 
 ;>---- Smex ----<;
 (require 'smex)

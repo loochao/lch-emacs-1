@@ -49,7 +49,7 @@
  (position . 130))
 ("org-capture-last-stored"
  (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** CJK stands f")
+ (front-context-string . "*** SY说去华尔街得英文好.")
  (rear-context-string . " :IDEA:\n** IDEA\n")
  (position . 249))
 ("org-refile-last-stored"

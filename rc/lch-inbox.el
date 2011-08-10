@@ -28,8 +28,7 @@
 	(system-time-locale "En"))
     (insert (format-time-string format))))
 
-;; ui
 
-(setq scroll-step 1)
+
 
 

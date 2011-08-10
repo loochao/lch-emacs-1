@@ -158,6 +158,7 @@ alias ll="ls -lh"
 alias la="ls -a"
 alias lal="ls -alh"
 alias ec="emacsclient"
+alias cde="cd /Volumes/DATA/Dropbox/.emacs.d"
 #alias emacs="emacs -nw"
 
 #-- Make the sort program behave in the traditional way.

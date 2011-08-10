@@ -1,1 +1,0 @@
-(:magit "installed" :asciidoc "installed" :lisppaste "installed" :dictionary-el "required" :switch-window "installed" :google-maps "required" :yasnippet "required" :emacs-goodies-el "installed" :smex "installed" :goto-last-change "installed" :auto-complete "installed")

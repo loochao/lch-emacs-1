@@ -15,6 +15,7 @@
       mark-ring-max 200                 ; # of marks kept in the mark ring.
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
       scroll-step 1                     ; Move down 1 line instead of multi.
+      scroll-conservatively 10000
       next-line-add-newlines nil        ; Don't add newlines at the end.
       message-log-max 500               ; Show lots of *message*.
      ;kill-whole-line t                 ; Remove the newlines as well.

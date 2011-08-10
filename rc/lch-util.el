@@ -81,7 +81,7 @@ activate
 do script \"cd '%s'; bash \"
 end tell" mydir)))
   ))
-(define-key global-map (kbd "<f6> <f6>") 'lch-start-terminal)
+(define-key global-map (kbd "<f1> <f2>") 'lch-start-terminal)
 
 
 ;; Punctuation substitution
@@ -367,7 +367,8 @@ occurence of CHAR."
                      char)
     (search-forward (string char) nil nil n))
   (setq unread-command-events (list last-input-event)))
-(define-key global-map (kbd "C-c a") 'my-wy-go-to-char)
+(define-key global-map (kbd "C-x g") 'my-wy-go-to-char)
+(define-key global-map (kbd "M-g") 'my-wy-go-to-char)
 
 ;>-- Kills live buffers, leaves some emacs work buffers --<;
 (defun nuke-some-buffers (&optional list)

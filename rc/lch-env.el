@@ -30,16 +30,18 @@
 			     ":/usr/texbin"
 			     ":/Volumes/DATA/Macports/bin"
                              ":/opt/local/bin"
-			     ":/Applications/Emacs.app/Contents/MacOS/bin"
-			     ":/Applications/Utilities/MATLAB_R2010b.app/bin/"
+			     ":Volumes/DATA/Applications/Documents/Emacs.app/Contents/MacOS/bin"
+			     ":Volumes/DATA/Applications/Utilities/MATLAB_R2010b.app/bin/"
 			     ))
       (setq exec-path (append exec-path
-			      '("/usr/texbin"
+			      '(
+				"Volumes/DATA/Applications/Documents/Emacs.app/Contents/MacOS/bin"
+                                "/usr/texbin"
                                 "/Volumes/DATA/Macports/bin"
 				"/opt/local/bin"
-				"/Applications/Utilities/MATLAB_R2010b.app/bin/"
+				"Volumes/DATA/Applications/Utilities/MATLAB_R2010b.app/bin/"
 				"/usr/local/bin"
-				"/Applications/Emacs.app/Contents/MacOS/bin")))))
+                                )))))
 
 ;>---------- FLAGs ----------<;
 (defconst lch-cygwin-p (eq system-type 'cygwin) "Are we on cygwin")
@@ -86,6 +88,12 @@
   (add-to-list 'Info-default-directory-list dir))
 
 ;>-------- KEY MAPS --------<;
+(define-prefix-command 'm-f1-map)
+(define-key global-map (kbd "M-<f1>") 'm-f1-map)
+
+(define-prefix-command 'm-f2-map)
+(define-key global-map (kbd "M-<f2>") 'm-f2-map)
+
 (define-prefix-command 'f1-map)
 (define-key global-map (kbd "<f1>") 'f1-map)
 

@@ -8,12 +8,14 @@
 (define-key global-map (kbd "<home>") 'beginning-of-buffer)
 (define-key global-map (kbd "<end>") 'end-of-buffer)
 
+(define-key global-map (kbd "M-1") 'shell)
+
+
 ;>-------- F1 --------<;
+(define-key global-map (kbd "<f1> <f1>") 'shell)
 
 ;>-------- F2 --------<;
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
-(define-key global-map (kbd "C-<f2>") 'shell)
-(define-key global-map (kbd "M-1") 'shell)
 ;(define-key global-map (kbd "S-<f2>") 'eshell)
 ;(define-key global-map (kbd "C-S-<f2>") 'cmd-shell)                          ;; => lch-util.el
 ;(define-key global-map (kbd "C-M-<f2>") 'msys-shell)                         ;; => lch-util.el
@@ -81,7 +83,6 @@
 ;(define-key global-map (kbd "<f6> P") 'lch-org-publish-prv)                  ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> w") 'lch-org-publish-worg)                 ;; => lch-org.el
 
-
 ;>-------- F7 --------<;
 
 ;(define-key global-map (kbd "C-0") 'org-capture)                             ;; => lch-org.el
@@ -98,7 +99,7 @@
 
 ;(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point)         ;; => lch-util.el
 ;(define-key global-map (kbd "C-<f9>") 'highlight-symbol-next)                ;; => lch-util.el
-;(define-key global-map (kbd "S-<f9>") 'highlight-symbol-prev)                ;; => lch- util.el
+;(define-key global-map (kbd "S-<f9>") 'highlight-symbol-prev)                ;; => lch-util.el
 
 
 (define-key global-map (kbd "<f9> 1") (lambda() (interactive) (dired org-source-dir)))
@@ -213,12 +214,11 @@
 
 ;>-------- F11 --------<;
 ;~~>- UI related stuffs.
-(define-key global-map (kbd "<f11> <f11>") 'menu-bar-mode)
-(define-key global-map (kbd "C-<f11>") 'tabbar-mode)
+(define-key global-map (kbd "C-<f11>") 'menu-bar-mode)
 (define-key global-map (kbd "S-<f11>") 'tool-bar-mode)
 (define-key global-map (kbd "M-<f11>") 'setnu-mode)
+(define-key global-map (kbd "C-M-<f11>") 'tabbar-mode)
 (define-key global-map (kbd "C-S-<f11>") 'ruler-mode)
-(define-key global-map (kbd "C-M-<f11>") 'whitespace-mode)
 
 ;(define-key global-map (kbd "<f11> <f1>") 'color-theme-arjen)                 ;; => lch-ui-theme.el
 ;(define-key global-map (kbd "<f11> <f2>") 'color-theme-dimilar)               ;; => lch-ui-theme.el

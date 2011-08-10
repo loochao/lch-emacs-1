@@ -2,97 +2,30 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Programming/" . "Bash/")
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/" . "Programming/")
- ("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/" . "ch-intro/")
- ("/Volumes/DATA/Dropbox/Education/" . "PU.Master.Thesis/")
- ("/Volumes/DATA/Dropbox/" . "Education/")
- ("/Volumes/DATA/" . "Dropbox/")
- ("/Volumes/" . "DATA/")
- ("/" . "Volumes/")
  ("/Users/LooChao/Dropbox/.emacs.d/" . "rc/")
  ("/Users/LooChao/Dropbox/" . ".emacs.d/")
- ("/Users/LooChao/" . ".vimperator/")
+ ("/Users/LooChao/" . "Dropbox/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7_bak/"
- "/Users/LooChao/"
- "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Programming/Bash/"
- "/etc/"
- "/Volumes/DATA/Dropbox/.vimperator.d/"
- "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7_bak/"
- "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/library/dotfiles/"
- "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-intro/"
  "/Users/LooChao/Dropbox/.emacs.d/rc/"
+ "/Users/LooChao/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "Makefile"
- ".bashrc"
- "bird2.sh"
- ".profile"
- "bashrc"
- "_vimpertorrc"
- ".vimperatorrc"
- "_bashrc"
- "ch-intro-inbox.tex"
  "test.py"
+ "lch-env.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7_bak/" (20026 13448) "request-assign-future.txt" "README" "Makefile" "lisp/" "doc/" "contrib/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7_bak/" (20026 13245) "request-assign-future.txt" "README" "Makefile" "lisp/" "doc/" "contrib/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Programming/Bash/" (20009 57463) "test2" "test" "Parameter.sh_bak" "Parameter.sh" "output" "greetings.sh" "greeting.sh" "function.sh" "cat_file.sh" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Programming/" (20009 57463) "Python/" "Java/" "git/" "Elisp/" "C/" "Bash/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Program/" (20022 40271) "Mp3tag_v245.zip" "110607_FirefoxPT_4.0.zip" "110607_FirefoxPT.zip" "110602_FirefoxPT.zip" "110412_FirefoxPT.zip" "110226_ChromePT.zip" "110102_Totalcmd.ZIP" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/" (20024 36414) "Wallpaper/" "vimperator/" "This is your Dropbox.txt" "Temporary/" "Software/" "Share/" "Research/" "Repository/" "Public/" "Programming/" "Program/" "Private/" "Photos/" "Org_110608.zip" "Org/" "Music/" "Movie/" "MobileOrg/" "LibraryTXT_INBOX/" "LIbrary_Temp/" "Library/" "lib/" "iPad intro.pdf" "Icon
-" "emacs.pdf" "emacs.d_110608.zip" "Education/" "Download/" "Documents/" "CHM501.pdf" "Android intro.pdf" ".vimperator.d/" ".emacs.lib/" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/" (20021 33053) "var/" "tramp" "thumbs/" "site-lisp/" "server/" "README" "rc/" "library/" "info/" "bin/" ".gitignore" ".git/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/library/" (20021 65092) "template/" "programming/" "dotfiles/" "cv/" "bin/" "../" "./")
-
- ("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/library/dotfiles/" (20024 50279) "Examples/" "_Xdefaults" "_vimrc" "_profile" "_gitignore" "_bashrc" "_bash_aliases" "../" "./")
-
- ("/Volumes/DATA/Dropbox/.emacs.d/library/dotfiles/" (20024 50024) "Examples/" "_Xdefaults" "_vimrc" "_profile" "_gitignore" "_bashrc" "_bash_aliases" "../" "./")
-
- ("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-intro/" (20024 36415) "intro_contributions.tex" "figures/" "chapter-intro.tex" "chapter-intro (LCH-X61's conflicted copy 2011-08-02).tex" "ch-intro-temp.tex" "ch-intro-inbox.tex" "ch-intro-inbox (LCH-X61's conflicted copy 2011-08-02).tex" ".#chapter-intro.tex" "../" "./")
-
- ("/Volumes/DATA/Dropbox/.vimperator.d/" (20024 10750) "README" "plugin_bak/" "plugin/" "lch-util.vimp" "lch-ui.vimp" "lch-plugin.vimp" "lch-key.vimp" "lch-init.vimp" "info/" "colors/" "_vimperatorrc" ".git/" "../" "./")
-
- ("/etc/" (20024 11588) "zshenv" "xtab" "xgrid/" "ttys" "thnuclnt/" "syslog.conf" "sudoers" "sshd_config" "ssh_config" "snmp/" "smb.conf.template" "smb.conf.old" "smb.conf" "shells" "services" "security/" "rtadvd.conf" "rpc" "rmtab" "resolv.conf" "rc.netboot" "rc.common" "racoon/" "protocols" "profile" "ppp/" "postfix/" "php.ini.default" "periodic/" "pear.conf" "paths.d/" "paths" "passwd" "pam.d/" "openldap/" "ntp.conf" "ntp-restrict.conf" "notify.conf" "newsyslog.d/" "newsyslog.conf" "networks" "nanorc" "named.conf" "moduli" "memberd.conf" "master.passwd" "manpaths.d/" "manpaths" "man.conf" "mail.rc" "mail/" "mach_init_per_user.d/" "mach_init_per_login_session.d/" "mach_init.d/" "locate.rc" "localtime" "krb5.keytab" "kern_loader.conf" "kcpassword" "irbrc" "hosts.equiv" "hosts" "hostconfig" "group" "gettytab" "gdb.conf" "ftpusers" "ftpd.conf" "fstab.hd" "find.codes" "efax.rc" "dnsextd.conf" "defaults/" "cups/" "csh.logout" "csh.login" "csh.cshrc" "bashrc" "autofs.conf" "auto_master" "auto_home" "authorization" "asl.conf" "apache2/" "amavisd.conf" "aliases.db" "aliases" "afpovertcp.cfg" "6to4.conf" ".paths.swp" "../" "./")
-
- ("/Users/" (19594 45080) "Shared/" "LooChao/" ".localized" "../" "./")
-
- ("/Users/LooChao/" (20024 11588) "vimperator/" "Temporary/" "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".texlive2010/" ".subversion/" ".ssh/" ".srecode/" ".sh_history" ".session" ".serverauth.88281" ".python-eggs/" ".profile" ".nnex" ".nevernote/" ".mplayer/" ".matlab/" ".local/" ".InstallAnywhere/" ".inputrc" ".ido.last" ".gitconfig" ".gem/" ".fontconfig/" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs" ".DS_Store" ".dropbox/" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" ".aspell.en.pws" ".aspell.en.prepl" ".adobe/" "../" "./")
-
- ("/Volumes/" (20023 39338) "MEDIA/" "MACINTOSH/" "LIBPT/" "iPortable_Snow_x86/" "DATA/" "chaol/" "BACKUP 1/" "BACKUP/" "../" "./")
-
- ("/Users/LooChao/.vimperator/" (19803 28947) "info/" "../" "./")
-
- ("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/" (20022 5619) "thesis-notes.org" "thesis-notes-temp.org" "Symbols.tex" "Symbols.log" "subfigure.sty" "Reference/" "README" "q.log" "puthesis.cls" "multirow.sty" "Makefile" "lch-pums-thesis.tex" "lch-pums-thesis.pdf" "lch-pums-thesis.bib" "Diagram.ppt" "ch-theory/" "ch-intro/" "ch-experiment/" "ch-conclusion/" "ch-appendicies/" "braket.sty" "acknowledgements.tex" "acknowledgements-inbox.tex" "abstract.tex" "abstract-inbox.tex" ".gitignore" ".git/" ".DS_Store" "../" "./")
-
- ("/Volumes/DATA/Dropbox/Education/" (20013 59632) "PU_Master_Thesis_template.only/" "PU.Master.Thesis_Template.only.zip" "PU.Master.Thesis/" ".DS_Store" "../" "./")
-
- ("/Volumes/DATA/Dropbox/" (20021 35867) "Wallpaper/" "vimperator/" "This is your Dropbox.txt" "Temporary/" "Software/" "Share/" "Research/" "Repository/" "Public/" "Programming/" "Program/" "Private/" "Photos/" "Org_110608.zip" "Org/" "Music/" "Movie/" "MobileOrg/" "LibraryTXT_INBOX/" "LIbrary_Temp/" "Library/" "iPad intro.pdf" "Icon
-" "emacs.pdf" "emacs.d_110608.zip" "Education/" "Download/" "Documents/" "CHM501.pdf" "Android intro.pdf" ".vimperator.d/" ".emacs.lib/" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
-
- ("/Volumes/DATA/" (20016 59360) "Video/" "Thesis/" "Repository/" "Readme" "Private/" "Notes/" "Music_ToCheckIN/" "Music_Temp/" "Music_INBOX/" "Music/" "Macports/" "Library_ToCheckIN/" "Library_Temp/" "Library_INBOX/" "FLV/" "Dropbox/" "Applications/" "Apple/" "Android/" "AmeriCanAndroid_070911.7z" ".Trashes/" ".TemporaryItems/" ".Spotlight-V100/" ".fseventsd/" ".DS_Store" ".com.apple.timemachine.supported" "../" "./")
-
- ("/Users/LooChao/.dropbox/" (20022 3560) "unlink.db" "sigstore.db" "l/" "host.db" "finderplugin/" "filecache.db" "dropbox.pid" "dbig" "config.db" "../" "./")
-
  ("/Users/LooChao/Dropbox/.emacs.d/rc/" (19904 50973) "xwl-wubi.elc" "xwl-wubi.el" "xwl-util.elc" "xwl-util.el" "xwl-shell.elc" "xwl-shell.el" "xwl-emms.elc" "xwl-emms.el" "xwl-calendar.elc" "xwl-calendar.el" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w3m.elc" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.elc" "lch-template.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-org.elc" "lch-org.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.elc" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-elisp-el-get.elc" "lch-elisp-el-get.el" "lch-el-get.elc" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bookmark.elc" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-alias.elc" "lch-alias.el" "dotEmacs" "../" "./")
 
  ("/Users/LooChao/Dropbox/.emacs.d/" (19904 50533) "var.smex-items" "var/" "url/" "tramp" "site-lisp-bak/" "site-lisp/" "server/" "semanticdb/" "rc/" "library/" "games/" "bin/" "auto-save-list/" "ac-comphist.dat" ".emacs.desktop" "../" "./")
+
+ ("/Users/LooChao/" (19904 32723) "vimperator/" "Sites/" "Python/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine_bak/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".subversion/" ".stardict/" ".ssh/" ".srecode/" ".sh_history" ".session" ".profile" ".mplayer/" ".matlab/" ".macports/" ".local/" ".ido.last" ".gitconfig" ".fontconfig/" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs-recentf" ".emacs" ".DS_Store" ".dropbox/" ".diskorderbash" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" "../" "./")
 
  ("/Users/LooChao/Dropbox/" (19904 43817) "Zotero_Backup/" "Zotero/" "WALLPAPER/" "Vimperator.zip" "vimperator/" "TXT/" "TMP/" "This is your Dropbox.txt" "SYNC/" "Summer.School/" "SOFT/" "SCAN/" "RESEARCH/" "REPO/" "PUC/" "Public/" "PU.Soccer.Hunter.csv" "Private/" "Picture/" "Photos/" "PGM/" "org/" "MUSIC/" "MOVIE/" "MobileOrg/" "LIB/" "iPad intro.pdf" "INBOX/" "Icon
 " "FLV/" "FirefoxPT/" "EDU/" "DOWNLOAD/" "Documents/" "COS333/" "COMIC/" "AUDIO/" "Android intro.pdf" "110330_FirefoxPT4.0.zip" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
