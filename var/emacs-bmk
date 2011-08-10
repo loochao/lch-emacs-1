@@ -2,71 +2,22 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("leisureread"
+(("org-capture-last-stored"
+ (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
+ (front-context-string . "*** 暂不加入evernote")
+ (rear-context-string . " :IDEA:\n** IDEA\n")
+ (position . 249))
+(#("leisureread" 0 11
+   (bmkp-full-record #0))
  (filename . "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt")
- (buffer-name . "leisureread.txt:leisureread")
- (front-context-string . ")\n    (let ((dec")
- (rear-context-string . "ring text \"\\n\"))")
+ (buffer-name . "leisureread.txt")
+ (front-context-string . "                ")
+ (rear-context-string . "nning-position)\n")
  (front-context-region-string)
  (rear-context-region-string)
  (visits . 0)
- (time . #1=(20034 57398 469))
- (created . #1#)
- (position . 1056)
- (end-position . 1056))
-("lch-emacs-rc"
- (filename . "~/Dropbox/.emacs.d/rc/")
- (front-context-string . "lch-alias.el\n  -")
- (rear-context-string . "4K Apr 13 16:14 ")
- (position . 140))
-("PPPL"
- (filename . "/scpc:yluo@portal.pppl.gov:/u/yluo/")
- (front-context-string . "IER\n  drwxr-xr-x")
- (rear-context-string . "0K Apr 16 10:25 ")
- (position . 97))
-("xwl-emacs"
- (filename . "~/Dropbox/.emacs.d/library/emacs.d/xwl-emacs/.emacs.d/site-lisp/")
- (front-context-string . "goto-last-change")
- (rear-context-string . "5K Feb 20 23:11 ")
- (position . 1337))
-("PUFiles"
- (filename . "/scpc:chaol@fedora.princeton.edu:/u/chaol/")
- (front-context-string . "$RECYCLE.BIN\n  d")
- (rear-context-string . "0K Jul 10  2009 ")
- (position . 107))
-("PHOTO"
- (filename . "/Volumes/DATA/PRV/PHOTO/")
- (front-context-string . "110403_Spring.To")
- (rear-context-string . "3B Apr  7 12:57 ")
- (position . 1581))
-("site-lisp"
- (filename . "~/Dropbox/.emacs.d/site-lisp/")
- (front-context-string . "ac-company.el\n  ")
- (rear-context-string . "7K Feb 22 21:45 ")
- (position . 148))
-("dotfiles"
- (filename . "~/Dropbox/REPO/GIT/dotfiles/")
- (front-context-string . "ChangeLog\n  -rw-")
- (rear-context-string . "5K Mar 21 02:13 ")
- (position . 146))
-("FLV"
- (filename . "~/Dropbox/FLV/")
- (front-context-string . "Classical\n  drwx")
- (rear-context-string . "8B Mar 20 22:41 ")
- (position . 130))
-("org-capture-last-stored"
- (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** SY说去华尔街得英文好.")
- (rear-context-string . " :IDEA:\n** IDEA\n")
- (position . 249))
-("org-refile-last-stored"
- (filename . "~/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** Todo可以重复, 重复")
- (rear-context-string . " :IDEA:\n** IDEA\n")
- (position . 249))
-("Downloads"
- (filename . "~/Downloads/")
- (front-context-string . "Emacs-23.3-unive")
- (rear-context-string . "1M Mar 10 16:52 ")
- (position . 132))
+ (time 20034 57625 582286)
+ (created 20034 57625 582286)
+ (position . 1411)
+ (end-position . 1411))
 )

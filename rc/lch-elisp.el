@@ -1,10 +1,11 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
-(require 'leisureread)
-(global-set-key (kbd "C-.") 'leisureread-insert-next-line)
-(global-set-key (kbd "C-,") 'leisureread-insert-previous-line)
-(global-set-key (kbd "C-'") 'leisureread-clear-line)
+;; FIXME: It wrote ~/lch-bmk, which is bad.
+;; (require 'leisureread)
+;; (global-set-key (kbd "C-.") 'leisureread-insert-next-line)
+;; (global-set-key (kbd "C-,") 'leisureread-insert-previous-line)
+;; (global-set-key (kbd "C-'") 'leisureread-clear-line)
 
 ;>---- bm mode ----<;
 (setq bm-restore-repository-on-load t)
@@ -16,7 +17,6 @@
 (global-set-key (kbd "<f6> <f5>") 'bm-previous)
 (global-set-key (kbd "M-<f6>") 'bm-previous)
 (global-set-key (kbd "C-<f6>") 'bm-next)
-
 ;; make bookmarks persistent as default
 (setq-default bm-buffer-persistence t)
 
@@ -35,8 +35,6 @@
 (add-hook 'kill-emacs-hook '(lambda nil
                               (bm-buffer-save-all)
                               (bm-repository-save)))
-;>---- bookmark+ mode ----<;
-(require 'bookmark+)
 
 ;>---- Evernote mode ----<;
 ;; (require 'evernote-mode)
@@ -56,7 +54,7 @@
 ;>---- Outline mode ----<;
 ;; bind the outline-minor-mode-prefix C-c @ to C-o
 (global-unset-key (kbd "C-o"))
-(define-key global-map (kbd "M-o") 'open-line)
+;(define-key global-map (kbd "M-o") 'open-line)
 ;; Set the minor mode prefix to C-o
 (setq outline-minor-mode-prefix (kbd "C-o"))
 
@@ -216,9 +214,8 @@
 ;>-------- Uniquify --------<;
 ;-Make filename unique
 (require 'uniquify)
-(setq
-  uniquify-buffer-name-style 'post-forward
-  uniquify-separator ":")
+(setq uniquify-buffer-name-style 'post-forward
+      uniquify-separator ":")
 
 ;>---------- iBuffer ----------<;
 ;- ibuffer shows a buffer list that allows to perform almost any
