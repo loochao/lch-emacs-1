@@ -5,7 +5,7 @@
   (bookmark-save))
 (bookmark-load bookmark-default-file t t)
 
-(defvar *leisureread-my-book-path* "/Users/LooChao/Dropbox/Library/Miscellaneous/TXT/Culture/Anthology/亦舒/亦舒_喜宝.txt")
+(defvar *leisureread-my-book-path* "leisureread.txt")
 (defvar *leisureread-bookmark-name* "leisureread")
 (defvar *leisureread-window-height* 1)
 
@@ -76,6 +76,4 @@
       (insert (leisureread-decorate-lines text))
       (newline))))
 
-(global-set-key (kbd "C-.") 'leisureread-insert-next-line)
-(global-set-key (kbd "C-,") 'leisureread-insert-previous-line)
-(global-set-key (kbd "C-'") 'leisureread-clear-line)
+(provide 'leisureread)

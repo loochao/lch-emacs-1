@@ -94,6 +94,9 @@
 (define-prefix-command 'm-f2-map)
 (define-key global-map (kbd "M-<f2>") 'm-f2-map)
 
+(define-prefix-command 'm-k-map)
+(define-key global-map (kbd "M-k") 'm-k-map)
+
 (define-prefix-command 'f1-map)
 (define-key global-map (kbd "<f1>") 'f1-map)
 

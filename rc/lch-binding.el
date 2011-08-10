@@ -10,6 +10,8 @@
 
 (define-key global-map (kbd "M-1") 'shell)
 
+(define-key global-map (kbd "M-k M-k") 'kill-this-buffer)
+
 
 ;>-------- F1 --------<;
 (define-key global-map (kbd "<f1> <f1>") 'shell)
@@ -28,7 +30,6 @@
 (define-key global-map (kbd "<f2> o") 'org-mode)
 (define-key global-map (kbd "<f2> O") 'outline-minor-mode)
 (define-key global-map (kbd "<f2> s") 'flyspell-mode)
-(define-key global-map (kbd "<f2> v") 'less-minor-mode)
 (define-key global-map (kbd "<f2> w") 'whitespace-mode)
 
 ;>-------- F3 --------<;
@@ -275,9 +276,9 @@
 ;(define-key global-map (kbd "C-z") 'undo)
 
 (define-key global-map (kbd "C-\\") 'hippie-expand)
-(define-key global-map (kbd "C-,") 'previous-buffer)
-(define-key global-map (kbd "C-.") 'next-buffer)
-(define-key global-map (kbd "C-'") 'other-window)
+;(define-key global-map (kbd "C-,") 'previous-buffer)
+;(define-key global-map (kbd "C-.") 'next-buffer)
+;(define-key global-map (kbd "C-'") 'other-window)
 (define-key global-map (kbd "C-;") 'comment-or-uncomment-region)
 (define-key global-map (kbd "C-/") '(lambda () (interactive)
                                (require 'xwl-wubi)
@@ -324,10 +325,10 @@
 
 (add-hook 'occur-mode-hook
 	  (lambda () (setq truncate-lines t)))
-(define-key global-map (kbd "C-o")
-		'(lambda () (interactive)
-		   (call-interactively 'occur)
-		   (other-window 1)))
+;; (define-key global-map (kbd "C-o")
+;; 		'(lambda () (interactive)
+;; 		   (call-interactively 'occur)
+;; 		   (other-window 1)))
 ; (<f1> p 'process)                                                           ;; => lch-util.el
 (define-key global-map (kbd "<f1> r") 'recentf-open-files)
 (define-key global-map (kbd "<f1> R") 'revert-buffer)

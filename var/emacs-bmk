@@ -3,10 +3,17 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("leisureread"
- (filename . "~/Dropbox/Library/Miscellaneous/TXT/Culture/Anthology/亦舒/亦舒_喜宝.txt")
- (front-context-string . "    邻座的人都被吵醒。皱眉头")
- (rear-context-string . "    “哈哈哈。”她大笑。\n\n")
- (position . 880))
+ (filename . "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt")
+ (buffer-name . "leisureread.txt:leisureread")
+ (front-context-string . ")\n    (let ((dec")
+ (rear-context-string . "ring text \"\\n\"))")
+ (front-context-region-string)
+ (rear-context-region-string)
+ (visits . 0)
+ (time . #1=(20034 57398 469))
+ (created . #1#)
+ (position . 1056)
+ (end-position . 1056))
 ("lch-emacs-rc"
  (filename . "~/Dropbox/.emacs.d/rc/")
  (front-context-string . "lch-alias.el\n  -")

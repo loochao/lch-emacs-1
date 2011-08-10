@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Aug 10 12:52:24 2011
+;; Created Wed Aug 10 15:48:43 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,40 +11,51 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("\\cite" "install-el:" "mkin" "install:" "install" "build" "tar" "hist" "C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs"))
-(setq regexp-search-ring '("lch-" "repository-file" "bm.el" "f7" "resear" "wy" "char" "f1" "w3m-mode" "menu" "<f1>" "f6" "accent" "org" "transition" "here we"))
+(setq regexp-search-ring '("f7" "fc-base" "shell" "outline" "w3m" "M-1" "color" "lch-" "repository-file" "bm.el" "resear" "wy" "char" "f1" "w3m-mode"))
 (setq register-alist '((98 file-query "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" 1756) (97 . "bd \"C-x f\") 'find-file-at-point)") (48 . "")))
-(setq file-name-history '("~/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bm.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bat-mode.el" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Volumes/DATA/Dropbox/.emacs.lib/site-lisp/" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/el-get/el-get/recipes/bookmark+.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/bookmark+/bookmark+.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-dict.el" "/Volumes/DATA/Dropbox/Org/org/iResearch.org" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/misc/flashcard.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/nterm/Makefile" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/newsticker/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/ivan-autoload.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-newsticker.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-keymap.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-ido.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-dictionary.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-calendar.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-auctex.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-abbrev.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/init.el.orig" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/init.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/init/Makefile" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/ivan/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/elisp.mk" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/Makefile" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/jimm/elisp.lch/ido.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/jimm/elisp.lch/README.rdoc" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/evilchelu/evilchelu_dotfiles.lch/bin/chelu/myip" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/evilchelu/evilchelu_dotfiles.lch/bin/chelu/whichcat"))
+(setq file-name-history '("/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt" "/Volumes/DATA/Dropbox/.emacs.d/rc/leisureread.txt" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/doc/loochao-emacs-cheat-sheet.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bookmark+/bookmark+-1.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/flashcard.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-shell.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bm.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-python.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-pgm.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-lisp.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-french.el.orig" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-flyspell.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-erc.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-comint.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/newsticker/Makefile" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/ivan/keyring.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-fun.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-org.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-w3m.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-shell.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-muse.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-load.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/setup.py" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/setup.sh"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el"
-  "lch-elisp.el"
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.el"
+  "leisureread.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  938
-  '(308 nil)
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  442
+  '(2605 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el"
+  "lch-binding.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  18565
+  '(18493 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bm.el"
-  "bm.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  16846
-  '(5137 nil)
   nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
+  "leisureread"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  191
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/")
+  nil)
 
 (desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-env.el"
-  "lch-env.el"
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el"
+  "lch-elisp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  2900
-  '(1 nil)
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  276
+  '(101 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
@@ -61,695 +72,46 @@
   nil)
 
 (desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bat-mode.el"
-  "bat-mode.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-dos)))
-
-(desktop-create-buffer 206
-  nil
-  "el-get"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  153
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/.emacs.lib/site-lisp/el-get/")
-  nil)
-
-(desktop-create-buffer 206
   "/Volumes/DATA/Dropbox/.emacs.d/doc/loochao-emacs-cheat-sheet.tex"
   "loochao-emacs-cheat-sheet.tex"
   'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode hi-lock-mode yas/minor-mode)
-  3545
-  '(3519 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-web.el"
-  "lch-web.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  11564
-  '(11480 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-dict.el"
-  "lch-dict.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1148
-  '(1136 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el"
-  "lch-binding.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  4091
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/org/iResearch.org"
-  "iResearch.org"
-  'org-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  6492
-  '(nil nil)
+  5379
+  '(5337 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
-  "org"
+  "site-lisp"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  4992
-  '(3244 nil)
+  2944
+  '(nil nil)
   t
-  '("/Volumes/DATA/Dropbox/Org/org/")
+  '("/Volumes/DATA/Dropbox/.emacs.d/site-lisp/")
   nil)
-
-(desktop-create-buffer 206
-  nil
-  "Research"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  143
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Org/org/Research/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/misc/flashcard.el"
-  "flashcard.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode view-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  2261
-  '(2211 nil)
-  t
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "misc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  907
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/misc/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "nterm"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  218
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/nterm/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/nterm/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "newsticker"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  220
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/newsticker/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/newsticker/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/ivan-autoload.el"
-  "ivan-autoload.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  131
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-newsticker.el"
-  "ivan-newsticker.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "init"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  3508
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-keymap.el"
-  "ivan-keymap.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  4452
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-ido.el"
-  "ivan-ido.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1906
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-dictionary.el"
-  "ivan-dictionary.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1296
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-calendar.el"
-  "ivan-calendar.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  2312
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-auctex.el"
-  "ivan-auctex.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1428
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-abbrev.el"
-  "ivan-abbrev.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1831
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/init.el.orig"
-  "init.el.orig"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  2629
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "emacs-expert-kit"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  197
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Source"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  505
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "init"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  216
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/init/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/init/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode)
-  1871
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "ivan"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  716
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/ivan/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/ivan/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source/emacs/elisp.mk"
-  "elisp.mk"
-  'makefile-bsdmake-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  607
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-util.el"
-  "lch-util.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  12563
-  '(12299 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  nil
-  "cheat-sheet"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  165
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Documents/loochao-document/cheat-sheet/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-ui.el"
-  "lch-ui.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   nil
   "doc"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  139
+  281
   '(nil nil)
   t
   '("/Volumes/DATA/Dropbox/.emacs.d/doc/")
   nil)
 
 (desktop-create-buffer 206
-  nil
-  "org-7.7"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  338
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "doc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  159
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/.emacs.d/site-lisp/org-7.7/doc/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Education"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  200
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "PU.Master.Thesis"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  1388
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ch-theory"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
-  164
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-theory/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory.tex"
-  "chapter-theory.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode flyspell-mode)
-  3725
-  '(7510 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-intro/ch-intro-temp.tex"
-  "ch-intro-temp.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  7753
-  '(6770 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-dos) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  nil
-  "ch-appendicies"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  167
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-appendicies/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ch-conclusion"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  167
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-conclusion/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ch-experiment"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
-  168
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-experiment/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ch-intro"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
-  233
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-intro/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-intro/chapter-intro.tex"
-  "chapter-intro.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode TeX-PDF-mode flyspell-mode)
-  12664
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-appendicies/appendicies.tex"
-  "appendicies.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-conclusion/futurework.tex"
-  "futurework.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  23
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-conclusion/chapter-conclusion.tex"
-  "chapter-conclusion.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/abstract-inbox.tex"
-  "abstract-inbox.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/Symbols2.tex"
-  "Symbols2.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/lch-pums-thesis.bib"
-  "lch-pums-thesis.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  236
-  '(208 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (TeX-master . t)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-experiment/chapter-experiment.tex"
-  "chapter-experiment.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode yas/minor-mode TeX-PDF-mode bib-cite-minor-mode reftex-mode)
-  1
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/science"
-  "science"
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt"
+  "leisureread.txt"
   'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  1
-  '(420 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/org/iDD.org"
-  "iDD.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  918
-  '(872 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el"
-  "lch-org.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode TeX-PDF-mode)
-  8838
-  '(8838 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/org/iPrv.org"
-  "iPrv.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  18339
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/org/iDea.org"
-  "iDea.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  241
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  1058
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-dos) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/org/Refile.org"
-  "Refile.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode TeX-PDF-mode)
-  30
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/dwa/dwa-emacs/snippets/org-mode/NOTE"
-  "NOTE"
-  'org-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (truncate-lines . t)))
+  '((buffer-file-coding-system . undecided-unix) (truncate-lines)))
 

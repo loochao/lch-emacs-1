@@ -1,15 +1,21 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
+(require 'leisureread)
+(global-set-key (kbd "C-.") 'leisureread-insert-next-line)
+(global-set-key (kbd "C-,") 'leisureread-insert-previous-line)
+(global-set-key (kbd "C-'") 'leisureread-clear-line)
 
 ;>---- bm mode ----<;
 (setq bm-restore-repository-on-load t)
 (setq bm-repository-file (concat emacs-var-dir "/.bm-repository"))
 (require 'bm)
-(global-set-key (kbd "C-<f6>") 'bm-toggle)
-(global-set-key (kbd "<f6> <f6>") 'bm-next)
+(set-face-attribute 'bm-persistent-face nil :background "SlateBlue")
+(global-set-key (kbd "<f6> <f6>") 'bm-toggle)
+(global-set-key (kbd "<f6> <f7>") 'bm-next)
 (global-set-key (kbd "<f6> <f5>") 'bm-previous)
 (global-set-key (kbd "M-<f6>") 'bm-previous)
+(global-set-key (kbd "C-<f6>") 'bm-next)
 
 ;; make bookmarks persistent as default
 (setq-default bm-buffer-persistence t)

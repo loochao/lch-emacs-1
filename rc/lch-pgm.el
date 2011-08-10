@@ -3,11 +3,12 @@
 ;>---- Lisp mode ----<;
 (defun xwl-lisp-mode-hook ()
   ;; (which-func-mode 1)
-;  (eldoc-mode 1)
+  ;(eldoc-mode 1)
 
   (set (make-local-variable 'outline-regexp) ";>---- ") ;FIXME
-  (outline-minor-mode 1)
-
+;  (outline-minor-mode 1)
+;  (unless (string= "*scratch*" (buffer-name))
+;    (outline-minor-mode))
   (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)
   (local-set-key (kbd "<S-tab>") 'lisp-complete-symbol)
   (local-set-key (kbd "C-c C-r") 'eval-region))
@@ -48,7 +49,7 @@
           '(("\\<\\(FIXME\\)" 1 'font-lock-fixme-face t)
 ;            ("\\<\\(TODO\\)"  1 'font-lock-todo-face  t)
             ("\\<\\(LCH\\)"  1 'font-lock-lch-face  t)
-            ("\\<\\(CAUTION\\)"  1 'font-lock-caution-face t)	    	    
+            ("\\<\\(CAUTION\\)"  1 'font-lock-caution-face t)
 	    )))
        xwl-keyword-highlight-modes))
 

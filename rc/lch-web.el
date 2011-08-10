@@ -115,10 +115,12 @@
   (define-key w3m-mode-map (kbd "t") '(lambda() (interactive) (w3m-new-tab) (lch-w3m-goto-url)))
   (define-key w3m-mode-map (kbd "C-t") 'w3m-new-tab)
 ;  (define-key w3m-mode-map (kbd "g") 'lch-w3m-goto-location)
-  (define-key w3m-mode-map (kbd "p") 'w3m-view-previous-page)
-  (define-key w3m-mode-map (kbd "n") 'w3m-view-next-page)
-;  (define-key w3m-mode-map (kbd "b") 'w3m-view-previous-page)
-;  (define-key w3m-mode-map (kbd "f") 'w3m-view-next-page)
+  (define-key w3m-mode-map (kbd "w") 'w3m-view-previous-page)
+  (define-key w3m-mode-map (kbd "e") 'w3m-view-next-page)
+  (define-key w3m-mode-map (kbd "[") 'w3m-view-previous-page)
+  (define-key w3m-mode-map (kbd "]") 'w3m-view-next-page)
+  (define-key w3m-mode-map (kbd "p") 'w3m-previous-buffer)
+  (define-key w3m-mode-map (kbd "n") 'w3m-next-buffer)
   (define-key w3m-mode-map (kbd "d") 'w3m-delete-buffer)
   (define-key w3m-mode-map (kbd "B") '(lambda() (interactive) (w3m-new-tab) (w3m-bookmark-view)))
   (define-key w3m-mode-map (kbd "H") 'w3m-history)
@@ -131,9 +133,6 @@
   (define-key w3m-mode-map (kbd "<tab>") 'w3m-next-anchor)
   (setq truncate-lines nil))
 (add-hook 'w3m-mode-hook 'lch-w3m-mode-hook)
-
-
-
 
 ;>---- Cookie Variables ----<;
 ;; enable cookies (to use sites such as Gmail)

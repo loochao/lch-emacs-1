@@ -127,6 +127,7 @@
 \hline
 \verb!M-1:!      & start shell inside emacs.\\
 \verb!M-g:!      & goto char.\\
+\verb!M-k M-k:!  & kill this buffer.\\
 
 \\
 \hline
@@ -146,6 +147,10 @@
 \hline
 \verb!f2  s:!    & spell-mode toggle.\\
 
+\hline
+\verb!f11 c:!    & lang env gb18030.\\
+\verb!f11 u:!    & lang env utf8.\\
+
 \\
 \hline
 \verb!C-x f:!    & find file at point.\\
@@ -156,10 +161,13 @@
 
 \\
 \hline
-w3m-mode
+w3m-mode\\
 \verb!d:!        & kill curren page.\\
 \verb!hjkl:!     & vim traditional move.\\
 \verb!H:!        & history.\\
+\verb!we:!       & history back/forward.\\
+\verb![]:!       & history back/forward.\\
+\verb!np:!       & next/prev buffer.\\
 
 \end{tabular}
 
@@ -167,7 +175,28 @@ w3m-mode
 \begin{tabular}{@{}ll@{}}
 \verb!artist-mode!        & .\\
 \verb!rainbow-mode!        & .\\
+\verb!whitespace-mode!        & .\\
+\verb!el-doc!        & display help for elisp func.\\
 \end{tabular}
+
+\section{M-x}
+\begin{tabular}{@{}ll@{}}
+\verb!list-colors-display!        & list colors.\\
+\verb!re-builder!        & helper to build reg exp.\\
+\end{tabular}
+
+
+\section{Elegant Colors}
+\begin{tabular}{@{}ll@{}}
+\verb!slateblue!        & .\\
+\end{tabular}
+
+\section{Miscellaneous}
+\begin{tabular}{@{}ll@{}}
+\verb!C-h v features!        & list all the packages loaded.\\
+\verb!leisure read!        & C-. C-, C-'\\
+\end{tabular}
+
 
 Used at the very beginning of a document:
 \verb!\documentclass{!\textit{class}\verb!}!.  Use
