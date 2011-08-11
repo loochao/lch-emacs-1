@@ -251,7 +251,6 @@
 
 (setq org-capture-templates
       '(
-	("1" "1" entry (file+olp (concat org-private-dir "/1.org") "1" "1") "* %? \n%U" :prepend t)
 	("a" "TODO-#A" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#A" "TODO-#A-") "* %? :#A:\n%U" :prepend t)
 ;	("A" "TODO-#A~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#A") "* %? :#A:\n%U" :prepend t)
 	("b" "TODO-#B" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#B" "TODO-#B-") "* %? :#B:\n%U" :prepend t)

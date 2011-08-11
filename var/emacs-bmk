@@ -4,20 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "/Volumes/DATA/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** 暂不加入evernote")
+ (front-context-string . "*** test \n[2011-")
  (rear-context-string . " :IDEA:\n** IDEA\n")
  (position . 249))
-(#("leisureread" 0 11
-   (bmkp-full-record #0))
- (filename . "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt")
- (buffer-name . "leisureread.txt")
- (front-context-string . "                ")
- (rear-context-string . "nning-position)\n")
- (front-context-region-string)
- (rear-context-region-string)
- (visits . 0)
- (time 20034 57625 582286)
- (created 20034 57625 582286)
- (position . 1411)
- (end-position . 1411))
 )

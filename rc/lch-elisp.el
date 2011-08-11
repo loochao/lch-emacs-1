@@ -1,7 +1,8 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
-;; FIXME: It wrote ~/lch-bmk, which is bad.
+;; FIXME: It wrote ~/lch-bmk, which is bad. Besides, it mess up with
+;; the bookmark files, which leads org not working alright.
 ;; (require 'leisureread)
 ;; (global-set-key (kbd "C-.") 'leisureread-insert-next-line)
 ;; (global-set-key (kbd "C-,") 'leisureread-insert-previous-line)

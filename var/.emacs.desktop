@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Aug 10 18:08:19 2011
+;; Created Thu Aug 11 12:23:20 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -13,19 +13,74 @@
 (setq search-ring '("\\cite" "install-el:" "mkin" "install:" "install" "build" "tar" "hist" "C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs"))
 (setq regexp-search-ring '("f7" "fc-base" "shell" "outline" "w3m" "M-1" "color" "lch-" "repository-file" "bm.el" "resear" "wy" "char" "f1" "w3m-mode"))
 (setq register-alist '((98 file-query "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" 1756) (97 . "bd \"C-x f\") 'find-file-at-point)") (48 . "")))
-(setq file-name-history '("/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el" "~/.emacs.bmk" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-conf.el" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/Org/org/iStuff.org" "/Volumes/DATA/Dropbox/Org/org/Softip.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/HDSD/ee.txt" "/Volumes/DATA/Dropbox/Org/org/iDea.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/dictionary/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/excel.sh" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/vi.bat" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt" "/Volumes/DATA/Dropbox/.emacs.d/rc/leisureread.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/doc/loochao-emacs-cheat-sheet.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bookmark+/bookmark+-1.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/flashcard.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-shell.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bm.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-python.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-pgm.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-lisp.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-french.el.orig" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-flyspell.el"))
+(setq file-name-history '("/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/Org/org/1.org" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el" "~/.emacs.bmk" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-conf.el" "/Volumes/DATA/Dropbox/Org/org/iStuff.org" "/Volumes/DATA/Dropbox/Org/org/Softip.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/HDSD/ee.txt" "/Volumes/DATA/Dropbox/Org/org/iDea.org" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/dictionary/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/excel.sh" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/bin/vi.bat" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.txt" "/Volumes/DATA/Dropbox/.emacs.d/rc/leisureread.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/leisureread.el" "/Volumes/DATA/Dropbox/.emacs.d/doc/loochao-emacs-cheat-sheet.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bookmark+/bookmark+-1.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/flashcard.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-shell.el" "/Volumes/DATA/Dropbox/.emacs.d/site-lisp/bm.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/site-lisp/flashcard/fc.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.lib/dotEmacs/emacs-expert-kit/Source_lch/emacs/init/ivan-python.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-pgm.el"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
   "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el"
   "lch-elisp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
-  288
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  2521
   '(78 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  424
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/.emacs.d/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "rc"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  140
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/.emacs.d/rc/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "org"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  137
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/Org/org/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-org.el"
+  "lch-org.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  8838
+  '(8838 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "var"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  279
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Dropbox/.emacs.d/var/")
+  nil)
 
 (desktop-create-buffer 206
   nil
@@ -70,28 +125,6 @@
   nil
   nil
   '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  ".emacs.d"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  424
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/.emacs.d/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "rc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  140
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Dropbox/.emacs.d/rc/")
-  nil)
 
 (desktop-create-buffer 206
   "/Volumes/DATA/Dropbox/Org/org/iDea.org"
