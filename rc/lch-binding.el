@@ -355,7 +355,6 @@
 ;(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)          ;; => lch-util.el
 (define-key global-map (kbd "<f1> W") 'widen)
 (define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
-
 (define-key global-map (kbd "<f1> $") 'toggle-truncate-lines)
 (define-key global-map (kbd "<f1> ^") 'lch-toggle-line-wrapping)             ;; => lch-init.el
 
@@ -365,8 +364,8 @@
 ;;                                (other-window -1)))
 (eval-after-load 'dired
   '(progn
-     (define-key dired-mode-map (kbd "C-o") nil)
-     (define-key dired-mode-map (kbd "M-o") nil)
+;     (define-key dired-mode-map (kbd "C-o") nil)
+;     (define-key dired-mode-map (kbd "M-o") nil)
      ))
 
 ;>-------- Ctrl X Map --------<;
@@ -377,14 +376,14 @@
 ;(global-set-key (kbd "C-x g") 'goto-line)
 ;(define-key global-map (kbd "C-x g") 'magit-status)                          ;; => lch-elisp.el
 
-;>>> lch-dict.el
+;=> lch-dict.el
 ;; (define-key global-map (kbd "M-s") '(lambda ()
 ;;                                (interactive)
 ;;                                (require 'xwl-dictionary)
 ;;                                (call-interactively 'dictionary-search)))
 
 ;>-------- MISC --------<;
-;>>> lch-skeleton.el
+;=> lch-skeleton.el
 ; (define-key global-map (kbd "(") 'skeleton-pair-insert-maybe)
 ; (define-key global-map (kbd "[") 'skeleton-pair-insert-maybe)
 ; (define-key global-map (kbd "{") 'skeleton-pair-insert-maybe)

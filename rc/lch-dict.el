@@ -15,7 +15,7 @@
 (autoload 'global-dictionary-tooltip-mode "dictionary" "Enable/disable dictionary-tooltip-mode for all buffers" t)
 
 (define-key global-map (kbd "<f7> <f6>") 'dictionary-search)
-(define-key global-map (kbd "<f7> <f8>") 'dictionary-match-words)
+;(define-key global-map (kbd "<f7> <f8>") 'dictionary-match-words)
 
 (setq dictionary-default-dictionary "*") ;"wn"
 

@@ -32,6 +32,7 @@
 ;(require 'lch-org-latex)
 (require 'lch-org-export)
 (require 'lch-org-agenda)
+(require 'lch-outline)
 
 (if lch-win32-p (require 'lch-w32))
 (if lch-mac-p (require 'lch-mac))
