@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Aug 16 03:30:54 2011
+;; Created Tue Aug 16 03:44:10 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,18 +11,51 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("\\cite" "install-el:" "mkin" "install:" "install" "build" "tar" "hist" "C-0" "thesis" "lisp-" "--with" "captur" "g" "dire" "emacs"))
-(setq regexp-search-ring '("pp^L-highlight" "pp-" "Volu" "outline-vis" "outline" "tex" "sears" "617" "8" "2^3P" "2^3	" "gamma_{tot" "i\\." "off-d" "sim" "matt"))
+(setq regexp-search-ring '("outl" "pp^L-highlight" "pp-" "Volu" "outline-vis" "outline" "tex" "sears" "617" "8" "2^3P" "2^3	" "gamma_{tot" "i\\." "off-d" "sim"))
 (setq register-alist '((98 file-query "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" 1756) (97 . "bd \"C-x f\") 'find-file-at-point)") (48 . "")))
-(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/rc/" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/site-lisp/pp-c-l.el" "/Users/LooChao/Dropbox/.emacs.d/rc/dotEmacs" "~/Dropbox/.emacs.d/rc/lch-emms.el" "~/Dropbox/.emacs.d/rc/" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/" "~/Dropbox/Org/privateiPrv.org" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/Dropbox/Org/org/iPU.org" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-inbox.elc" "~/Dropbox/.emacs.d/rc/lch-env.el" "~/Dropbox/.emacs.d/rc/dotEmacs~" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-web.el" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-outline.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-conf.el" "/Volumes/DATA/Dropbox/Org/org/iDea.org" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-custom.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-env.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-elisp.el" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory.tex" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory-inbox.tex"))
+(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-outline.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/Dropbox/.emacs.d/rc/elisp_bak.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-alias.el" "~/Dropbox/.emacs.d/rc/" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/rc/" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/site-lisp/pp-c-l.el" "/Users/LooChao/Dropbox/.emacs.d/rc/dotEmacs" "~/Dropbox/.emacs.d/rc/lch-emms.el" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/privateiPrv.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/Dropbox/Org/org/iPU.org" "~/Dropbox/.emacs.d/rc/lch-inbox.elc" "~/Dropbox/.emacs.d/rc/lch-env.el" "~/Dropbox/.emacs.d/rc/dotEmacs~" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-web.el" "/Volumes/DATA/Dropbox/.emacs.d/var/.bm-repository" "/Volumes/DATA/Dropbox/.emacs.d/var/emacs-bmk" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-outline.el" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-conf.el" "/Volumes/DATA/Dropbox/Org/org/iDea.org" "/Volumes/DATA/Dropbox/.emacs.d/rc/lch-binding.el"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-outline.el"
+  "lch-outline.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "rc"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  3614
+  '(265 nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
+  nil)
+
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
   "lch-elisp.el"
   'emacs-lisp-mode
   '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
-  244
-  '(206 nil)
+  2797
+  '(79 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-alias.el"
+  "lch-alias.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  2006
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
@@ -48,17 +81,6 @@
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "rc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  141
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
-  nil)
 
 (desktop-create-buffer 206
   nil
@@ -136,17 +158,6 @@
   nil
   nil
   '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-env.el"
-  "lch-env.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
-  908
-  '(879 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/Org/org/iLog.org"
