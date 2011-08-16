@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ byte-recompile-directory
  cd
  lm
  5x5
  afm
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (byte-recompile-directory . 2)
 )
