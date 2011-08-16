@@ -2,40 +2,34 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/LooChao/Dropbox/Org/" . "org/")
  ("/Users/LooChao/Dropbox/.emacs.d/" . "rc/")
- ("/Users/LooChao/Dropbox/" . "Org/")
+ ("/Users/LooChao/Dropbox/" . ".emacs.d/")
  ("/Users/LooChao/" . "Dropbox/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/LooChao/Dropbox/Org/org/"
  "/Users/LooChao/Dropbox/.emacs.d/rc/"
  "/Users/LooChao/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "iPU.org"
+ "dotEmacs"
  "test.py"
  "lch-env.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/LooChao/Dropbox/Org/org/" (20041 29951) "USLife.org" "Unix.org" "Travel.org" "Sports.org" "Softip.org_archive" "Softip.org" "Sociology.org" "Society.org" "Sitemap.org" "Science.org" "Rsch/" "Research/" "Refile.org" "Programming.org" "Programming/" "Private.org" "Politics.org" "Physics.org_archive" "Physics.org" "Physics/" "Philosophy.org" "Pearl.org_archive" "Pearl.org" "Opera.org" "Music.org" "Movie.org" "Miscellaneous.org" "Methodology.org" "MechanicalSE.org" "Mathematics.org" "ltxpng/" "Lifetip.org_archive" "Lifetip.org" "Life.org" "Library.org" "library/" "Latex/" "iTHU.org" "iStuff.org_archive" "iStuff.org" "iResearch.org" "iResearch.html" "iResearch/" "iPU.org" "iPrv.org_archive_archive" "iPrv.org_archive_2" "iPrv.org_archive" "iPrv.org" "index.org" "image/" "iLog.org" "iDea.org_archive" "iDea.org" "iDD.org" "iCount.org_archive" "iCount.org" "Humor.org" "Html.org" "History.org_archive" "History.org" "History/" "Fiction.org" "fashion.stylist.org" "English.org" "Emacs.org_archive" "Emacs.org" "Emacs/" "ElectricalSE.org" "Economy.org" "data/" "Culture.org" "Culture/" "Cookery.org" "ComputerSE.org" "Career.org" "Career/" "Bib-Edu.org" "BBall.Team.Reimbursement.org" "Art-Ent.org_archive" "Art-Ent.org" "Archive/" "../" "./")
+ ("/Users/LooChao/Dropbox/.emacs.d/rc/" (20042 1319) "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.elc" "lch-template.el" "lch-startup.elc" "lch-startup.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-outline.elc" "lch-outline.el" "lch-other-conf.elc" "lch-other-conf.el" "lch-org.elc" "lch-org.el" "lch-org-latex.elc" "lch-org-latex.el" "lch-org-export.elc" "lch-org-export.el" "lch-org-agenda.elc" "lch-org-agenda.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-auto-mode.elc" "lch-auto-mode.el" "lch-aquamacs.elc" "lch-aquamacs.el" "lch-aqua-custom.elc" "lch-aqua-custom.el" "lch-alias.elc" "lch-alias.el" "dotEmacs" "../" "./")
 
- ("/Users/LooChao/Dropbox/Org/" (20041 23124) "var/" "tmp/" "template/" "public_html/" "privateiPrv.org" "private_html/" "org/" ".svn/" ".org-timestampsWorg-notes.cache" ".org-timestampspublic-static.cache" ".org-timestampspublic-notes.cache" ".org-timestampsPrivate.cache" ".org-timestampsorg-static.cache" ".org-timestampsorg-notes.cache" ".org-timestamps/" "../" "./")
-
- ("/Users/LooChao/Dropbox/" (20041 59468) "Wallpaper/" "TXT/" "This is your Dropbox.txt" "Temporary/" "Software/" "Share/" "Research/" "Repository/" "Public/" "Programming/" "Program/" "Private/" "Photos/" "Org_110608.zip" "Org/" "Music/" "Movie/" "MobileOrg/" "Library_I/" "Library/" "iPad intro.pdf" "Icon
-" "emacs.d_110608.zip" "Education/" "Download/" "Documents/" "Android intro.pdf" ".vimperator.d/" ".emacs.lib/" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
-
- ("/Users/LooChao/Dropbox/.emacs.d/" (20041 23896) "var/" "tramp" "site-lisp/" "server/" "README" "rc/" "library/" "info/" "doc/" "bin/" ".gitignore" ".git/" ".DS_Store" "../" "./")
-
- ("/Users/LooChao/Dropbox/.emacs.d/rc/" (20041 39547) "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.el" "lch-startup.elc" "lch-startup.el" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-outline.elc" "lch-outline.el" "lch-other-conf.el" "lch-org.elc" "lch-org.el" "lch-org-latex.el" "lch-org-export.elc" "lch-org-export.el" "lch-org-agenda.elc" "lch-org-agenda.el" "lch-mouse.el" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-el-get.elc" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-auto-mode.elc" "lch-auto-mode.el" "lch-aquamacs.elc" "lch-aquamacs.el" "lch-aqua-custom.elc" "lch-aqua-custom.el" "lch-alias.elc" "lch-alias.el" "dotEmacs.elc" "dotEmacs" "../" "./")
+ ("/Users/LooChao/Dropbox/.emacs.d/" (20042 1613) "var/" "tramp" "site-lisp/" "server/" "README" "rc/" "library/" "info/" "doc/" "bin/" ".gitignore" ".git/" "../" "./")
 
  ("/Users/LooChao/" (19904 32723) "vimperator/" "Sites/" "Python/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine_bak/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".subversion/" ".stardict/" ".ssh/" ".srecode/" ".sh_history" ".session" ".profile" ".mplayer/" ".matlab/" ".macports/" ".local/" ".ido.last" ".gitconfig" ".fontconfig/" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs-recentf" ".emacs" ".DS_Store" ".dropbox/" ".diskorderbash" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" "../" "./")
+
+ ("/Users/LooChao/Dropbox/" (19904 43817) "Zotero_Backup/" "Zotero/" "WALLPAPER/" "Vimperator.zip" "vimperator/" "TXT/" "TMP/" "This is your Dropbox.txt" "SYNC/" "Summer.School/" "SOFT/" "SCAN/" "RESEARCH/" "REPO/" "PUC/" "Public/" "PU.Soccer.Hunter.csv" "Private/" "Picture/" "Photos/" "PGM/" "org/" "MUSIC/" "MOVIE/" "MobileOrg/" "LIB/" "iPad intro.pdf" "INBOX/" "Icon
+" "FLV/" "FirefoxPT/" "EDU/" "DOWNLOAD/" "Documents/" "COS333/" "COMIC/" "AUDIO/" "Android intro.pdf" "110330_FirefoxPT4.0.zip" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

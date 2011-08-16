@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ bookmark-jump
  byte-recompile-directory
  cd
  lm
  5x5
  afm
  arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
- (byte-recompile-directory . 2)
+ (byte-recompile-directory . 4)
+ (bookmark-jump . 1)
 )

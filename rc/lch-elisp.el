@@ -1,6 +1,11 @@
-                                        ; -*- coding: utf-8 -*-
+; -*- coding: utf-8 -*-
+;>========== ELISP.EL -- LISP PACKAGES ==========<;
+(require 'pp-c-l)
+(setq pp^L-^L-string
+      "----------------")
+(set-face-attribute 'pp^L-highlight nil :foreground "Black" :background "Orange")
+(pretty-control-l-mode 1)
 
-                                        ;>========== ELISP.EL -- LISP PACKAGES ==========<;
 ;; FIXME: It wrote ~/lch-bmk, which is bad. Besides, it mess up with
 ;; the bookmark files, which leads org not working alright.
 ;; (require 'leisureread)
