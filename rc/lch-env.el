@@ -29,7 +29,6 @@
       (setenv "PATH" (concat (getenv "PATH")
 			     ":/usr/texbin"
 			     ":/opt/local/bin"
-                             ;"/Volumes/DATA/Macports/bin"
 			     ":/Applications/Documents/Emacs.app/Contents/MacOS/bin"
 			     ))
       (setq exec-path (append exec-path
@@ -54,6 +53,7 @@
 
 ;>---------- VAR ----------<;
 (defvar emacs-lib-dir (concat emacs-dir "/library"))
+(defvar emacs-doc-dir (concat emacs-dir "/doc"))
 (defvar git-dir (concat dropbox-path "/REPO/GIT") "git dir")
 (setq emacs-var-dir (concat emacs-path "/.emacs.d/var"))
 (if lch-aquamacs-p

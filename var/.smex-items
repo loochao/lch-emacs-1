@@ -1,18 +1,16 @@
 
 ;; ----- smex-history -----
 (
- outline-minor-mode
- bookmark-jump
- byte-recompile-directory
+ open-for-stefan
  cd
  lm
  5x5
  afm
+ arp
+ dbx
 )
 
 ;; ----- smex-data -----
 (
- (byte-recompile-directory . 4)
- (bookmark-jump . 1)
- (outline-minor-mode . 1)
+ (open-for-stefan . 2)
 )

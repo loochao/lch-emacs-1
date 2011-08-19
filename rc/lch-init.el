@@ -4,6 +4,9 @@
 ;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
 
+(when window-system
+  (global-unset-key "\C-z"))
+
 (setq enable-local-eval t
       modeline-click-swaps-buffers t
       undo-limit 100000

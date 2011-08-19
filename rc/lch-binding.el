@@ -108,10 +108,13 @@
 (define-key global-map (kbd "<f9> 3") (lambda() (interactive) (dired (concat org-source-dir "/public_html"))))
 (if (boundp 'dropbox-path)
     (define-key global-map (kbd "<f9> 4") (lambda() (interactive) (dired dropbox-path))))
+(define-key global-map (kbd "<f9> 5") (lambda() (interactive) (dired emacs-doc-dir)))
+
 (define-key global-map (kbd "<f9> a") (lambda() (interactive) (find-file (concat org-source-dir "/Art-Ent.org"))))
 (define-key global-map (kbd "<f9> b") (lambda() (interactive) (find-file (concat org-source-dir "/Bib-Edu.org"))))
 (define-key global-map (kbd "<f9> C") (lambda() (interactive) (find-file (concat org-source-dir "/Culture.org"))))
 (define-key global-map (kbd "<f9> C-c") (lambda() (interactive) (find-file (concat org-source-dir "/ComputerSE.org"))))
+(define-key global-map (kbd "<f9> d") (lambda() (interactive) (find-file (concat emacs-doc-dir "/loochao-cheat-sheet.tex"))))
 (define-key global-map (kbd "<f9> e") (lambda() (interactive) (find-file (concat org-source-dir "/Emacs.org"))))
 (define-key global-map (kbd "<f9> E") (lambda() (interactive) (find-file (concat org-source-dir "/English.org"))))
 (define-key global-map (kbd "<f9> C-e") (lambda() (interactive) (find-file (concat org-source-dir "/Economy.org"))))
@@ -246,11 +249,12 @@
 ;(define-key global-map (kbd "<f11> l") 'toggle-line-spacing)                  ;; => lch-ui.el
 (define-key global-map (kbd "<f11> L") 'setnu-mode)
 ;(define-key global-map (kbd "<f11> m") 'w32-maximize-frame)                   ;; => lch-ui.el
+(define-key global-map (kbd "<f11> n") 'narrow-to-region)
 (define-key global-map (kbd "<f11> M") 'menu-bar-mode)
 (define-key global-map (kbd "<f11> r") 'ruler-mode)
 (define-key global-map (kbd "<f11> t") 'tool-bar-mode)
 (define-key global-map (kbd "<f11> T") 'tabbar-mode)
-;(define-key global-map (kbd "<f1> w") 'lch-toggle-line-wrapping)              ;; => lch-init.el
+(define-key global-map (kbd "<f11> w") 'widen)
 (define-key global-map (kbd "<f11> W") 'whitespace-mode)
 
 ;>-------- F12 --------<;

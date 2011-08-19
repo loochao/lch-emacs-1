@@ -13,7 +13,6 @@
   (local-set-key (kbd "<S-tab>") 'lisp-complete-symbol)
   (local-set-key (kbd "C-c C-r") 'eval-region))
 
-
 (add-hook 'lisp-mode-hook 'xwl-lisp-mode-hook)
 (add-hook 'lisp-interaction-mode-hook 'xwl-lisp-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'xwl-lisp-mode-hook)
