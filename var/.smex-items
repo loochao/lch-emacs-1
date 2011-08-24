@@ -1,7 +1,7 @@
 
 ;; ----- smex-history -----
 (
- open-for-stefan
+ color-theme-tomorrow
  cd
  lm
  5x5
@@ -12,5 +12,5 @@
 
 ;; ----- smex-data -----
 (
- (open-for-stefan . 2)
+ (color-theme-tomorrow . 1)
 )

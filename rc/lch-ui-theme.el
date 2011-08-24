@@ -22,6 +22,11 @@
 (require 'color-theme-zenburn)
 (define-key global-map (kbd "<f11> <f8>") (lambda() (interactive) (color-theme-zenburn) (message "color theme zenburn selected")))
 
+(require 'color-theme-tomorrow)
+(require 'color-theme-tomorrow-night)
+(require 'color-theme-tomorrow-night-eighties)
+(require 'color-theme-tomorrow-night-bright)
+
 ;(require 'color-theme-dimilar)
 ;(define-key global-map (kbd "<f11> <f9>") (lambda() (interactive) (color-theme-dimilar) (message "color theme dimilar selected")))
 
@@ -40,7 +45,7 @@
       (cursor-color . "burlywood")
       (foreground-color . "MistyRose3")
       (mouse-color . "sienna1"))
-     
+
      (modeline ((t (:background "DarkRed" :foreground "white" :box (:line-width 1 :style released-button)))))
      (modeline-mousable ((t (:background "DarkRed" :foreground "white"))))
      (modeline-mousable-minor-mode ((t (:background "DarkRed" :foreground "white"))))
@@ -51,7 +56,7 @@
 
      (border ((t (:background "black"))))
      (buffer-menu-buffer ((t (:bold t :weight bold))))
-     (minibuffer-prompt ((t (:bold t :foreground "DarkSeaGreen"))))     
+     (minibuffer-prompt ((t (:bold t :foreground "DarkSeaGreen"))))
      (bookmark-menu-heading ((t (:foreground "#ffff55"))))
 
      (font-lock-comment-delimiter-face ((t (:foreground "#999988"))))
@@ -80,7 +85,7 @@
      (ac-selection-face ((t (:background "SlateBlue" :foreground "White"))))
      (ac-yasnippet-candidate-face ((t (:background "sandybrown" :foreground "black"))))
      (ac-yasnippet-selection-face ((t (:background "coral3" :foreground "white"))))
-     
+
      (yas/field-highlight-face ((t (:background "DimGrey"))))
      (yas/mirror-highlight-face ((t (:background "gray22"))))
 
@@ -129,11 +134,11 @@
      (org-level-7 ((t (:foreground "#f3715c"))))
      (org-level-8 ((t (:foreground "#7ec0ee"))))
 ;     (org-link ((t (:foreground "#cccccc" :underline t))))
-     (org-link ((t (:foreground "Cyan" :underline nil))))     
+     (org-link ((t (:foreground "Cyan" :underline nil))))
      (org-meta-line ((t (:foreground "#95917e"))))
      (org-mode-line-clock ((t (nil))))
      (org-property-value ((t (nil))))
-     (org-quote ((t (:inherit org-block :slant italic))))     
+     (org-quote ((t (:inherit org-block :slant italic))))
      (org-scheduled ((t (:foreground "PaleGreen"))))
      (org-scheduled-previously ((t (:foreground "chocolate1"))))
      (org-scheduled-today ((t (:foreground "PaleGreen"))))
@@ -146,7 +151,7 @@
      (org-todo ((t (:bold t :foreground "#ff5555" :weight bold))))
      (org-upcoming-deadline ((t (:foreground "chocolate1"))))
      (org-verbatim ((t (:foreground "#555555" :underline t))))
-     (org-verse ((t (:inherit org-block :slant italic))))     
+     (org-verse ((t (:inherit org-block :slant italic))))
      (org-warning ((t (:bold t :foreground "#ff6600" :weight bold))))
 
      (outline-1 ((t (:foreground "#FCAF3E"))))
@@ -223,10 +228,10 @@
 
      (ido-first-match ((t (:foreground "pink"))))
 ;     (ido-incomplete-regexp ((t (:bold t :foreground "#ff6600" :weight bold))))
-     (ido-incomplete-regexp ((t (:bold t :foreground "SlateBlue" :weight bold))))     
+     (ido-incomplete-regexp ((t (:bold t :foreground "SlateBlue" :weight bold))))
      (ido-indicator ((t (:background "red1" :foreground "yellow1" :width condensed))))
-     (ido-only-match ((t (:foreground "SlateBlue"))))     
-     (ido-subdir ((t (:foreground "Peru"))) )   
+     (ido-only-match ((t (:foreground "SlateBlue"))))
+     (ido-subdir ((t (:foreground "Peru"))) )
 
      )))
 
