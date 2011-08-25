@@ -1,0 +1,117 @@
+#+STARTUP: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [10pt, t]
+#+LATEX_HEADER: \usepackage{APC524b}
+#+BEAMER_FRAME_LEVEL: 3
+#+TITLE: C
+#+AUTHOR: Robert Lupton
+#+DATE: 23 September 2010
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %8BEAMER_envargs(Env Args) %4BEAMER_col(Col) %8BEAMER_extra(Extra)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+#+OPTIONS: toc:t
+
+* Introduction
+** types
+*** Introduction
+C was designed as a system programming language, to remove the necessity of writing operating systems in
+assembler.  It's one of the large family of languages deriving from Algol.
+
+\pause
+You've seen ``hello world'' before:
+#+INCLUDE src/hello.c src C
+\pause
+
+This example comes from "The C Programming Language" by Brian Kernighan and Dennis Ritchie ("K&R")
+
+*** Declarations
+ All variables must be declared before they can be used:
+#+BEGIN_SRC c
+ char c = 'a';
+ char *s = "I am a string";
+ double d = 1;
+ float f = 1.0f;
+ int i = 101010101;
+ long l = 10;
+ short s = 10;
+#+END_SRC
+\pause
+"string" is spelt \code{char *} for reasons that I'll explain in a bit.
+\pause
+\code{short} is actually a shorthand for \code{short int} (\code{long} means \code{long int}).
+You can also define integral types (\code{char} and \code{int}) as being \code{signed} or \code{unsigned}.
+\pause One especially useful qualifier is \code{const}:
+#+BEGIN_SRC c
+const unsigned long bad = 0xdeadbeef00000000;
+#+END_SRC
+
+\pause An unqualified \code{int} is supposed to be the most efficient integral type on your machine, and is
+what you'd generally use unless there was some reason not to.
+
+*** Declaring your own types
+C allows you to use your own name for a type:
+#+BEGIN_SRC c
+typedef unsigned short U16;
+#+END_SRC
+\pause
+Why would I want to do this?
+
+\pause
+CCD image data is typically created using a 16-bit A/D converter, so
+the natural type for a single pixel is a 2-byte integer.
+
+But C doesn't tell me how large an \code{int} is; I
+can find out (using \code{sizeof(int)}) but I don't want to have to change all my declarations when I move
+to a new system.
+
+\pause
+Actually, these days, I could say:
+#+BEGIN_SRC c
+#include <stdint.h>
+typedef uint16_t U16;
+#+END_SRC
+but even that only works if the processor actually has an unsigned 16-bit type.
+
+*** Declarations
+You can mix code and declarations:
+#+BEGIN_SRC c
+  int pwv = 0;                            // Precipitable Water Vapour
+  /*
+   * Estimate the PWV based on the altitude
+   */
+  ...;
+  /*
+   * Given that estimate, find a better value
+   */
+  const int pwv0 = pwv;                   /* initial estimate of pwv */
+#+END_SRC
+\pause
+The ability to declare variables when they are first needed means that you can usually initialize them too;
+when possible, make them \code{const}.
+
+*** Scope
+A variable's /scope/ is the part of the programme it may be referenced from;  in C, a variable's scope
+is the nearest set of braces (\code{\{\}}), a /block/.  If it isn't in a block, a variable is visible globally
+(i.e. it'll show up when you run \code{nm} on your object file).  If this isn't what you wanted, you can:
+ \pause
+ - Move it into a function --- remember, global variables should usually be avoided
+ \pause
+ - Label it \code{static} which makes it only visible within the file
+ \pause
+ - Decide that it really /must/ be globally visible, and declare it in a header file:
+  #+BEGIN_SRC c
+  extern int nread;	// Number of times I've read from a file
+  #+END_SRC
+
+\pause
+It is generally a good idea to declare a variable in as restricted a scope as possible (the "No Globals" rule
+is a special case of this one).
+
+
+
+
+* Test
+** test2
+*** test
+1
+*** test
+2

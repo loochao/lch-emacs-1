@@ -1,0 +1,192 @@
+% Created 2011-08-25 Thu 02:55
+\documentclass[10pt, t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{APC524b}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{C}
+\author{Robert Lupton\thanks{LooChao@gmail.com}}
+\date{23 September 2010}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Outline}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\label{sec-1}
+\subsection{types}
+\label{sec-1-1}
+\begin{frame}
+\frametitle{Introduction}
+\label{sec-1-1-1}
+
+C was designed as a system programming language, to remove the necessity of writing operating systems in
+assembler.  It's one of the large family of languages deriving from Algol.
+
+\pause
+You've seen ``hello world'' before:
+CANNOT INCLUDE FILE src/hello.c
+\pause
+
+This example comes from ``The C Programming Language'' by Brian Kernighan and Dennis Ritchie (``K\&R'')
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declarations}
+\label{sec-1-1-2}
+
+ All variables must be declared before they can be used:
+
+\begin{verbatim}
+char c = 'a';
+char *s = "I am a string";
+double d = 1;
+float f = 1.0f;
+int i = 101010101;
+long l = 10;
+short s = 10;
+\end{verbatim}
+
+
+
+\pause
+``string'' is spelt \code{char *} for reasons that I'll explain in a bit.
+\pause
+\code{short} is actually a shorthand for \code{short int} (\code{long} means \code{long int}).
+You can also define integral types (\code{char} and \code{int}) as being \code{signed} or \code{unsigned}.
+\pause One especially useful qualifier is \code{const}:
+
+\begin{verbatim}
+const unsigned long bad = 0xdeadbeef00000000;
+\end{verbatim}
+
+
+
+
+\pause An unqualified \code{int} is supposed to be the most efficient integral type on your machine, and is
+what you'd generally use unless there was some reason not to.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declaring your own types}
+\label{sec-1-1-3}
+
+C allows you to use your own name for a type:
+
+\begin{verbatim}
+typedef unsigned short U16;
+\end{verbatim}
+
+
+
+\pause
+Why would I want to do this?
+
+\pause
+CCD image data is typically created using a 16-bit A/D converter, so
+the natural type for a single pixel is a 2-byte integer.
+
+But C doesn't tell me how large an \code{int} is; I
+can find out (using \code{sizeof(int)}) but I don't want to have to change all my declarations when I move
+to a new system.
+
+\pause
+Actually, these days, I could say:
+
+\begin{verbatim}
+#include <stdint.h>
+typedef uint16_t U16;
+\end{verbatim}
+
+
+
+but even that only works if the processor actually has an unsigned 16-bit type.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Declarations}
+\label{sec-1-1-4}
+
+You can mix code and declarations:
+
+\begin{verbatim}
+int pwv = 0;                            // Precipitable Water Vapour
+/*
+ * Estimate the PWV based on the altitude
+ */
+...;
+/*
+ * Given that estimate, find a better value
+ */
+const int pwv0 = pwv;                   /* initial estimate of pwv */
+\end{verbatim}
+
+
+
+\pause
+The ability to declare variables when they are first needed means that you can usually initialize them too;
+when possible, make them \code{const}.
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Scope}
+\label{sec-1-1-5}
+
+A variable's \emph{scope} is the part of the programme it may be referenced from;  in C, a variable's scope
+is the nearest set of braces (\code{\{\}}), a \emph{block}.  If it isn't in a block, a variable is visible globally
+(i.e. it'll show up when you run \code{nm} on your object file).  If this isn't what you wanted, you can:
+ \pause
+\begin{itemize}
+\item Move it into a function --- remember, global variables should usually be avoided
+\end{itemize}
+ \pause
+\begin{itemize}
+\item Label it \code{static} which makes it only visible within the file
+\end{itemize}
+ \pause
+\begin{itemize}
+\item Decide that it really \emph{must} be globally visible, and declare it in a header file:
+
+\begin{verbatim}
+extern int nread;     // Number of times I've read from a file
+\end{verbatim}
+\end{itemize}
+
+\pause
+It is generally a good idea to declare a variable in as restricted a scope as possible (the ``No Globals'' rule
+is a special case of this one).
+\end{frame}
+\section{Test}
+\label{sec-2}
+\subsection{test2}
+\label{sec-2-1}
+\begin{frame}
+\frametitle{test}
+\label{sec-2-1-1}
+
+1
+\end{frame}
+\begin{frame}
+\frametitle{test}
+\label{sec-2-1-2}
+
+2
+\end{frame}
+
+\end{document}

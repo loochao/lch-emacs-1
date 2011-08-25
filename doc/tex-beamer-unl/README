@@ -1,0 +1,10 @@
+-*- coding:utf-8; mode:org -*-
+
+** Modification log of UNLTheme.sty
+*** UNL.pdf changed to logo.pdf
+Just put any pdf you want to show on the left corner, then it's OK.
+
+*** Change the height of the horizontal bar
+| \beamer@headheight=2.5\baselineskip |
+| ->                                  |
+| \beamer@headheight=1.5\baselineskip |
