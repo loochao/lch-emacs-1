@@ -1,0 +1,17 @@
+-*- coding:utf-8; mode:org; -*-
+
+** Usage
+*** tex -> dvi -> ps -> pdf
+$ latex   lch-pums-thesis (Not latex lch-pums-thesis.tex)
+$ bibtex  lch-pums-thesis
+$ latex   lch-pums-thesis
+
+Figure has to be in eps format
+*** tex -> pdf
+$ pdflatex  lch-pums-thesis
+$ bibtex    lch-pums-thesis
+$ pdflatex  lch-pums-thesis
+
+Be aware, there's no suffixes in those commands.
+Figure can be pdf png jpg, etc.
+

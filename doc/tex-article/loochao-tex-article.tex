@@ -1,0 +1,571 @@
+\documentclass[preprint,preprintnumbers]{revtex4}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Friday, December 11, 2009 15:13:58}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+\DeclareMathAlphabet{\mathscr}{OT1}{pzc}
+                                 {m}{it}
+
+\begin{document}
+
+\title{ loochao-tex-article}
+\author{Chao Lu}
+\affiliation{Princeton University, Princeton, NJ 08544-5263}
+
+\begin{abstract}
+abstract goes in here
+\end{abstract}
+
+\maketitle
+
+\section{Section1}
+
+Recent news that X-ray free electron laser at SLAC (Stanford) became
+operational at $0.15$ nm provided tremendous excitement for scientists in
+various disciplines. Very large efforts made by many researchers, engineers
+and technicians over a dozen of years at a very substantial cost is finally
+paying off. The very large cost of such a large \textquotedblleft scientific
+tool\textquotedblright\ did not diminish the importance of the achievement,
+which is expecting to have a profound impact on the studies in many fields
+such as crystallography, and condense matter, in general, and high
+resolution microscopy of biological elements, etc. in particular. However,
+very large cost and size, resulting in low flexibility regarding the use of
+this important device has forced researchers to search for a more portable,
+less expensive XUV and X-ray devices, which can be used in individual
+researchers laboratories for preparatory work before going into these larger
+facilities.
+
+In particular, a portable X-ray laser operating in a transient regime at $%
+13.5$ nm has been demonstrated in Suckewer's group \cite{Koro96} (see Fig. %
+\ref{Li}). The laser uses H-like Li ions as an active medium which are
+excited by ionization-recombination process in a microcapillary. The
+excitation mechanism is the following. First, a strong $250$ $fs$ laser
+pulse (power density 10$^{17}$W/cm$^{2}$) creates nonequilibrium plasma of Li%
+$^{3+}$ ions and electrons. Electron density is $10^{19}-10^{20}$ cm$^{-3}$.
+The ion-electron recombination occurs on a time scale faster then $1$ ps
+which creates Li$^{2+}$ (H-like) ions in highly excited states (large
+principle quantum number $n$). By collisions atoms are transferred to states
+with smaller $n$ on a few ps time scale. For proper density population
+inversion between the level $n=2$ and the ground state ($n=1$) is created
+for $10-100$ ps. This results in lasing on the wavelength of the $n=2$ to $%
+n=1$ transition ($13.5nm$) which is measured by a spectrometer. Experimental
+setup and the measured spectrum is shown in the figure \ref{Li}.
+% \begin{figure}[h]
+% \begin{center}
+% \epsfig{figure=Li.eps, angle=270, width=15cm}
+% \end{center}
+% \caption{X-ray lasing in H-like Li ions demonstrated in Suckewer group
+% \protect\cite{Koro96}.}
+% \label{Li}
+% \end{figure}
+
+% \begin{figure}[h]
+% \begin{center}
+% \epsfig{figure=He.eps, angle=270, width=17cm}
+% \end{center}
+% \caption{He energy level diagram taken from Ref. \protect\cite{Drak07}.}
+% \label{He}
+% \end{figure}
+
+As demonstrated in the figure \ref{Li}, a low power $2$ Hz Nd/YAG laser ($100
+$ mJ$,$ $5ns$) was focused with an $f/6$ lens on the entrance of
+microcapillary. Microcapillaries of lengths from $1$ to $5$ $mm$ and
+diameters of $0.3$ $mm$ were made in solid LiF by drilling appropriate
+holes. After a few hundred nsec delay (varied between 300 and 1000 ns), the
+Ti:sapphire $250$ $fs$ laser was fired, whose energy is $50-60$ mJ in a
+repetition rate $2$ Hz. This femto-second laser was tightly focused with the
+same $f/6$ lens onto the plasma at the entrance of the microcapillary
+providing a power density close to $2\times 10^{17}$ $W/{cm}^{2}$. The
+Nd/YAG laser beam was directed to the microcapillary by a near
+100reflectivity mirror, $M_{1}$, and the femto-second laser beam was
+directed by directed by a mirror, $M_{2}$ which is transparent for the $1.06$
+$\mu m$ wavelength of the Nd/YAG laser. From the output spectra, we could
+see the soft X-ray lasing.
+
+In the present research we are trying to make a laser in a similar way,
+however, instead of ions, we want to use neutral He atoms which are easier
+to confine then plasma. Fig. \ref{He} shows He energy level diagram and
+radiative decay times for various transitions. We want to make a laser
+operating at the $2~^{1}$P $\rightarrow 1~^{1}$S transition ($58$ nm). So,
+we need to create population inversion between those levels. We are planning
+to do it in two stages. First, we populate the triplet $2~^{3}\text{S}$
+state by ionization-recombination processes similar to what has been done in
+the Li-ions experiment. Then we transfer population into the singlet $2~^{1}$%
+P state of He by sending short optical laser pulses which yields population
+transfer via the triplet $3~^{3}$D state.
+
+Next I discuss these processes in details.
+
+\section{Preparation of orthohelium}
+
+First we inject an ultrashort high power laser pulse to ionize the He gas.
+Then we turned off the laser and rapid recombination and de-excitation
+follow such that the lowest states of He atoms are prepared according to
+their statistical weights. Hence for the sake of simplicity we take the
+relative population of the triplet $2~^{3}\text{S}$ and singlet $1~^{1}\text{%
+S}$ states to be 3 to 1.
+
+Let me consider the physics of the laser plasma as produced in our Princeton
+lab. We envision a laser plasma created by Keldysh tunneling with a non
+Boltzmann distribution of neutral excited atoms. This involves $\text{He}%
+^{++}\rightarrow \text{He}^{+}\rightarrow \text{He}$ electron capture via
+three-body recombination. Three-body recombination for H-like ions is
+approximately proportional to the forth power of the principal quantum
+number $n^{4}$ and to the square of the electron density as ${N_{e}}^{2}$.
+Hence for sufficiently high initial electron density three-body
+recombination will dominate radiative decay.
+
+However, the collisional ionization from highly excited states is also fast,
+thus in order for three-body recombination rates to dominate ionization
+rates, the recombining plasma should have a low electron temperature $\text{T%
+}_{e}$. For example, for $k_{B}\text{T}_{e}\approx 1$ $eV$, initial electron
+density $N_{e}\approx 2\times 10^{16}$ cm$^{-3}\approx N_{\text{He}^{++}}$
+for fully ionized $\text{He}^{++}$ in quasi-neutral plasma, the equilibrium
+between recombination and ionization processes will be established after a
+few dozen picoseconds at a ratio of $N_{e}/N_{\text{He}}\approx 3\times
+10^{-3}$ for $N_{\text{He}}=10^{16}$ cm$^{-3}$. This ratio becomes even
+smaller ($N_{e}/N_{\text{He}}\approx 10^{-8}$) for $k_{B}\text{T}_{e}\approx
+0.5$ $eV$. In such way one can obtain an essentially neutral gas of excited
+He atoms.
+
+In order to create a fully ionized $\text{He}^{++}$ plasma at low
+temperature, we consider the example of a plasma capillary 10-100 $\mu $m in
+diameter and a few cm long. The tunneling ionization can be used to generate
+the plasma \cite{Keld65,Burn89,avi04,avi07}. In this way one can strip both
+electrons from He atoms without significantly heating the plasma, especially
+for ultra-short laser pulses. The laser intensity needs to be in the order
+of $10^{16}$ W/cm$^{2}$ for efficient tunneling ionization of He to $\text{He%
+}^{+}$ and to $\text{He}^{++}$ according to Keldysh theory \cite{Keld65}.
+For needle like plasma column such intensities can easily be obtained from a
+Ti/Sapphire laser at wavelength $\lambda =0.8$ $\mu $m with $\sim $ $10$ mJ
+energy per pulse in pulses of $50-100$ fs duration with ionization pulse
+propagating in plasma channel. Use of such short pulses is crucial to
+minimize plasma heating. It is important to use laser pulses shorter than
+collision times of electrons in order to minimize plasma heating during the
+ionization process.
+
+The bottom line is that we can create a cold laser plasma which recombines
+to produce an excited neutral gas. In particular the metastable triplet $%
+2~^{3}\text{S}$ (8000 s radiative life time) state will be formed with a
+statistical weight of around 3 compared to the $1^{1}\text{S}$ state. The
+population in the $2~^{3}\text{S}$ state is then transferred to the $3~^{3}%
+\text{D}$ state via the $2~^{3}\text{P}$ levels by dark state adiabatic
+transfer (STIRAP).
+
+\section{Population transfer from $2~^{3}\text{S}$ to $3~^{3}$D via STIRAP
+process}
+
+Robust population transfer from the triplet $2~^{3}\text{S}$ to triplet $%
+3~^{3}\text{D}$ is then made possible by Stimulated Raman Adiabatic Passage
+(STIRAP) \cite{Berg98}. In this technique one subjects the system, whose
+state is $2~^{3}\text{S}$ at $t=0$, to a so called counter intuitive pulse
+sequence with Rabi frequencies $\Omega _{1}$ and $\Omega _{2}$ in which the $%
+\Omega _{1}$ ($2~^{3}\text{P}\rightarrow 3~^{3}\text{D}$) pulse precedes the
+$\Omega _{2}$ ($2~^{3}\text{S}\rightarrow 2~^{3}\text{P}$) pulse. This pulse
+sequence ideally results in a complete transfer of population to the desired
+state $3~^{3}\text{D}$ without necessarily populating the $2~^{3}\text{P}$
+state in the process.
+
+The mechanism of STIRAP is best understood in the dressed state basis in
+which we introduce bright and dark states. Beginning with the dark state
+\begin{equation}
+|0~\rangle =\frac{\Omega _{1}|2~^{3}\text{S}\rangle -\Omega _{2}|3~^{3}\text{%
+D}\rangle }{\sqrt{\Omega _{1}^{2}+\Omega _{2}^{2}}}
+\end{equation}%
+we apply $\Omega _{1}$ before $\Omega _{2}$ so that $|0\rangle \cong |2^{3}%
+\text{S}\rangle $ during the early stages of transfer. Then we adiabatically
+turn on $\Omega _{2}$ while turning off $\Omega _{1}$, such that $|0\rangle
+\cong |3~^{3}\text{D}\rangle $ for large times. The condition of
+adiabaticity implies the following estimate of the required pulse energy
+(see Appendix A)
+
+\begin{equation}
+W\gtrsim 1000\frac{\hbar cS}{\lambda ^{3}\gamma \tau _{\text{pulse}}},
+\label{s3a}
+\end{equation}%
+where $S$ is the cross section area of the pulse, $\tau _{\text{pulse}}$ is
+the pulse duration, $\lambda $ and $\gamma $ are the wavelength and the rate
+of the transition. For the weakest 2$^{3}$P$\rightarrow $2$^{3}$S transition
+$\lambda =1083$ nm and $\gamma =10^{7}$s$^{-1}$. Then for a plasma capillary
+of radius $\sim 0.1$mm and pulse duration $\tau _{\text{pulse}}=1$ ps Eq. (%
+\ref{s3a}) yields $W\gtrsim 20$ $\mu \text{J}$. Currently pico-second lasers
+are commercially available with much greater energy.
+
+\section{Population transfer from $3~^{3}\text{D}$ to $2~^{1}$P: level
+degeneracy problem}
+
+Once the population is transferred to the $3~^{3}\text{D}$ state a strong
+resonant driving field is applied on the $3~^{3}\text{D}$ to $2~^{1}\text{P}$
+transition. However, levels $3~^{3}$D and $3~^{1}$D are essentially
+degenerate (splitting between them is $0.2$ nm) and the applied external
+field inevitably drives transition $3~^{1}\text{D}$ to $2~^{1}$P which is
+more then 1000 times stronger then $3~^{3}$D to $2~^{1}$P transition (see
+Fig. \ref{He}). Thus, the Rabi frequency which drives the $3~^{1}$D to $%
+2~^{1}$P transition is much larger then those driving the $3~^{3}$D to $%
+2~^{1}$P transition. Under such condition, practically no population can be
+transferred from the $3~^{3}$D state as shown in Fig. \ref{f1}. This is true
+no matter how strong the driving field is.
+
+To avoid this problem it has been suggested to apply an additional resonant
+field which drives the $3~^{1}\text{D}$ to $4~^{1}\text{P transition. The
+equivalent scheme is sketched in the insert of Fig. }$\ref{f2}. If the
+additional driving field $\Omega _{bc}(t)$ is strong enough the population
+can be transferred completely from $3~^{3}\text{D}$ to $2~^{1}\text{P (see
+Fig. }$\ref{f2}). The condition for an efficient population transfer is that
+the amplitude $A$ of the additional field Rabi frequency $\Omega _{bc}(t)$
+is greater then those of $\Omega _{cd}(t)$. This is demonstrated in Fig. \ref%
+{f3} which shows population transfer as a function of $A$.
+
+% \begin{figure}[h]
+% \begin{center}
+% \epsfig{figure=f1.ps, angle=270, width=14cm}
+% \end{center}
+% \caption{Population transfer from a degenerate level $a$ by resonant driving
+% of $a$ - $d$ transition with Rabi frequency $\Omega_{ad}=exp(-t^2)$. The $c$
+% - $d$ transition is driven with $\Omega_{cd}=100\Omega_{ad}$. $|C_d(t)|^2$
+% is the population of the level $d$ as a function of time.}
+% \label{f1}
+% \end{figure}
+
+% \begin{figure}[h]
+% \begin{center}
+% \epsfig{figure=f2.ps, angle=270, width=14cm}
+% \end{center}
+% \caption{Population transfer from a degenerate level $a$ under driving
+% another level. Driving Rabi frequencies are shown in the figure.}
+% \label{f2}
+% \end{figure}
+
+% \begin{figure}[h]
+% \begin{center}
+% \epsfig{figure=f3.ps, angle=270, width=14cm}
+% \end{center}
+% \caption{Population transfered to the level $d$ as a function of the
+% amplitude $A$ of the Rabi frequency $\Omega _{bc}$.}
+% \label{f3}
+% \end{figure}
+Result shown in the figures are obtained by numerical solution of the
+evolution equations for $C_{a}$, $C_{b}$, $C_{c}$ and $C_{d}$ which are
+probability amplitudes to find the system in the states $a$, $b$, $c$ and $d$
+respectively. For resonant driving fields the evolution equations read%
+\begin{equation}
+\frac{dC_{a}}{dt}=i\Omega _{ad}(t)C_{d},
+\end{equation}%
+\begin{equation}
+\frac{dC_{d}}{dt}=i\Omega _{ad}(t)C_{a}+i\Omega _{cd}(t)C_{c},
+\end{equation}%
+\begin{equation}
+\frac{dC_{c}}{dt}=i\Omega _{ad}(t)C_{d}+i\Omega _{bc}(t)C_{b},
+\end{equation}%
+\begin{equation}
+\frac{dC_{b}}{dt}=i\Omega _{bc}(t)C_{c},
+\end{equation}%
+with the initial condition $C_{a}(0)=1$, $C_{b}(0)=C_{c}(0)=C_{d}(0)=0$.
+Rubi frequencies $\Omega (t)$ are given in the figures in dimensionless
+units so that unit of time is the inverse amplitude of $\Omega _{ad}(t)$.
+
+Derivation of these equations is provided in Appendix B for the special case
+of a two level system.
+
+\section{Discussion}
+
+There are several methods for producing extreme ultra-violet lasing: for
+example, using a capillary discharge \cite{Rocc94}, a free-electron laser
+\cite{Milt01}, optical field ionization of a gas cell \cite{Lemo95} or
+plasma-based recombination lasers \cite{Suck85}. Coherent XUV radiation can
+also be produced by the generation of harmonics of an optical laser in a gas
+or plasma medium. Our main goal is to investigate the extent to which
+coherence effects might be useful in this problem.
+
+Electron excitation has been the mechanism of choice for the pumping of a
+wide variety of XUV\ lasers. Alternatively, high-intensity ultrashort (with
+pulse duration less then $100$ fs) optical pulses can be used to pump
+recombination lasers \cite{Burn89}. In this method, intense circularly
+polarized light ionizes atoms via tunneling process. Then atoms recombine
+yielding species in excited electron states.
+
+The three-body recombination scheme is attractive due to its potential of
+achieving lasing at XUV wavelengths with relatively moderate pumping
+requirements. Several experiments have demonstrated gain and lasing in such
+scheme \cite{Naga93,Krus96,Koro96}. Recombination mechanism relies on
+obtaining ions in a relatively cold plasma which is possible due to short
+duration of the pump pulse. Then rapid recombination and de-excitation
+processes follow during which transient population inversion can be created.
+
+In the present work we are focusing on lasing in He and He-like ions which
+utilizes advantages of the recombination XUV lasers and possibly the effects
+of quantum coherence. The later, for example, is the key for lasing without
+inversion wherein quantum coherence created in the medium by means of strong
+driving field helps to partially eliminate resonant absorption on the
+transition of interest and to achieve gain without population inversion.
+Such an effect holds promise for obtaining short wavelength lasers in the UV
+and $X-$ray spectral domains where inverted medium is difficult to prepare
+due to fast spontaneous decay.
+
+\appendix
+
+\section{Condition of optimum STIRAP}
+
+STIRAP is optimum if during the time of overlap of the two pulses ($\Omega
+_{1}(t)$ and $\Omega _{2}(t)$) the effective Rabi frequency
+\begin{equation}
+\Omega _{\text{eff}}(t)=\sqrt{\Omega _{1}^{2}(t)+\Omega _{2}^{2}(t)}
+\end{equation}%
+is constant \cite{Berg98}. This implies that population transfer is
+efficient if the peak values of $\Omega _{1}$ and $\Omega _{2}$ are equal.
+
+Because transition 2$^{3}$P$\rightarrow $2$^{3}$S is about $6$ times weaker
+then transition 3$^{3}$D$\rightarrow $2$^{3}$P, the 2$^{3}$P$\rightarrow $2$%
+^{3}$S transition determines the required energy per pulse. One can estimate
+the energy from the condition%
+\begin{equation}
+\Omega \tau =2\pi ,  \label{s0}
+\end{equation}%
+where $\tau $ is the pulse duration,
+\begin{equation}
+\Omega =\frac{\wp E_{0}}{\hbar }  \label{s0a}
+\end{equation}%
+is the Rabi frequency for the 2$^{3}$P$\rightarrow $2$^{3}$S transition, $%
+E_{0}$ is the amplitude of the electric field and $\wp $ is the
+electric-dipole transition matrix element.
+
+Condition (\ref{s0}) is essentially requirement of adiabaticity ($\Omega
+\tau \gg 1$). Eqs. (\ref{s0}) and (\ref{s0a}) yield%
+\begin{equation}
+E_{0}=\frac{2\pi \hbar }{\wp \tau }.
+\end{equation}%
+Energy density in electromagnetic wave is
+\begin{equation}
+u=\frac{1}{2}\epsilon _{0}E_{0}^{2},
+\end{equation}%
+so that the total energy in pulse reads%
+\begin{equation}
+W=uc\tau S=\frac{1}{2}\epsilon _{0}E_{0}^{2}c\tau S=2\pi ^{2}\epsilon _{0}cS%
+\frac{\hbar ^{2}}{\wp ^{2}\tau },  \label{s1}
+\end{equation}%
+where $S$ is the cross section area of the pulse. The 2$^{3}$P$\rightarrow $2%
+$^{3}$S transition rate $\gamma $ can be estimated as%
+\begin{equation}
+\gamma =\frac{k_{0}^{3}\wp ^{2}}{2\pi \epsilon _{0}\hbar }\quad \text{which
+yields }\quad \wp ^{2}=\frac{2\pi \epsilon _{0}\hbar \gamma }{k_{0}^{3}}.
+\label{s2}
+\end{equation}%
+Substitute Eq. (\ref{s2}) into Eq. (\ref{s1}) gives finally%
+\begin{equation}
+W=8\pi ^{4}\frac{\hbar cS}{\gamma \tau \lambda ^{3}},  \label{s3}
+\end{equation}%
+where $\lambda $ is the wavelength of the transition.
+
+\section{Derivation of evolution equation for a two-level system}
+
+Here we consider a two level atom ($a$ is excited and $b$ is the ground
+state). States $a$ and $b$ are described by wavefunctions $\psi _{a}$ and $%
+\psi _{b}$. We assume that atom interacts with an applied electromagnetic
+field which is polarized along the $x-$ axis%
+\begin{equation}
+\vec{E}(t)=\hat{x}E_{0}\cos (\nu t).
+\end{equation}%
+Hamiltonian of the system reads
+\begin{equation}
+\hat{H}=\hat{H}_{0}+\hat{V},
+\end{equation}%
+where $\hat{H}_{0}$ is the Hamiltonian of the free atom%
+\begin{equation}
+\hat{H}_{0}\psi _{a}=\hbar \omega _{a}\psi _{a},\qquad \hat{H}_{0}\psi
+_{b}=\hbar \omega _{b}\psi _{b}
+\end{equation}%
+and $\hat{V}$ corresponds to the atom-field interaction in the dipole
+approximation%
+\begin{equation}
+\hat{V}=-e\vec{E}(t)\cdot \vec{r}=-exE_{0}\cos (\nu t),
+\end{equation}%
+$\vec{r}$ is the electron position in the atom and $e$ is the electron
+charge.
+
+Matrix elements are given by%
+\begin{equation}
+<\psi _{a}|\hat{H}|\psi _{a}>=<\psi _{a}|\hat{H}_{0}|\psi _{a}>+<\psi _{a}|%
+\hat{V}|\psi _{a}>=\hbar \omega _{a},
+\end{equation}%
+\begin{equation}
+<\psi _{b}|\hat{H}|\psi _{b}>=<\psi _{b}|\hat{H}_{0}|\psi _{b}>+<\psi _{b}|%
+\hat{V}|\psi _{b}>=\hbar \omega _{b},
+\end{equation}%
+\begin{equation}
+<\psi _{a}|\hat{H}|\psi _{b}>=<\psi _{a}|\hat{H}_{0}|\psi _{b}>+<\psi _{a}|%
+\hat{V}|\psi _{b}>=<\psi _{a}|\hat{V}|\psi _{b}>=-eE_{0}\cos (\nu t)\int
+d^{3}r\psi _{a}^{\ast }x\psi _{b}.
+\end{equation}%
+We introduce the following notation for the dipole matrix element between
+levels $a$ and $b$%
+\begin{equation}
+\wp =e\int d^{3}r\psi _{a}^{\ast }x\psi _{b}
+\end{equation}%
+so that%
+\begin{equation}
+<\psi _{a}|\hat{H}|\psi _{b}>=-\wp E_{0}\cos (\nu t).
+\end{equation}
+
+Under the applied electromagnetic field the atomic wavefunction $\psi $
+evolves so that $\psi $ is a superposition of $\psi _{a}$ and $\psi _{b}$
+\begin{equation}
+\psi =C_{a}(t)\psi _{a}+C_{b}(t)\psi _{b}  \label{a1}
+\end{equation}%
+with time-dependent coefficients $C_{a}(t)$ and $C_{b}(t)$ which we need to
+find. $C_{a}(t)$ and $C_{b}(t)$ have meaning of probability amplitudes to
+find atom in the state $a$ and $b$ respectively.
+
+Schr\"{o}dinger equation for the atomic wavefunction $\psi $ reads%
+\begin{equation}
+i\hbar \frac{\partial \psi }{\partial t}=\hat{H}\psi .  \label{a2}
+\end{equation}
+
+Substituting Eq. (\ref{a1}) into Eq. (\ref{a2}) we obtain%
+\begin{equation}
+i\hbar \dot{C}_{a}(t)\psi _{a}+i\hbar \dot{C}_{b}(t)\psi _{b}=C_{a}(t)\hat{H}%
+\psi _{a}+C_{b}(t)\hat{H}\psi _{b}.  \label{a3}
+\end{equation}%
+Multiplying both sides of Eq. (\ref{a3}) by $\psi _{a}^{\ast }$ and
+integration over the volume we find
+\begin{equation}
+i\hbar \dot{C}_{a}(t)=C_{a}(t)<\psi _{a}|\hat{H}|\psi _{a}>+C_{b}(t)<\psi
+_{a}|\hat{H}|\psi _{b}>
+\end{equation}%
+or
+\begin{equation}
+i\hbar \dot{C}_{a}(t)=\hbar \omega _{a}C_{a}(t)-\wp E_{0}\cos (\nu
+t)C_{b}(t).  \label{a4}
+\end{equation}%
+Multiplication of Eq. (\ref{a3}) by $\psi _{b}^{\ast }$ and integration over
+volume yields%
+\begin{equation}
+i\hbar \dot{C}_{b}(t)=\hbar \omega _{b}C_{b}(t)-\wp E_{0}\cos (\nu
+t)C_{a}(t).  \label{a5}
+\end{equation}%
+Dividing both sides by $i\hbar $ and incorporating decay rates $\gamma _{a}$
+and $\gamma _{b}$ of the states $a$ and $b$ due to spontaneous emission and
+collisions Eqs. (\ref{a4}) and (\ref{a5}) reduce to
+\begin{equation}
+\dot{C}_{a}=-i\omega _{a}C_{a}+i\Omega \cos (\nu t)C_{b}-\frac{\gamma _{a}}{2%
+}C_{a},  \label{a6}
+\end{equation}%
+\begin{equation}
+\dot{C}_{b}=-i\omega _{b}C_{b}+i\Omega \cos (\nu t)C_{a}-\frac{\gamma _{b}}{2%
+}C_{b},  \label{a7}
+\end{equation}%
+where
+
+\begin{equation*}
+\Omega =\frac{\wp E_{0}}{\hbar }\sim 10^{8}\div 10^{9}\text{ Hz.}
+\end{equation*}%
+Eqs. (\ref{a6}) and (\ref{a7}) determine $C_{a}(t)$ and $C_{b}(t)$ and,
+thus, give a complete description of the system evolution. Introducing new
+functions%
+\begin{equation}
+C_{a}=\exp \left( -\left[ i\omega _{a}+\frac{\gamma _{a}}{2}\right] t\right)
+\tilde{C}_{a},
+\end{equation}%
+\begin{equation}
+C_{b}=\exp \left( -\left[ i\omega _{b}+\frac{\gamma _{b}}{2}\right] t\right)
+\tilde{C}_{b},
+\end{equation}%
+Eqs. (\ref{a6}) and (\ref{a7}) reduce to
+\begin{equation}
+\frac{d\tilde{C}_{a}}{dt}=i\Omega \cos (\nu t)\exp \left( \left[ i\omega +%
+\frac{\gamma _{a}-\gamma _{b}}{2}\right] t\right) \tilde{C}_{b},  \label{a8}
+\end{equation}%
+\begin{equation}
+\frac{d\tilde{C}_{b}}{dt}=i\Omega \cos (\nu t)\exp \left( -\left[ i\omega +%
+\frac{\gamma _{a}-\gamma _{b}}{2}\right] t\right) \tilde{C}_{a},  \label{a9}
+\end{equation}%
+where%
+\begin{equation*}
+\omega =\omega _{a}-\omega _{b}.
+\end{equation*}%
+Taking into account that
+\begin{equation*}
+\cos (\nu t)=\frac{1}{2}\left( e^{i\nu t}+e^{-i\nu t}\right)
+\end{equation*}%
+we find%
+\begin{equation}
+\frac{d\tilde{C}_{a}}{dt}=i\frac{\Omega }{2}\left[ \exp \left( \left[
+i(\omega +\nu )+\frac{\gamma _{a}-\gamma _{b}}{2}\right] t\right) +\exp
+\left( \left[ i(\omega -\nu )+\frac{\gamma _{a}-\gamma _{b}}{2}\right]
+t\right) \right] \tilde{C}_{b},  \label{a10}
+\end{equation}%
+\begin{equation}
+\frac{d\tilde{C}_{b}}{dt}=i\frac{\Omega }{2}\left[ \exp \left( -\left[
+i(\omega +\nu )+\frac{\gamma _{a}-\gamma _{b}}{2}\right] t\right) +\exp
+\left( -\left[ i(\omega -\nu )+\frac{\gamma _{a}-\gamma _{b}}{2}\right]
+t\right) \right] \tilde{C}_{a}.  \label{a11}
+\end{equation}%
+Next we omit the fast oscillating terms (containing $\omega +\nu $). Such
+simplification is known as the Rotating Wave Approximation (RWA). In the RWA
+Eqs. (\ref{a10}) and (\ref{a11}) reduce to
+\begin{equation}
+\frac{d\tilde{C}_{a}}{dt}=i\frac{\Omega }{2}\exp \left( i\Delta t\right)
+\tilde{C}_{b},  \label{a12}
+\end{equation}%
+\begin{equation}
+\frac{d\tilde{C}_{b}}{dt}=i\frac{\Omega }{2}\exp \left( -i\Delta t\right)
+\tilde{C}_{a},  \label{a13}
+\end{equation}%
+where%
+\begin{equation*}
+\Delta =\omega -\nu -i\frac{(\gamma _{a}-\gamma _{b})}{2}
+\end{equation*}%
+is the detuning of the frequency of the applied field $\nu $ from the atomic
+transition frequency $\omega =\omega _{a}-\omega _{b}$.
+
+\begin{thebibliography}{99}
+\bibitem{Koro96} D. V. Korobkin, C.H. Nam, S. Suckewer and A. Goltsov, Phys.
+Rev. Lett. \textbf{77}, 5206 (1996).
+
+\bibitem{Drak07} G. W. F. Drake and D. C. Morton, ApJSS \textbf{170}, 251
+(2007).
+
+\bibitem{Keld65} L. V. Keldysh, Soviet Physics JETP \textbf{20}, 1307 (1965).
+
+\bibitem{Burn89} N. H. Burnett and P. B. Corkum, J. Opt. Soc. Am. B \textbf{6%
+}, 1195 (1989).
+
+\bibitem{avi04} Y. Avitzour, S. Suckewer, and E. Valeo, Phys. Rev. E \textbf{%
+69}, 046409 (2004).
+
+\bibitem{avi07} Y. Avitzour, S. Suckewer, JOSA B \textbf{24}, 819 (2007).
+
+\bibitem{Berg98} K. Bergmann, H. Theuer and B. W. Shore, Rev. Mod. Phys.
+\textbf{70}, 1003 (1998).
+
+\bibitem{Rocc94} J. J. Rocca \textit{et al}., Phys. Rev. Lett. \textbf{73},
+2192 (1994).
+
+\bibitem{Milt01} S. V. Milton \textit{et al}., Science \textbf{292}, \ 2037
+(2001).
+
+\bibitem{Lemo95} B. E. Lemoff, G. Y. Yin, C.L. Gordon, C. P. J. Barty and S.
+E. Harris, Phys. Rev. Lett. \textbf{74}, 1574 (1995).
+
+\bibitem{Suck85} S. Suckewer \textit{et al}., Phys. Rev. Lett. \textbf{55},
+1753 (1985).
+
+\bibitem{Naga93} Y. Nagata, K. Midorikawa, S. Kubodera, M. Obara, H. Tashiro
+and K. Toyoda, Phys. Rev. Lett. \textbf{71}, 3774 (1993).
+
+\bibitem{Krus96} K. M. Krushelnick, W. Tighe and S. Suckewer, J. Opt. Soc.
+Am. B \textbf{13}, 306 (1996).
+\end{thebibliography}
+
+\end{document}

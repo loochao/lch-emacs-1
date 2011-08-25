@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
- color-theme-tomorrow
  cd
  lm
  5x5
  afm
  arp
  dbx
+ dig
 )
 
 ;; ----- smex-data -----
 (
- (color-theme-tomorrow . 1)
+ 
 )

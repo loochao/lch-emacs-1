@@ -1,0 +1,81 @@
+-*- coding:utf-8; mode:org -*-
+
+* 中文排版有多种选择
+** CJK 宏包 + pdflatex
+*** src
+#+begin_src latex
+
+\documentclass{article}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+你好, PICB！
+\end{CJK*}
+\end{document}
+
+#+end_src
+
+*** Compile
+#+begin_src shell
+$ pdflatex testCJK.tex
+#+end_src
+
+** xeCJK 宏包 + xelatex (英文文档中需要用中文时用这个)
+*** src
+#+begin_src latex
+
+% !Mode:: "TeX:UTF-8"
+% filename: temp_xeCJK.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage[slantfont,boldfont]{xeCJK}
+
+% 设置中文字体
+% ==========================================================
+\setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti]{STSong}
+\setCJKsansfont{STHeiti}
+\setCJKmonofont{STFangsong}
+
+\setCJKfamilyfont{zhsong}{STSong}
+\setCJKfamilyfont{zhhei}{STHeiti}
+\setCJKfamilyfont{zhfs}{STFangsong}
+\setCJKfamilyfont{zhkai}{STKaiti}
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+% ==========================================================
+
+\title{\LaTeX 中文设置之低层方案}
+\author{xiaoyong}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+  字体示例：\\
+  \begin{tabular}{c|c}
+    \hline
+    \textbf{\TeX 命令} & \textbf{效果}\\
+    \hline
+    \verb|{\songti 宋体}| & {\songti 宋体}\\
+    \hline
+    \verb|{\heiti 黑体}| & {\heiti 黑体}\\
+    \hline
+    \verb|{\fangsong 仿宋}| & {\fangsong 仿宋}\\
+    \hline
+    \verb|{\kaishu 楷书}| & {\kaishu 楷书}\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\end{document}
+
+#+end_src
+*** compile
+: xelatex temp_xeCJK.tex
+*** 字体
+因为 Mac 上没有装全 Windows 的中文字体, 也没有 Adobe 的中文字体, 所以
+我把字体设成了 Mac 自带的华文系列中文字体（ST*）, 否则编译会通不过.
