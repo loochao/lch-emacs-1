@@ -2,6 +2,8 @@
 
 ;>========== DOTEMACS ==========<;
 
+;;; Copyright
+;;
 ;; Copyright (C) 2005 2006 2007 2008 2009 2010 2011
 ;; Author: Chao LU <(concat "Loochao" at-symbol "gmail.com")>
 ;; Keywords: dotemacs, init, loochao, lch
@@ -27,7 +29,13 @@
 ;; the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 ;; Boston, MA 02111-1307, USA.
 ;;
-;~~ Commentary:
+;;; Commentary:
+;;
+;;    ___ _ __ ___   __ _  ___ ___
+;;   / _ \ '_ ` _ \ / _` |/ __/ __|
+;;  |  __/ | | | | | (_| | (__\__ \
+;; (_)___|_| |_| |_|\__,_|\___|___/
+;;
 ;;
 ;; "Show me your ~/.emacs and I will tell you who you are."
 ;;                                                    [Bogdan Maryniuk]
@@ -44,6 +52,8 @@
 
 ;; uptimes
 (setq emacs-load-start-time (current-time))
+
+;;; GLOBAL CONST
 
 (defconst lch-win32-p (eq system-type 'windows-nt) "Are we on Windows?")
 (defconst lch-linux-p (eq system-type 'gnu/linux) "Are we on Linux?")
@@ -60,7 +70,7 @@
 (defvar emacs-dir (concat emacs-path "/.emacs.d"))
 (setq user-emacs-directory (concat emacs-dir "/"))
 
-;; ;>---- OS Type ----<;
+;; OS Type
 ;; (defmacro GNULinux (&rest body)
 ;;   (list 'if (string-match "linux" (prin1-to-string system-type))
 ;;         (cons 'progn body)))
@@ -69,7 +79,7 @@
 ;;   (list 'if (string-match "windows" (prin1-to-string system-type))
 ;;         (cons 'progn body)))
 
-;; ;>---- Emacs type ----<;
+;; Emacs type
 ;; (defmacro GNUEmacs (&rest body)
 ;;   "Execute any number of forms if running under GNU Emacs."
 ;;   (list 'if (string-match "GNU Emacs" (version))
@@ -88,23 +98,25 @@
 ;;   (list 'if (string-match "XEmacs" (version))
 ;;         (cons 'progn body)))
 
-;>---- Emacs version ----<;
+;; Emacs version
 ;; (GNUEmacs
 ;;  (list emacs-version emacs-major-version emacs-minor-version
 ;;        system-type system-name system-configuration
 ;;        window-system
 ;;        (when (boundp 'aquamacs-version) aquamacs-version)))
 
-;>---- Configurations ----<;
+
+;;; Configurations
+
 (load (concat emacs-dir "/rc/lch-env.el"))
 (require 'lch-conf)
 (require 'lch-z)
 (require 'lch-startup)
 
-;>-------- CONF from Others --------<;
+;; CONF From Others
 ;(require 'lch-other-conf)
 
-;>-------- LOAD CONF FILES --------<;
+;; Load CONF Files
 ;; This has to be put at the end of dotEmacs
 ;(mapc 'load (directory-files (concat emacs-dir "/rc") t "\\.el\\'"))
 ;; If under Windows then load the w3m.el

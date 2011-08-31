@@ -4,7 +4,9 @@
 (setenv "LANG" "en_US.UTF-8" )
 (setenv "LC_ALL" "en_US.UTF-8" )
 
-;>---------- LOAD-PATH ----------<;
+
+;;; LOAD-PATH
+
 (defvar emacs-site-lisp (concat emacs-dir "/site-lisp"))
 (defvar lch-emacs-conf (concat emacs-dir "/rc"))
 
@@ -16,7 +18,7 @@
        ;(list "/path/to/pkg")
        ))
 
-;>- Automatically add all the elisp in emacs.d/site-lisp into load-path
+;; Automatically add all the elisp in emacs.d/site-lisp into load-path
 (defun my-add-subdirs-to-load-path (dir)
  (let ((default-directory (concat dir "/")))
   (setq load-path (cons dir load-path))
@@ -39,8 +41,9 @@
 				"/opt/local/bin"
 				"/usr/local/bin"
                                 )))))
+
+;;; FLAGs
 
-;>---------- FLAGs ----------<;
 (defconst lch-cygwin-p (eq system-type 'cygwin) "Are we on cygwin")
 (defconst lch-mbp-win (and (eq system-type 'windows-nt) (string-match (system-name) "LCH-MBP")) "Are we on MBP-WIN?")
 (defconst lch-mbp-x61 (and (eq system-type 'windows-nt) (string-match (system-name) "LCH-X61")) "Are we on X61")
@@ -51,7 +54,9 @@
 (defconst is-before-emacs-21 (>= 21 emacs-major-version) "Is Emacs older than 21")
 (defconst is-after-emacs-23  (<= 23 emacs-major-version) "Is Emacs newer than 23")
 
-;>---------- VAR ----------<;
+
+;;; VARs
+
 (defvar emacs-lib-dir (concat emacs-dir "/library"))
 (defvar emacs-doc-dir (concat emacs-dir "/doc"))
 (defvar git-dir (concat dropbox-path "/REPO/GIT") "git dir")
@@ -76,7 +81,9 @@
 ;(load (concat emacs-lib-dir "/emacs-starter-kit/init.el"))
 ;(load (concat emacs-lib-dir "/conf/dea-read-only/.emacs"))
 
-;>---- INFO ----<;
+
+;;; INFO
+
 (defvar emacs-info-dir (concat emacs-dir "/info"))
 ;(add-to-list 'Info-default-directory-list emacs-info-dir)
 (dolist (dir `(,emacs-info-dir
@@ -85,7 +92,9 @@
 	       "~/local/share/info"))
   (add-to-list 'Info-default-directory-list dir))
 
-;>-------- KEY MAPS --------<;
+
+;;; KEYMAP
+
 (define-prefix-command 'm-f1-map)
 (define-key global-map (kbd "M-<f1>") 'm-f1-map)
 
@@ -134,4 +143,6 @@
 (define-prefix-command 'f12-map)
 (define-key global-map (kbd "<f12>") 'f12-map)
 
+
+;;; PROVIDE
 (provide 'lch-env)

@@ -1,4 +1,4 @@
-;-*- coding: utf-8 -*-
+;-*- coding:utf-8; -*-
 
 ;>======== DIRED ========<;
 ;; keybinding
@@ -39,17 +39,17 @@
   "Sort dired listings with directories first before adding marks."
   (mydired-sort))
 
-;>-- Allows recursive deletes --<;
+;; Allows recursive deletes
 ;(setq dired-recursive-deletes 'top)
 (setq dired-recursive-deletes 'always)
 
-;>---- Switch infos on/off ----<;
+;;Switch infos on/off
 ;(require 'dired-details)
 ;(dired-details-install)
 ;(setq dired-details-hidden-string " ")
 ;(require 'dired-details+)
 
-;>---- Set Face ----<;
+;; Set Face
 (eval-after-load 'dired '(progn (require 'dired-filetype-face)))
 
 (setq dired-recursive-copies 'always)
@@ -59,8 +59,9 @@
 (define-key dired-mode-map (kbd "w") (lambda ()
                                        (interactive)
                                        (dired-copy-filename-as-kill 0)))
-;>-------- Util --------<;
-;>---- Open current directory in Finder, Explorer, etc. ----<;
+
+;;; Util
+;; Open current directory in Finder, Explorer, etc.
 (define-key dired-mode-map (kbd "f")
   '(lambda ()
      (interactive)
@@ -73,7 +74,7 @@
          ((x)
           (xwl-shell-command-asynchronously (concat "nautilus --browser " d)))))))
 
-;>---- Open current directory in a console/terminal ----<;
+;; Open current directory in a console/terminal
 (define-key dired-mode-map (kbd "c")
   '(lambda ()
      (interactive)
@@ -97,7 +98,7 @@ end tell" d)))
 	(w3m-find-file file))))
 (define-key dired-mode-map (kbd "v") 'xwl-dired-w3m-find-file)
 
-;> Use tar to compress marked file or dir.
+;; Use tar to compress marked file or dir.
 ;; On Compressed file, uncompress it instead.
 (defun ywb-dired-compress-dir ()
   (interactive)
@@ -114,7 +115,7 @@ end tell" d)))
         (shell-command (concat "tar -zcvf " cfile " " (mapconcat 'identity files " ")))))
     (revert-buffer)))
 
-;> Similar to TC, use the SAME buffer to quickview files
+;; Similar to TC, use the SAME buffer to quickview files
 (defvar ywb-dired-quickview-buffer nil)
 (defun ywb-dired-quickview ()
   (interactive)
@@ -162,14 +163,33 @@ end tell" d)))
   (setq path (substring path 17))
   (concat (substring path 0 1) ":" (substring path 1)))
 
-
 (add-hook 'dired-mode-hook (lambda ()
 (define-key dired-mode-map "z" 'ywb-dired-compress-dir)
 (define-key dired-mode-map "V" 'ywb-dired-w3m-visit)
 (define-key dired-mode-map "W" 'ywb-dired-copy-fullname-as-kill)
 (define-key dired-mode-map "\C-q" 'ywb-dired-quickview)))
 
-;>-------- Omit --------<;
+
+;;; ls-lisp
+
+;; Emulate insert-directory completely in Emacs Lisp
+(require 'ls-lisp)
+
+;; Disable the case sensitive sort of file names
+(setq ls-lisp-ignore-case t)
+
+;; Sort directories first in any ordering
+(setq ls-lisp-dirs-first t)
+
+;; Use ISO 8601 dates (on MS-Windows)
+(setq ls-lisp-format-time-list
+        '("%Y-%m-%d %H:%M"
+          "%Y-%m-%d %H:%M"))
+
+;; Use localized date/time format
+(setq ls-lisp-use-localized-time-format t)
+
+;;; Omit
 (setq dired-omit-size-limit nil)
 
 (setq dired-omit-files
@@ -197,8 +217,8 @@ end tell" d)))
         (darwin '((".*" "open")))
         (t '())
         ))
-
-;>-------- Sort --------<;
+
+;;; Sort
 (setq dired-listing-switches "-lh")
 
 ;; Sort methods that affect future sessions
@@ -263,7 +283,11 @@ end tell" d)))
 (define-key dired-mode-map (kbd "s .") 'dired-sort-by-invisible-only)
 (define-key dired-mode-map (kbd "s z") 'dired-sort-by-size)
 
-;>-------- Binding --------<;
+(define-key dired-mode-map (kbd "<SPC>") 'dired-count-sizes)
+
+
+;;;  Binding
+
 (define-key dired-mode-map (kbd "M-<") (lambda ()
                                          (interactive)
 					 (goto-char (point-min))
@@ -273,13 +297,14 @@ end tell" d)))
                                          (interactive)
 					 (goto-char (point-max))
                                          (dired-previous-line 1)))
-;>- TC-like F4 View file
+;; TC-like F4 View file
 ;(define-key dired-mode-map (kbd "<f4>") 'dired-find-file)
 ;(define-key dired-mode-map (kbd "<f7>") 'dired-create-directory)
 
-;>-------- Dired mode hook --------<;
-;; if dired's already loaded, then the keymap will be bound
+
+;;; Dired mode hook
 
+;; if dired's already loaded, then the keymap will be bound
 (defun lch-dired-mode-init ()
   ;> Dired-Omit-Mode (provided in dired-x mode)
   ;; lets you hide uninteresting files
@@ -306,4 +331,10 @@ end tell" d)))
 (define-key global-map (kbd "<C-f3>") 'joc-dired-magic-buffer)
 (define-key global-map (kbd "<M-f3>") 'joc-dired-toggle-buffer-name)
 
+(message "~~ lch-dired: done.")
 (provide 'lch-dired)
+
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "

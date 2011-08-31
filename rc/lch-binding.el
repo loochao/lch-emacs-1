@@ -1,22 +1,22 @@
 ;-*- coding:utf-8; mode:emacs-lisp; -*-
 
 ;>======== BINDING.EL ========<;
-;> (info "(emacs)Key Bindings")
+;;; (info "(emacs)Key Bindings")
 (message "=> lch-binding: loading...")
 
-;>-------- Fn map defined in dotEmacs file --------<;
+
+;;; Fn map defined in dotEmacs file
 (define-key global-map (kbd "<home>") 'beginning-of-buffer)
 (define-key global-map (kbd "<end>") 'end-of-buffer)
+;(define-key global-map (kbd "M-n") 'pager-page-down)
+;(define-key global-map (kbd "M-p") 'pager-page-up)
 
-(define-key global-map (kbd "M-1") 'shell)
+;;; F1
 
-(define-key global-map (kbd "M-k M-k") 'kill-this-buffer)
-
-
-;>-------- F1 --------<;
 (define-key global-map (kbd "<f1> <f1>") 'shell)
 
-;>-------- F2 --------<;
+
+;;; F2
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
 ;(define-key global-map (kbd "S-<f2>") 'eshell)
 ;(define-key global-map (kbd "C-S-<f2>") 'cmd-shell)                          ;; => lch-util.el
@@ -32,7 +32,8 @@
 (define-key global-map (kbd "<f2> s") 'flyspell-mode)
 (define-key global-map (kbd "<f2> w") 'whitespace-mode)
 
-;>-------- F3 --------<;
+
+;;; F3
 ;(define-key global-map (kbd "<f3>") ')
 ;(define-key global-map (kbd "<C-f3>") 'joc-dired-magic-buffer)
 ;(define-key global-map (kbd "<M-f3>") 'joc-dired-toggle-buffer-name)
@@ -44,10 +45,11 @@
 (define-key global-map (kbd "<f3> y") 'w3m-print-this-url)
 (define-key global-map (kbd "<f3> l") 'w3m-print-current-url)
 
-;>-------- F4 --------<;
+
+;;; F4
+;(define-key global-map (kbd "M-<f4>") 'close-frame)                          ;; => lch-util.el
 ;> Binding to Namespace (Such as Org, w3m...)
 ;(define-key global-map (kbd "<f4> <f4>") 'lch-open-file-browser)                ;; => lch-util.el
-;C-x f ffap
 
 ;; Org
 (define-key global-map (kbd "<f4> o a") 'org-agenda-list)
@@ -61,7 +63,8 @@
 ;(if lch-win32-p                                                              ;; => lch-util.el
 ;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer))
 
-;>-------- F5 --------<;
+
+;;; F5
 ;> Skeleton related stuff
 ;(define-key global-map (kbd "<f5> c") 'org-center-skeleton)                  ;; => lch-skeleton.el
 ;(define-key global-map (kbd "<f5> e") 'org-example-skeleton)                 ;; => lch-skeleton.el
@@ -77,22 +80,26 @@
 
 
 
-;>-------- F6 --------<;
+
+;;; F6
 ;(define-key global-map (kbd "<f6> e") 'org-export-as-html)                   ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> o") 'org-publish)                          ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> p") 'lch-org-publish-org)                  ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> P") 'lch-org-publish-prv)                  ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> w") 'lch-org-publish-worg)                 ;; => lch-org.el
 
-;>-------- F7 --------<;
+
+;;; F7
 
 ;(define-key global-map (kbd "C-0") 'org-capture)                             ;; => lch-org.el
 ;<f7> i 'org-capture --> INBOX                                                ;; => lch-org.el
 
-;>-------- F8 --------<;
+
+;;; F8
 ;(define-key global-map (kbd "<f8>") 'org-agenda)                             ;; => lch-org.el
 
-;>-------- F9 --------<;
+
+;;; F9
 ;> 0 ;> =: Bookmark related stuffs.
 ;> alpha:  org files.
 ;(defvar org-source-dir "~/Dropbox/org/org" "org source dir") ;; => dotEmacs
@@ -160,10 +167,11 @@
     (define-key global-map (kbd "<f9> w s") (lambda() (interactive) (dired "e:/Tmp/SPgm")))
     (define-key global-map (kbd "<f9> w t") (lambda() (interactive) (find-file "e:/TMP/DOC/TEX/Untitled1.tex")))))
 
-;>-------- F10 --------<;
+
+;;; F10
 
-;> Find file & dir map.
-;> File in emacs.d/rc has the initial letter as its invoker.
+;; Find file & dir map.
+;; File in emacs.d/rc has the initial letter as its invoker.
 (define-key global-map (kbd "<f10> 1") (lambda() (interactive) (dired (concat emacs-dir "/rc"))))
 (define-key global-map (kbd "<f10> 2") (lambda() (interactive) (dired (concat emacs-lib-dir "/dotfiles"))))
 (define-key global-map (kbd "<f10> 3") (lambda() (interactive) (dired emacs-site-lisp)))
@@ -198,7 +206,7 @@
     (define-key global-map (kbd "<f10> t") (lambda() (interactive) (find-file "d:/TCMD/wincmd.ini"))))
 (define-key global-map (kbd "<f10> u") (lambda() (interactive) (find-file (concat emacs-dir "/rc/lch-util.el"))))
 
-;>---- F10+v Vimperator ----<;
+;; F10+v Vimperator
 (defvar vimp-dir "~/vimperator")
 (define-key global-map (kbd "<f10> v 1") (lambda() (interactive) (dired vimp-dir)))
 (define-key global-map (kbd "<f10> v 2") (lambda() (interactive) (dired (concat vimp-dir "/colors"))))
@@ -211,13 +219,14 @@
 (define-key global-map (kbd "<f10> v p") (lambda() (interactive) (find-file (concat vimp-dir "/lch-plugin.vimp"))))
 (define-key global-map (kbd "<f10> v u") (lambda() (interactive) (find-file (concat vimp-dir "/lch-ui.vimp"))))
 (define-key global-map (kbd "<f10> v U") (lambda() (interactive) (find-file (concat vimp-dir "/lch-util.vimp"))))
-;>----
+
 
 (define-key global-map (kbd "<f10> U") (lambda() (interactive) (find-file (concat emacs-dir "/rc/lch-ui.el"))))
 (define-key global-map (kbd "<f10> w") (lambda() (interactive) (find-file (concat emacs-dir "/rc/lch-web.el"))))
 
 
-;>-------- F11 --------<;
+
+;;; F11
 ;~~>- UI related stuffs.
 (define-key global-map (kbd "C-<f11>") 'menu-bar-mode)
 (define-key global-map (kbd "S-<f11>") 'tool-bar-mode)
@@ -257,7 +266,8 @@
 (define-key global-map (kbd "<f11> w") 'widen)
 (define-key global-map (kbd "<f11> W") 'whitespace-mode)
 
-;>-------- F12 --------<;
+
+;;; F12
 ;> EMMS
 ;; (define-key global-map (kbd "<f12> <f12>") 'emms-pause)                     ;; => All in lch-emms.el
 ;; (define-key global-map (kbd "<f12> c")   'emms-start)
@@ -272,7 +282,19 @@
 ;; (define-key global-map (kbd "<f12> r")   'emms-toggle-repeat-track)
 ;; (define-key global-map (kbd "<f12> R")   'emms-toggle-repeat-playlist)
 
-;>-------- Ctrl Map --------<;
+
+;;; Alt Map
+;; (define-key global-map (kbd "M-o") '(lambda ()
+;;                                (interactive)
+;;                                (other-window -1)))
+
+(define-key global-map (kbd "M-1") 'shell)
+
+(define-key global-map (kbd "M-k") 'kill-this-buffer)
+(define-key global-map (kbd "M-g") 'goto-line)
+
+
+;;; Ctrl Map
 ;(define-key global-map (kbd "C-=") 'text-scale-increase)                     ;; => lch-util.el
 ;(define-key global-map (kbd "C--") 'text-scale-decrease)                     ;; => lch-util.el
 ;(define-key global-map (kbd "C-0") 'text-scale-normal-size)                  ;; => lch-util.el
@@ -290,9 +312,8 @@
                                (toggle-input-method)))
 (define-key global-map (kbd "C-2") 'set-mark-command)
 
-;>-------- Ctrl+X Map --------<;
-
-;>-------- Ctrl+C && F1 Map --------<;
+
+;;; Ctrl+C && F1 Map
 ;; => User defined functions.
 ;(define-key global-map (kbd "<f1> <f1>") 'lookup-google)                     ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
@@ -363,17 +384,10 @@
 (define-key global-map (kbd "<f1> $") 'toggle-truncate-lines)
 (define-key global-map (kbd "<f1> ^") 'lch-toggle-line-wrapping)             ;; => lch-init.el
 
-;>-------- Alt Map --------<;
-;; (define-key global-map (kbd "M-o") '(lambda ()
-;;                                (interactive)
-;;                                (other-window -1)))
-(eval-after-load 'dired
-  '(progn
-;     (define-key dired-mode-map (kbd "C-o") nil)
-;     (define-key dired-mode-map (kbd "M-o") nil)
-     ))
+
+;;; Ctrl X Map
+;C-x f ffap
 
-;>-------- Ctrl X Map --------<;
 ;(define-key global-map (kbd "C-x b") 'ibuffer)                               ;; => lch-elisp.el
 ;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)                          ;; => lch-elisp.el
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -387,7 +401,18 @@
 ;;                                (require 'xwl-dictionary)
 ;;                                (call-interactively 'dictionary-search)))
 
-;>-------- MISC --------<;
+
+
+;;; Alt Map
+(eval-after-load 'dired
+  '(progn
+;     (define-key dired-mode-map (kbd "C-o") nil)
+;     (define-key dired-mode-map (kbd "M-o") nil)
+     ))
+
+
+
+;;; MISC
 ;=> lch-skeleton.el
 ; (define-key global-map (kbd "(") 'skeleton-pair-insert-maybe)
 ; (define-key global-map (kbd "[") 'skeleton-pair-insert-maybe)
@@ -395,14 +420,13 @@
 ; ;(define-key global-map (kbd "<") 'skeleton-pair-insert-maybe)
 ; (define-key global-map (kbd "\"") 'skeleton-pair-insert-maybe)
 
-;>-------- Alt Map --------<;
-;(define-key global-map (kbd "M-<f4>") 'close-frame)                          ;; => lch-util.el
-
-;>-------- Org Mode --------<;
+
 
 
 
-;>-------- Keybinding Table --------<;
+
+;;; Keybinding Table
+
 ;; [from http://www-xray.ast.cam.ac.uk/~gmorris/dotemacs.html]
 (defun my-keytable (arg)
   "Print the key bindings in a tabular form."
@@ -515,5 +539,18 @@
     (goto-char (point-min))
     (values)))
 
+;;; Provide lch-binding.
 (message "~~ lch-binding: done.")
 (provide 'lch-binding)
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; eval: (add-hook 'before-save-hook 'time-stamp)
+;; time-stamp-start: "Version: "
+;; time-stamp-format: "%:y-%02m-%02d for GNU Emacs 23.1.90 (x86_64-pc-linux-gnu)"
+;; time-stamp-end: "$"
+;; time-stamp-line-limit: 15
+;; End:

@@ -247,7 +247,7 @@
 ;; %T          timestamp with date and time
 ;; %u, %U      like the above, but inactive timestamps
 
-(define-key global-map (kbd "C-0") 'org-capture)
+(define-key global-map (kbd "M-0") 'org-capture)
 
 (setq org-capture-templates
       '(

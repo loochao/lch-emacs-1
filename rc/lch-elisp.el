@@ -1,14 +1,25 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
-;>---- PP ^L ----<;
+
+
+;;; Highlight non-breaking spaces
+;; FIXME How does it work?
+(require 'disp-table)
+(aset standard-display-table
+      (make-char 'latin-iso8859-1 (- ?\240 128))
+      (vector (+ ?\267 (* 524288 (face-id 'nobreak-space)))))
+
+
+;;; PP ^L
 (require 'pp-c-l)
 (setq pp^L-^L-string
       "----------------")
 (set-face-attribute 'pp^L-highlight t :foreground "Black" :background "Orange")
 (pretty-control-l-mode 1)
 
-;>---- Leisure Read ----<;
+
+;;; Leisure Read
 ;; FIXME: It wrote ~/lch-bmk, which is bad. Besides, it mess up with
 ;; the bookmark files, which leads org not working alright.
 ;; (require 'leisureread)
@@ -16,10 +27,12 @@
 ;; (global-set-key (kbd "C-,") 'leisureread-insert-previous-line)
 ;; (global-set-key (kbd "C-'") 'leisureread-clear-line)
 
-;>---- Flyspell ----<;
-;>---- iSpell ----<;
+
+;;; Flyspell
 ;; By default, it's iSpell, but if aspell is installed:
 (when (featurep 'aspell) (setq ispell-program-name "aspell"))
+(setq-default ispell-local-dictionary "american")
+
 ;; Omit tex keywords
 (add-hook 'LaTeX-mode-hook 'flyspell-mode-on)
 (add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
@@ -29,7 +42,8 @@
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
-;>---- BM ----<;
+
+;;; BM
 (setq bm-restore-repository-on-load t)
 (setq bm-repository-file (concat emacs-var-dir "/.bm-repository"))
 (require 'bm)
@@ -58,7 +72,8 @@
                               (bm-buffer-save-all)
                               (bm-repository-save)))
 
-;>---- Evernote mode ----<;
+
+;;; Evernote mode
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8"))
 ;; (define-prefix-command 'M0-map)
@@ -73,7 +88,8 @@
 ;; (define-key global-map (kbd "M-0 p") 'evernote-post-region)
 ;; (define-key global-map (kbd "M-0 b") 'evernote-browser)
 
-;>---- One-key ----<;
+
+;;; One-key
 (require 'one-key)
 (defvar one-key-menu-emms-alist nil
   "`One-Key' menu list for EMMS.")
@@ -99,35 +115,63 @@
 
 (define-key global-map (kbd "<f12> <f11>") 'one-key-menu-emms)
 
-;>---- Calfw ----<;
+
+;;; Calfw
 (require 'calfw)
 (require 'calfw-org)
 
-;>---- AucTeX ----<;
+
+;;; AucTeX
+
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
-;>---- Magit ----<;
+(setq preview-gs-command
+      (cond (lch-win32-p
+             "C:/Program Files/gs/gs8.64/bin/gswin32c.exe")
+            (t
+             "/usr/texbin/gs")))
+
+;;; Magit
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
 
-;>---- Goto-last-change ----<;
+
+;;; Goto-last-change
 (require 'goto-last-change)
-(define-key global-map (kbd "C-x C-/") 'goto-last-change)
+(define-key global-map (kbd "C-x C-\\") 'goto-last-change)
 (define-key global-map (kbd "<f2> <f2>") 'goto-last-change)
+;(require 'goto-last-change)
+;; OR auto-load:
+(autoload 'goto-last-change "goto-last-change"
+ 	  "Set point to the position of the last change." t)
 
-;>---- Smex ----<;
+
+
+;;; Smex
 (require 'smex)
 (smex-initialize)
 (setq smex-save-file (concat emacs-var-dir "/.smex-items"))
 (define-key global-map (kbd "M-x") 'smex)
 (define-key global-map (kbd "M-X") 'smex-major-mode-commands)
 
-;>---- FFAP ----<;
+
+;;; FFAP
 (require 'ffap)
-(define-key global-map (kbd "C-x f") 'find-file-at-point)
+(defun lch-ffap ()
+  "Find variable function or file at point"
+  (interactive)
+  (cond ((not (eq (variable-at-point) 0))
+          (call-interactively 'describe-variable)
+          )
+         ((function-called-at-point)
+          (call-interactively 'describe-function))
+         (t (find-file-at-point))))
+(define-key global-map (kbd "C-x f") 'lch-ffap)
+(define-key global-map (kbd "<f10> <f10>") 'lch-ffap)
 
-;>---- Recentf ----<;
+
+;;; Recentf
 (require 'recentf)
 
 ;; toggle `recentf' mode
@@ -142,48 +186,50 @@
 ;; add key binding
 (define-key global-map (kbd "C-x C-r") 'recentf-open-files)
 
-;>---- Pager ----<;
+
+;;; Pager
+
+;; Better scrolling in Emacs (doing a `Pg Up' followed by a `Pg Dn' will
+;; place the point at the same place)
+
 (require 'pager)
-(define-key global-map "\C-v" 'pager-page-down)
-(define-key global-map [next] 'pager-page-down)
-(define-key global-map "\ev" 'pager-page-up)
-(define-key global-map [prior] 'pager-page-up)
+(define-key global-map (kbd "C-v") 'pager-page-down)
+(define-key global-map (kbd "M-v") 'pager-page-up)
 (define-key global-map '[M-up] 'pager-row-up)
 (define-key global-map '[M-kp-8] 'pager-row-up)
 (define-key global-map '[M-down] 'pager-row-down)
 (define-key global-map '[M-kp-2] 'pager-row-down)
 
-;>---- Python ----<;
+
+;;; Python
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq interpreter-mode-alist (cons '("python" . python-mode)
                                       interpreter-mode-alist))
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 
-;>---- Cedet ----<;
+
+;;; Cedet
 ;(require 'cedet)
 
-;>---- Goto last change ----<;
-;(require 'goto-last-change)
-;; OR auto-load:
-(autoload 'goto-last-change "goto-last-change"
- 	  "Set point to the position of the last change." t)
-(define-key global-map (kbd "C-x C-\\") 'goto-last-change)
-
-;>---- Rainbow mode ----<;
+
+;;; Rainbow mode
 (require 'rainbow-mode)
 
-;>---- Autopair ----<;
+
+;;; Autopair
 ;> Auto insert the other part of Paren.
 ;; The same as skeleton-insert-pair.
 ; (require 'autopair)
 ; (autopair-global-mode) ;; to enable in all buffers
 
-;>---- Find-dired ----<;
+
+;;; Find-dired
 (require 'find-dired)
 (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld"))
 
 
-;>-------- Package --------<;
+
+;;;---- Package ----
 ;; (when (require 'package)
 ;;   (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
 ;; 			   ("gnu" . "http://elpa.gnu.org/packages/")
@@ -195,7 +241,8 @@
 (setq highlight-beyond-fill-column-in-modes
       '("emacs-lisp-mode"))
 
-;>-------- Less --------<;
+
+;;;---- Less ----
 ;(require 'less)
 ;; (eval-after-load 'less
 ;;   '(progn
@@ -213,13 +260,15 @@
 ;;      ))
 ;(global-less-minor-mode 1)
 
-;>-------- Uniquify --------<;
+
+;;;---- Uniquify ----
 ;-Make filename unique
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
 
-;>---------- iBuffer ----------<;
+
+;;;------ iBuffer ------
 ;- ibuffer shows a buffer list that allows to perform almost any
 ;- imaginable operation on the opened buffers.
 (when (require 'ibuffer)
@@ -234,7 +283,8 @@
     (define-key global-map (kbd "C-x C-b") 'ibuffer)
     )
 
-;>-------- iDo --------<;
+
+;;;---- iDo ----
 (require 'ido)
 (ido-mode t)
 (setq ido-save-directory-list-file (concat emacs-var-dir "/emacs-ido-last"))
@@ -244,36 +294,53 @@
 ;(setq ido-enable-tramp-completion nil)
 (define-key global-map (kbd "C-x b") 'ido-switch-buffer)
 
-;>-------- Browse-kill-ring --------<;
+
+;;; Browse-kill-ring
+
+;; (info "(emacs)Kill Ring")
 (require 'browse-kill-ring)
+(setq browse-kill-ring-separator
+      "\n--item------------------------------")
+;; temporarily highlight the inserted `kill-ring' entry
+(setq browse-kill-ring-highlight-inserted-item t)
+
+;(defface separator-face '((t (:foreground "Orange" :weight bold))) nil)
+;(setq browse-kill-ring-separator-face 'separator-face)
+
 (define-key global-map (kbd "C-c k") 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
-;>-------- Hide-region --------<;
-;- Hide-region
+
+;;; Hide-region
+
+;; Hide-region
 ;(require 'hide-region)
 ;(define-key global-map (kbd "C-c r") 'hide-region-hide)
 ;(define-key global-map (kbd "C-c R") 'hide-region-unhide)
 
-;- Hide-line
+;; Hide-line
 ;(require 'hide-lines)
 ;(define-key global-map (kbd "C-c l") 'hide-lines)
 ;(define-key global-map (kbd "C-c L") 'show-all-invisible)
 
-;>-------- Htmlize-buffer --------<;
+
+;;; Htmlize-buffer
 (require 'htmlize)
 
-;>-------- Dired-jump --------<;
+
+;;; Dired-jump
 ;> provide some dired goodies and dired-jump at C-x C-j
 (load "dired-x")
 ;; ;> TC-like file search, just need to press letters.
 ;; (require 'dired-lis)
 ;; (dired-lcs-mode 1)
 
-;>-------- YASnippet --------<;
+
+;;; YASnippet
 ;- Loaded in org.el
 
-;>-------- Company --------<;
+
+;;; Company
 ;; (add-to-list 'load-path (concat emacs-dir "/site-lisp/company"))
 ;; (autoload 'company-mode "company" nil t)
 
@@ -291,7 +358,8 @@
 
 
 
-;>-------- Auto-Complete --------<;
+
+;;;---- Auto-Complete ----
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories emacs-site-lisp)
@@ -306,27 +374,33 @@
 ;;        (lambda ()
 ;;          (add-to-list 'ac-sources 'ac-source-company-elisp)))
 
-;>-------- Vimpulse --------<;
+
+;;;---- Vimpulse ----
 ;(require 'vimpulse)
 
-;>-------- Cygwin --------<;
+
+;;;---- Cygwin ----
 ;(require 'setup-cygwin)
 
-;>-------- Cedet --------<;
+
+;;;---- Cedet ----
 ;(require 'cedet)
 ;(semantic-mode 1)
 
-;>-------- Sunrise Commander --------<;
+
+;;;---- Sunrise Commander ----
 ;(require 'sunrise-commander)
 ;(define-key global-map (kbd "C-M-e") 'sunrise-cd)
 ;(sunrise-mc-keys)
 
-;>-------- Highlight-tail --------<;
+
+;;;---- Highlight-tail ----
 ; (require 'highlight-tail)
 ; (message "Highlight-tail loaded - now your Emacs will be even more sexy!")
 ; (highlight-tail-mode)
 
-;>-------- Bat-mode --------<;
+
+;;;---- Bat-mode ----
 (when (string-equal system-type "windows-nt")
   (progn
     (setq auto-mode-alist
@@ -342,7 +416,8 @@
   )
 
 
-;>-------- Matlab --------<;
+
+;;;---- Matlab ----
 ;; FIXME
 ;(load-library "matlab-load")
 ;(matlab-cedet-setup)
@@ -350,18 +425,21 @@
 ;; (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
 ;; (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 
-;>-------- AucTeX --------<;
+
+;;;---- AucTeX ----
 ;(load "auctex.el" nil t t)
 ;(setq TeX-auto-save t)
 ;(setq-default TeX-master nil)
 ;(load "preview-latex.el" nil t t)
 
-;>-------- Session --------<;
+
+;;;---- Session ----
 ;! Save a list of open files in ~/.emacs.d/session.
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 
-;>-------- Whitespace-mode  --------<;
+
+;;;---- Whitespace-mode  ----
 ;- Make whitespace-mode with very basic background coloring for whitespaces
 (defvar whitespace-style (quote ( spaces tabs newline space-mark tab-mark newline-mark )))
 
@@ -379,7 +457,8 @@
    (tab-mark 9 [9655 9] [92 9]) ; tab
 ))
 
-;>-------- Highlight Symbol --------<;
+
+;;;---- Highlight Symbol ----
 ;> Highlight occurrence of current word, and move cursor to next/prev occurrence
 ;> see http://xahlee.org/emacs/modernization_isearch.html
 (require 'highlight-symbol)
@@ -389,21 +468,21 @@
 (define-key global-map (kbd "<f9> <f10>") 'highlight-symbol-prev)
 
 
-;>-------- Bat Mode --------<;
+
+;;;---- Bat Mode ----
 ;> For editing Windows's cmd.exe's script; batch, ".bat" file mode.
 (autoload 'dos-mode "dos" "A mode for editing Windows cmd.exe batch scripts." t)
 (add-to-list 'auto-mode-alist '("\\.bat\\'" . dos-mode))
 (add-to-list 'auto-mode-alist '("\\.cmd\\'" . dos-mode))
 
-;>-------- AutoHotKey Mode --------<;
+
+;;;---- AutoHotKey Mode ----
 ;> a keyboard macro for Windows
 (autoload 'xahk-mode "xahk-mode" "AutoHotKey mode" t)
 (add-to-list 'auto-mode-alist '("\\.ahk\\'" . xahk-mode))
 
-;>-------- Evernote Mode --------<;
-;(load "evernote-mode")
-
-;; ;>-------- Hunspell --------<;
+
+;;; Hunspell
 ;; (when (string-equal system-type "windows-nt")
 ;;   (when (or (file-exists-p "../bin/hunspell")
 ;;             (file-exists-p "C:\\Program Files (x86)\\ErgoEmacs\\hunspell")
@@ -415,7 +494,8 @@
 ;;       (rw-hunspell-setup)
 ;;       ) ) )
 
-;>-------- Desktop --------<;
+
+;;; Desktop
 ;- Make emacs open all files in last emacs session.
 ;- Desktop is already part of Emacs.
 ;- This functionality is provided by desktop-save-mode ("feature"
@@ -504,4 +584,13 @@
 ;;     )
 ;;   )
 
+
+;;; provide
 (provide 'lch-elisp)
+
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; outline-regexp: ";;;;* "
+;; End:

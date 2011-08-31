@@ -1,12 +1,30 @@
-;-*- coding: utf-8 -*-
+;-*- coding:utf-8; -*-
 
 ;>======== INIT.EL  ========<;
-;; (info "(emacs)Customization")
+;;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
+
+
+
+
+;;; (info "(emacs)Kill Ring")
+;; auto-indent pasted code
+(defadvice yank (after indent-region activate)
+  (if (member major-mode
+              '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
+                objc-mode latex-mode plain-tex-mode python-mode))
+      (indent-region (region-beginning) (region-end) nil)))
+
+(defadvice yank-pop (after indent-region activate)
+  (if (member major-mode
+              '(emacs-lisp-mode scheme-mode lisp-mode c-mode c++-mode
+                objc-mode latex-mode plain-tex-mode python-mode))
+      (indent-region (region-beginning) (region-end) nil)))
 
 (when window-system
   (global-unset-key "\C-z"))
 
+;;; Customization
 (setq enable-local-eval t
       modeline-click-swaps-buffers t
       undo-limit 100000
@@ -14,6 +32,8 @@
       tab-width 8
       read-file-name-completion-ignore-case t
       completion-ignore-case t
+      message-log-max t                 ; Don't truncate the message log buffer when it becomes large
+      indicate-buffer-boundaries t      ; ?? visually indicate buffer boundaries and scrolling
       inhibit-startup-message t         ; Turn off the picture startup
       mark-ring-max 200                 ; # of marks kept in the mark ring.
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
@@ -50,74 +70,106 @@
 ;; content to reflect what's on-disk.
 (global-auto-revert-mode 1)
 
-;; Transient mark
+;;; Transient mark
 (when window-system (transient-mark-mode 1))
 
-;; Set default browser
+;;; Set default browser
 (setq browse-url-browser-function 'browse-url-firefox)
 
 ;(setq left-fringe-width 12)
 
-;>---- Mouse Jump away ----<;
+
+;;; Minibuffer
+
+;; Ignore case when reading a file name completion
+(setq read-file-name-completion-ignore-case t)
+
+;; Dim the ignored part of the file name
+(file-name-shadow-mode 1)
+
+;; Minibuffer window expands vertically as necessary to hold the text that you
+;; put in the minibuffer
+(setq resize-mini-windows t)
+
+;; From Babel.el: "If the output is short enough to display in the echo area
+;; (which is determined by the variables `resize-mini-windows' and
+;; `max-mini-window-height'), it is shown in echo area."
+
+
+;;; Mouse Jump away
 (mouse-avoidance-mode 'animate)
 ;(mouse-avoidance-mode 'jump)
 
-;>---- Turn on the functions disabled by default ----<;
+
+;;; Turn on the functions disabled by default
 (put 'upcase-region    'disabled nil)
 (put 'downcase-region  'disabled nil)
 (put 'overwrite-mode   'disabled t)
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
-;>- Turn on all the disabled functions
+
+;;; Turn on all the disabled functions
 (setq disabled-command-function nil)
 
-;>---- Display page delimiter ^L as a horizontal line ----<;
+
+;;; Display page delimiter ^L as a horizontal line
 ;(aset standard-display-table ?\^L (vconcat (make-vector 64 ?-) "^L"))
 
-;>---- 'y' for 'yes', 'n' for 'no' ----<;
+
+;;; 'y' for 'yes', 'n' for 'no'
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;>---- Alter the scratch message ----<;
+
+;;; Alter the scratch message
 (setq initial-scratch-message "")
 ;(setq initial-scratch-message "Welcome to the world of Emacs")
 
-;>---- Don't beep at me ----<;
+
+;;; Don't beep at me
 (setq visible-bell t)
 ;>~ No ring no screen shaking.
 ;(setq ring-bell-function 'ignore)
 
-;>---- Line trancation enable ----<;
+
+;;; Line trancation enable
 (setq truncate-partial-width-windows nil)
 
-;>---- Display column & line number ----<;
+
+;;; Display column & line number
 (when (fboundp 'line-number-mode)
   (line-number-mode 1))
 (when (fboundp 'column-number-mode)
   (column-number-mode 1))
 
-;>---- Time stamp support ----<;
+
+;;; Time stamp support
 (setq time-stamp-active t)
 (setq time-stamp-warn-inactive t)
 ;(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S Lu Chao")
 ;(add-hook 'write-file-hooks 'time-stamp)
 
-;>---- New line ----<;
+
+;;; New line
 ;; Interchange these two keys.
 ;; Under most cases, indent is needed after enter.
 (define-key global-map (kbd "C-m") 'newline-and-indent)
 (define-key global-map (kbd "C-j") 'newline)
 
-;>---- Directly delete current line ----<;
+
+;;; Directly delete current line
 ;(define-key global-map (kbd "C-k") 'kill-whole-line)
 
-;>---- Set default major mode org-mode ----<;
+
+;;; Set default major mode org-mode
 ;> Enabled in Org-mode
 ;(setq major-mode 'org-mode)
 
-;>---- Display picture ----<;
+
+;;; Display picture
 (auto-image-file-mode)
 
-;>---- Grammar highlight ----<;
+
+;;; Grammar highlight
 ;> Significant functionality depends on font-locking being active.
 ;> For all buffers
 (global-font-lock-mode t)
@@ -126,30 +178,37 @@
 ;> For Org buffers only
 ;> (add-hook 'org-mode-hook 'turn-on-font-lock)
 
-;>---- BMK FILW ----<;
+
+;;; BMK FILW
 ;> Not only on exit, but on every modification
 (setq bookmark-save-flag 1)
 
-;>---- Allow emacs cocopy&paste with X11 apps ----<;
+
+;;; Allow emacs cocopy&paste with X11 apps
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
-;>---- Start server for emacsclient ----<;
-;>- Start the emacs server only if another instance of the server is not running.
+
+;;; Start server for emacsclient
+
+;;; Start the emacs server only if another instance of the server is not running.
 (require 'server)
 (if (eq (server-running-p server-name) nil)
     (server-start))
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
-;>---- Delete-selection as usual soft ----<;
+
+;;; Delete-selection as usual soft
 ;> Select and press a key to delete, like MSWord
 (delete-selection-mode t)
 
-;>---- Enable some function ----<;
+
+;;; Enable some function
 (put 'narrow-to-region 'disabled nil)
 (put 'erase-buffer 'disabled nil)
 
-;>-------- BACKUP POLICIES --------<;
+
+;;; BACKUP POLICIES
 (setq make-backup-files t
       version-control t
       kept-old-versions 2
@@ -164,13 +223,15 @@
 ;; Don't make backup files
 ;(setq make-backup-files nil backup-inhibited t)
 
-;>-------- DIARY FILE --------<;
+
+;;; DIARY FILE
 ;(setq diary-file "~/.emacs.var/.diary")
 ;(add-hook 'diary-hook 'appt-make-list)
 ;(setq diary-mail-addr "loochao@gmail.com")
 
 
-;>-------- AUTO-FILL --------<;
+
+;;; AUTO FILL
 ;> Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
 ;> Auto fill length
@@ -179,7 +240,8 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
 
-;>-------- TRUNCATE-LINES --------<;
+
+;;; TRUNCATE LINES
 ;> t means aaaaa->
 (set-default 'truncate-lines nil)
 ;; Toggles between line wrapping in the current buffer.
@@ -197,7 +259,8 @@
   )
 (define-key global-map (kbd "C-c ^") 'lch-toggle-line-wrapping)
 
-;>-------- AUTO COMPILE EL FILES --------<;
+
+;;; AUTO COMPILE EL FILES
 (defun elisp-compile-hook ()
   (add-hook 'after-save-hook (lambda () (byte-compile-file (buffer-file-name
 (current-buffer)))) nil t))
@@ -211,12 +274,14 @@
   (interactive)
   (byte-recompile-directory "~/.emacs.d/rc" 0 bytecomp-force))
 
-;>-------- ALIASES --------<;
+
+;;; ALIASES
 (defalias 'wku 'w3m-print-this-url)
 (defalias 'wkl 'w3m-print-current-url)
 (defalias 'afm 'auto-fill-mode)
 
-;>-------- TIME SETTING --------<;
+
+;;; TIME SETTING
 ;; Display format in 24hr format
 (setq display-time-24hr-format t)
 ;; Display time date
@@ -228,9 +293,10 @@
 (setq display-time-format "%a(%V) %m-%d/%H:%M")
 
 (display-time)
-;>-------- LOCAL VARIABLES --------<;
-;- (info "(emacs)Variables")
-;- (info "(emacs)Directory Variables")
+
+;;; LOCAL VARIABLES
+;; (info "(emacs)Variables")
+;; (info "(emacs)Directory Variables")
 
 ;; file local variables specifications are obeyed, without query -- RISKY!
 (setq enable-local-variables t)
@@ -251,7 +317,8 @@
 ;        (org-export-latex-title-command . "\\maketitle[logo=Forem]")
       ))
 
-;>-------- EXPANSIONS & COMPLETIONS --------<;
+
+;;; EXPANSIONS & COMPLETIONS
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
         try-expand-whole-kill
@@ -268,11 +335,13 @@
         try-expand-line
 	try-expand-line-all-buffers))
 
-;>-------- USER INFO --------<;
+
+;;; USER INFO
 (setq user-full-name "LooChao<LooChao@gmail.com>")
 (setq user-mail-address "LooChao@gmail.com")
 
-;>-------- GREP & FIND --------<;
+
+;;; GREP & FIND
 ;- (info "(emacs)Dired and Find")
 ;; Search for files with names matching a wild card pattern and Dired the output
 (define-key global-map (kbd "C-c 1") 'find-name-dired)
@@ -285,7 +354,8 @@
 
 (setq grep-find-command "find . -type f ! -regex \".*/\\({arch}\\|\\.arch-ids\\|\\.svn\\|_darcs\\|\\.bzr\\|\\.git\\|\\.hg\\)/.*\" -print0 | xargs -0 grep -nH -e ")
 
-;>-------- AUTO SAVE FILES IN ONE PLACE --------<;
+
+;;; AUTO SAVE FILES IN ONE PLACE
 ;- Put autosave files (i.e. #foo#) in one place, *NOT*
 ;; scattered all over the file system!
 
@@ -309,7 +379,8 @@
     (expand-file-name
      (concat "#%" (buffer-name) "#")))))
 
-;>-------- PRINT FOR W32 --------<;
+
+;;; PRINT FOR W32
 (if lch-win32-p
     (progn
       (require 'w32-winprint)
@@ -318,3 +389,10 @@
 
 (message "~~ lch-init: done.")
 (provide 'lch-init)
+
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; outline-regexp: ";;;;* "
+;; End:

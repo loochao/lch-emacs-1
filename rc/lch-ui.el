@@ -137,8 +137,11 @@
     (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
 
 ;>---- Show buffer name in titlebar ----<;
-;(setq frame-title-format "Emacs - %f")
-(setq frame-title-format "FIRST THING FIRST / DO IT NOW!!")
+;; %f: Full path of current file.
+;; %b: Buffer name.
+(setq frame-title-format "-- %f --")
+;(setq frame-title-format "LooChao@%b")
+;(setq frame-title-format "FIRST THING FIRST / DO IT NOW!!")
 (setq icon-title-format "Emacs - %b")
 
 (set-face-background 'isearch "darkCyan")
@@ -173,7 +176,7 @@
     (overwrite-mode
       (set-cursor-color lch-overwrite-color)
       (setq cursor-type lch-overwrite-cursor-type))
-    (t 
+    (t
       (set-cursor-color lch-normal-color)
       (setq cursor-type lch-normal-cursor-type))))
 
@@ -191,9 +194,9 @@
 (if (fboundp 'show-paren-mode)
     (progn
       (show-paren-mode t)
-      (setq show-paren-delay 0)      
+      (setq show-paren-delay 0)
       (setq show-paren-style 'parentheses)
-;     (setq show-paren-style 'expression)      
+;     (setq show-paren-style 'expression)
       ))
 
 ;; Highlight paren when inside (red)
@@ -260,7 +263,7 @@
     (setq nextState (% (+ currentState (length colorList) num) (length colorList)))
     (setq colorToUse (nth nextState colorList))
     (set-frame-parameter nil 'foreground-color colorToUse)
-    (redraw-frame (selected-frame))    
+    (redraw-frame (selected-frame))
     (message "Current foreColor is %s" colorToUse)
 
     (put 'lch-cycle-fg-color 'state nextState))
@@ -292,7 +295,7 @@ See `cycle-color'."
     (setq nextState (% (+ currentState (length colorList) num) (length colorList)))
     (setq colorToUse (nth nextState colorList))
     (set-frame-parameter nil 'background-color colorToUse)
-    (redraw-frame (selected-frame))    
+    (redraw-frame (selected-frame))
     (message "Current backColor is %s" colorToUse)
 
     (put 'lch-cycle-bg-color 'state nextState))
@@ -337,11 +340,11 @@ Warning: tested on Windows Vista only."
   (let (fontList fontToUse currentState nextState )
     (setq fontList (list
 		    "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"
-		    "-outline-Lucida Console-normal-normal-normal-mono-21-*-*-*-c-*-iso8859-1"		    
+		    "-outline-Lucida Console-normal-normal-normal-mono-21-*-*-*-c-*-iso8859-1"
 		    "-outline-Lucida Console-normal-normal-normal-mono-24-*-*-*-c-*-iso8859-1"
 		    "-outline-Monaco-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"
-		    "-outline-Monaco-normal-normal-normal-mono-21-*-*-*-c-*-iso8859-1"		    
-		    "-outline-Monaco-normal-normal-normal-mono-24-*-*-*-c-*-iso8859-1"		    
+		    "-outline-Monaco-normal-normal-normal-mono-21-*-*-*-c-*-iso8859-1"
+		    "-outline-Monaco-normal-normal-normal-mono-24-*-*-*-c-*-iso8859-1"
 ;		    "-*-Courier New-normal-r-*-*-24-112-96-96-c-*-iso8859-1"
 ;		    "-outline-Lucida Sans Unicode-normal-normal-normal-sans-24-*-*-*-p-*-iso8859-1"
                     ))
@@ -396,7 +399,7 @@ See `cycle-font'."
 (find-if #'qiang-font-existsp font-list)
 
 (defun qiang-make-font-string (font-name font-size)
-  (if (and (stringp font-size) 
+  (if (and (stringp font-size)
            (equal ":" (string (elt font-size 0))))
       (format "%s%s" font-name font-size)
     (format "%s %s" font-name font-size)))
@@ -413,9 +416,9 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
                   english-font-size))
         (zh-font (font-spec :family (find-if #'qiang-font-existsp chinese-fonts)
                             :size chinese-font-size)))
- 
+
     ;; Set the default English font
-    ;; 
+    ;;
     ;; The following 2 method cannot make the font settig work in new frames.
     ;; (set-default-font "Consolas:pixelsize=18")
     ;; (add-to-list 'default-frame-alist '(font . "Consolas:pixelsize=18"))
@@ -423,8 +426,8 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
     (message "Set English Font to %s" en-font)
     (set-face-attribute
      'default nil :font en-font)
- 
-    ;; Set Chinese font 
+
+    ;; Set Chinese font
     ;; Do not use 'unicode charset, it will cause the english font setting invalid
     (message "Set Chinese Font to %s" zh-font)
     (dolist (charset '(kana han symbol cjk-misc bopomofo))

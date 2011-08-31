@@ -1,11 +1,13 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== OUTLINE.EL ==========<;
+;; (info "(emacs)Outline Mode")
 ;; bind the outline-minor-mode-prefix C-c @ to C-o
 (global-unset-key (kbd "C-o"))
 (add-hook 'outline-minor-mode-hook
-          (lambda () (local-set-key (kbd "C-o")
-                                    outline-mode-prefix-map)))
+          (lambda ()
+            (local-set-key (kbd "C-o") 'outline-mode-prefix-map)
+            (hide-body)))
 
 ;; ; Outline-minor-mode key map
 ;; (define-prefix-command 'cm-map nil "Outline-")
@@ -32,9 +34,12 @@
 
 ;; Add hook to the following major modes so that the outline minor mode starts automatically.
 ;; Outline mode is better to be enabled only in document modes.
-(add-hook 'muse-mode-hook 'outline-minor-mode)
-(add-hook 'html-mode-hook 'outline-minor-mode)
-(add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+(dolist (hook '(emacs-lisp-mode-hook
+                latex-mode-hook
+                text-mode-hook
+                change-log-mode-hook
+                makefile-mode-hook))
+  (add-hook hook 'outline-minor-mode))
 
 (defun body-p ()
   (save-excursion
@@ -110,4 +115,24 @@
 (define-key outline-mode-map (kbd "C-M-<up>") 'outline-previous-visible-heading)
 (define-key outline-mode-map (kbd "C-M-<down>") 'outline-next-visible-heading)
 
+(when (require 'outline-magic)
+  (add-hook 'outline-minor-mode-hook
+            (lambda ()
+              (define-key outline-minor-mode-map
+                (kbd "<M-tab>") 'outline-cycle))))
+
+(defun org-cycle-global ()
+  (interactive)
+  (org-cycle t))
+
+(defun org-cycle-local ()
+  (interactive)
+  (save-excursion
+    (move-beginning-of-line nil)
+    (org-cycle)))
+
+(global-set-key (kbd "C-M-]") 'org-cycle-global) ; ok on Elisp, not on LaTeX
+(global-set-key (kbd "M-]") 'org-cycle-local) ; ok on Elisp, not on LaTeX
+
+(message "~~ lch-outline: done.")
 (provide 'lch-outline)

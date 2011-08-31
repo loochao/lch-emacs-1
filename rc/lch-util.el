@@ -1,6 +1,170 @@
 ;-*- coding:utf-8 -*-
 
 ;>======== UTIL.EL ========<;
+
+
+;;; Special words
+(defvar keywords-critical-pattern
+      "\\(BUGS\\|FIXME\\|TODO\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
+(make-face 'keywords-critical)
+(set-face-attribute 'keywords-critical nil
+                    :foreground "black" :background "yellow"
+                    :weight 'bold)
+
+;; smaller subset of keywords for ensuring no conflict with Org mode TODO keywords
+(defvar keywords-org-critical-pattern
+      "\\(BUGS\\|FIXME\\|XXX\\|[^*] TODO\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
+
+
+;; FIXME Highlighting all special keywords but "TODO" in Org mode is already a
+;; good step. Though, a nicer integration would be that "TODO" strings in the
+;; headings are not touched by this code, and that only "TODO" strings in the
+;; text body would be. Don't know (yet) how to do that...
+(make-face 'keywords-org-critical)
+(set-face-attribute 'keywords-org-critical nil
+                    :foreground "red" :background "yellow"
+                    :weight 'bold)
+
+(setq keywords-normal-pattern "\\([Ww][Aa][Rr][Nn][Ii][Nn][Gg]\\)")
+(make-face 'keywords-normal)
+(set-face-attribute 'keywords-normal nil
+                    :foreground "magenta2" :background "yellow")
+
+;; Set up highlighting of special words for proper selected major modes only
+;; No interference with Org mode (which derives from text-mode)
+(dolist (mode '(fundamental-mode
+                svn-log-view-mode
+                text-mode))
+  (font-lock-add-keywords mode
+                          `((,keywords-critical-pattern 1 'keywords-critical prepend)
+                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
+
+;; Set up highlighting of special words for Org mode only
+(dolist (mode '(org-mode))
+  (font-lock-add-keywords mode
+                          `((,keywords-org-critical-pattern 1 'keywords-org-critical prepend)
+                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
+
+;; Add fontification patterns (even in comments) to a selected major mode
+;; *and* all major modes derived from it
+(defun fontify-keywords ()
+  (interactive)
+;;;   (font-lock-mode -1)
+;;;   (font-lock-mode 1)
+  (font-lock-add-keywords nil
+                          `((,keywords-critical-pattern 1 'keywords-critical prepend)
+                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
+;; FIXME                        0                  t
+
+;; Set up highlighting of special words for selected major modes *and* all
+;; major modes derived from them
+(dolist (hook '(c++-mode-hook
+                c-mode-hook
+                change-log-mode-hook
+                cperl-mode-hook
+                css-mode-hook
+                emacs-lisp-mode-hook
+                html-mode-hook
+                java-mode-hook
+                latex-mode-hook
+                lisp-mode-hook
+                makefile-mode-hook
+                message-mode-hook
+                php-mode-hook
+                python-mode-hook
+                sh-mode-hook
+                shell-mode-hook
+                ssh-config-mode-hook))
+  (add-hook hook 'fontify-keywords))
+
+
+;;; Repeat last command passed to `shell-command'
+(defun repeat-shell-command ()
+  "Repeat most recently executed shell command."
+  (interactive)
+  (save-buffer)
+  (or shell-command-history (error "Nothing to repeat."))
+  (shell-command (car shell-command-history)))
+
+(global-set-key (kbd "C-c j") 'repeat-shell-command)
+
+
+;;; Shift a line up or down
+(defun move-line (n)
+  "Move the current line up or down by N lines."
+  (interactive "p")
+  (let ((col (current-column))
+        start
+        end)
+    (beginning-of-line)
+    (setq start (point))
+    (end-of-line)
+    (forward-char)
+    (setq end (point))
+    (let ((line-text (delete-and-extract-region start end)))
+      (forward-line n)
+      (insert line-text)
+      ;; restore point to original column in moved line
+      (forward-line -1)
+      (forward-char col))))
+
+(defun move-line-up (n)
+  "Move the current line up by N lines."
+  (interactive "p")
+  (move-line (if (null n) -1 (- n))))
+
+(defun move-line-down (n)
+  "Move the current line down by N lines."
+  (interactive "p")
+  (move-line (if (null n) 1 n)))
+
+(global-set-key (kbd "<C-M-up>") 'move-line-up)
+(global-set-key (kbd "<C-M-down>") 'move-line-down)
+
+
+;;; Digital-clock
+(defun my-digital-clock (&optional arg)
+  "Show digital clock in the separate Emacs frame.
+Show digital clock in the same Emacs frame if called with C-0.
+Cancel the clock if called with C-u."
+  (interactive "P")
+  (and (boundp 'my-digital-clock-timer) (timerp my-digital-clock-timer)
+       (cancel-timer my-digital-clock-timer))
+  (and (boundp 'my-digital-clock-frame) (framep my-digital-clock-frame)
+       (delete-frame my-digital-clock-frame))
+  (if (or (not arg) (numberp arg))
+      (setq my-digital-clock-timer
+            (run-at-time
+             t 1
+             (lambda ()
+               (message "%s"
+                        ;; (round (float-time)) ; e.g. 1234567890
+                        (format-time-string "%Y-%m-%d %H:%M:%S" (current-time))
+                        )))))
+  (or arg
+      (setq my-digital-clock-frame
+            (make-frame
+             `((top . 478) (left . 80) (width . 24) (height . 1)
+               (name . "TIME")
+               (minibuffer . only)
+               (buffer-predicate . nil)
+               (user-position . t)
+               (vertical-scroll-bars . nil)
+               (scrollbar-width . 0)
+               (menu-bar-lines . 0)
+               (foreground-color . "green")
+               (background-color . "black")
+               ,(cond
+                 ((eq window-system 'x)
+                  '(font . "-*-Fixed-Medium-R-*--64-*-*-*-C-*-*-*")))
+               (cursor-color . "gray2")
+               (cursor-type . bar)
+               (auto-lower . nil)
+               (auto-raise . t)
+               (border-width . 0)
+               (internal-border-width . 0))))))
+
+
 (defun lch-insert-date (&optional prefix)
   "Insert the current date in ISO format. With prefix-argument,
 add day of week. With two prefix arguments, add day of week and
@@ -11,6 +175,8 @@ time."
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format (current-time)))))
 
+
+;;; lch-search
 (defun lch-search ()
   (interactive)
   (split-window)
@@ -38,7 +204,8 @@ time."
 ;; (add-hook 'comint-output-filter-functions 'wcy-shell-mode-auto-rename-buffer-output-filter)
 ;; (add-hook 'comint-input-filter-functions 'wcy-shell-mode-auto-rename-buffer-input-filter )
 
-;; Automatically add execute permission to a script file.
+
+;;; Automatically add execute permission to a script file.
 (defun lch-chmod-x ()
    (and (save-excursion
           (save-restriction
@@ -52,7 +219,8 @@ time."
              (concat "Saved as script: " buffer-file-name)))))
 
 (add-hook 'after-save-hook 'lch-chmod-x)
-
+
+;;; Start file browser
 (defun lch-start-file-browser ()
   "Open current pwd with file browser.
    Currently, just work under Mac OSX."
@@ -65,6 +233,8 @@ time."
   ))
 (define-key global-map (kbd "<f4> <f4>") 'lch-start-file-browser)
 
+
+;;; Start terminal
 (defun lch-start-terminal ()
   "Open current pwd with terminal.
    Currently, just work under Mac OSX."
@@ -83,8 +253,8 @@ end tell" mydir)))
   ))
 (define-key global-map (kbd "<f1> <f2>") 'lch-start-terminal)
 
-
-;; Punctuation substitution
+
+;;; Punctuation substitution
 (defun lch-punctuate-buffer ()
   "Substitute Chinese punctuation to English ones"
   (interactive)
@@ -103,6 +273,8 @@ end tell" mydir)))
       (replace-match "\"" nil t))
     ))
 
+
+;;; Delete trailing spaces
 ;; It is better to go to the next line here because this way we can
 ;; call this with a numeric argument.
 (defun delete-trailing-spaces (arg)
@@ -125,6 +297,8 @@ end tell" mydir)))
       (delete-trailing-spaces 1)))
   (message "Deleting trailing spaces... done"))
 
+
+;;; Buffer beautify
 (defun buffer-untabify ()
   "Convert all tabs in buffer with multiple spaces, preserving columns."
   (interactive)
@@ -139,13 +313,14 @@ end tell" mydir)))
   (buffer-delete-trailing-spaces)
   (buffer-smart-tabify)
   (message "Cleaning up buffer... done"))
-
-;; Compute the length of the marked region
+
+;;; Compute the length of the marked region
 (defun region-length ()
   "length of a region"
   (interactive)
   (message (format "%d" (- (region-end) (region-beginning)))))
-
+
+;;; Words count
 (defun count-words (start end)
   "Print number of words in the region."
   (interactive "r")
@@ -158,8 +333,8 @@ end tell" mydir)))
       (message "Region has %d words" n)
       n)))
 
-
-;; Show ascii table
+
+;;; Show ascii table
 (defun lch-ascii-table ()
   (interactive)
   (switch-to-buffer "*ascii*")
@@ -180,14 +355,16 @@ end tell" mydir)))
       (setq i (- i 96))
       ))))
 
+
+;;; Indent whole buffer
 (defun indent-whole-buffer ()
   (interactive)
   (save-excursion
     (mark-whole-buffer)
     (indent-for-tab-command)))
 (define-key global-map (kbd "C-c i") 'indent-whole-buffer)
-
-;; insert a time stamp string
+
+;;; insert a time stamp string
 (defun lch-insert-time-stamp ()
   "Insert a time stamp."
   (interactive "*")
@@ -197,6 +374,8 @@ end tell" mydir)))
                   (user-login-name)
                   comment-end)))
 
+
+;;; dos<->unix
 (defun dos2unix ()
   "Cut all visible ^M from the current buffer."
   (interactive)
@@ -213,6 +392,8 @@ end tell" mydir)))
     (while (search-forward "\n" nil t)
       (replace-match "\r\n"))))
 
+
+;;; Reverse words/region
 (defun reverse-words (start end)
   (interactive "r")
   (let ((words (reverse (split-string (buffer-substring start end)))))
@@ -222,7 +403,6 @@ end tell" mydir)))
     (backward-char 1)
     (delete-char 1)))
 
-
 (defun reverse-region-by-line (beg end)
   (interactive "r")
   (save-excursion
@@ -231,8 +411,8 @@ end tell" mydir)))
       (replace-match (apply #'string
                             (nreverse (string-to-list (match-string 0)))))
       (forward-line))))
-
-
+
+;;; Shuffle vector
 (defun shuffle-vector (vector)
   "Destructively shuffle the contents of VECTOR and return it."
   (loop
@@ -242,7 +422,8 @@ end tell" mydir)))
    do (rotatef (aref vector pos)
                (aref vector swap)))
   vector)
-
+
+;;; Randomize region
 (defun randomize-region (start end)
   "Randomly re-order the lines in the region."
   (interactive "r")
@@ -265,8 +446,8 @@ end tell" mydir)))
             (insert (aref rlines linenum))))))))
 
 
-
-;>-- Jump to matched paren --<;
+
+;;; Jump to matched paren
 ;;;###autoload
 (defun his-match-paren (arg)
   "Go to the matching paren if on a paren; otherwise insert %."
@@ -278,7 +459,8 @@ end tell" mydir)))
           (t (self-insert-command (or arg 1))))))
 (define-key global-map "%" 'his-match-paren)
 
-;>-- Split Windows --<;
+
+;;; Split Windows
 ;;;###autoload
 (defun ywb-favorite-window-config (&optional percent)
   "Split window to proper portion"
@@ -297,7 +479,8 @@ end tell" mydir)))
 (define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)
 (define-key global-map (kbd "C-c w") 'ywb-favorite-window-config)
 
-;>-- Transpose(Interchange) Two Windows --<;
+
+;;; Transpose(Interchange) Two Windows
 ;;;###autoload
 (defun his-transpose-windows (arg)
   "Transpose the buffers shown in two windows."
@@ -311,7 +494,8 @@ end tell" mydir)))
         (select-window (funcall selector)))
       (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
 
-;>-- Kill current buffer without confirmation --<;
+
+;;; Kill current buffer without confirmation
 (define-key global-map (kbd "C-x C-k") 'kill-current-buffer)
 
 (defun kill-current-buffer ()
@@ -319,7 +503,8 @@ end tell" mydir)))
   (interactive)
   (kill-buffer (current-buffer)))
 
-;>---- Switch or create *scratch ----<;
+
+;;; Switch or create *scratch*
 (defun ywb-create/switch-scratch ()
   (interactive)
   (let ((buf (get-buffer "*scratch*")))
@@ -328,9 +513,8 @@ end tell" mydir)))
       (lisp-interaction-mode))))
 (define-key global-map (kbd "<f1> s") 'ywb-create/switch-scratch)
 (define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)
-
-;>-- In Windows, Alt+F4 closes the frame --<;
-;>-(or kill emacs if it is the last frame)
+
+;;; Alt+F4 closes the frame (Win32 ONLY)
 (defun close-frame ()
   "Closes the current frame or kill emacs if there are just one
 frame. It simulates the same functionality of the Close button in
@@ -343,7 +527,8 @@ the frame title bar."
 (if (and (boundp 'w32-initialized) w32-initialized)
     (define-key global-map (kbd "M-<f4>") 'close-frame))
 
-;>-- Increase/decrease font size --<;
+
+;;; Zoom
 (defun text-scale-normal-size ()
   "Set the height of the default face in the current buffer to its default value."
   (interactive)
@@ -355,8 +540,9 @@ the frame title bar."
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 
-;>---- Go-to-char ----<;
-;> C-c a x goto x, then press x to go to next 'x'
+
+;;; Go-to-char
+;; C-c a x goto x, then press x to go to next 'x'
 (defun my-wy-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
 Typing `wy-go-to-char-key' again will move forwad to the next Nth
@@ -368,9 +554,9 @@ occurence of CHAR."
     (search-forward (string char) nil nil n))
   (setq unread-command-events (list last-input-event)))
 (define-key global-map (kbd "C-x g") 'my-wy-go-to-char)
-(define-key global-map (kbd "M-g") 'my-wy-go-to-char)
+;(define-key global-map (kbd "M-g") 'my-wy-go-to-char)
 
-;>-- Kills live buffers, leaves some emacs work buffers --<;
+;;; Nuke buffers
 (defun nuke-some-buffers (&optional list)
   "For each buffer in LIST, kill it silently if unmodified. Otherwise ask.
 LIST defaults to all existing live buffers."
@@ -396,6 +582,7 @@ LIST defaults to all existing live buffers."
 (define-key global-map (kbd "<f1> n") 'nuke-some-buffers)
 (define-key global-map (kbd "C-c n") 'nuke-some-buffers)
 
+;;; Auto scroll
 (defvar my-scroll-auto-timer nil)
 (defun my-scroll-auto (arg)
   "Scroll text of current window automatically with a given frequency.
@@ -415,22 +602,15 @@ With C-u, C-0 or M-0, cancel the timer."
 
 (define-key global-map (kbd "<f1> S") 'my-scroll-auto)
 
-(defun my-find-thing-at-point ()
-  "Find variable, function or file at point."
-  (interactive)
-  (cond ((not (eq (variable-at-point) 0))
-         (call-interactively 'describe-variable))
-        ((function-called-at-point)
-         (call-interactively 'describe-function))
-        (t (find-file-at-point))))
-
-;>---- Inserts the user name ----<;
+
+;;; Inserts the user name
 (defun insert-userid ()
   "Insert the my full name and address"
   (interactive)
         (insert user-full-name))
 
-;>---- Process ----<;
+
+;;; Process
 (define-key global-map (kbd "<f1> p")
                 (lambda () (interactive)
                   (let* ((n "*top*")
@@ -445,8 +625,9 @@ With C-u, C-0 or M-0, cancel the timer."
                       (local-set-key "q" '(lambda () (interactive) (kill-buffer (current-buffer))))
                       (hl-line-mode 1)))))
 
-;>---- Switch Mode ----<;
-;>~~ The mode selected last time is remembered.
+
+;;; Switch Mode
+;; The mode selected last time is remembered.
 (defvar switch-major-mode-last-mode nil)
 (make-variable-buffer-local 'switch-major-mode-last-mode)
 
@@ -470,7 +651,8 @@ With C-u, C-0 or M-0, cancel the timer."
     (setq switch-major-mode-last-mode last-mode)))
 (define-key global-map (kbd "<f1> C-m") 'switch-major-mode)
 
-;>---- Inserts Date ----<;
+
+;;; Inserts Date
 (defun insert-date()
 "Insert a time-stamp according to locale's date and time format."
 (interactive)
@@ -478,7 +660,8 @@ With C-u, C-0 or M-0, cancel the timer."
 
 (define-key global-map (kbd "<f1> T") 'insert-date)
 
-;>---- New Empty Buffer ----<;
+
+;;; New Empty Buffer
 (defun new-empty-buffer ()
   "Opens a new empty buffer."
   (interactive)
@@ -487,7 +670,8 @@ With C-u, C-0 or M-0, cancel the timer."
     (funcall (and initial-major-mode))
     (setq buffer-offer-save t)))
 
-;>---- M$CMD Shell ----<;
+
+;;; M$CMD Shell
 (defun cmd-shell (&optional arg)
   "Run cmd.exe (WinNT) or command.com shell. A numeric prefix
 arg switches to the specified session, creating it if necessary."
@@ -503,7 +687,8 @@ arg switches to the specified session, creating it if necessary."
     (shell buf-name)))
 (define-key global-map (kbd "C-S-<f1>") 'cmd-shell)
 
-;>---- MSYS Shell ----<;
+
+;;; MSYS Shell
 (defun msys-shell (&optional arg)
   "Run MSYS shell (sh.exe).  It's like a Unix Shell in Windows.
 A numeric prefix arg switches to the specified session, creating
@@ -519,7 +704,8 @@ it if necessary."
     (shell buf-name)))
 (define-key global-map (kbd "C-M-<f1>") 'msys-shell)
 
-;>---- Locate Current File ----<;
+
+;;; Locate Current File
 (defun locate-current-file-in-explorer ()
   (interactive)
   (cond
@@ -538,6 +724,8 @@ it if necessary."
 
 (if lch-win32-p (define-key global-map (kbd "<f4> <f4>") 'locate-current-file-in-explorer))
 
+
+;;; Buffer tabifying
 ;; Tabifying is a good thing as long as it is used *ONLY* for
 ;; indentation.  Otherwise it will affect strings as well, which is a
 ;; _VERY BAD THING_!
@@ -572,4 +760,12 @@ it if necessary."
          (setq line (1+ line)))))
    (message "Tabifying buffer... done")))
 
+;;; Provide
+(message "~~ lch-util: done.")
 (provide 'lch-util)
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; outline-regexp: ";;;;* "
+;; End:

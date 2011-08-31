@@ -31,11 +31,16 @@
 (make-face 'font-lock-todo-face)
 (make-face 'font-lock-lch-face)
 (make-face 'font-lock-caution-face)
+(make-face 'font-lock-figure-face)
+(make-face 'font-lock-why-face)
 
 (modify-face 'font-lock-fixme-face "Black" "Yellow" nil t nil t nil nil)
 (modify-face 'font-lock-lch-face "White" "SlateBlue" nil t nil t nil nil)
 (modify-face 'font-lock-todo-face  "Black" "Yellow" nil t nil nil nil nil)
 (modify-face 'font-lock-caution-face  "White" "DarkRed" nil t nil nil nil nil)
+(modify-face 'font-lock-figure-face "White" "DarkRed" nil t nil t nil nil)
+(modify-face 'font-lock-why-face "Black" "Cyan" nil t nil t nil nil)
+
 
 (setq xwl-keyword-highlight-modes
      '(php-mode java-mode c-mode c++-mode emacs-lisp-mode scheme-mode
@@ -46,9 +51,11 @@
          (font-lock-add-keywords
           mode
           '(("\\<\\(FIXME\\)" 1 'font-lock-fixme-face t)
-;            ("\\<\\(TODO\\)"  1 'font-lock-todo-face  t)
+            ("\\<\\(TODO~\\)"  1 'font-lock-todo-face  t)
             ("\\<\\(LCH\\)"  1 'font-lock-lch-face  t)
             ("\\<\\(CAUTION\\)"  1 'font-lock-caution-face t)
+            ("\\<\\(FIGURE\\)"  1 'font-lock-figure-face t)
+            ("\\<\\(WHY\\)"  1 'font-lock-why-face t)
 	    )))
        xwl-keyword-highlight-modes))
 
