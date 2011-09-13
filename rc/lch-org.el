@@ -313,6 +313,20 @@
 ;;   )
 
 ;>-------- Org-Library --------<;
+(require 'org-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+(add-to-list 'org-export-latex-classes
+             '("revtex4"
+               "\\documentclass{revtex4}
+                \\usepackage{graphicx}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+
 ;; (defun lch-pdf-check-in (fname)
 ;;   (interactive "sEnter name of the pdf to check in: ")
 ;;   (insert (format "[[pdf:%s][%s]" fname fname)))
@@ -335,11 +349,11 @@
 ;;   (define-key org-mode-map (kbd "C-c 0") 'reftex-citation))
 ;; (add-hook 'org-mode-hook 'org-mode-reftex-setup)
 
-;> Use buffer local setting is better.
+;; Use buffer local setting is better.
 ;; (setq org-link-abbrev-alist
-;;       '(("bib" . "~/Dropbox/RESEARCH/Research/Research.bib::%s")
-;; 	("notes" . "~/Dropbox/RESEARCH/Research/org/Research.org::#%s")
-;; 	("papers" . "~/Dropbox/RESEARCH/Research/papers/%s.pdf")))
+;;       '(("bib" . "~/Dropbox/Research/Research.bib::%s")
+;; 	("notes" . "~/Dropbox/Research/org/Research.org::#%s")
+;; 	("papers" . "~/Dropbox/Research/papers/%s.pdf")))
 
 (provide 'lch-org)
 

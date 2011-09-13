@@ -4,9 +4,6 @@
 ;;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
 
-
-
-
 ;;; (info "(emacs)Kill Ring")
 ;; auto-indent pasted code
 (defadvice yank (after indent-region activate)
@@ -208,7 +205,7 @@
 (put 'erase-buffer 'disabled nil)
 
 
-;;; BACKUP POLICIES
+;;; Backup policies
 (setq make-backup-files t
       version-control t
       kept-old-versions 2
@@ -224,14 +221,14 @@
 ;(setq make-backup-files nil backup-inhibited t)
 
 
-;;; DIARY FILE
+;;; Diary file
 ;(setq diary-file "~/.emacs.var/.diary")
 ;(add-hook 'diary-hook 'appt-make-list)
 ;(setq diary-mail-addr "loochao@gmail.com")
 
 
 
-;;; AUTO FILL
+;;; Auto fill
 ;> Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
 ;> Auto fill length
@@ -241,7 +238,7 @@
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
 
 
-;;; TRUNCATE LINES
+;;; Truncate lines
 ;> t means aaaaa->
 (set-default 'truncate-lines nil)
 ;; Toggles between line wrapping in the current buffer.
@@ -260,7 +257,7 @@
 (define-key global-map (kbd "C-c ^") 'lch-toggle-line-wrapping)
 
 
-;;; AUTO COMPILE EL FILES
+;;; Auto compile el files
 (defun elisp-compile-hook ()
   (add-hook 'after-save-hook (lambda () (byte-compile-file (buffer-file-name
 (current-buffer)))) nil t))
@@ -275,13 +272,13 @@
   (byte-recompile-directory "~/.emacs.d/rc" 0 bytecomp-force))
 
 
-;;; ALIASES
+;;; Aliases
 (defalias 'wku 'w3m-print-this-url)
 (defalias 'wkl 'w3m-print-current-url)
 (defalias 'afm 'auto-fill-mode)
 
 
-;;; TIME SETTING
+;;; Time setting
 ;; Display format in 24hr format
 (setq display-time-24hr-format t)
 ;; Display time date
@@ -294,7 +291,7 @@
 
 (display-time)
 
-;;; LOCAL VARIABLES
+;;; Local variables
 ;; (info "(emacs)Variables")
 ;; (info "(emacs)Directory Variables")
 
@@ -318,7 +315,7 @@
       ))
 
 
-;;; EXPANSIONS & COMPLETIONS
+;;; Expansions & completions
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
         try-expand-whole-kill
@@ -336,12 +333,12 @@
 	try-expand-line-all-buffers))
 
 
-;;; USER INFO
+;;; User info
 (setq user-full-name "LooChao<LooChao@gmail.com>")
 (setq user-mail-address "LooChao@gmail.com")
 
 
-;;; GREP & FIND
+;;; Grep & find
 ;- (info "(emacs)Dired and Find")
 ;; Search for files with names matching a wild card pattern and Dired the output
 (define-key global-map (kbd "C-c 1") 'find-name-dired)
@@ -355,7 +352,7 @@
 (setq grep-find-command "find . -type f ! -regex \".*/\\({arch}\\|\\.arch-ids\\|\\.svn\\|_darcs\\|\\.bzr\\|\\.git\\|\\.hg\\)/.*\" -print0 | xargs -0 grep -nH -e ")
 
 
-;;; AUTO SAVE FILES IN ONE PLACE
+;;; Auto save files in one place
 ;- Put autosave files (i.e. #foo#) in one place, *NOT*
 ;; scattered all over the file system!
 
@@ -380,7 +377,7 @@
      (concat "#%" (buffer-name) "#")))))
 
 
-;;; PRINT FOR W32
+;;; Print for w32
 (if lch-win32-p
     (progn
       (require 'w32-winprint)

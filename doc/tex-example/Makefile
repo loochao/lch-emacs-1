@@ -1,22 +1,19 @@
-NAME=tex-example
-SOURCE=$(NAME).tex
+%.pdf: %.tex
+	pdflatex $<
 
-pdf: $(SOURCE)
-	pdflatex $(NAME)
+# clean:
+# 	find -E . \( -name "*.aux" \
+# 	          -o -name "$<.*" \
+#                    ! -name "*.pdf" \
+#                    ! -name "*.dvi" \
+#                    ! -name "*.tex" \
+#                    ! -name "*.bib" \) \
+#             -exec rm -rf {} \;
 
-clean:
-	find -E . \( -name "*.aux" \
-	          -o -name "$(NAME).*" \
-                   ! -name "*.pdf" \
-                   ! -name "*.dvi" \
-                   ! -name "*.tex" \
-                   ! -name "*.bib" \) \
-            -exec rm -rf {} \;
-
-extraclean:
-	find -E . \( -name "*.aux" \
-	          -o -name "$(NAME).*" \
-                   ! -name "*.dvi" \
-                   ! -name "*.tex" \
-                   ! -name "*.bib" \) \
-            -exec rm -rf {} \;
+# extraclean:
+# 	find -E . \( -name "*.aux" \
+# 	          -o -name "$(NAME).*" \
+#                    ! -name "*.dvi" \
+#                    ! -name "*.tex" \
+#                    ! -name "*.bib" \) \
+#             -exec rm -rf {} \;

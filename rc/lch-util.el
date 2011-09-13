@@ -1,14 +1,12 @@
 ;-*- coding:utf-8 -*-
 
 ;>======== UTIL.EL ========<;
-
-
 ;;; Special words
 (defvar keywords-critical-pattern
       "\\(BUGS\\|FIXME\\|TODO\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
 (make-face 'keywords-critical)
 (set-face-attribute 'keywords-critical nil
-                    :foreground "black" :background "yellow"
+                    :foreground "Black" :background "Cyan"
                     :weight 'bold)
 
 ;; smaller subset of keywords for ensuring no conflict with Org mode TODO keywords
@@ -22,13 +20,13 @@
 ;; text body would be. Don't know (yet) how to do that...
 (make-face 'keywords-org-critical)
 (set-face-attribute 'keywords-org-critical nil
-                    :foreground "red" :background "yellow"
+                    :foreground "Black" :background "Cyan"
                     :weight 'bold)
 
 (setq keywords-normal-pattern "\\([Ww][Aa][Rr][Nn][Ii][Nn][Gg]\\)")
 (make-face 'keywords-normal)
 (set-face-attribute 'keywords-normal nil
-                    :foreground "magenta2" :background "yellow")
+                    :foreground "Black" :background "Magenta2")
 
 ;; Set up highlighting of special words for proper selected major modes only
 ;; No interference with Org mode (which derives from text-mode)
@@ -49,8 +47,8 @@
 ;; *and* all major modes derived from it
 (defun fontify-keywords ()
   (interactive)
-;;;   (font-lock-mode -1)
-;;;   (font-lock-mode 1)
+;;   (font-lock-mode -1)
+;;   (font-lock-mode 1)
   (font-lock-add-keywords nil
                           `((,keywords-critical-pattern 1 'keywords-critical prepend)
                             (,keywords-normal-pattern 1 'keywords-normal prepend))))
