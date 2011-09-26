@@ -1,0 +1,61 @@
+\documentclass[letterpaper,12pt,oneside]{book} % For Screen
+%\documentclass[a4paper,11pt,twoside]{book} % For Print
+
+\title{A \TeX Book Example}
+\author{Charles LU\thanks{Thanks to WanziGE, XiaoxuJIE}}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+%\include{abstract}
+%\include{introduction}
+
+\chapter{The \textsc{Eagle} and the Arrow}
+%% All below will be italic until next shape command.
+\itshape
+An eagle sat on a lofty rock, watching the movements of a
+Hare whom he sought to make his prey \footnote{This is a footnote}.
+
+An eagle sat on a lofty rock, watching the movements of a
+Hare whom he sought to make his prey \footnote{This is a footnote}.
+\upshape
+
+\begin{itshape}
+An eagle sat on a lofty rock, watching the movements of a
+Hare whom he sought to make his prey \footnote{This is a footnote}.
+\end{itshape}
+
+An \textsl{archer}, who saw the \textbf{{\it Eagle}} from a place of concealment,
+took an accurate aim and wounded him mortally.
+
+\section{The Dog in the Manger}
+
+A dog lay in a manger, and by his growling and snapping
+prevented the oxen from eating the hay which had been
+placed for them.
+
+\section{Font size}
+{\tiny tiny}
+{\scriptsize scriptsize}
+{\footnotesize footnotesize}
+{\small small}
+{\normalsize normalsize}
+{\large large}
+{\Large Large}
+{\LARGE LARGE}
+{\huge huge}
+{\Huge Huge}
+
+\chapter*{NOT Counting}
+
+\backmatter
+\appendix
+\include{appendix}
+\end{document}

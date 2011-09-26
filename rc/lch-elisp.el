@@ -202,10 +202,10 @@
 
 
 ;;; Python
-(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-                                      interpreter-mode-alist))
-(autoload 'python-mode "python-mode" "Python editing mode." t)
+;; (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+;; (setq interpreter-mode-alist (cons '("python" . python-mode)
+;;                                       interpreter-mode-alist))
+;; (autoload 'python-mode "python-mode" "Python editing mode." t)
 
 
 ;;; Cedet
@@ -419,11 +419,11 @@
 
 ;;;---- Matlab ----
 ;; FIXME
-;(load-library "matlab-load")
+(load-library "matlab-load")
 ;(matlab-cedet-setup)
-;; (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
-;; (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
-;; (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
+(autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
+(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
+(autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 
 
 ;;;---- AucTeX ----

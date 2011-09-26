@@ -136,10 +136,10 @@
     (set-face-font 'modeline "-apple-Monaco-medium-normal-normal-*-18-*-*-*-m-0-fontset-startup")
     (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
 
-;>---- Show buffer name in titlebar ----<;
+;;; Show buffer name in titlebar
 ;; %f: Full path of current file.
 ;; %b: Buffer name.
-(setq frame-title-format "-- %f --")
+(setq frame-title-format "LooChao@%b")
 ;(setq frame-title-format "LooChao@%b")
 ;(setq frame-title-format "FIRST THING FIRST / DO IT NOW!!")
 (setq icon-title-format "Emacs - %b")
@@ -147,7 +147,6 @@
 (set-face-background 'isearch "darkCyan")
 (set-face-foreground 'isearch "white")
 (set-face-background 'region "gray50")
-
 
 ;>---------- Cursor ----------<;
 ;> Don't blink

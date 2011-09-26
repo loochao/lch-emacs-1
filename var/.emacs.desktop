@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Sep 12 20:05:53 2011
+;; Created Mon Sep 26 16:37:34 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,84 +11,128 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex" "subdirs"))
-(setq regexp-search-ring '("%" "PUC" "drop" "keldysh" "*" "sigma" "figure" "photodarken" "photochang" "cite" "batch" "eval" "latex-clas" "ref" "%s" "librarypt"))
+(setq regexp-search-ring '("matlab" "estim" "pgm" "pl" "intensity" "figure" "electric" "where" "\\ll" "equ" "keldysh" "kel" "radi" "ionization" "multi" "stage"))
 (setq register-alist nil)
-(setq file-name-history '("~/Dropbox/Org/org/Pearl.org" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/yankring_history_v2.txt" "~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/rc/lch-ui.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.vim.d/README.md" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.vim.d/.gitignore" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.vim.d/.gitmodules" "~/.vim/vimrc" "/Users/LooChao/.vim/auto-install.sh" "/Users/LooChao/.vim/install-vimrc.sh" "~/Dropbox/.emacs.d/site-lisp/org-7.7/Makefile" "~/Dropbox/.emacs.d/doc/tex-example/tex-book.tex" "~/Dropbox/.emacs.d/doc/tex-example/tex-article.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Miscellaneous/PUC/PU10F_APC524_Software.Engineering_Robert.Lupton/Source.Code/Makefile" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Miscellaneous/PUC/PU10F_APC524_Software.Engineering_Robert.Lupton/Lecture/L12-interfaces_handout.pdf.html" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/src/fortran_examples.f90" "~/Dropbox/.emacs.d/doc/tex-example/Makefile" "~/Dropbox/.emacs.d/doc/tex-example/tex-example.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Library/Miscellaneous/TXT/Culture/History/‘Ãñ‘·Ç‘Ã÷_‘Âþ‘Ì¸‘Ãñ‘¹ú‘Õþ‘ÖÎ‘Ê·.note" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/Dropbox/‘Ä©‘ÊÀ‘ÅÄ‘°¸‘³Æ‘Ææ.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/‘·ç‘Á÷‘×Ü‘±»‘Óê‘´ò‘·ç‘´µ‘È¥•¡·•¡·‘Ãñ‘¹ú‘ÄÇ‘Ð©‘´ó‘ÎÄ‘ÈË.txt" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/00095.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Library/Culture/History/‘Ãñ‘·Ç‘Ã÷_‘Âþ‘µ­‘Ãñ‘¹ú‘Õþ‘ÖÎ‘Ê·.txt" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Reader/TXT/‘Ãñ‘·Ç‘Ã÷_‘Âþ‘µ­‘Ãñ‘¹ú‘Õþ‘ÖÎ‘Ê·.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Reader/TXT/‘Âþ‘Ì¸‘Ãñ‘¹ú‘Õþ‘ÖÎ‘Ê·.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/1.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/‘Âþ‘Ì¸‘Ãñ‘¹ú‘Õþ‘ÖÎ‘Ê·.note" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/‘Êé‘Õª.dat" "/Users/LooChao/.wine/dosdevices/z:/Volumes/HDSD/1.txt" "/Users/LooChao/1.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/HDSD/mam.txt"))
+(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/Dropbox/.emacs.d/library/programming/matlab/lagr1.m" "~/Dropbox/.emacs.d/library/programming/matlab" "/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/example2.cpp" "/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/example1.cpp" "~/Dropbox/.emacs.d/library/programming/cpp" "~/Dropbox/Library/Library.bib" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/fashion.stylist.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-util.el"
-  "lch-util.el"
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
+  "lch-elisp.el"
   'emacs-lisp-mode
   '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  436
-  '(nil nil)
+  11927
+  '(11897 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/Pearl.org"
-  "Pearl.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  271
-  '(256 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
   "rc"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  5178
-  '(nil nil)
+  4242
+  '(174 nil)
   t
   '("/Users/LooChao/Dropbox/.emacs.d/rc/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui.el"
-  "lch-ui.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/matlab/lagr1.m"
+  "lagr1.m"
+  'objc-mode
+  '(abbrev-mode global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
   1
-  '(1092 nil)
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
   nil
-  "git"
+  "matlab"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  109
+  86
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/Repository/git/")
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/matlab/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  "Users"
+  "R"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  78
+  1
   '(nil nil)
   t
-  '("/Users/")
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/R/")
   nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/example2.cpp"
+  "example2.cpp"
+  'c++-mode
+  '(abbrev-mode global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  198
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/example1.cpp"
+  "example1.cpp"
+  'c++-mode
+  '(abbrev-mode global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  344
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "cpp"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  83
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Library/Library.bib"
+  "Library.bib"
+  'bibtex-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  13841
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory.tex"
+  "chapter-theory.tex"
+  'latex-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  16900
+  '(14116 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
   "LooChao"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  935
-  '(1 nil)
+  86
+  '(nil nil)
   t
   '("/Users/LooChao/")
   nil)
@@ -98,176 +142,55 @@
   "Dropbox"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  302
+  621
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/")
+  '("/Users/LooChao/Dropbox/" "/Users/LooChao/Dropbox/.emacs.d/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  ".emacs.d"
+  "Org"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  514
+  98
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/.emacs.d/")
+  '("/Users/LooChao/Dropbox/Org/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-init.el"
-  "lch-init.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  3948
-  '(nil nil)
   nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el"
-  "lch-pgm.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  1169
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/doc/tex-example/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode)
-  26
-  '(28 nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "tex-example"
+  "org"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode)
-  120
-  '(nil nil)
+  4958
+  '(48 nil)
   t
-  '("/Users/LooChao/Dropbox/.emacs.d/doc/tex-example/")
+  '("/Users/LooChao/Dropbox/Org/org/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/doc/tex-example/tex-book.tex"
-  "tex-book.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  99
+  nil
+  "Mathematica‘±Ê‘¼Ç"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  1283
   '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/LIBRARY_TOSORT_C/Technology/ComputerSE/Programming/Mathematica/Mathematica‘±Ê‘¼Ç/")
+  nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Library/Library.bib"
-  "Library.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  136
-  '(136 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/doc/tex-example/tex-article.tex"
-  "tex-article.tex"
-  'latex-mode
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/LIBRARY_TOSORT_C/Technology/ComputerSE/Programming/Mathematica/Mathematica‘±Ê‘¼Ç/Mathematica‘±Ê‘¼Ç.doc"
+  "Mathematica‘±Ê‘¼Ç.doc"
+  'org-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  ".emacs.d"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  96
-  '(nil nil)
-  t
-  '("/Users/LooChao/.emacs.d/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Library"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  638
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Library/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "TXT"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  4331
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Reader/TXT/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory.tex"
-  "chapter-theory.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  5359
-  '(5360 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  nil
-  "Education"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  171
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Education/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "PU.Master.Thesis"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  1390
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Education/PU.Master.Thesis/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/lch-pums-thesis.bib"
-  "lch-pums-thesis.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  218
-  '(207 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
   nil
@@ -281,202 +204,147 @@
   nil)
 
 (desktop-create-buffer 206
-  "/Volumes/DATA/test.bib"
-  "test.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  nil
+  "MATLAB"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  114
+  '(nil nil)
+  t
+  '("/Users/LooChao/Documents/MATLAB/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  104
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "python"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  130
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/python/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/test.py"
+  "test.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode auto-complete-mode yas/minor-mode)
+  92
+  '(77 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iLog.org"
+  "iLog.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  9851
+  '(9492 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iPrv.org"
+  "iPrv.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  38554
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iDD.org"
+  "iDD.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
   1
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
-  nil
-  "DATA"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  866
-  '(nil nil)
-  t
-  '("/Volumes/DATA/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/lch-pums-thesis.tex"
-  "lch-pums-thesis.tex"
+  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-intro/chapter-intro.tex"
+  "chapter-intro.tex"
   'latex-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  8467
-  '(nil nil)
+  4423
+  '(3787 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "ch-intro"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  347
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-intro/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Education"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode)
+  299
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Education/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/lch-pums-thesis.bib"
+  "lch-pums-thesis.bib"
+  'bibtex-mode
+  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
+  493
+  '(471 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Pearl.org"
+  "Pearl.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  325
+  '(256 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
 
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-theory/chapter-theory-inbox.tex"
   "chapter-theory-inbox.tex"
   'latex-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  245
-  '(245 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "ch-experiment"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  201
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-experiment/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-experiment/chapter-experiment.tex"
-  "chapter-experiment.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1489
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "ch-appendicies"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  136
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-appendicies/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "ch-conclusion"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  135
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Education/PU.Master.Thesis/ch-conclusion/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Nonlinear_Optics"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  421
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Documents/Nonlinear_Optics/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "emacs-org-tex"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  743
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Documents/emacs-org-tex/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Documents/emacs-org-tex/emacs-org-latex.org"
-  "emacs-org-latex.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  25105
-  '(7953 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Documents/emacs-org-tex/emacs-org-latex.tex"
-  "emacs-org-latex.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(1 nil)
+  463
+  '(244 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Documents/emacs-org-tex/Chalcogenides.bib"
-  "Chalcogenides.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  558
-  '(543 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Documents/emacs-org-tex/Makefile"
-  "Makefile"
-  'makefile-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode)
-  236
-  '(752 nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Research/Research.bib"
-  "Research.bib"
-  'bibtex-mode
-  '(global-auto-revert-mode highlight-parentheses-mode yas/minor-mode)
-  199
-  '(199 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/doc/tex-article/loochao-tex-article.tex"
-  "loochao-tex-article.tex"
-  'latex-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  278
-  '(15 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "tex-article"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  565
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/doc/tex-article/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-org.el"
-  "lch-org.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
-  12714
-  '(12633 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/Org/org/iDea.org"
@@ -487,16 +355,522 @@
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/iPrv.org"
-  "iPrv.org"
+  "/Users/LooChao/Dropbox/Org/org/Art-Ent.org"
+  "Art-Ent.org"
   'org-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  11071
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/BBall.Team.Reimbursement.org"
+  "BBall.Team.Reimbursement.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Bib-Edu.org"
+  "Bib-Edu.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Career.org"
+  "Career.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/ComputerSE.org"
+  "ComputerSE.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Cookery.org"
+  "Cookery.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Culture.org"
+  "Culture.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Economy.org"
+  "Economy.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/ElectricalSE.org"
+  "ElectricalSE.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Emacs.org"
+  "Emacs.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/English.org"
+  "English.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Fiction.org"
+  "Fiction.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/History.org"
+  "History.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Html.org"
+  "Html.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Humor.org"
+  "Humor.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Library.org"
+  "Library.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Life.org"
+  "Life.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Lifetip.org"
+  "Lifetip.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Mathematics.org"
+  "Mathematics.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/MechanicalSE.org"
+  "MechanicalSE.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Methodology.org"
+  "Methodology.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Miscellaneous.org"
+  "Miscellaneous.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Movie.org"
+  "Movie.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Music.org"
+  "Music.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Opera.org"
+  "Opera.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Philosophy.org"
+  "Philosophy.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Physics.org"
+  "Physics.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Politics.org"
+  "Politics.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Private.org"
+  "Private.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Programming.org"
+  "Programming.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Refile.org"
+  "Refile.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  136
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Science.org"
+  "Science.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Sitemap.org"
+  "Sitemap.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Society.org"
+  "Society.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Sociology.org"
+  "Sociology.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Softip.org"
+  "Softip.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Sports.org"
+  "Sports.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Travel.org"
+  "Travel.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/USLife.org"
+  "USLife.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Unix.org"
+  "Unix.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/fashion.stylist.org"
+  "fashion.stylist.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iCount.org"
+  "iCount.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iPU.org"
+  "iPU.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iResearch.org"
+  "iResearch.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iStuff.org"
+  "iStuff.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iTHU.org"
+  "iTHU.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/index.org"
+  "index.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
 

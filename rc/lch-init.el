@@ -167,17 +167,17 @@
 
 
 ;;; Grammar highlight
-;> Significant functionality depends on font-locking being active.
-;> For all buffers
+;; Significant functionality depends on font-locking being active.
+;; For all buffers
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 
-;> For Org buffers only
-;> (add-hook 'org-mode-hook 'turn-on-font-lock)
+;; For Org buffers only
+;; (add-hook 'org-mode-hook 'turn-on-font-lock)
 
 
 ;;; BMK FILW
-;> Not only on exit, but on every modification
+;; Not only on exit, but on every modification
 (setq bookmark-save-flag 1)
 
 
@@ -196,7 +196,7 @@
 
 
 ;;; Delete-selection as usual soft
-;> Select and press a key to delete, like MSWord
+;; Select and press a key to delete, like MSWord
 (delete-selection-mode t)
 
 
@@ -215,7 +215,7 @@
       backup-by-copying-when-linked t
       backup-by-copying-when-mismatch t)
 
-;> Backup path
+;; Backup path
 (setq backup-directory-alist '(("" . "~/.emacs.var/backup")))
 ;; Don't make backup files
 ;(setq make-backup-files nil backup-inhibited t)
@@ -229,17 +229,17 @@
 
 
 ;;; Auto fill
-;> Turn on auto-fill mode for all major modes
+;; Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
-;> Auto fill length
+;; Auto fill length
 (set-fill-column 78)
-;> Automatically turn on auto-fill-mode when editing text files
+;; Automatically turn on auto-fill-mode when editing text files
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
 
 
 ;;; Truncate lines
-;> t means aaaaa->
+;; t means aaaaa->
 (set-default 'truncate-lines nil)
 ;; Toggles between line wrapping in the current buffer.
 (defun lch-toggle-line-wrapping ()
