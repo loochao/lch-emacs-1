@@ -1,0 +1,295 @@
+\documentclass[11pt,twoside,openany,svgnames,x11names]{book}
+
+\usepackage{wallpaper}
+\usepackage{changepage}
+\usepackage[explicit,clearempty]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+\usepackage{lipsum}
+\usepackage[ISBN=978-80-85955-35-4]{ean13isbn}
+
+\usepackage{geometry}
+\geometry{
+   paperwidth=216mm, paperheight=303mm,
+   left=23mm,  %% or inner=23mm
+   right=18mm, %% or outer=18mm
+   top=23mm, bottom=23mm,
+   headheight=\baselineskip,
+   headsep=7mm,
+   footskip=10mm
+}
+
+
+%% Command to hold chapter illustration image
+\newcommand\chapterillustration{}
+
+%% Define how the chapter title is printed
+\titleformat{\chapter}{}{}{0pt}{
+%% Background image at top of page
+\ThisULCornerWallPaper{1}{\chapterillustration}
+%% Draw a semi-transparent rectangle across the top
+\tikz[overlay,remember picture]
+  \fill[LightSalmon1,opacity=.7]
+  (current page.north west) rectangle 
+  ([yshift=-3cm] current page.north east);
+  %% Check if on an odd or even page
+  \strictpagecheck\checkoddpage
+  %% On odd pages, "logo" image at lower right
+  %% corner; Chapter number printed near spine
+  %% edge (near the left); chapter title printed
+  %% near outer edge (near the right).
+  \ifoddpage{
+    \ThisLRCornerWallPaper{.35}{fern_mo_01}
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[anchor=south west,
+      xshift=20mm,yshift=-30mm,
+      font=\sffamily\bfseries\huge] 
+      at (current page.north west) 
+      {\chaptername\ \thechapter};
+    \node[fill=Sienna!80!black,text=white,
+      font=\Huge\bfseries, 
+      inner ysep=12pt, inner xsep=20pt,
+      rounded rectangle,anchor=east, 
+      xshift=-20mm,yshift=-30mm] 
+      at (current page.north east) {#1};
+    \end{tikzpicture}
+  }
+  %% On even pages, "logo" image at lower left
+  %% corner; Chapter number printed near outer
+  %% edge (near the right); chapter title printed
+  %% near spine edge (near the left).
+  \else {
+    \ThisLLCornerWallPaper{.35}{fern_mo_01}
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[anchor=south east,
+      xshift=-20mm,yshift=-30mm,
+      font=\sffamily\bfseries\huge] 
+      at (current page.north east)
+      {\chaptername\ \thechapter};
+    \node[fill=Sienna!80!black,text=white,
+      font=\Huge\bfseries,
+      inner sep=12pt, inner xsep=20pt,
+      rounded rectangle,anchor=west,
+      xshift=20mm,yshift=-30mm] 
+      at ( current page.north west) {#1};
+    \end{tikzpicture}
+  }
+  \fi
+}
+%% Define how the chapter title is printed
+\titleformat{name=\chapter,numberless}{}{}{0pt}{
+%% Draw a semi-transparent rectangle across the top
+\tikz[overlay,remember picture]
+  \fill[LightSalmon1,opacity=.7]
+  (current page.north west) rectangle 
+  ([yshift=-3cm] current page.north east);
+  %% Check if on an odd or even page
+  \strictpagecheck\checkoddpage
+  %% On odd pages, "logo" image at lower right
+  %% corner; Chapter number printed near spine
+  %% edge (near the left); chapter title printed
+  %% near outer edge (near the right).
+  \ifoddpage{
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[fill=Sienna!80!black,text=white,
+      font=\Huge\bfseries, 
+      inner ysep=12pt, inner xsep=20pt,
+      rounded rectangle,anchor=east, 
+      xshift=-20mm,yshift=-30mm] 
+      at (current page.north east) {#1};
+    \end{tikzpicture}
+  }
+  %% On even pages, "logo" image at lower left
+  %% corner; Chapter number printed near outer
+  %% edge (near the right); chapter title printed
+  %% near spine edge (near the left).
+  \else {
+    \begin{tikzpicture}[overlay,remember picture]
+    \node[fill=Sienna!80!black,text=white,
+      font=\Huge\bfseries,
+      inner sep=12pt, inner xsep=20pt,
+      rounded rectangle,anchor=west,
+      xshift=20mm,yshift=-30mm] 
+      at ( current page.north west) {#1};
+    \end{tikzpicture}
+  }
+  \fi
+}
+\titlespacing*{\chapter}{0pt}{0pt}{135mm}
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{50mm}
+
+%% Set the uniform width of the colour box
+%% displaying the page number in footer
+%% to the width of "99"
+\newlength\pagenumwidth
+\settowidth{\pagenumwidth}{99}
+
+%% Define style of page number colour box
+\tikzset{pagefooter/.style={
+anchor=base,font=\sffamily\bfseries\small,
+text=white,fill=Sienna!80!black,text centered,
+text depth=17mm,text width=\pagenumwidth}}
+
+%% Concoct some colours of our own
+\definecolor[named]{GreenTea}{HTML}{CAE8A2}
+\definecolor[named]{MilkTea}{HTML}{C5A16F}
+
+%%%%%%%%%%
+%%% Re-define running headers on non-chapter pages
+%%%%%%%%%%
+\fancypagestyle{headings}{%
+  \fancyhf{}   % Clear all headers and footers first
+  %% Right headers on odd pages
+  \fancyhead[RO]{%
+    %% First draw the background rectangles
+    \begin{tikzpicture}[remember picture,overlay]
+    \fill[MilkTea!25!white] (current page.north east) rectangle (current page.south west);
+    \fill[white, rounded corners] ([xshift=-10mm,yshift=-20mm]current page.north east) rectangle ([xshift=15mm,yshift=17mm]current page.south west);
+    \end{tikzpicture}
+    %% Then the decorative line and the right mark
+    \begin{tikzpicture}[xshift=-.75\baselineskip,yshift=.25\baselineskip,remember picture,    overlay,fill=GreenTea,draw=GreenTea]\fill circle(3pt);\draw[semithick](0,0) -- (current page.west |- 0,0);\end{tikzpicture} \sffamily\itshape\small\nouppercase{\rightmark}
+  }
+
+  %% Left headers on even pages
+  \fancyhead[LE]{%
+    %% Background rectangles first
+    \begin{tikzpicture}[remember picture,overlay]
+    \fill[MilkTea!25!white] (current page.north east) rectangle (current page.south west);
+    \fill[white, rounded corners] ([xshift=-15mm,yshift=-20mm]current page.north east) rectangle ([xshift=10mm,yshift=17mm]current page.south west);
+    \end{tikzpicture}
+    %% Then the right mark and the decorative line
+    \sffamily\itshape\small\nouppercase{\leftmark}\ 
+    \begin{tikzpicture}[xshift=.5\baselineskip,yshift=.25\baselineskip,remember picture, overlay,fill=GreenTea,draw=GreenTea]\fill (0,0) circle (3pt); \draw[semithick](0,0) -- (current page.east |- 0,0 );\end{tikzpicture}
+  }
+
+  %% Right footers on odd pages and left footers on even pages,
+  %% display the page number in a colour box
+  \fancyfoot[RO,LE]{\tikz[baseline]\node[pagefooter]{\thepage};}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+%%%%%%%%%%
+%%% Re-define running headers on chapter pages
+%%%%%%%%%%
+\fancypagestyle{plain}{%
+  %% Clear all headers and footers
+  \fancyhf{}
+  %% Right footers on odd pages and left footers on even pages,
+  %% display the page number in a colour box
+  \fancyfoot[RO,LE]{\tikz[baseline]\node[pagefooter]{\thepage};}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+\frontmatter
+
+%%%%%%%%%%%%%%
+%% Cover page
+%%%%%%%%%%%%%%
+
+%% No header nor footer on the cover
+\thispagestyle{empty}
+
+%% Cover illustration
+\ThisLLCornerWallPaper{1}{grapes-in-my-studio-little-too-much-dust}
+
+%% Bar across the top
+\tikz[remember picture,overlay]%
+\node[fill=Sienna,text=white,font=\LARGE\bfseries,text=Cornsilk,%
+minimum width=\paperwidth,minimum height=5em,anchor=north]%
+at (current page.north){Exercises in \LaTeX};
+
+\vspace*{2\baselineskip}
+
+{\bfseries\itshape\color{LightGoldenrod!50!Gold}\fontsize{36pt}{46pt}\selectfont
+The Wonderful Calmness\par
+of Still Life Photos\par}
+
+\vspace*{2\baselineskip}
+
+{\LARGE\color{LightGoldenrod}
+A small dummy example book by \scshape{Curutari}\par
+}
+
+\tikz[remember picture,overlay]%
+\node[fill=Sienna,font=\LARGE\bfseries,text=Cornsilk,%
+minimum width=\paperwidth,minimum height=3em,anchor=south]%
+ at (current page.south) {Malaysian \LaTeX\ User Group};
+
+\begin{center}
+\LARGE\bfseries\color{SaddleBrown!30!black}
+
+\end{center}
+
+\cleardoublepage
+
+\tableofcontents
+
+%% Main matter starts here; resets page-numberings to arabic numeral 1
+\mainmatter
+
+\pagestyle{headings}
+
+%% Public domain image from
+%% http://www.public-domain-image.com/objects/computer-chips/slides/six-computers-chips-circuits.html
+\renewcommand\chapterillustration{six-computers-chips-circuits}
+\chapter{Hello World!}
+\section{First Section}
+\lipsum[1-6]
+
+\section{Second Section}
+\lipsum[7-11]
+
+\section{Third Section}
+\lipsum[12-15]
+
+%% Public domain image from
+%% http://www.public-domain-image.com/still-life/slides/cherry-tomatos.html
+\renewcommand\chapterillustration{cherry-tomatos}
+\chapter{Whassup, Doc?}
+\lipsum[5-6]
+
+\pagestyle{empty}\newpage\mbox{}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%
+%% Back cover
+%%%%%%%%%%%%%%%%%%%%%%
+
+%% Temporarily enlarge this page to push
+%% down the bottom margin
+\enlargethispage{3\baselineskip}
+\thispagestyle{empty}
+%\pagecolor[HTML]{0C0303}
+\pagecolor[HTML]{0E0407}
+
+\begin{center}
+\begin{minipage}{.8\textwidth}
+\color{Cornsilk}\Large\bfseries
+\lipsum[1]
+
+\begin{center}
+\huge\bfseries\sffamily\color{lime}`So Calming.'
+\end{center}
+
+\lipsum[2]
+
+\end{minipage}
+\end{center}
+
+\vspace*{\stretch{1}}
+
+\begin{center}
+\colorbox{white}{\EANisbn[SC4]}
+
+\vspace*{\baselineskip}
+
+\textbf{\textcolor{LightGoldenrod!50!Gold}{Malaysian \LaTeX\ User Group \textbullet\ \texttt{http://latex-my.blogspot.com}}}
+
+\textbf{\textcolor{LightGoldenrod}{Cover Illustration by Dusan Bicanski \textbullet\ \texttt{http://www.public-domain-image.com}}}
+\end{center}
+
+\end{document}
