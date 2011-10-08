@@ -1,6 +1,38 @@
 ;-*- coding:utf-8 -*-
 
 ;>======== UTIL.EL ========<;
+;;; Underline prev line.
+(defun gse-underline-previous-line ()
+  "Underline the previous line with dashes."
+  (interactive)
+  (let ((start-pos (point))
+        (start-col nil)
+        (end-col nil))
+    (beginning-of-line 0)
+    (if (re-search-forward "[^ ]" (save-excursion (end-of-line) (point)) t)
+        (progn
+          (setq start-col (- (current-column) 1))
+
+          (end-of-line)
+          (re-search-backward "[^ ]" nil t)
+          (setq end-col (current-column))
+
+          ;; go to next line and insert dashes
+          (beginning-of-line 2)
+          (insert
+           (make-string start-col ?\ )
+           (make-string (+ 1 (- end-col start-col)) ?-)
+           "\n")
+          )
+      (goto-char start-pos)
+      (error "No text on previous line"))
+    ))
+
+(global-set-key (kbd "C-c -") 'gse-underline-previous-line)
+(global-set-key (kbd "C-c _") 'gse-underline-previous-line)
+
+
+
 ;;; Special words
 (defvar keywords-critical-pattern
       "\\(BUGS\\|FIXME\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
@@ -164,16 +196,16 @@ Cancel the clock if called with C-u."
 
 
 (defun lch-insert-date (&optional prefix)
-  "Insert the current date in ISO format. With prefix-argument,
-add day of week. With two prefix arguments, add day of week and
+  "Insert the current date in ISO format. With prefix-argument (press C-u once),
+add day of week. With two prefix arguments (C-u twice), add day of week and
 time."
   (interactive "P")
   (let ((format (cond ((not prefix) "%Y/%m/%d")
                       ((equal prefix '(4)) "%Y-%m-%d %a")
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format (current-time)))))
+(define-key global-map (kbd "C-c d") 'lch-insert-date)
 
-
 ;;; lch-search
 (defun lch-search ()
   (interactive)

@@ -14,7 +14,41 @@
 ;;; F1
 
 (define-key global-map (kbd "<f1> <f1>") 'shell)
+;(define-key global-map (kbd "<f1> <f1>") 'lookup-google)                     ;; => lch-util.el
+;(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
+;(define-key global-map (kbd "<f1> a") 'wy-go-to-char)                        ;; => lch-util.el
+;(<f1> 4 'newsmth)                                                           ;; => lch-shell.el
 
+(define-key global-map (kbd "<f1> C-a") 'lookup-word-definition)              ;; => lch-util.el
+(define-key global-map (kbd "<f1> c") 'comment-region)
+(define-key global-map (kbd "<f1> C") 'list-colors-display)
+(define-key global-map (kbd "<f1> e") 'eval-buffer)
+(define-key global-map (kbd "<f1> E") 'erase-buffer)
+(define-key global-map (kbd "<f1> f") 'find-dired)
+(define-key global-map (kbd "<f1> C-f") 'fill-region)
+(define-key global-map (kbd "<f1> g") 'grep-find)
+;(global-set-key (kbd "<f1> C-g") 'lch-google-search-w3m)                     ;; => lch-web.el
+(define-key global-map (kbd "<f1> G") 'find-grep-dired)
+(define-key global-map (kbd "<f1> i") 'indent-region)
+;(define-key global-map (kbd "<f1> C-m") 'switch-major-mode)                  ;; => lch-util.el
+;(define-key global-map (kbd "<f1> n") 'nuke-some-buffers)                    ;; => lch-util.el
+;(define-key global-map (kbd "<f1> l") 'i-toggle-line-wrapping)               ;; => lch-init.el
+;(define-key global-map (kbd "<f1> C-m") 'dictionary-match-words)             ;; => lch-elisp.el
+(define-key global-map (kbd "<f1> N") 'narrow-to-region)
+(define-key global-map (kbd "<f1> r") 'recentf-open-files)
+(define-key global-map (kbd "<f1> R") 'revert-buffer)
+;(define-key global-map (kbd "<f1> S") 'my-scroll-auto)                       ;; => lch-util.el
+;(define-key global-map (kbd "<f1> s") 'ywb-create/switch-scratch)            ;; => lch-util.el
+;(define-key global-map (kbd "<f1> C-s") 'dictionary-search)                  ;; => lch-elisp.el
+;(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)          ;; => lch-util.el
+(define-key global-map (kbd "<f1> W") 'widen)
+(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
+(define-key global-map (kbd "<f1> $") 'toggle-truncate-lines)
+(define-key global-map (kbd "<f1> ^") 'lch-toggle-line-wrapping)             ;; => lch-init.el
+(define-key global-map (kbd "<f1> u") 'uncomment-region)
+(define-key global-map (kbd "<f1> C-u") 'revert-buffer)
+(define-key global-map (kbd "<f1> v") 'view-mode)
+; (<f1> p 'process)                                                           ;; => lch-util.el
 
 ;;; F2
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
@@ -312,60 +346,32 @@
                                (toggle-input-method)))
 (define-key global-map (kbd "C-2") 'set-mark-command)
 
-
-;;; Ctrl+C && F1 Map
-;; => User defined functions.
-;(define-key global-map (kbd "<f1> <f1>") 'lookup-google)                     ;; => lch-util.el
-;(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
-;(define-key global-map (kbd "<f1> a") 'wy-go-to-char)                        ;; => lch-util.el
-; (<f1> 4 'newsmth)                                                           ;; => lch-shell.el
-
-(define-key global-map (kbd "<f1> C-a") 'lookup-word-definition)              ;; => lch-util.el
-(define-key global-map (kbd "<f1> c") 'comment-region)
-(define-key global-map (kbd "C-c c") 'comment-region)
-(define-key global-map (kbd "<f1> C") 'list-colors-display)
-;; CAUTION
-(define-key global-map (kbd "C-6")
-		'(lambda () (interactive)
-		   (require 'lch-dired)
-		   (call-interactively 'dired-jump)))
-(define-key global-map (kbd "<f1> e") 'eval-buffer)
-(define-key global-map (kbd "C-c e") 'eval-buffer)
-(define-key global-map (kbd "<f1> E") 'erase-buffer)
-(define-key global-map (kbd "<f1> f") 'find-dired)
-(define-key global-map (kbd "C-c f") 'find-dired)
-;(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
-(define-key global-map (kbd "<f1> C-f") 'fill-region)
-(define-key global-map (kbd "<f1> g") 'grep-find)
-(define-key global-map (kbd "C-c g") 'grep-find)
-;(global-set-key (kbd "C-c C-g") 'lch-google-search-w3m)                      ;; => lch-web.el
-;(global-set-key (kbd "<f1> C-g") 'lch-google-search-w3m)                     ;; => lch-web.el
-(define-key global-map (kbd "<f1> G") 'find-grep-dired)
-(define-key global-map (kbd "<f1> i") 'indent-region)
-;(define-key global-map (kbd "<f1> C-m") 'switch-major-mode)                  ;; => lch-util.el
-;(define-key global-map (kbd "<f1> n") 'nuke-some-buffers)                    ;; => lch-util.el
-;(define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
-;(define-key global-map (kbd "<f1> l") 'i-toggle-line-wrapping)               ;; => lch-init.el
-;(define-key global-map (kbd "<f1> C-m") 'dictionary-match-words)             ;; => lch-elisp.el
-(define-key global-map (kbd "<f1> N") 'narrow-to-region)
-
 (add-hook 'occur-mode-hook
 	  (lambda () (setq truncate-lines t)))
 ;; (define-key global-map (kbd "C-o")
 ;; 		'(lambda () (interactive)
 ;; 		   (call-interactively 'occur)
 ;; 		   (other-window 1)))
-; (<f1> p 'process)                                                           ;; => lch-util.el
-(define-key global-map (kbd "<f1> r") 'recentf-open-files)
-(define-key global-map (kbd "<f1> R") 'revert-buffer)
-;(define-key global-map (kbd "<f1> S") 'my-scroll-auto)                       ;; => lch-util.el
+
+
+;;; Ctrl+C Map
+(define-key global-map (kbd "C-c c") 'comment-region)
+;(define-key global-map (kbd "C-c d") 'lch-insert-date)
+;; CAUTION
+(define-key global-map (kbd "C-6")
+		'(lambda () (interactive)
+		   (require 'lch-dired)
+		   (call-interactively 'dired-jump)))
+
+(define-key global-map (kbd "C-c e") 'eval-buffer)
+(define-key global-map (kbd "C-c f") 'find-dired)
+;(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
+(define-key global-map (kbd "C-c g") 'grep-find)
+;(global-set-key (kbd "C-c C-g") 'lch-google-search-w3m)                      ;; => lch-web.el
+;(define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
+
 ;(define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)             ;; => lch-util.el
-;(define-key global-map (kbd "<f1> s") 'ywb-create/switch-scratch)            ;; => lch-util.el
-;(define-key global-map (kbd "<f1> C-s") 'dictionary-search)                  ;; => lch-elisp.el
-(define-key global-map (kbd "<f1> u") 'uncomment-region)
 (define-key global-map (kbd "C-c u") 'uncomment-region)
-(define-key global-map (kbd "<f1> C-u") 'revert-buffer)
-(define-key global-map (kbd "<f1> v") 'view-mode)
 (define-key global-map (kbd "C-c v") 'view-mode)
 (define-key global-map (kbd "C-c C-v") 'view-mode)
 (setq view-mode-hook
@@ -378,12 +384,8 @@
 	(define-key view-mode-map "u" 'view-scroll-page-backward)
 	))
 
-;(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)          ;; => lch-util.el
-(define-key global-map (kbd "<f1> W") 'widen)
-(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
-(define-key global-map (kbd "<f1> $") 'toggle-truncate-lines)
-(define-key global-map (kbd "<f1> ^") 'lch-toggle-line-wrapping)             ;; => lch-init.el
-
+;(global-set-key (kbd "C-c -") 'gse-underline-previous-line)                 ;; => lch-util.el
+;(global-set-key (kbd "C-c _") 'gse-underline-previous-line)                 ;; => lch-util.el
 
 ;;; Ctrl X Map
 ;C-x f ffap
@@ -410,6 +412,7 @@
 ;     (define-key dired-mode-map (kbd "M-o") nil)
      ))
 
+;; Alt-z ZapToChar
 
 
 ;;; MISC

@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Dropbox/Org/org/iDea.org")
- (front-context-string . "*** 方婷说以前出来的台湾人都")
+ (front-context-string . "*** 记笔记时, 有几个INB")
  (rear-context-string . " :IDEA:\n** IDEA\n")
  (position . 250))
 )

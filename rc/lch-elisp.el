@@ -1,7 +1,11 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
-
+
+;;; Gse-number-rect
+;; Insert self-incremental number prefix to a rect region.
+(require 'gse-number-rect)
+(global-set-key "\C-xru" 'gse-number-rectangle)
 
 ;;; Highlight non-breaking spaces
 ;; FIXME How does it work?
