@@ -1,6 +1,11 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ELISP.EL -- LISP PACKAGES ==========<;
+(message "=> lch-elisp: loading...")
+
+;;; Icicles
+(require 'icicles)
+(icy-mode 1)
 
 ;;; Gse-number-rect
 ;; Insert self-incremental number prefix to a rect region.
@@ -591,7 +596,7 @@
 
 ;;; provide
 (provide 'lch-elisp)
-
+(message "~~ lch-elisp: done.")
 
 ;;; Local Vars.
 ;; Local Variables:

@@ -1,10 +1,12 @@
 ;-*- coding: utf-8 -*-
 
 ;>========== MAC ==========<;
-;> Use Spotlight as locate in OSX
+(message "=> lch-mac: loading...")
+
+;; Use Spotlight as locate in OSX
 (setq locate-command "mdfind")
 
-;> Define a function to setup additional path
+;; Define a function to setup additional path
 (defun my-add-path (path-element)
 "Add the specified path element to the Emacs PATH"
    (interactive "DEnter directory to be added to path: ")
@@ -13,7 +15,7 @@
             (concat (expand-file-name path-element)
               path-separator (getenv "PATH")))))
 
-;> Set localized PATH for OS X
+;; Set localized PATH for OS X
 (if (fboundp 'my-add-path)
     (let ((my-paths (list
                      "/opt/local/bin"
@@ -22,4 +24,7 @@
                      "~/bin")))
       (dolist (path-to-add my-paths (getenv "PATH"))
         (my-add-path path-to-add))))
+
+;; Provide
 (provide 'lch-mac)
+(message "~~ lch-mac: done.")

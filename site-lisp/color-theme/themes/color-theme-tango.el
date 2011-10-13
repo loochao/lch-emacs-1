@@ -21,7 +21,7 @@
       (ibuffer-title-face . font-lock-type-face))
      (border ((t (:background "#888a85"))))
      (fringe ((t (:background "grey10"))))
-;     (mode-line ((t (:foreground "#eeeeec" :background "#555753"))))
+                                        ;     (mode-line ((t (:foreground "#eeeeec" :background "#555753"))))
      (region ((t (:background "#555753"))))
      (font-lock-builtin-face ((t (:foreground "#729fcf"))))
      (font-lock-comment-face ((t (:foreground "#888a85"))))

@@ -1,6 +1,8 @@
 ;-*- coding: utf-8 -*-
 
 ;>======== HIGHLIGHT-LINE ========<;
+
+(message "=> lch-hl-line: loading...")
 (require 'hl-line+)
 
 (defun hl-line-toggle-when-idle (&optional arg)
@@ -36,3 +38,4 @@ With prefix argument, turn on if ARG > 0; else turn off."
 (hl-line-when-idle-interval 1)
 
 (provide 'lch-hl-line)
+(message "~~ lch-hl-line: done.")

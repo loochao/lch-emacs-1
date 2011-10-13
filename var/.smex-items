@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ ffap
+ a
  cd
  lm
  5x5
  afm
- arp
- dbx
- dig
+ any
 )
 
 ;; ----- smex-data -----
 (
- 
+ (ffap . 1)
 )

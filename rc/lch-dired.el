@@ -16,6 +16,8 @@
 ;; * f: find-name-dired;
 ;; * g: grep-find;
 
+(message "=> lch-dired: loading...")
+
 (require 'dired)
 (require 'dired-x)
 (require 'dired-aux)
@@ -331,9 +333,9 @@ end tell" d)))
 (define-key global-map (kbd "<C-f3>") 'joc-dired-magic-buffer)
 (define-key global-map (kbd "<M-f3>") 'joc-dired-toggle-buffer-name)
 
-(message "~~ lch-dired: done.")
 (provide 'lch-dired)
-
+(message "~~ lch-dired: done.")
+
 ;; Local Variables:
 ;; mode: emacs-lisp
 ;; mode: outline-minor

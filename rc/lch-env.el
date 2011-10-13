@@ -1,6 +1,7 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== ENVIRONMENTS ==========<;
+(message "=> lch-env: loading...")
 (setenv "LANG" "en_US.UTF-8" )
 (setenv "LC_ALL" "en_US.UTF-8" )
 
@@ -146,3 +147,4 @@
 
 ;;; PROVIDE
 (provide 'lch-env)
+(message "~~ lch-env: done.")

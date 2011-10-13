@@ -17,7 +17,7 @@
 ;(define-key global-map (kbd "<f1> <f1>") 'lookup-google)                     ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> <f2>") 'lookup-wikipedia)                  ;; => lch-util.el
 ;(define-key global-map (kbd "<f1> a") 'wy-go-to-char)                        ;; => lch-util.el
-;(<f1> 4 'newsmth)                                                           ;; => lch-shell.el
+;(<f1> 4 'newsmth)                                                            ;; => lch-shell.el
 
 (define-key global-map (kbd "<f1> C-a") 'lookup-word-definition)              ;; => lch-util.el
 (define-key global-map (kbd "<f1> c") 'comment-region)
@@ -543,9 +543,10 @@
     (values)))
 
 ;;; Provide lch-binding.
-(message "~~ lch-binding: done.")
 (provide 'lch-binding)
+(message "~~ lch-binding: done.")
 
+
 ;;; Local Vars.
 ;; Local Variables:
 ;; mode: emacs-lisp

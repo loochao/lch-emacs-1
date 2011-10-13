@@ -1,4 +1,4 @@
-;;; color-theme-lch.el 
+;;; color-theme-lch.el
 
 ;; Modified from color-theme-arjen
 
@@ -36,18 +36,18 @@
       (cursor-color . "burlywood")
       (foreground-color . "MistyRose3")
       (mouse-color . "sienna1"))
-     
+
      (modeline ((t (:background "DarkRed" :foreground "white" :box (:line-width 1 :style released-button)))))
      (modeline-mousable ((t (:background "DarkRed" :foreground "white"))))
      (modeline-mousable-minor-mode ((t (:background "DarkRed" :foreground "white"))))
-;     (mode-line-buffer-id ((t (:foreground "pink" :bold t))))
+                                        ;     (mode-line-buffer-id ((t (:foreground "pink" :bold t))))
      (mode-line-emphasis ((t (:foreground "#99ccff"))))
      (mode-line-highlight ((t (:foreground "#55ff55"))))
      (fringe ((t (:background "black"))))
 
      (border ((t (:background "black"))))
      (buffer-menu-buffer ((t (:bold t :weight bold))))
-     (minibuffer-prompt ((t (:bold t :foreground "DarkSeaGreen"))))     
+     (minibuffer-prompt ((t (:bold t :foreground "DarkSeaGreen"))))
      (bookmark-menu-heading ((t (:foreground "#ffff55"))))
 
      (font-lock-comment-delimiter-face ((t (:foreground "#999988"))))
@@ -76,7 +76,7 @@
      (ac-selection-face ((t (:background "DarkSeaGreen" :foreground "white"))))
      (ac-yasnippet-candidate-face ((t (:background "sandybrown" :foreground "black"))))
      (ac-yasnippet-selection-face ((t (:background "coral3" :foreground "white"))))
-     
+
      (yas/field-highlight-face ((t (:background "DimGrey"))))
      (yas/mirror-highlight-face ((t (:background "gray22"))))
 
@@ -86,7 +86,7 @@
      (dired-ignored ((t (:foreground "#555555"))))
      (dired-mark ((t (:foreground "#78a355"))))
      (dired-marked ((t (:background "#222222"))))
-;     (dired-perm-write ((t (:background "black" :foreground "#666699" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Monaco"))))
+                                        ;     (dired-perm-write ((t (:background "black" :foreground "#666699" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "outline" :family "Monaco"))))
      (dired-symlink ((t (:foreground "#4682b4"))))
      (dired-warning ((t (:bold t :foreground "#ff6600" :weight bold))))
 
@@ -128,7 +128,7 @@
      (org-meta-line ((t (:foreground "#95917e"))))
      (org-mode-line-clock ((t (nil))))
      (org-property-value ((t (nil))))
-     (org-quote ((t (:inherit org-block :slant italic))))     
+     (org-quote ((t (:inherit org-block :slant italic))))
      (org-scheduled ((t (:foreground "PaleGreen"))))
      (org-scheduled-previously ((t (:foreground "chocolate1"))))
      (org-scheduled-today ((t (:foreground "PaleGreen"))))
@@ -141,7 +141,7 @@
      (org-todo ((t (:bold t :foreground "#ff5555" :weight bold))))
      (org-upcoming-deadline ((t (:foreground "chocolate1"))))
      (org-verbatim ((t (:foreground "#555555" :underline t))))
-     (org-verse ((t (:inherit org-block :slant italic))))     
+     (org-verse ((t (:inherit org-block :slant italic))))
      (org-warning ((t (:bold t :foreground "#ff6600" :weight bold))))
 
      (outline-1 ((t (:foreground "#FCAF3E"))))
@@ -220,8 +220,8 @@
      (ido-incomplete-regexp ((t (:bold t :foreground "#ff6600" :weight bold))))
      (ido-indicator ((t (:background "red1" :foreground "yellow1" :width condensed))))
      (ido-only-match ((t (:foreground "SlateBlue"))))
-     (ido-subdir ((t (:foreground "#b9fc6d"))) )   
-     
+     (ido-subdir ((t (:foreground "#b9fc6d"))) )
+
 
      )))
 

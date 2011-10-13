@@ -1,7 +1,8 @@
 ;>======== DICTIONARY ========<;
-;> dictionary client for dict.org.
-;> To use, call dictionary-lookup-definition to lookup def of word under cursor.
+;; dictionary client for dict.org.
+;; To use, call dictionary-lookup-definition to lookup def of word under cursor.
 
+(message "=> lch-dict: loading...")
 (add-to-list 'load-path
              (concat (file-name-directory (or load-file-name buffer-file-name)) "../site-lisp/dictionary-1.8.7")
 )
@@ -53,3 +54,4 @@
                                (call-interactively 'dictionary-search)))
 
 (provide 'lch-dict)
+(message "~~ lch-dict: done.")

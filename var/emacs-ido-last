@@ -2,6 +2,11 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Volumes/DATA/Repository/git/" . "aquamacs-emacs/")
+ ("/Volumes/DATA/Repository/" . "git/")
+ ("/Volumes/DATA/" . "Repository/")
+ ("/Volumes/" . "DATA/")
+ ("/" . "Volumes/")
  ("/Users/LooChao/Dropbox/.emacs.d/" . "rc/")
  ("/Users/LooChao/Dropbox/" . ".emacs.d/")
  ("/Users/LooChao/" . "Dropbox/")
@@ -21,6 +26,18 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Volumes/DATA/Repository/git/aquamacs-emacs/" (20117 60026) "vpath.sed" "update-subdirs" "test/" "src/" "README" "oldXMenu/" "nt/" "nextstep/" "msdos/" "move-if-change" "mkinstalldirs" "Makefile.in" "Makefile" "make-dist" "m4/" "lwlib/" "lisp/" "lib-src/" "leim/" "INSTALL.emacs" "INSTALL.BZR" "install-sh" "INSTALL" "info/" "etc/" "doc/" "COPYING" "configure.in" "configure" "config.sub" "config.status" "config.log" "config.guess" "config.bat" "ChangeLog" "build-aquamacs" "BUGS" "autogen.sh" "aquamacs/" "admin/" ".gitignore" ".gitattributes" ".git/" ".dir-locals.el" ".cvsignore" ".bzrignore" ".arch-inventory" "../" "./")
+
+ ("/Volumes/DATA/Repository/git/" (20051 53600) "warrenb213s-hastarins-linux_on_wince_htc/" "Tomorrow-Theme/" "mposxext/" "aquamacs-emacs/" "../" "./")
+
+ ("/Volumes/DATA/Repository/" (19976 36941) "svn/" "src/" "hg/" "git/" "../" "./")
+
+ ("/Volumes/DATA/" (20117 59966) "Video/" "Temperory/" "Repository/" "Private/" "Notes/" "Music/" "INBOX/" "Flv/" "Dropbox/" "Applications/" "Apple/" ".Trashes/" ".TemporaryItems/" ".Spotlight-V100/" ".fseventsd/" ".DS_Store" ".com.apple.timemachine.supported" "../" "./")
+
+ ("/Volumes/" (20118 5014) "MACINTOSH/" "DATA/" "chaol/" "BACKUP/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/var/" (20119 20065) "url/" "tramp" "tetris-scores" "skeleton.el" "emacs.recentf" "emacs-session" "emacs-recentf" "emacs-ido-last.elc" "emacs-ido-last" "emacs-desktop" "emacs-custom-file.elc" "emacs-custom-file" "emacs-bmk" "emacs-abbrev-defs.el" "ac-comphist.dat" ".smex-items" ".emms-history" ".emacs.desktop.lock" ".emacs.desktop" ".bm-repository" "../" "./")
+
  ("/Users/LooChao/Dropbox/.emacs.d/rc/" (19904 50973) "xwl-wubi.elc" "xwl-wubi.el" "xwl-util.elc" "xwl-util.el" "xwl-shell.elc" "xwl-shell.el" "xwl-emms.elc" "xwl-emms.el" "xwl-calendar.elc" "xwl-calendar.el" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w3m.elc" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.elc" "lch-template.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-org.elc" "lch-org.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.elc" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-elisp-el-get.elc" "lch-elisp-el-get.el" "lch-el-get.elc" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bookmark.elc" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-alias.elc" "lch-alias.el" "dotEmacs" "../" "./")
 
  ("/Users/LooChao/Dropbox/.emacs.d/" (19904 50533) "var.smex-items" "var/" "url/" "tramp" "site-lisp-bak/" "site-lisp/" "server/" "semanticdb/" "rc/" "library/" "games/" "bin/" "auto-save-list/" "ac-comphist.dat" ".emacs.desktop" "../" "./")

@@ -1,9 +1,10 @@
 ;-*- coding: utf-8 -*-
 
 ;>======== EL-GET ========<;
-;> To install, modify el-get.el & package.el(for elpa), and change the path
-;> to be Dropbox/.emacs.d/site-lisp
+;; To install, modify el-get.el & package.el(for elpa), and change the path
+;; to be Dropbox/.emacs.d/site-lisp
 
+(message "=> lch-el-get: loading...")
 (require 'el-get)
 (setq el-get-dir (concat emacs-site-lisp "/el-get/"))
 (setq el-get-sources
@@ -23,7 +24,7 @@
 	;; 		(add-hook 'doc-mode-hook '(lambda ()
 	;; 					    (turn-on-auto-fill)
 	;; 					    (require 'asciidoc)))))
-	
+
 	;; (:name smex				; a better (ido like) M-x
 	;;        :after (lambda ()
 	;; 		(setq smex-save-file (concat emacs-var-dir "/.smex-items"))
@@ -33,9 +34,10 @@
 	;; (:name goto-last-change		; move pointer back to last change
 	;;        :after (lambda ()
 	;; 		;; when using AZERTY keyboard, consider C-x C-_
-	;; 		(global-set-key (kbd "C-x C-/") 'goto-last-change)))	
+	;; 		(global-set-key (kbd "C-x C-/") 'goto-last-change)))
 ))
 
 (el-get)
 
 (provide 'lch-el-get)
+(message "~~ lch-el-get: done.")

@@ -1,6 +1,7 @@
 ;-*- coding:utf-8; -*-
 
 ;>======== INIT.EL  ========<;
+
 ;;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
 
@@ -384,9 +385,8 @@
       (define-key global-map (kbd "<f2> p") 'w32-winprint-print-buffer-htmlize)
       (define-key global-map (kbd "<f2> P") 'w32-winprint-print-buffer-notepad)))
 
-(message "~~ lch-init: done.")
 (provide 'lch-init)
-
+(message "~~ lch-init: done.")
 
 ;;; Local Vars.
 ;; Local Variables:

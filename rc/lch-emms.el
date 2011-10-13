@@ -1,8 +1,10 @@
 ; -*- coding: utf-8 -*-
 
 ;>========== EMMS ==========<;
-;> Under MAC, need to $port install mplayer mp3info(but does not work for CN)!
-;> $port install amixer for volume adjust.
+;; Under MAC, need to $port install mplayer mp3info(but does not work for CN)!
+;; $port install amixer for volume adjust.
+
+(message "=> lch-emms: loading...")
 (require 'emms-setup)
 (emms-standard)
 (emms-default-players)
@@ -94,3 +96,4 @@
 (define-key emms-playlist-mode-map (kbd "<up>")    (lambda () (interactive) (emms-seek +60)))
 
 (provide 'lch-emms)
+(message "~~ lch-emms: done.")
