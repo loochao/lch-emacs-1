@@ -1,16 +1,19 @@
 
 ;; ----- smex-history -----
 (
- ffap
+ lch-color-theme
+ color-theme-tango
+ color-theme-jimmy
+ org-mode
  a
  cd
  lm
- 5x5
- afm
- any
 )
 
 ;; ----- smex-data -----
 (
- (ffap . 1)
+ (org-mode . 1)
+ (color-theme-jimmy . 1)
+ (color-theme-tango . 1)
+ (lch-color-theme . 1)
 )
