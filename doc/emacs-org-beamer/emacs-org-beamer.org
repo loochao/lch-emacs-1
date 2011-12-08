@@ -1,7 +1,7 @@
-#+TITLE:     Writing Beamer presentations in org-mode
-#+AUTHOR:    Eric S Fraga
-#+EMAIL:     e.fraga@ucl.ac.uk
-#+DATE:      2010-03-30 Tue
+#+TITLE:     Chao's Beamer Template
+#+AUTHOR:    Chao LU
+#+EMAIL:     chaol@princeton.edu
+#+DATE:      2011-12-05 Mon
 #+DESCRIPTION:
 #+KEYWORDS:
 #+LANGUAGE:  en
@@ -14,37 +14,33 @@
 #+LINK_HOME:
 
 #+STARTUP: oddeven
-
 #+STARTUP: beamer
 #+LATEX_CLASS: beamer
 #+LATEX_CLASS_OPTIONS: [bigger, english, 10pt, presentation]
-#+LATEX_HEADER: \mode<beamer>{\usetheme{CambridgeUS} \usecolortheme{beaver} \setbeamertemplate{items}[ball] \setbeamertemplate{blocks}[rounded][shadow=true] \useoutertheme{infolines}}
-#+BEAMER_FRAME_LEVEL: 2
+#+LATEX_HEADER: \usepackage{loochao}
+#+BEAMER_FRAME_LEVEL: 3
 
 #+COLUMNS: %20ITEM %13BEAMER_env(Env) %6BEAMER_envargs(Args) %4BEAMER_col(Col) %7BEAMER_extra(Extra)
 
 * Introduction
-** Overview
-- org-mode template
-- CambridgeUS
-- Berlin
-- beamer structure
-- beamer settings
-
-* Methodology
-** A simple slide
-This slide consists of some text with a number of bullet points:
-- the first, very @important@, point!
-- the previous point shows the use of the special markup which
-  translates to the Beamer specific /alert/ command for highlighting
-  text.
-The above list could be numbered or any other type of list and may
-include sub-lists.
-
-** A more complex slide
-This slide illustrates the use of Beamer blocks.  The following text,
-with its own headline, is displayed in a block:
-*** Org mode increases productivity				  :B_theorem:
+** Background
+*** Chalcogen elements
+*** Short-range order
+- medium-range order.
+*** Light induced phenomena
+*** Application
+** State of Art
+*** The problem we're facing
+*** What others do about it
+*** What's the solution from our group
+*** Spin coating difference
+* Preliminary Results
+** Theoretical (Volume expansion)
+*** Dipole interaction mode
+** Experimental (Change of index of refraction)
+*** Setup of the laser
+*** SEM image of As_2 S_3
+**** Org mode increases productivity                                           :B_theorem:
     :PROPERTIES:
     :BEAMER_env: theorem
     :END:
@@ -52,67 +48,14 @@ with its own headline, is displayed in a block:
     - it is based on ascii text which is inherently portable.
     - Emacs!
 
-    \hfill \(\qed\)
+* Future Challenges
+*** Volume gratings
+*** Hologram
+*** Creating structure by light
+*** Confirming defeats
+* Backup slides
+*** Craig
+- Here's the problem we're dealing with.
+- Here how others
 
-
-** Two columns
-
-*** A block					      :B_ignoreheading:BMCOL:
-    :PROPERTIES:
-    :BEAMER_env: ignoreheading
-    :BEAMER_col: 0.4
-    :END:
-    - this slide consists of two columns
-    - the first (left) column has no heading and consists of text
-    - the second (right) column has an image and is enclosed in an
-      @example@ block
-
-*** A screenshot 					    :BMCOL:B_example:
-    :PROPERTIES:
-    :BEAMER_col: 0.6
-    :BEAMER_env: example
-    :END:
-** Babel
-   :PROPERTIES:
-   :BEAMER_envargs: [t]
-   :END:
-*** Octave code						      :BMCOL:B_block:
-    :PROPERTIES:
-    :BEAMER_col: 0.45
-    :BEAMER_env: block
-    :END:
-#+srcname: octaveexample
-#+begin_src octave :results output :exports both
-A = [1 2 ; 3 4]
-b = [1; 1];
-x = A\b
-#+end_src
-
-*** The output						      :BMCOL:B_block:
-    :PROPERTIES:
-    :BEAMER_col: 0.4
-    :BEAMER_env: block
-    :BEAMER_envargs: <2->
-    :END:
-
-#+results: octaveexample
-#+begin_example
-A =
-
-   1   2
-   3   4
-
-x =
-
-  -1
-   1
-
-#+end_example
-
-* Conclusions
-** Summary
-   - org is an incredible tool for time management
-   - @but@ it is also excellent for writing and for preparing presentations
-   - Beamer is a very powerful \LaTeX{} package for presentations
-   - the combination is unbeatable!
 
