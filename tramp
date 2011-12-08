@@ -95,8 +95,6 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl"))
- (["scpc" nil "ssh" nil]
-  nil)
  (["ssh" "chaol" "sixtyfour.princeton.edu" nil]
   ("uname" "Linux 2.6.18-274.0.0.0.1.el5")
   ("test" "test")
@@ -116,4 +114,18 @@
   ("remote-encoding" "base64")
   ("remote-decoding" "base64 -d -i")
   ("inline-compress" "gzip")
-  ("inline-decompress" "gzip -d")))
+  ("inline-decompress" "gzip -d"))
+ (["ssh" "yluo" "portal.pppl.gov" nil]
+  ("uname" "Linux 2.6.18-274.el5")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("stat" "\\stat")
+  ("file-exists" "test -e")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 589)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("~" "/u/yluo")))

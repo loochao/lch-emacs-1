@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
- lch-color-theme
- color-theme-tango
- color-theme-jimmy
+ org-export-as-latex
+ uncomment-region
+ auto-complete
  org-mode
- a
  cd
  lm
+ 5x5
 )
 
 ;; ----- smex-data -----
 (
  (org-mode . 1)
- (color-theme-jimmy . 1)
- (color-theme-tango . 1)
- (lch-color-theme . 1)
+ (org-export-as-latex . 88)
+ (auto-complete . 5)
+ (uncomment-region . 2)
 )

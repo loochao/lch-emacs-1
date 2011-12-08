@@ -4,8 +4,8 @@
 (message "=> lch-elisp: loading...")
 
 ;;; Icicles
-(require 'icicles)
-(icy-mode 1)
+;; (require 'icicles)
+;; (icy-mode 1)
 
 ;;; Gse-number-rect
 ;; Insert self-incremental number prefix to a rect region.

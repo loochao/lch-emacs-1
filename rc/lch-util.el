@@ -42,8 +42,9 @@
                     :weight 'bold)
 
 ;; smaller subset of keywords for ensuring no conflict with Org mode TODO keywords
+;; \\|[^*] TODO
 (defvar keywords-org-critical-pattern
-      "\\(BUGS\\|FIXME\\|XXX\\|[^*] TODO\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
+      "\\(BUGS\\|FIXME\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
 
 
 ;; FIXME Highlighting all special keywords but "TODO" in Org mode is already a
