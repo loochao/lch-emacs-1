@@ -1,8 +1,50 @@
-; -*- coding: utf-8 -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>========== ELISP.EL -- LISP PACKAGES ==========<;
+;;; ELISP.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Settings for elisp packages.
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 (message "=> lch-elisp: loading...")
 
+;;; Windmove
+;; use shift + arrow keys to switch between visible buffers
+(require 'windmove)
+(windmove-default-keybindings 'super)
+
+;;; Saveplace
+;; Remembers your location in a file when saving files
+(setq save-place-file (concat emacs-var-dir "/saveplace"))
+;; activate it for all buffers
+(setq-default save-place t)
+(require 'saveplace)
+
 ;;; Icicles
 ;; (require 'icicles)
 ;; (icy-mode 1)
@@ -41,16 +83,25 @@
 ;; By default, it's iSpell, but if aspell is installed:
 (when (featurep 'aspell) (setq ispell-program-name "aspell"))
 (setq-default ispell-local-dictionary "american")
+(setq ispell-extra-args '("--sug-mode=ultra"))
+
+(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+
+(defun lch-turn-on-flyspell ()
+  "Force flyspell-mode on using a positive argument.  For use in hooks."
+  (interactive)
+  (flyspell-mode +1))
+
+(add-hook 'message-mode-hook 'lch-turn-on-flyspell)
+(add-hook 'text-mode-hook 'lch-turn-on-flyspell)
+
+;; (dolist (hook '(text-mode-hook))
+;;   (add-hook hook (lambda () (flyspell-mode 1))))
+;; (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+;;   (add-hook hook (lambda () (flyspell-mode -1))))
 
 ;; Omit tex keywords
-(add-hook 'LaTeX-mode-hook 'flyspell-mode-on)
 (add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
-
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
-(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode -1))))
-
 
 ;;; BM
 (setq bm-restore-repository-on-load t)
@@ -130,17 +181,6 @@
 (require 'calfw-org)
 
 
-;;; AucTeX
-
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-
-(setq preview-gs-command
-      (cond (lch-win32-p
-             "C:/Program Files/gs/gs8.64/bin/gswin32c.exe")
-            (t
-             "/usr/texbin/gs")))
-
 ;;; Magit
 (require 'magit)
 (define-key global-map (kbd "C-x g") 'magit-status)
@@ -181,20 +221,27 @@
 
 
 ;;; Recentf
+;; save recent files
 (require 'recentf)
 
 ;; toggle `recentf' mode
 (recentf-mode 1)
 
 ;; file to save the recent list into
-(setq recentf-save-file (concat emacs-var-dir "/emacs.recentf"))
+(setq recentf-save-file (concat emacs-var-dir "/emacs.recentf")
+      recentf-max-saved-items 200
+      recentf-max-menu-items 30)
 
-;; maximum number of items in the recentf menu
-(setq recentf-max-menu-items 30)
+(defun lch-recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
 
-;; add key binding
-(define-key global-map (kbd "C-x C-r") 'recentf-open-files)
-
+;; Key bindings
+(define-key global-map (kbd "C-x R") 'recentf-open-files)
+(define-key global-map (kbd "C-x C-r") 'lch-recentf-ido-find-file)
 
 ;;; Pager
 
@@ -238,7 +285,7 @@
 
 
 
-;;;---- Package ----
+;;; Package
 ;; (when (require 'package)
 ;;   (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
 ;; 			   ("gnu" . "http://elpa.gnu.org/packages/")
@@ -251,7 +298,7 @@
       '("emacs-lisp-mode"))
 
 
-;;;---- Less ----
+;;; Less
 ;(require 'less)
 ;; (eval-after-load 'less
 ;;   '(progn
@@ -270,16 +317,18 @@
 ;(global-less-minor-mode 1)
 
 
-;;;---- Uniquify ----
-;-Make filename unique
+;;; Uniquify
+;; Make filename unique
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
-
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
-;;;------ iBuffer ------
-;- ibuffer shows a buffer list that allows to perform almost any
-;- imaginable operation on the opened buffers.
+;;; iBuffer
+;; ibuffer shows a buffer list that allows to perform almost any
+;; imaginable operation on the opened buffers.
 (when (require 'ibuffer)
     ;; completely replaces `list-buffer'
     (defalias 'ibuffer-list-buffers 'list-buffer)
@@ -293,16 +342,20 @@
     )
 
 
-;;;---- iDo ----
-(require 'ido)
+;;; iDo
 (ido-mode t)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-max-prospects 10
+      ido-default-file-method 'selected-window)
+
 (setq ido-save-directory-list-file (concat emacs-var-dir "/emacs-ido-last"))
-(setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
-;(setq ido-show-dot-for-dired t)
-;(setq ido-enable-tramp-completion nil)
 (define-key global-map (kbd "C-x b") 'ido-switch-buffer)
 
+;(setq ido-show-dot-for-dired t)
+;(setq ido-enable-tramp-completion nil)
 
 ;;; Browse-kill-ring
 
@@ -368,7 +421,7 @@
 
 
 
-;;;---- Auto-Complete ----
+;;; Auto-Complete
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories emacs-site-lisp)
@@ -376,7 +429,7 @@
 (setq ac-comphist-file  (concat emacs-var-dir "/ac-comphist.dat"))
 (global-auto-complete-mode t)
 
-;> Use Company Backends for Auto-Complete.
+;; Use Company Backends for Auto-Complete.
 ;; (require 'ac-company)
 ;; (ac-company-define-source ac-source-company-elisp company-elisp)
 ;; (add-hook 'emacs-lisp-mode-hook
@@ -384,32 +437,31 @@
 ;;          (add-to-list 'ac-sources 'ac-source-company-elisp)))
 
 
-;;;---- Vimpulse ----
+;;; Vimpulse
 ;(require 'vimpulse)
 
 
-;;;---- Cygwin ----
+;;; Cygwin
 ;(require 'setup-cygwin)
 
 
-;;;---- Cedet ----
+;;; Cedet
 ;(require 'cedet)
 ;(semantic-mode 1)
 
 
-;;;---- Sunrise Commander ----
-;(require 'sunrise-commander)
-;(define-key global-map (kbd "C-M-e") 'sunrise-cd)
-;(sunrise-mc-keys)
+;;; Sunrise Commander
+;; (require 'sunrise-commander)
+;; (define-key global-map (kbd "C-M-e") 'sunrise-cd)
+;; (sunrise-mc-keys)
 
 
-;;;---- Highlight-tail ----
-; (require 'highlight-tail)
-; (message "Highlight-tail loaded - now your Emacs will be even more sexy!")
-; (highlight-tail-mode)
-
+;;;  Highlight-tail
+;; (require 'highlight-tail)
+;; (message "Highlight-tail loaded - now your Emacs will be even more sexy!")
+;; (highlight-tail-mode)
 
-;;;---- Bat-mode ----
+;;; Bat-mode
 (when (string-equal system-type "windows-nt")
   (progn
     (setq auto-mode-alist
@@ -426,7 +478,7 @@
 
 
 
-;;;---- Matlab ----
+;;; Matlab
 ;; FIXME
 (load-library "matlab-load")
 ;(matlab-cedet-setup)
@@ -435,7 +487,7 @@
 (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 
 
-;;;---- AucTeX ----
+;;; AucTeX
 ;(load "auctex.el" nil t t)
 ;(setq TeX-auto-save t)
 ;(setq-default TeX-master nil)
@@ -448,8 +500,8 @@
 (add-hook 'after-init-hook 'session-initialize)
 
 
-;;;---- Whitespace-mode  ----
-;- Make whitespace-mode with very basic background coloring for whitespaces
+;;; Whitespace-mode
+;; Make whitespace-mode with very basic background coloring for whitespaces
 (defvar whitespace-style (quote ( spaces tabs newline space-mark tab-mark newline-mark )))
 
 ;- Make whitespace-mode and whitespace-newline-mode use "¶" for end of line char and ▷ for tab.
@@ -467,9 +519,9 @@
 ))
 
 
-;;;---- Highlight Symbol ----
-;> Highlight occurrence of current word, and move cursor to next/prev occurrence
-;> see http://xahlee.org/emacs/modernization_isearch.html
+;;; Highlight Symbol
+;; Highlight occurrence of current word, and move cursor to next/prev occurrence
+;; see http://xahlee.org/emacs/modernization_isearch.html
 (require 'highlight-symbol)
 ;; temp hotkeys
 (define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point) ; this is a toggle
@@ -478,15 +530,15 @@
 
 
 
-;;;---- Bat Mode ----
-;> For editing Windows's cmd.exe's script; batch, ".bat" file mode.
+;;; Bat Mode
+;; For editing Windows's cmd.exe's script; batch, ".bat" file mode.
 (autoload 'dos-mode "dos" "A mode for editing Windows cmd.exe batch scripts." t)
 (add-to-list 'auto-mode-alist '("\\.bat\\'" . dos-mode))
 (add-to-list 'auto-mode-alist '("\\.cmd\\'" . dos-mode))
 
 
-;;;---- AutoHotKey Mode ----
-;> a keyboard macro for Windows
+;;; AutoHotKey Mode
+;; a keyboard macro for Windows
 (autoload 'xahk-mode "xahk-mode" "AutoHotKey mode" t)
 (add-to-list 'auto-mode-alist '("\\.ahk\\'" . xahk-mode))
 
@@ -505,33 +557,33 @@
 
 
 ;;; Desktop
-;- Make emacs open all files in last emacs session.
-;- Desktop is already part of Emacs.
-;- This functionality is provided by desktop-save-mode ("feature"
-;- name: "desktop"). The mode is not on by default in emacs 23, and
-;- has a lot options.
+;; Make emacs open all files in last emacs session.
+;; Desktop is already part of Emacs.
+;; This functionality is provided by desktop-save-mode ("feature"
+;; name: "desktop"). The mode is not on by default in emacs 23, and
+;; has a lot options.
 
-;- By default, it read .emacs.desktop.lock file from the
-;- dir where Emacs starts from, so when evoke Emacs from
-;- FVWM by C-W-2, it reads the file from ~/.
+;; By default, it read .emacs.desktop.lock file from the
+;; dir where Emacs starts from, so when evoke Emacs from
+;; FVWM by C-W-2, it reads the file from ~/.
 
-;- Goal: have emacs always auto open the set of opend files in last
-;- session, even if emacs crashed in last session or the OS crashed in
-;- last session. Also, don't bother users by asking questions like "do
-;- you want to save desktop?" or "do you want to override last session
-;- file?", because these are annoying and terms like "session" or
-;- "desktop" are confusing to most users because it can have many
-;- meanings.
+;; Goal: have emacs always auto open the set of opend files in last
+;; session, even if emacs crashed in last session or the OS crashed in
+;; last session. Also, don't bother users by asking questions like "do
+;; you want to save desktop?" or "do you want to override last session
+;; file?", because these are annoying and terms like "session" or
+;; "desktop" are confusing to most users because it can have many
+;; meanings.
 
-;- Some tech detail: set the desktop session file at
-;- user-emacs-directory (default is "~/.emacs.d/.emacs.desktop").  This file
-;- is our desktop file. It will be auto created and or over-written.
-;- if a emacs expert has other desktop session files elsewhere, he can
-;- still use or manage those.
+;; Some tech detail: set the desktop session file at
+;; user-emacs-directory (default is "~/.emacs.d/.emacs.desktop").  This file
+;; is our desktop file. It will be auto created and or over-written.
+;; if a emacs expert has other desktop session files elsewhere, he can
+;; still use or manage those.
 
-;- Save the desktop file automatically if it already exists.
-;- Use M-x desktop-save once to save the desktop, eachtime you exit Emacs
-;- Or just set (desktop-save-mode 1), so Emacs will save desktop automatically.
+;; Save the desktop file automatically if it already exists.
+;; Use M-x desktop-save once to save the desktop, eachtime you exit Emacs
+;; Or just set (desktop-save-mode 1), so Emacs will save desktop automatically.
 
 (require 'desktop)
 

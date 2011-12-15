@@ -1,0 +1,173 @@
+%% ==============================================================================
+%% Chao LU's Beamer theme.
+%% ==============================================================================
+\mode
+<beamer>
+
+%\useoutertheme{infolines}
+%\useoutertheme[footline=authorinstitutetitle]{miniframes}
+%\useoutertheme{split}
+\useoutertheme[subsection=false]{smoothbars}
+%\useoutertheme[subsection=true]{smoothbars}
+%\useoutertheme{shadow}
+
+\useinnertheme[shadow=true]{rounded}
+%\useinnertheme[shadow=false]{rounded}
+
+%% Also change items into ball
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{items}[triangle]
+%\setbeamertemplate{items}[ball]
+
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{navigation symbols}{\insertbackfindforwardnavigationsymbol}
+
+%% ------------------------------------------------------------------------------
+%% Head/foot line
+%% ------------------------------------------------------------------------------
+% \setbeamertemplate{footline}{\hfill \insertpagenumber}
+
+%% footline with only framenumber
+%% "%" inside hbox is important! Or you will get hbox overflowed by space.
+% \setbeamertemplate{footline}
+% {
+%   \hbox{%
+%     \begin{beamercolorbox}[wd=.96\paperwidth,ht=2.25ex,dp=1ex,center]{}
+%     \end{beamercolorbox}%
+%     \begin{beamercolorbox}[wd=.04\paperwidth,ht=2.25ex,dp=1ex,right]{}% No Color
+%       \insertframenumber \hspace*{2ex}
+%     \end{beamercolorbox}%
+%     % \begin{beamercolorbox}[wd=.04\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}% Use color of date
+%     %   \insertframenumber \hspace*{2ex}
+%     % \end{beamercolorbox}%
+%   }%
+%   \vskip0pt%
+% }
+
+%% Versatile footline 3 parts
+% \setbeamertemplate{footline}
+% {
+%   \hbox{%
+%     %% Author
+%     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+%     %   \usebeamerfont{author in head/foot}\insertshortauthor
+%     % \end{beamercolorbox}%
+%     %% Section
+%     \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}
+%       \usebeamerfont{section in head/foot}\insertsection
+%     \end{beamercolorbox}%
+%     %% Subsection
+%     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}
+%     %   \insertsubsection
+%     % \end{beamercolorbox}%
+%     %% Date and Framenumber
+%     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}% No Color
+%     %   \insertdate \hfill \insertframenumber \hspace*{2ex}
+%     % \end{beamercolorbox}%
+%     % %% Framenumber only
+%     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}% Use color of date
+%     %   \insertframenumber \hspace*{2ex}
+%     % \end{beamercolorbox}%
+%   }%
+% }
+
+\setbeamertemplate{footline}
+{
+  \hbox{%
+    \begin{beamercolorbox}[wd=.8\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}
+      \hspace*{2ex}\usebeamerfont{section in head/foot}\insertsection/\insertsubsection
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}
+      \usebeamerfont{section in head/foot}\insertframenumber \hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+}
+
+
+%% Navigation footline
+% \setbeamertemplate{footline}
+% {%
+%   \pgfuseshading{beamer@barshade}%
+%   \ifbeamer@sb@subsection%
+%   \vskip-9.75ex%
+%   \else%
+%   \vskip-7ex%
+%   \fi%
+%   \begin{beamercolorbox}[ignorebg,ht=2.25ex,dp=3.75ex,wd=.65\paperwidth]{section in head/foot}
+%     \insertnavigation{.65\paperwidth}
+%   \end{beamercolorbox}%
+%   \ifbeamer@sb@subsection%
+%   \begin{beamercolorbox}[ignorebg,ht=2.125ex,dp=1.125ex,%
+%     leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+%     \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+%   \end{beamercolorbox}%
+%   \fi%
+% }%
+
+%% ------------------------------------------------------------------------------
+%% Color theme
+%% ------------------------------------------------------------------------------
+
+%% Inner color themes: lily, orchid, rose
+%% Complete color themes: albatross, beetle, crane, dove, fly, seagull
+%% Outer color themes: whale, seahorse, dolphin(?)
+\usecolortheme[RGB={140,17,17}]{structure}
+\usecolortheme{orchid}
+\usecolortheme{whale}
+
+%% ------------------------------------------------------------------------------
+%% Customized Various Color elements
+%% ------------------------------------------------------------------------------
+\definecolor{LC_Scarlet}{RGB}{140,17,17}
+\definecolor{LC_Cream}{RGB}{245,240,219}
+\definecolor{LC_DarkGrey}{RGB}{35,35,35}
+\definecolor{LC_Grey}{RGB}{100,100,100}
+\definecolor{LC_LightGrey}{RGB}{200,200,200}
+\definecolor{LC_VeryLightGrey}{RGB}{225,225,225}
+%% Alternatives
+%% Red            204  0    0
+%% Logo           240  7    46
+%% Original       255  25   25
+%% Scarlet        140  17   17
+%% Cream          245  240  219
+%% Cream2         245  255  250 - Whitest
+%% Dairy Cream    249  228  188 - more peachy
+%% Cream Brulee   255  229  160 - peach
+%% Cream Can      245  200   92 - Almost a peach
+%% Coconut Cream  248  247  220 - More white
+
+\setbeamercolor{titlelike}{fg=LC_Cream,bg=LC_Scarlet}
+\setbeamercolor{frametitle}{fg=LC_Cream}
+%% Sidebar
+\setbeamercolor{sidebar}{fg=LC_Cream}
+\setbeamercolor{title in sidebar}{fg=LC_Cream}
+\setbeamercolor{author in sidebar}{fg=LC_Cream}
+\setbeamercolor{section in sidebar shaded}{fg=LC_Cream}
+\setbeamercolor{subsection in sidebar shaded}{fg=LC_Cream}
+%% Block
+\setbeamercolor{block title}{fg=white,bg=black}
+\setbeamercolor{block body}{fg=black,bg=LC_VeryLightGrey}
+
+%% ------------------------------------------------------------------------------
+%% Handout Mode - Using the default layouts, no menus, etc.
+%% ------------------------------------------------------------------------------
+\mode
+<handout>
+
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\useinnertheme{default}
+\setbeamercolor{block title}{fg=black,bg=LC_LightGrey}
+\setbeamercolor{block body}{fg=black,bg=LC_VeryLightGrey}
+
+%% ------------------------------------------------------------------------------
+%% Settings for every mode
+%% ------------------------------------------------------------------------------
+\mode
+<all>
+
+%% <presentation> encompasses <beamer>, <handout>, and <trans>
+%% (transparencies)
+%\mode<presentation>

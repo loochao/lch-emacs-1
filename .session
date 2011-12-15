@@ -1,7 +1,8 @@
-;;; Automatically generated on Wed Oct 12 18:00:41 2011
-;;; Invoked by LooChao@dynamic-oit-vapornet-c-3363.princeton.edu using 23.3.1
+;;; -*- coding: iso-latin-1-with-esc; -*-
+;;; Automatically generated on Thu Dec  8 06:07:25 2011
+;;; Invoked by LooChao@dynamic-oit-vapornet-c-3511.princeton.edu using 22.1.1
 (setq-default session-file-alist '(("~/Dropbox/.emacs.d/rc/lch-binding.el" 2243 1 1 nil nil 2243 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/dotEmacs" 3580 2187 1 nil nil 3527 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/lch-env.el" 1982 1983 1 nil nil 1982 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/lch-elisp-el-get.el" 693 nil 1 nil nil 693 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/lch-pgm.el" 1608 993 1 nil nil 1022 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/lch-w3m.el" 137 887 1 nil nil 137 (overwrite-mode)) ("~/Dropbox/.emacs.d/rc/lch-emms.el" 2097 563 1 nil nil 1208 (overwrite-mode))))
-(setq-default file-name-history '("/Users/LooChao/.emacs" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp-el-get.el" "~/Dropbox/.emacs.d/site-lisp/el-get/el-get/el-get.el" "~/Dropbox/.emacs.d/rc/lch-elisp-el-get.el" "/Users/LooChao/Dropbox/.emacs.d/site-lisp/el-get/el-get/el-get.el" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/.emacs" "~/Dropbox/.emacs.d/rc/xwl-emms.el" "~/Dropbox/.emacs.d/rc/lch-emms.el" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/rc/lch-w3m.el" "/Users/LooChao/Dropbox/.emacs.d/rc/xwl-emms.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-emms.el"))
+(setq-default file-name-history '("~/Dropbox/.emacs.d/doc/emacs-org-beamer/emacs-org-beamer.org" "~/Dropbox/.emacs.d/doc/emacs-org-beamer/filename.org" "/Users/LooChao/.emacs" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp-el-get.el" "~/Dropbox/.emacs.d/site-lisp/el-get/el-get/el-get.el" "~/Dropbox/.emacs.d/rc/lch-elisp-el-get.el" "/Users/LooChao/Dropbox/.emacs.d/site-lisp/el-get/el-get/el-get.el" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/.emacs" "~/Dropbox/.emacs.d/rc/xwl-emms.el" "~/Dropbox/.emacs.d/rc/lch-emms.el" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/rc/lch-w3m.el" "/Users/LooChao/Dropbox/.emacs.d/rc/xwl-emms.el" "/Users/LooChao/Dropbox/.emacs.d/rc/lch-emms.el"))
 (setq-default search-ring '("hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex" "subdirs"))
 (setq-default buffer-name-history '(".emacs" "lch-env.el" "*Messages*"))
 (setq-default command-history '((indent-region (region-beginning) (region-end) nil) (comment-region (region-beginning) (region-end) nil) (switch-to-buffer ".emacs") (switch-to-buffer "lch-env.el") (find-file "/Users/LooChao/.emacs") (kill-buffer "*Messages*") (switch-to-buffer "*Messages*") (find-file "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp-el-get.el") (describe-variable (quote el-get-dir)) (find-file "/Users/LooChao/Dropbox/.emacs.d/site-lisp/el-get/el-get/el-get.el") (eshell nil)))
@@ -13,3 +14,4 @@
 (setq-default serial-name-history '("/dev/ttys0"))
 (setq-default serial-speed-history '("9600" "1200" "2400" "4800" "14400" "19200" "28800" "38400" "57600" "115200"))
 (setq-default smex-history '(indent-region cd lm 5x5 afm arp dbx))
+(setq-default yes-or-no-p-history '("yes" "no"))

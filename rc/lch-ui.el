@@ -1,6 +1,39 @@
-;-*- coding: utf-8 -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>======== UI.EL ========<;
+;;; UI.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Setting for UI.
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
+(message "=> lch-ui: loading...")
+
+;;; W32 max/restore frame
 (if lch-win32-p
     (and (fboundp 'w32-send-sys-command)
     (progn
@@ -15,23 +48,24 @@
 	(w32-send-sys-command 61488))
 
       (define-key global-map (kbd "<f11> m") 'w32-maximize-frame))))
-
-;>-- Pretty Control L --<;
+
+;;; Pretty Control L
 ;(require 'pp-c-l)
 ;(pretty-control-l-mode 1)
-
-;>---------- MENU ----------<;
+
+;;; MENU
 ;> get rid of the Games in the Tools menu
 ;(define-key menu-bar-tools-menu [games] nil)
-
-;>---------- Theme ----------<;
+
+;;; Theme
 ;; (add-to-list 'load-path (concat emacs-dir "/site-lisp/color-theme"))
 ;; (require 'color-theme)
 ;; (color-theme-arjen)
 
 ;(set-foreground-color "MistyRose3")
 ;(set-background-color "Black")
-
+
+;;; Frame parameters
 (setq default-frame-alist
       (append
        '(
@@ -47,18 +81,18 @@
 ;	(width . 128)
 	) default-frame-alist)
       )
+
+;;; FONT
+;; You can get text properties of any char by typing `C-u C-x ='
 
-;>---------- FONT ----------<;
-;- You can get text properties of any char by typing `C-u C-x ='
-
-;- Under Windows, you can get the current font string by typing
+;; Under Windows, you can get the current font string by typing
 ;; `(insert (format "\n%S" (w32-select-font)))' followed by `C-x C-e'
 
-;- You can find the current font by typing
+;; You can find the current font by typing
 ;; `M-x ielm RET (frame-parameters) RET'
 ;; see the line `font'
 
-;- To check if some font is available in Emacs do following:
+;; To check if some font is available in Emacs do following:
 ;;    1.   Switch to the `*scratch*' buffer.
 ;;    2.   Type `(prin1-to-string (x-list-fonts "font-you-want-to-check or
 ;;         pattern"))'.
@@ -70,7 +104,7 @@
 ;;         `(dolist (i (x-list-fonts "*")) (princ i) (terpri))'
 ;;         for a better output.
 
-;- Format: "-a-b-c-d-e-f-g-h-i-j-k-l-"
+;; Format: "-a-b-c-d-e-f-g-h-i-j-k-l-"
 ;; where
 ;;
 ;; a = foundry
@@ -119,7 +153,7 @@
 ;;     dependant). "iso8859" and "iso8859-1" are accepted as synonyms for
 ;;     ansi.
 
-;- Use `xfontsel' utility (or the command-line `xlsfonts') to try out
+;; Use `xfontsel' utility (or the command-line `xlsfonts') to try out
 ;; different fonts. After choosing a font, click the select button in
 ;; `xfontsel' window. This will copy font name you choose to copy & paste
 ;; buffer.
@@ -135,7 +169,7 @@
 (if lch-mac-p
     (set-face-font 'modeline "-apple-Monaco-medium-normal-normal-*-18-*-*-*-m-0-fontset-startup")
     (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
-
+
 ;;; Show buffer name in titlebar
 ;; %f: Full path of current file.
 ;; %b: Buffer name.
@@ -148,18 +182,18 @@
 (set-face-foreground 'isearch "white")
 (set-face-background 'region "gray50")
 
-;>---------- Cursor ----------<;
-;> Don't blink
+;;; Cursor
+;; Don't blink
 (and (fboundp 'blink-cursor-mode) (blink-cursor-mode (- (*) (*) (*))))
 
-;>---- bar-cursor-mode ----<;
+;; bar-cursor-mode
 (require 'bar-cursor)
 (bar-cursor-mode 1)
 
-;> Change cursor color and type according to some minor modes.
+;; Change cursor color and type according to some minor modes.
 (defvar lch-read-only-color       "gray")
-;> valid values are t, nil, box, hollow, bar, (bar . WIDTH), hbar,
-;> (hbar . HEIGHT); see the docs for set-cursor-type
+;; valid values are t, nil, box, hollow, bar, (bar . WIDTH), hbar,
+;; (hbar . HEIGHT); see the docs for set-cursor-type
 (defvar lch-read-only-cursor-type 'hbar)
 (defvar lch-overwrite-color       "red")
 (defvar lch-overwrite-cursor-type 'bar)
@@ -183,13 +217,13 @@
   (set-cursor-color lch-normal-color)
   (setq cursor-type lch-normal-cursor-type))
 
-;> FIXME Doesn'et work with Aquamacs
+;; FIXME Doesn'et work with Aquamacs
 (if (not lch-aquamacs-p) (add-hook 'post-command-hook 'lch-set-cursor-according-to-mode)
   (add-hook 'after-init-hook 'aquamacs-cursor))
-
-;>---------- Parentheses ---------->;
-;> Comment this paragraph, so the highlight-parentheses will work.
-;> Paren color set in color-theme-lch.el
+
+;;; Parentheses
+;; Comment this paragraph, so the highlight-parentheses will work.
+;; Paren color set in color-theme-lch.el
 (if (fboundp 'show-paren-mode)
     (progn
       (show-paren-mode t)
@@ -201,7 +235,7 @@
 ;; Highlight paren when inside (red)
 (require 'highlight-parentheses)
 
-;> Have to define global-highlight-parentheses-mode to enable it all the time
+;; Have to define global-highlight-parentheses-mode to enable it all the time
 (defun turn-on-highlight-parentheses-mode ()
   (highlight-parentheses-mode t))
 (define-global-minor-mode global-highlight-parentheses-mode
@@ -209,24 +243,20 @@
   turn-on-highlight-parentheses-mode)
 (global-highlight-parentheses-mode)
 
-
-;> Get rid of all space-wasting garbage and minimize clutter
+;; Get rid of all space-wasting garbage and minimize clutter
 (if (not lch-mac-p) (and (fboundp 'menu-bar-mode)   (menu-bar-mode   -1)))
 (and (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 ;(if lch-linux-p (and (fboundp 'tool-bar-mode)   (tool-bar-mode   -1)))
 (and (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
-
-
-;>---------- Line-num ----------<;
+
+;;; Line-num
 ;; vi style set num
 (require 'setnu)
-
-;>---------- Menu-bar+ ---------->;
+
+;;; Menu-bar+
 (eval-after-load "menu-bar" '(require 'menu-bar+))
-
-(provide 'lch-ui)
-
-;>----------- Tabbar ---------->;
+
+;;; Tabbar
 (require 'tabbar)
 ;(tabbar-mode t)
 ;(define-key global-map (kbd "") 'tabbar-backward-group)
@@ -249,9 +279,8 @@
    ((t (:inherit tabbar-default-face
                  :foreground "black"
                  :box (:line-width 2 :color "white" :style released-button))))))
-
-
-;>---------- Color ---------->;
+
+;;; Cycle color
 (defun lch-cycle-fg-color (num)
   ""
   (interactive "p")
@@ -315,8 +344,8 @@ See `cycle-color'."
   (lch-cycle-bg-color -1)
   )
 (define-key global-map (kbd "<f11> 4") 'lch-cycle-bg-color-backward)
-
-;>---------- Mode-line ----------<;
+
+;;; Mode-line
 ;(require 'modeline-posn)
 (setq size-indication-mode t)
 (add-to-list 'default-mode-line-format
@@ -326,7 +355,7 @@ See `cycle-color'."
                                             (region-end))
                                (- (region-end) (region-beginning)))))))
 
-;>-------- Font --------<;
+;;; Cycle fonts
 (defun cycle-font (num)
   "Change font in current frame.
 Each time this is called, font cycles thru a predefined set of fonts.
@@ -377,7 +406,8 @@ See `cycle-font'."
   )
 
 (define-key global-map (kbd "<f11> 6") 'cycle-font-backward)
-
+
+;;; Toggle line space
 (defun toggle-line-spacing ()
 "Toggle line spacing between no extra space to extra half line height."
 (interactive)
@@ -388,7 +418,7 @@ See `cycle-font'."
 
 (define-key global-map (kbd "<f11> l") 'toggle-line-spacing)
 
-;>-------- Auto Select Fonts --------<;
+;;; Auto Select Fonts
 (defun qiang-font-existsp (font)
   (if (null (x-list-fonts font))
       nil t))
@@ -437,5 +467,13 @@ If set/leave chinese-font-size to nil, it will follow english-font-size"
     (qiang-set-font
      '("Lucida Console" "Monaco" "Consolas" "DejaVu Sans Mono" "Monospace" "Courier New") ":pixelsize=21"
      '("Microsoft Yahei" "文泉驿等宽微米黑" "黑体" "新宋体" "宋体")))
-
+
 (provide 'lch-ui)
+(message "~~ lch-ui: done.")
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:

@@ -1,14 +1,47 @@
-;>======== PROGRAMMING.EL ========<;
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>---- Lisp mode ----<;
+;;; PROGRAMMING.EL
+;;
+;; Copyright (c) 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Some basic configuration for programming languages.
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
+(message "=> lch-pgm: loading...")
+
+;;; Lisp mode
 (defun xwl-lisp-mode-hook ()
   ;; (which-func-mode 1)
-  ;(eldoc-mode 1)
+  ;; (eldoc-mode 1)
 
-  (set (make-local-variable 'outline-regexp) ";>---- ") ;FIXME
-;  (outline-minor-mode 1)
-;  (unless (string= "*scratch*" (buffer-name))
-;    (outline-minor-mode))
+  (set (make-local-variable 'outline-regexp) ";>---- ") ;; FIXME
+  ;; (outline-minor-mode 1)
+  ;; (unless (string= "*scratch*" (buffer-name))
+  ;;   (outline-minor-mode))
   (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)
   (local-set-key (kbd "<S-tab>") 'lisp-complete-symbol)
   (local-set-key (kbd "C-c C-r") 'eval-region))
@@ -16,9 +49,9 @@
 (add-hook 'lisp-mode-hook 'xwl-lisp-mode-hook)
 (add-hook 'lisp-interaction-mode-hook 'xwl-lisp-mode-hook)
 (add-hook 'emacs-lisp-mode-hook 'xwl-lisp-mode-hook)
-
-;>---- Highlight Special Keywords ----<;
-;>-- Using Greek Symbol to respresent lambda --<;
+
+;;; Highlight Special Keywords
+;; Using Greek Symbol to respresent lambda
 (font-lock-add-keywords
  nil ;; 'emacs-lisp-mode
  `(("\\<lambda\\>"
@@ -26,7 +59,7 @@
                               ,(make-char 'greek-iso8859-7 107))
               nil)))))
 
-;>-- Highlight TODO & FIXME --<;
+;; Highlight TODO & FIXME
 (make-face 'font-lock-fixme-face)
 (make-face 'font-lock-todo-face)
 (make-face 'font-lock-lch-face)
@@ -41,12 +74,11 @@
 (modify-face 'font-lock-figure-face "White" "DarkRed" nil t nil t nil nil)
 (modify-face 'font-lock-why-face "Black" "Cyan" nil t nil t nil nil)
 
-
-(setq xwl-keyword-highlight-modes
+(setq lch-keyword-highlight-modes
      '(php-mode java-mode c-mode c++-mode emacs-lisp-mode scheme-mode
        text-mode outline-mode))
 
-(defun xwl-highlight-special-keywords ()
+(defun lch-highlight-special-keywords ()
  (mapc (lambda (mode)
          (font-lock-add-keywords
           mode
@@ -57,8 +89,61 @@
             ("\\<\\(FIGURE\\)"  1 'font-lock-figure-face t)
             ("\\<\\(WHY\\)"  1 'font-lock-why-face t)
 	    )))
-       xwl-keyword-highlight-modes))
+       lch-keyword-highlight-modes))
 
-(xwl-highlight-special-keywords)
+(lch-highlight-special-keywords)
+
+;;; cc mode
+(defun lch-c-mode-common-hook ()
+  (setq c-basic-offset 4))
+
+;; this will affect all modes derived from cc-mode, like
+;; java-mode, php-mode, etc
+(add-hook 'c-mode-common-hook 'lch-c-mode-common-hook)
+
+(defun lch-makefile-mode-hook ()
+  (setq indent-tabs-mode t)
+  (setq tab-width 4))
+
+(add-hook 'makefile-mode-hook 'lch-makefile-mode-hook)
 
 (provide 'lch-pgm)
+(message "~~ lch-pgm: done.")
+
+;;; Perl
+(defalias 'perl-mode 'cperl-mode)
+
+(defun lch-cperl-mode-hook ()
+  (setq cperl-indent-level 4)
+  (setq cperl-continued-statement-offset 8)
+  ;; cperl-hairy affects all those variables, but I prefer
+  ;; a more fine-grained approach as far as they are concerned
+  (setq cperl-font-lock t)
+  (setq cperl-electric-lbrace-space t)
+  (setq cperl-electric-parens nil)
+  (setq cperl-electric-linefeed nil)
+  (setq cperl-electric-keywords nil)
+  (setq cperl-info-on-command-no-prompt t)
+  (setq cperl-clobber-lisp-bindings t)
+  (setq cperl-lazy-help-time 3)
+
+  ;; if you want all the bells and whistles
+  ;; (setq cperl-hairy)
+
+  (set-face-background 'cperl-array-face nil)
+  (set-face-background 'cperl-hash-face nil)
+  (setq cperl-invalid-face nil))
+
+(add-hook 'cperl-mode-hook 'lch-cperl-mode-hook t)
+;;; Emacs lisp
+(defun lch-emacs-lisp-mode-hook ()
+  (turn-on-eldoc-mode))
+
+(add-hook 'emacs-lisp-mode-hook 'lch-emacs-lisp-mode-hook)
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:

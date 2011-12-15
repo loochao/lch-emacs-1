@@ -1,6 +1,111 @@
-;-*- coding:utf-8 -*-
+;; -*- coding:utf-8; -*-
 
-;>======== UTIL.EL ========<;
+;;; UTIL.EL
+;;
+;; Copyright (c) 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Utilities
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
+;;; Jump to a definition in the current file. (This is awesome.)
+(require 'imenu)
+
+(defun prelude-ido-goto-symbol (&optional symbol-list)
+  "Refresh imenu and jump to a place in the buffer using Ido."
+  (interactive)
+  (unless (featurep 'imenu)
+    (require 'imenu nil t))
+  (cond
+   ((not symbol-list)
+    (let ((ido-mode ido-mode)
+          (ido-enable-flex-matching
+           (if (boundp 'ido-enable-flex-matching)
+               ido-enable-flex-matching t))
+          name-and-pos symbol-names position)
+      (unless ido-mode
+        (ido-mode 1)
+        (setq ido-enable-flex-matching t))
+      (while (progn
+               (imenu--cleanup)
+               (setq imenu--index-alist nil)
+               (prelude-ido-goto-symbol (imenu--make-index-alist))
+               (setq selected-symbol
+                     (ido-completing-read "Symbol? " symbol-names))
+               (string= (car imenu--rescan-item) selected-symbol)))
+      (unless (and (boundp 'mark-active) mark-active)
+        (push-mark nil t nil))
+      (setq position (cdr (assoc selected-symbol name-and-pos)))
+      (cond
+       ((overlayp position)
+        (goto-char (overlay-start position)))
+       (t
+        (goto-char position)))))
+   ((listp symbol-list)
+    (dolist (symbol symbol-list)
+      (let (name position)
+        (cond
+         ((and (listp symbol) (imenu--subalist-p symbol))
+          (prelude-ido-goto-symbol symbol))
+         ((listp symbol)
+          (setq name (car symbol))
+          (setq position (cdr symbol)))
+         ((stringp symbol)
+          (setq name symbol)
+          (setq position
+                (get-text-property 1 'org-imenu-marker symbol))))
+        (unless (or (null position) (null name)
+                    (string= (car imenu--rescan-item) name))
+          (add-to-list 'symbol-names name)
+          (add-to-list 'name-and-pos (cons name position))))))))
+(global-set-key (kbd "M-i") 'prelude-ido-goto-symbol)
+
+
+;;; Better kill-region
+;;  Note 'kill-region' is binded to 'C-w'
+(defadvice kill-region (before slick-cut activate compile)
+  "When called interactively with no active region, kill a single line instead."
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
+;;; Open file in external program
+(defun lch-open-with ()
+  "Simple function that allows us to open the underlying
+file of a buffer in an external program."
+  (interactive)
+  (when buffer-file-name
+    (shell-command (concat
+                    (if (eq system-type 'darwin)
+                        "open"
+                      (read-shell-command "Open current file with: "))
+                    " "
+                    buffer-file-name))))
+(global-set-key (kbd "C-c o") 'lch-open-with)
+
 ;;; Underline prev line.
 (defun gse-underline-previous-line ()
   "Underline the previous line with dashes."
@@ -31,8 +136,6 @@
 (global-set-key (kbd "C-c -") 'gse-underline-previous-line)
 (global-set-key (kbd "C-c _") 'gse-underline-previous-line)
 
-
-
 ;;; Special words
 (defvar keywords-critical-pattern
       "\\(BUGS\\|FIXME\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
@@ -107,7 +210,6 @@
                 shell-mode-hook
                 ssh-config-mode-hook))
   (add-hook hook 'fontify-keywords))
-
 
 ;;; Repeat last command passed to `shell-command'
 (defun repeat-shell-command ()
@@ -118,7 +220,6 @@
   (shell-command (car shell-command-history)))
 
 (global-set-key (kbd "C-c j") 'repeat-shell-command)
-
 
 ;;; Shift a line up or down
 (defun move-line (n)
@@ -151,7 +252,6 @@
 
 (global-set-key (kbd "<C-M-up>") 'move-line-up)
 (global-set-key (kbd "<C-M-down>") 'move-line-down)
-
 
 ;;; Digital-clock
 (defun my-digital-clock (&optional arg)
@@ -206,7 +306,7 @@ time."
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format (current-time)))))
 (define-key global-map (kbd "C-c d") 'lch-insert-date)
-
+
 ;;; lch-search
 (defun lch-search ()
   (interactive)
@@ -263,7 +363,6 @@ time."
   (when lch-mac-p (shell-command (format "open -a Finder %s" mydir)))
   ))
 (define-key global-map (kbd "<f4> <f4>") 'lch-start-file-browser)
-
 
 ;;; Start terminal
 (defun lch-start-terminal ()
@@ -303,7 +402,6 @@ end tell" mydir)))
     (while (search-forward "”" nil t)
       (replace-match "\"" nil t))
     ))
-
 
 ;;; Delete trailing spaces
 ;; It is better to go to the next line here because this way we can
@@ -317,7 +415,7 @@ end tell" mydir)))
      (forward-line 1)
      (decf arg 1)))
 
-;; Remove all the tabs and spaces at the end of the lines.
+;;; Remove all the tabs and spaces at the end of the lines.
 (defun buffer-delete-trailing-spaces ()
   "Remove all the tabs and spaces at the end of all the lines in the buffer."
   (interactive)
@@ -388,12 +486,32 @@ end tell" mydir)))
 
 
 ;;; Indent whole buffer
-(defun indent-whole-buffer ()
+(defun lch-indent-buffer ()
+  "Indents the entire buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun lch-indent-region-or-buffer ()
+  "Indents a region if selected, otherwise the whole buffer."
   (interactive)
   (save-excursion
-    (mark-whole-buffer)
-    (indent-for-tab-command)))
-(define-key global-map (kbd "C-c i") 'indent-whole-buffer)
+    (if (region-active-p)
+        (progn
+          (indent-region (region-beginning) (region-end))
+          (message "Indented selected region."))
+      (progn
+        (lch-indent-buffer)
+        (message "Indented buffer.")))))
+
+
+(define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)
+
+;; Yet another way to do it
+;; (defun indent-whole-buffer ()
+;;   (interactive)
+;;   (save-excursion
+;;     (mark-whole-buffer)
+;;     (indent-for-tab-command)))
 
 ;;; insert a time stamp string
 (defun lch-insert-time-stamp ()
@@ -415,14 +533,13 @@ end tell" mydir)))
     (while (search-forward "\r" nil t)
       (replace-match ""))))
 
-;; convert a buffer from Unix end of lines to DOS `^M(\n)' end of lines
+;;; convert a buffer from Unix end of lines to DOS `^M(\n)' end of lines
 (defun unix2dos ()
   (interactive)
   (save-excursion
     (goto-char (point-min))
     (while (search-forward "\n" nil t)
       (replace-match "\r\n"))))
-
 
 ;;; Reverse words/region
 (defun reverse-words (start end)
@@ -475,11 +592,9 @@ end tell" mydir)))
         (let ((rlines (shuffle-vector lines)))
           (dotimes (linenum (length rlines))
             (insert (aref rlines linenum))))))))
-
-
 
 ;;; Jump to matched paren
-;;;###autoload
+;;###autoload
 (defun his-match-paren (arg)
   "Go to the matching paren if on a paren; otherwise insert %."
   (interactive "p")
@@ -509,7 +624,6 @@ end tell" mydir)))
   (call-interactively 'his-transpose-windows))
 (define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)
 (define-key global-map (kbd "C-c w") 'ywb-favorite-window-config)
-
 
 ;;; Transpose(Interchange) Two Windows
 ;;;###autoload
@@ -524,7 +638,6 @@ end tell" mydir)))
         (set-window-buffer (funcall selector) this-win)
         (select-window (funcall selector)))
       (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
-
 
 ;;; Kill current buffer without confirmation
 (define-key global-map (kbd "C-x C-k") 'kill-current-buffer)
@@ -533,7 +646,6 @@ end tell" mydir)))
   "Kill the current buffer, without confirmation."
   (interactive)
   (kill-buffer (current-buffer)))
-
 
 ;;; Switch or create *scratch*
 (defun ywb-create/switch-scratch ()
@@ -557,7 +669,6 @@ the frame title bar."
 
 (if (and (boundp 'w32-initialized) w32-initialized)
     (define-key global-map (kbd "M-<f4>") 'close-frame))
-
 
 ;;; Zoom
 (defun text-scale-normal-size ()
@@ -569,8 +680,6 @@ the frame title bar."
 (define-key global-map [C-down-mouse-2] 'text-scale-normal-size)
 (define-key global-map (kbd "C-=") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
-
-
 
 ;;; Go-to-char
 ;; C-c a x goto x, then press x to go to next 'x'
@@ -586,7 +695,7 @@ occurence of CHAR."
   (setq unread-command-events (list last-input-event)))
 (define-key global-map (kbd "C-x g") 'my-wy-go-to-char)
 ;(define-key global-map (kbd "M-g") 'my-wy-go-to-char)
-
+
 ;;; Nuke buffers
 (defun nuke-some-buffers (&optional list)
   "For each buffer in LIST, kill it silently if unmodified. Otherwise ask.
@@ -655,7 +764,6 @@ With C-u, C-0 or M-0, cancel the timer."
                       (rename-buffer n)
                       (local-set-key "q" '(lambda () (interactive) (kill-buffer (current-buffer))))
                       (hl-line-mode 1)))))
-
 
 ;;; Switch Mode
 ;; The mode selected last time is remembered.
@@ -681,7 +789,6 @@ With C-u, C-0 or M-0, cancel the timer."
     (funcall mode)
     (setq switch-major-mode-last-mode last-mode)))
 (define-key global-map (kbd "<f1> C-m") 'switch-major-mode)
-
 
 ;;; Inserts Date
 (defun insert-date()
@@ -690,7 +797,6 @@ With C-u, C-0 or M-0, cancel the timer."
 (insert (format-time-string "%y.%m.%d %H:%M" (current-time))))
 
 (define-key global-map (kbd "<f1> T") 'insert-date)
-
 
 ;;; New Empty Buffer
 (defun new-empty-buffer ()
@@ -700,7 +806,6 @@ With C-u, C-0 or M-0, cancel the timer."
     (switch-to-buffer buf)
     (funcall (and initial-major-mode))
     (setq buffer-offer-save t)))
-
 
 ;;; M$CMD Shell
 (defun cmd-shell (&optional arg)
@@ -717,7 +822,6 @@ arg switches to the specified session, creating it if necessary."
                                       "command.com")))
     (shell buf-name)))
 (define-key global-map (kbd "C-S-<f1>") 'cmd-shell)
-
 
 ;;; MSYS Shell
 (defun msys-shell (&optional arg)
@@ -798,5 +902,6 @@ it if necessary."
 ;;; Local Vars.
 ;; Local Variables:
 ;; mode: emacs-lisp
+;; mode: outline-minor
 ;; outline-regexp: ";;;;* "
 ;; End:

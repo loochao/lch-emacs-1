@@ -1,0 +1,59 @@
+%% ------------------------------------------------------------------------------
+%% Default mode
+%% ------------------------------------------------------------------------------
+
+
+
+
+
+\setbeamerfont{block title}{size={}}
+
+%\usetheme{Frankfurt}
+
+\setbeamertemplate{headline}
+{
+  \begin{beamercolorbox}[wd=.70\paperwidth,ht=4.25ex,dp=1ex,right,RGB={140,17,17}]{section in head/foot}
+    \vskip12pt \hfill \insertsectionnavigationhorizontal{.70\linewidth}{}{}  \hfill  \vskip2pt
+  \end{beamercolorbox}%
+
+  \begin{beamercolorbox}[wd=.30\paperwidth,ht=4.25ex,dp=1ex,center,RGB={140,17,17}]{section in head/foot}
+    \vskip2pt \hfill \hfill \insertsubsection  \hfill  \vskip2pt
+  \end{beamercolorbox}%
+
+  \hfill
+  \begin{beamercolorbox}[rounded=true, center,
+    shadow=true,wd=16cm,RGB={140,120,220}, ht=14.85ex]{section in head/foot}
+    Some text goes here...
+  \end{beamercolorbox}
+  \hfill\hfill
+}
+
+
+% \newif\ifbeamer@secheader
+% \beamer@secheaderfalse
+% \DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+% \ProcessOptionsBeamer
+% \useoutertheme{infolines}
+% \ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+\defbeamertemplate*{footline}{}{
+  \hbox{%
+    \begin{beamercolorbox}[wd=.96\paperwidth,ht=2.25ex,dp=1ex,center,RGB={140,17,17}]{}
+    \end{beamercolorbox}%
+    % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    %   \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+    % \end{beamercolorbox}%
+    % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    %   \usebeamerfont{title in head/foot}\insertshorttitle
+    % \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.04\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      % \usebeamerfont{date in
+      % head/foot}\insertshortdate{}\hspace*{2em}
+      % \usebeamerfont{title in head/foot}\insertshorttitle \hspace*{2em}
+      % \usebeamerfont{author in
+      % head/foot}\insertshortauthor~~(\insertshortinstitute) \hspace*{2em}
+      % \insertframenumber /\inserttotalframenumber\hspace*{2ex}
+      \insertframenumber \hspace*{2ex}
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}

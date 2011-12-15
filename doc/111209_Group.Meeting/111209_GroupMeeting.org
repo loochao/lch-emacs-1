@@ -1,0 +1,126 @@
+#+TITLE:     Project Report
+#+AUTHOR:    Chao LU
+#+EMAIL:     chaol@princeton.edu
+#+DATE:      2011-12-09 Fri
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+STARTUP: oddeven
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [bigger, english, 10pt, presentation]
+#+LATEX_HEADER: \usepackage{loochao}
+#+BEAMER_FRAME_LEVEL: 3
+
+#+COLUMNS: %20ITEM %13BEAMER_env(Env) %6BEAMER_envargs(Args) %4BEAMER_col(Col) %7BEAMER_extra(Extra)
+
+* Microscopy Measurement
+** Film Uniformity
+*** 100x lens                                                                   :noexport:
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.5
+    :END:
+[[file:./figures/111208_As2S3_AsDep_UniformSite_100x_3D.jpeg]]
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.5
+    :END:
+[[file:./figures/111208_As2S3_AsDep_UniformSite_100x_2D.jpeg]]
+
+*** 10x lens
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.5
+    :END:
+[[file:./figures/111208_As2S3_AsDep_UniformSite_10x_3D.jpeg]]
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.5
+    :END:
+[[file:./figures/111208_As2S3_AsDep_UniformSite_10x_2D.jpeg]]
+** Film Thickness
+*** Film Thickness
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.7
+    :END:
+##+ATTR_LaTeX: width=0.7\textwidth
+[[file:./figures/111208_As2S3_AsDeposited_100x_2D_HeightMeasurements.jpeg]]
+**** A block
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :BEAMER_col: 0.3
+    :END:
+- 0.747 $\mu m$
+- 100x lens
+* Absorption Coefficient
+** 488nm and White Source
+*** 488nm and White Source
+**** 488nm Measurements
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- W/O film: 17.82W
+- With film: 17.82W
+- The film is too thin to absorb much, maybe good for us?
+
+**** TODO
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Add ND filter and retest.
+- Increase the film thickness.
+- How to increase thickness to upto $200 \mu m$???
+
+**** White source
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Tried last night.
+- May need Maike's help: Mounts and driver for the spectrometer.
+* Refractive index
+** Refractive index
+*** Refractive index
+**** dn/dt
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Cooling system needed if we want data for long time like 2hours.
+- Black enclosure needed as well.
+- Film ready for 20min, need to test $\Delta n$, thanks for Jerry's help
+
+**** dn/dx
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- How to focus tight. Now it's mm.
+- How to measure spot size.
+- How to measure such small changes, Raman?
+- How to mark this spot size out.
+
+* TODO
+** TODO
+*** TODO
+**** TODO List
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Mechanism of hologram, like multiplexing.
+- How to fabricate thick film, where are we now?
+- OptiGrate.
+- FTIR -- Maike?
+

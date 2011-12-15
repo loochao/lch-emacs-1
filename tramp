@@ -128,4 +128,6 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
-  ("~" "/u/yluo")))
+  ("~" "/u/yluo"))
+ (["sudo" "root" "Chao-LUs-MacBook-Pro.local" nil]
+  nil))

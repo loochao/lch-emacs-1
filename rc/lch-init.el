@@ -1,6 +1,36 @@
-;-*- coding:utf-8; -*-
+;; -*- coding:utf-8; -*-
 
-;>======== INIT.EL  ========<;
+;;; INIT.EL
+;;
+;; Copyright (c)  Chao LU 2005 2006-2011
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Initialization settings
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 
 ;;; (info "(emacs)Customization")
 (message "=> lch-init: loading...")
@@ -37,6 +67,7 @@
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
       scroll-step 1                     ; Move down 1 line instead of multi.
       scroll-conservatively 10000
+      scroll-preserve-screen-position 1
       next-line-add-newlines nil        ; Don't add newlines at the end.
       message-log-max 500               ; Show lots of *message*.
      ;kill-whole-line t                 ; Remove the newlines as well.
@@ -112,7 +143,9 @@
 
 ;;; Display page delimiter ^L as a horizontal line
 ;(aset standard-display-table ?\^L (vconcat (make-vector 64 ?-) "^L"))
-
+
+;;; Death to the tabs!
+(setq-default indent-tabs-mode nil)
 
 ;;; 'y' for 'yes', 'n' for 'no'
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -141,11 +174,15 @@
 
 
 ;;; Time stamp support
-(setq time-stamp-active t)
-(setq time-stamp-warn-inactive t)
-;(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S Lu Chao")
-;(add-hook 'write-file-hooks 'time-stamp)
+;; when there's "Time-stamp: <>" in the first 10 lines of the file
+(setq time-stamp-active t
+      time-stamp-warn-inactive t
+      ;; check first 10 buffer lines for Time-stamp: <>
+      time-stamp-line-limit 10
+      time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S (%u)") ; date format
+(add-hook 'write-file-hooks 'time-stamp) ; update when saving
 
+;(setq time-stamp-format "%:y-%02m-%02d %02H:%02M:%02S Lu Chao")
 
 ;;; New line
 ;; Interchange these two keys.
@@ -177,10 +214,21 @@
 ;; (add-hook 'org-mode-hook 'turn-on-font-lock)
 
 
-;;; BMK FILW
+;;; Bookmark file
 ;; Not only on exit, but on every modification
 (setq bookmark-save-flag 1)
 
+
+;;; Savehist
+;; keeps track of some history
+(setq savehist-additional-variables
+      ;; search entries
+      '(search ring regexp-search-ring)
+      ;; save every minute
+      savehist-autosave-interval 60
+      ;; keep the home clean
+      savehist-file (concat emacs-var-dir "/savehist"))
+(savehist-mode t)
 
 ;;; Allow emacs cocopy&paste with X11 apps
 (setq x-select-enable-clipboard t)
@@ -196,10 +244,9 @@
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
 
-;;; Delete-selection as usual soft
+;;; Delete the selection with a keypress
 ;; Select and press a key to delete, like MSWord
 (delete-selection-mode t)
-
 
 ;;; Enable some function
 (put 'narrow-to-region 'disabled nil)
@@ -316,23 +363,34 @@
       ))
 
 
-;;; Expansions & completions
+;;; Hippie expand is dabbrev expand on steroids
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
-        try-expand-whole-kill
-        ;senator-try-expand-semantic
-        try-expand-dabbrev-visible
-        try-expand-dabbrev-from-kill
         try-expand-dabbrev-all-buffers
-        try-expand-all-abbrevs
+        try-expand-dabbrev-from-kill
         try-complete-file-name-partially
         try-complete-file-name
+        try-expand-all-abbrevs
         try-expand-list
-        ;try-complete-lisp-symbol-partially
-        ;try-complete-lisp-symbol
         try-expand-line
-	try-expand-line-all-buffers))
-
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
+;; Yet another way
+;; (setq hippie-expand-try-functions-list
+;;       '(try-expand-dabbrev
+;;         try-expand-whole-kill
+;;         ;senator-try-expand-semantic
+;;         try-expand-dabbrev-visible
+;;         try-expand-dabbrev-from-kill
+;;         try-expand-dabbrev-all-buffers
+;;         try-expand-all-abbrevs
+;;         try-complete-file-name-partially
+;;         try-complete-file-name
+;;         try-expand-list
+;;         ;try-complete-lisp-symbol-partially
+;;         ;try-complete-lisp-symbol
+;;         try-expand-line
+;; 	try-expand-line-all-buffers))
 
 ;;; User info
 (setq user-full-name "LooChao<LooChao@gmail.com>")

@@ -1,0 +1,5 @@
+Emacs-Org-TeX
+=============
+
+Open the emacs-org-tex.org file, then M-x org-export, pick latex, the
+emacs-org-tex.tex file will be generated.

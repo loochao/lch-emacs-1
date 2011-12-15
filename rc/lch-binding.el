@@ -1,9 +1,38 @@
-;-*- coding:utf-8; mode:emacs-lisp; -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>======== BINDING.EL ========<;
+;;; BINDINGS.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; Global bindings
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code:
 ;;; (info "(emacs)Key Bindings")
 (message "=> lch-binding: loading...")
-
 
 ;;; Fn map defined in dotEmacs file
 (define-key global-map (kbd "<home>") 'beginning-of-buffer)
@@ -356,7 +385,7 @@
 
 ;;; Ctrl+C Map
 (define-key global-map (kbd "C-c c") 'comment-region)
-;(define-key global-map (kbd "C-c d") 'lch-insert-date)
+;; (define-key global-map (kbd "C-c d") 'lch-insert-date)
 ;; CAUTION
 (define-key global-map (kbd "C-6")
 		'(lambda () (interactive)
@@ -365,12 +394,13 @@
 
 (define-key global-map (kbd "C-c e") 'eval-buffer)
 (define-key global-map (kbd "C-c f") 'find-dired)
-;(define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
+;; (define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
 (define-key global-map (kbd "C-c g") 'grep-find)
-;(global-set-key (kbd "C-c C-g") 'lch-google-search-w3m)                      ;; => lch-web.el
-;(define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
-
-;(define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)             ;; => lch-util.el
+;; (global-set-key (kbd "C-c C-g") 'lch-google-search-w3m)                      ;; => lch-web.el
+;; (define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
+;; (define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)           ;; => lch-util.el
+;; (global-set-key (kbd "C-c o") 'lch-open-with)                                ;; => lch-util.el
+;; (define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)             ;; => lch-util.el
 (define-key global-map (kbd "C-c u") 'uncomment-region)
 (define-key global-map (kbd "C-c v") 'view-mode)
 (define-key global-map (kbd "C-c C-v") 'view-mode)

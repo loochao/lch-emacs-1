@@ -1,0 +1,6 @@
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:

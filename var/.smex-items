@@ -1,19 +1,16 @@
 
 ;; ----- smex-history -----
 (
- org-export-as-latex
- uncomment-region
- auto-complete
- org-mode
  cd
  lm
  5x5
+ afm
+ arp
+ dbx
+ dig
 )
 
 ;; ----- smex-data -----
 (
- (org-mode . 1)
- (org-export-as-latex . 88)
- (auto-complete . 5)
- (uncomment-region . 2)
+ 
 )

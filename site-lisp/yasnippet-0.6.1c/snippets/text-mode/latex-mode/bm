@@ -1,0 +1,38 @@
+\documentclass[bigger, english, 10pt, presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{loochao}
+
+\title{}
+\subtitle{}
+\author{}
+\institute{}
+\titlegraphic{}
+\date{\today}
+
+\begin{document}
+% --------------------------------------------------- Slide --
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+% --------------------------------------------------- Slide --
+
+\begin{frame}
+\frametitle{Outline}
+\setcounter{tocdepth}{3}
+\tableofcontents
+\end{frame}
+
+\end{document}
