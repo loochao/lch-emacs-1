@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Dec 15 06:46:11 2011
+;; Created Thu Dec 15 06:52:45 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,16 +11,16 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex" "subdirs"))
-(setq regexp-search-ring '("time-st" "mac" "pgm" "tex" "er" "ido" "mac" "tail" "----" "uni" "tab" "tramp" "lch-ui" "ctrl" "indent" "shell"))
+(setq regexp-search-ring '("time-st" "mac" "pgm" "tex" "er" "ido" "tail" "----" "uni" "tab" "tramp" "lch-ui" "ctrl" "indent" "shell"))
 (setq register-alist nil)
-(setq file-name-history '("~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el" "~/Dropbox/.emacs.d/rc/lch-mac.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-python.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-js.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-ui.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/test.pl" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-packages.el" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-tex.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-latex.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-programming.el" "~/Dropbox/.emacs.d/var/.bm-repository" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-erc.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-common-lisp.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-coffee.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-emacs-lisp.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-perl.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-lisp.el" "~/Dropbox/.emacs.d/rc/lch-mac.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/rc/lch-tramp.el" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-editor.el" "~/Dropbox/.emacs.d/rc/lch-binding.el" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/.emacs.d/rc/lch-shell.el" "~/Dropbox/.emacs.d/rc/lch-env.el" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/varl" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/lvar" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/hd" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/MAE324/ProbSet/HW2/hw2.pdf" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-global-keybindings.el"))
+(setq file-name-history '("~/Dropbox/.emacs.d/var/.bm-repository" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el" "~/Dropbox/.emacs.d/rc/lch-mac.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-python.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-js.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-ui.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/test.pl" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-packages.el" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-tex.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-latex.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-programming.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-erc.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-common-lisp.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-coffee.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-emacs-lisp.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-perl.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-lisp.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/rc/lch-tramp.el" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-editor.el" "~/Dropbox/.emacs.d/rc/lch-binding.el" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/.emacs.d/rc/lch-shell.el" "~/Dropbox/.emacs.d/rc/lch-env.el" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/varl" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/lvar" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/hd" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/MAE324/ProbSet/HW2/hw2.pdf" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-global-keybindings.el"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-init.el"
   "lch-init.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   5568
   '(5920 nil)
   nil
@@ -31,7 +31,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-editor.el"
   "prelude-editor.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1156
   '(nil nil)
   nil
@@ -53,7 +53,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el"
   "prelude-el-get.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   2600
   '(nil nil)
   nil
@@ -64,7 +64,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-mac.el"
   "lch-mac.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1731
   '(1038 nil)
   nil
@@ -86,7 +86,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
   "lch-elisp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   7845
   '(1052 nil)
   nil
@@ -97,7 +97,7 @@
   "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el"
   "lch-pgm.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   4611
   '(4551 nil)
   nil
@@ -108,7 +108,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-python.el"
   "prelude-python.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1359
   '(nil nil)
   nil
@@ -119,7 +119,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-programming.el"
   "prelude-programming.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   2006
   '(1166 nil)
   nil
@@ -141,7 +141,7 @@
   "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el"
   "lch-conf.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   2159
   '(1615 nil)
   nil
@@ -152,7 +152,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-packages.el"
   "prelude-packages.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1948
   '(nil nil)
   nil
@@ -163,7 +163,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-tex.el"
   "lch-tex.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1072
   '(1976 nil)
   nil
@@ -174,7 +174,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-util.el"
   "lch-util.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   27306
   '(997 nil)
   nil
@@ -185,7 +185,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-global-keybindings.el"
   "prelude-global-keybindings.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1507
   '(1507 nil)
   nil
@@ -196,7 +196,7 @@
   "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-common-lisp.el"
   "prelude-common-lisp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1881
   '(nil nil)
   nil
@@ -207,7 +207,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-tramp.el"
   "lch-tramp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1
   '(6461 nil)
   nil
@@ -218,7 +218,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui.el"
   "lch-ui.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1027
   '(16508 nil)
   nil
@@ -229,7 +229,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-binding.el"
   "lch-binding.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   2973
   '(2980 nil)
   nil
@@ -240,7 +240,7 @@
   "/Users/LooChao/Dropbox/.emacs.d/rc/lch-shell.el"
   "lch-shell.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode yas/minor-mode eldoc-mode)
   1131
   '(3605 nil)
   nil

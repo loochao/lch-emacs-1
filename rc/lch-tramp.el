@@ -91,7 +91,7 @@
 ;(setq tramp-remote-path (quote ("/usr/xpg4/bin" "/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin" "/usr/ccs/bin" "/local/bin" "/local/freeware/bin" "/local/gnu/bin" "/usr/freeware/bin" "/usr/pkg/bin" "/usr/contrib/bin" "/p/perl/bin")))
 
 ;;; (info "(tramp)Traces and Profiles")
-;;; help debugging
+;;; Debugging
 (setq tramp-verbose 9)  ; default is 0
 
 ;; Open a file as root
@@ -149,6 +149,13 @@
 ;; (global-set-key (kbd "C-x C-S-r") 'find-file-root)
 
 (provide 'lch-tramp)
+
+;; Open file by sudo -- Not working FIXME
+;; (defun lch-sudo-edit (&optional arg)
+;;   (interactive "p")
+;;   (if (or arg (not buffer-file-name))
+;;       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+;;     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;;; TRAMP NOTEs
 ;; ;; new proxy system (introduced with Tramp 2.1, instead of the old
