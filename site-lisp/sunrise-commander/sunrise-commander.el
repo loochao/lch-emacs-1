@@ -672,7 +672,7 @@ automatically:
   (make-local-variable 'hl-line-sticky-flag)
   (setq hl-line-sticky-flag nil)
   (hl-line-mode 1)
-  )
+)
 
 ;;;###autoload
 (define-derived-mode sr-virtual-mode dired-virtual-mode "Sunrise VIRTUAL"
@@ -2863,12 +2863,12 @@ symbol `ALWAYS' if the answer is a/A."
              (directory-files dir)))
 
 (defun sr-list-of-directories (dir)
-  "Return the list of directories in DIR as a list of strings.
+ "Return the list of directories in DIR as a list of strings.
 The list does not include the current directory and the parent directory."
-  (let ((result (sr-filter (function (lambda (x)
-                                       (file-directory-p (concat dir "/" x))))
-                           (sr-list-of-contents dir))))
-    (mapcar (lambda (x) (concat x "/")) result)))
+ (let ((result (sr-filter (function (lambda (x)
+                                      (file-directory-p (concat dir "/" x))))
+                          (sr-list-of-contents dir))))
+   (mapcar (lambda (x) (concat x "/")) result)))
 
 (defun sr-list-of-files (dir)
   "Return the list of regular files in DIR as a list of strings.
@@ -2908,7 +2908,7 @@ Broken links are *not* considered regular files."
           (sr-make-progress-reporter
            "comparing" (+ (length file-alist1) (length file-alist2))))
          (predicate `(prog1 ,(sr-ask-compare-panes-predicate)
-                       (sr-progress-reporter-update progress 1)))
+                            (sr-progress-reporter-update progress 1)))
          (file-list1 (mapcar 'cadr (dired-file-set-difference
                                     file-alist1 file-alist2 predicate)))
          (file-list2 (mapcar 'cadr (dired-file-set-difference
@@ -3033,11 +3033,11 @@ as its first argument."
   "Pop the first mark in the current Dired buffer."
   (let ((result nil))
     (condition-case description
-        (save-excursion
-          (goto-char (point-min))
-          (dired-next-marked-file 1)
-          (setq result (dired-get-filename t t))
-          (dired-unmark 1))
+      (save-excursion
+        (goto-char (point-min))
+        (dired-next-marked-file 1)
+        (setq result (dired-get-filename t t))
+        (dired-unmark 1))
       (error (message (cadr description))))
     result))
 
@@ -3084,7 +3084,7 @@ as its first argument."
      (sr-keep-buffer))
     (run-with-idle-timer 0.01 nil 'sr-find-prompt)
     (if sr-find-items
-        (set (make-local-variable 'sr-find-items) sr-find-items))))
+      (set (make-local-variable 'sr-find-items) sr-find-items))))
 
 (defun sr-find (pattern)
   "Run `find-dired' passing the current directory as first parameter."
@@ -3374,7 +3374,7 @@ buffer in the passive pane."
     ("\M-e" . sr-end-of-buffer)
     ("\C-v" . scroll-up-command)
     ("\M-v" . (lambda () (interactive) (scroll-up-command '-)))
-    ) "Keybindings installed in `isearch-mode' during a sticky search.")
+  ) "Keybindings installed in `isearch-mode' during a sticky search.")
 
 (defun sr-sticky-isearch-remap-commands (&optional restore)
   "Remap `isearch-mode-map' commands using `sr-sticky-isearch-commands'.
@@ -3576,18 +3576,17 @@ See `sr-term' for a description of the arguments."
   (let* ((program (if program (executable-find program)))
          (program (or program sr-terminal-program))
          (dir (expand-file-name
-               (if sr-running sr-this-directory default-directory)))
-         (aterm (car sr-ti-openterms))
-         (line-mode (if (buffer-live-p aterm)
-                        (with-current-buffer aterm (term-in-line-mode)))))
+              (if sr-running sr-this-directory default-directory)))
+        (aterm (car sr-ti-openterms))
+        (line-mode (if (buffer-live-p aterm)
+                       (with-current-buffer aterm (term-in-line-mode)))))
     (sr-term-excursion newterm (term program))
     (sr-term-char-mode)
     (when (or line-mode (term-in-line-mode))
       (sr-term-line-mode))
     (when cd
       (term-send-raw-string
-       (concat "cd " (shell-quote-wildcard-pattern dir) "
-")))))
+       (concat "cd " (shell-quote-wildcard-pattern dir) "")))))
 
 (defun sr-term-eshell (&optional cd newterm)
   "Implementation of `sr-term' when using `eshell'."
@@ -3664,15 +3663,15 @@ Helper macro for implementing terminal integration in Sunrise."
     (while (and sr-ti-openterms
                 (not (buffer-live-p (car sr-ti-openterms))))
       (pop sr-ti-openterms))
-    (when (and (string= (buffer-name (car sr-ti-openterms)) name)
-               (car sr-ti-openterms)
-               (pop sr-ti-openterms)
-               (buffer-live-p (car sr-ti-openterms)))
-      (rename-uniquely)
-      (set-buffer (car sr-ti-openterms))
-      (when (string-match "<[0-9]+>\\'" (buffer-name))
-        (setq name (substring (buffer-name) 0 (match-beginning 0)))
-        (rename-buffer name)))))
+      (when (and (string= (buffer-name (car sr-ti-openterms)) name)
+                 (car sr-ti-openterms)
+                 (pop sr-ti-openterms)
+                 (buffer-live-p (car sr-ti-openterms)))
+        (rename-uniquely)
+        (set-buffer (car sr-ti-openterms))
+        (when (string-match "<[0-9]+>\\'" (buffer-name))
+          (setq name (substring (buffer-name) 0 (match-beginning 0)))
+          (rename-buffer name)))))
 (add-hook 'kill-buffer-hook 'sr-ti-restore-previous-term)
 
 (defun sr-ti-revert-buffer ()

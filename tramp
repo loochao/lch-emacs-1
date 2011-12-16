@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*-
+;; -*- emacs-lisp -*- <11/12/15 15:40:23 /Users/LooChao/Dropbox/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -129,5 +129,20 @@
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
   ("~" "/u/yluo"))
- (["sudo" "root" "Chao-LUs-MacBook-Pro.local" nil]
-  nil))
+ (["sudo" "root" "dynamic-oit-vapornet-c-3511.princeton.edu" nil]
+  nil)
+ (["sudo" "root" "localhost" nil]
+  ("uname" "Darwin 10.8.0")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("readlink" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("stat" nil)
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("file-exists" "test -e")
+  ("uid-integer" 0)))

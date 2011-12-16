@@ -451,16 +451,24 @@
 
 
 ;;; Sunrise Commander
-;; (require 'sunrise-commander)
-;; (define-key global-map (kbd "C-M-e") 'sunrise-cd)
-;; (sunrise-mc-keys)
+(require 'sunrise-commander)
+(add-to-list 'auto-mode-alist '("\\.srvm\\'" . sr-virtual-mode))
+(define-key global-map (kbd "C-M-e") 'sunrise)
+(require 'sunrise-x-buttons)
+(require 'sunrise-x-loop)
+(require 'sunrise-x-mirror)
+(require 'sunrise-x-modeline)
+(require 'sunrise-x-tabs)
+(require 'sunrise-x-tree)
 
 
+
 ;;;  Highlight-tail
 ;; (require 'highlight-tail)
 ;; (message "Highlight-tail loaded - now your Emacs will be even more sexy!")
 ;; (highlight-tail-mode)
 
+
 ;;; Bat-mode
 (when (string-equal system-type "windows-nt")
   (progn
