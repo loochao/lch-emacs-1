@@ -9,23 +9,31 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/"
+ "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/"
  "/Users/LooChao/Dropbox/.emacs.d/rc/"
  "/Users/LooChao/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "slideNote.tex"
+ "test.sed"
  "test.py"
  "lch-env.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/LooChao/Dropbox/.emacs.d/rc/" (19904 50973) "xwl-wubi.elc" "xwl-wubi.el" "xwl-util.elc" "xwl-util.el" "xwl-shell.elc" "xwl-shell.el" "xwl-emms.elc" "xwl-emms.el" "xwl-calendar.elc" "xwl-calendar.el" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w3m.elc" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.elc" "lch-template.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-org.elc" "lch-org.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.elc" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-elisp-el-get.elc" "lch-elisp-el-get.el" "lch-el-get.elc" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bookmark.elc" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-alias.elc" "lch-alias.el" "dotEmacs" "../" "./")
+ ("/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/" (20203 52765) "slide.tex" "main.tex" "handout.tex" "auto/" "../" "./")
+
+ ("/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/" (20203 52607) "tex-beamer-example.tex" "tex-beamer-example.pdf" "Makefile" "loochao.sty" "handoutWithNotes.sty" "General-Exam.tex" "General-Exam.pdf" "beamerthemeLooChao.sty" "auto/" "../" "./")
+
+ ("/Users/LooChao/" (20201 54864) "vimperator/" "Temporary/" "Sites/" "Repository/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".texlive2011/" ".texlive2010/" ".subversion/" ".ssh/" ".srecode/" ".sh_history" ".session" ".serverauth.768" ".serverauth.7642" ".serverauth.5235" ".serverauth.39758" ".serverauth.322" ".serverauth.2158" ".serverauth.1621" ".serverauth.12044" ".python-eggs/" ".profile" ".pps/" ".picasaoriginals/" ".picasa.ini" ".nnex" ".nevernote/" ".mplayer/" ".matlab/" ".macports/" ".local/" ".InstallAnywhere/" ".inputrc" ".ido.last" ".gitconfig" ".fontconfig/" ".flexlmrc" ".eshell/" ".erc/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs" ".DS_Store" ".dropbox/" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" ".aspell.en.pws" ".aspell.en.prepl" ".adobe/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/rc/" (20202 53290) "Makefile" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-tex.elc" "lch-tex.el" "lch-template.elc" "lch-template.el" "lch-startup.elc" "lch-startup.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-outline.elc" "lch-outline.el" "lch-other-conf.elc" "lch-other-conf.el" "lch-org.elc" "lch-org.el" "lch-org-latex.elc" "lch-org-latex.el" "lch-org-export.elc" "lch-org-export.el" "lch-org-agenda.elc" "lch-org-agenda.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.el" "lch-erc.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-auto-mode.elc" "lch-auto-mode.el" "lch-aquamacs.elc" "lch-aquamacs.el" "lch-aqua-custom.elc" "lch-aqua-custom.el" "lch-alias.elc" "lch-alias.el" "dotEmacs.elc" "dotEmacs" "../" "./")
 
  ("/Users/LooChao/Dropbox/.emacs.d/" (19904 50533) "var.smex-items" "var/" "url/" "tramp" "site-lisp-bak/" "site-lisp/" "server/" "semanticdb/" "rc/" "library/" "games/" "bin/" "auto-save-list/" "ac-comphist.dat" ".emacs.desktop" "../" "./")
-
- ("/Users/LooChao/" (19904 32723) "vimperator/" "Sites/" "Python/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine_bak/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".subversion/" ".stardict/" ".ssh/" ".srecode/" ".sh_history" ".session" ".profile" ".mplayer/" ".matlab/" ".macports/" ".local/" ".ido.last" ".gitconfig" ".fontconfig/" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs-recentf" ".emacs" ".DS_Store" ".dropbox/" ".diskorderbash" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" "../" "./")
 
  ("/Users/LooChao/Dropbox/" (19904 43817) "Zotero_Backup/" "Zotero/" "WALLPAPER/" "Vimperator.zip" "vimperator/" "TXT/" "TMP/" "This is your Dropbox.txt" "SYNC/" "Summer.School/" "SOFT/" "SCAN/" "RESEARCH/" "REPO/" "PUC/" "Public/" "PU.Soccer.Hunter.csv" "Private/" "Picture/" "Photos/" "PGM/" "org/" "MUSIC/" "MOVIE/" "MobileOrg/" "LIB/" "iPad intro.pdf" "INBOX/" "Icon
 " "FLV/" "FirefoxPT/" "EDU/" "DOWNLOAD/" "Documents/" "COS333/" "COMIC/" "AUDIO/" "Android intro.pdf" "110330_FirefoxPT4.0.zip" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")

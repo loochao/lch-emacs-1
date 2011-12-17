@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Dec 15 16:14:22 2011
+;; Created Sat Dec 17 14:39:17 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,470 +11,382 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("install" "move" "sun" "sun	" "install" "sun" "tramp" "time-st" "mac" "pgm" "tex" "er" "ido" "tail" "----" "uni"))
+(setq regexp-search-ring '("\\note" "critis" "note" "douc" "not" "inclu" "plain" "mac" "dired" "sky" "slate" "seagre" "green" "sky" "install" "move"))
 (setq register-alist nil)
-(setq file-name-history '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-modeline.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-mirror.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-loop.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-checkpoints.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-buttons.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el" "~/Dropbox/.emacs.d/rc/lch-tex.elc" "~/Dropbox/.emacs.d/rc/lch-auto-mode.el" "~/Dropbox/.emacs.d/rc/lch-auto-mode.el" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-shell.el" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-common-lisp.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-global-keybindings.el" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/.emacs.d/rc/lch-tex.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-packages.el" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-programming.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-python.el" "~/Dropbox/.emacs.d/rc/lch-mac.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el" "~/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-core.el" "~/Dropbox/.emacs.d/rc/lch-tramp.el" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/.emacs.d/site-lisp/sunrise-commander.el" "~/Dropbox/.emacs.d/rc/lch-binding.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-commander.el"))
+(setq file-name-history '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-example-2/tex-beamer-example.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/main.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/General-Exam.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-pu/tex-beamer-pu.org" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-4/Makefile" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slidenote.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide_head.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/main.tex.bak" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote_head.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote_head" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide_head.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout_head.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout_head" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/head-slideNote.tex" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/head-slide.tex" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/head-handout.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/Makefile" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote.tex" "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/main.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/main.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide.tex" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-3" "~/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/handoutWithNotes.sty"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
   nil
-  "images (Sunrise)<4>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  113
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/images/") (right . t))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "rc (Sunrise)"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  108
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Dropbox/.emacs.d/rc/") (left . t))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-modeline.el"
-  "sunrise-x-modeline.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2824
-  '(2795 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 80)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-mirror.el"
-  "sunrise-x-mirror.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  4364
-  '(4337 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 80)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-loop.el"
-  "sunrise-x-loop.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  3477
-  '(3452 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 80)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-checkpoints.el"
-  "sunrise-x-checkpoints.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2124
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 80)))
-
-(desktop-create-buffer 206
-  nil
-  "rc"
+  "tex-beamer-example-3"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  2105
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  153
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander/sunrise-x-buttons.el"
-  "sunrise-x-buttons.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2456
-  '(2428 nil)
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/main.tex"
+  "main.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  1184
+  '(501 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 80)))
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
 
 (desktop-create-buffer 206
   nil
-  "emacs-prelude"
+  "tex-beamer-example-3"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  130
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  636
   '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/")
+  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/doc/tex-beamer-example-2/tex-beamer-example.tex"
+  "tex-beamer-example.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  27716
+  '(2912 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "tex-beamer-example-3"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  163
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-example-3/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  "emacs-prelude"
+  "tex-beamer-pu"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  145
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  504
   '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/")
+  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-pu/")
   nil)
 
 (desktop-create-buffer 206
-  nil
-  "modules"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  233
-  '(nil nil)
-  t
-  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-core.el"
-  "prelude-core.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  3776
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-el-get.el"
-  "prelude-el-get.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2439
-  '(2439 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-conf.el"
-  "lch-conf.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2159
-  '(1615 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  nil
-  "LooChao (Sunrise)"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  573
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "Sites (Sunrise)<4>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  92
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "Sites (Sunrise)<3>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  92
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "Sites (Sunrise)<2>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  92
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "Sites (Sunrise)"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  235
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "LooChao (Sunrise)<3>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  88
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/site-lisp/sunrise-commander.el"
-  "sunrise-commander.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode view-mode)
-  2176
-  '(12986 nil)
-  t
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/Emacs.org"
-  "Emacs.org"
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-pu/tex-beamer-pu.org"
+  "tex-beamer-pu.org"
   'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode org-beamer-mode TeX-PDF-mode)
+  2264
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-4/Makefile"
+  "Makefile"
+  'makefile-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode TeX-PDF-mode)
+  1548
+  '(nil nil)
   nil
-  "site-lisp"
+  nil
+  '((tab-width . 4) (indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "tex-beamer-example-4"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  5195
-  '(116 nil)
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  139
+  '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/.emacs.d/site-lisp/")
+  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-4/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-tramp.el"
-  "lch-tramp.el"
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/tex-beamer-example-3/Makefile"
+  "Makefile"
+  'makefile-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode TeX-PDF-mode)
+  1548
+  '(1182 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide.tex"
+  "slide.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/handout.tex"
+  "handout.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  24
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slide.tex"
+  "slide.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  80
+  '(53 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-3/slideNote.tex"
+  "slideNote.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  161
+  '(117 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/General-Exam.tex"
+  "General-Exam.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  259
+  '(351 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/handoutWithNotes.sty"
+  "handoutWithNotes.sty"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  12031
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/Beamer_Handout/Beamer-class-Bsp9-handout-advanced.tex"
+  "Beamer-class-Bsp9-handout-advanced.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  1861
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/Beamer_Handout/Handout-advanced.tex"
+  "Handout-advanced.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  440
+  '(263 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/Makefile"
+  "Makefile"
+  'makefile-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode TeX-PDF-mode)
+  54
+  '(54 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "Beamer_Handout"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  525
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/h:/Downloads/Beamer_Handout/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/Beamer-class-Bsp9-handout-advanced.tex"
+  "Beamer-class-Bsp9-handout-advanced.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  639
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/Handout-advanced.tex"
+  "Handout-advanced.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  400
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/tex-beamer-example.tex"
+  "tex-beamer-example.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  3513
+  '(687 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General.Exam/General_Exam.org"
+  "General_Exam.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode org-beamer-mode TeX-PDF-mode)
+  875
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
+  "lch-elisp.el"
   'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  6105
-  '(5836 nil)
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode TeX-PDF-mode)
+  20445
+  '(13662 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
-  ".emacs.d"
+  "General.Exam"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  387
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  217
   '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/")
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General.Exam/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/latex-mode/fr"
+  "fr"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  108
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  nil
+  "latex-mode"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  591
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/latex-mode/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "library"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  111
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Worg"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  117
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Repository/git/Worg/")
   nil)
 
 (desktop-create-buffer 206
   nil
   "rc"
   'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  2766
-  '(1506 nil)
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  108
+  '(nil nil)
   t
-  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/")
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el"
-  "lch-pgm.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  4611
-  '(4551 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-mac.el"
-  "lch-mac.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1731
-  '(1038 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-python.el"
-  "prelude-python.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1359
+  "/Users/LooChao/.wine/dosdevices/h:/Downloads/tex-beamer-example-2/loochao.sty"
+  "loochao.sty"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  1
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-programming.el"
-  "prelude-programming.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  2006
-  '(1166 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-packages.el"
-  "prelude-packages.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1948
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/111216_Group_Meeting/111216_GroupMeeting.tex"
+  "111216_GroupMeeting.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  1
   '(nil nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-tex.el"
-  "lch-tex.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1072
-  '(1976 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-util.el"
-  "lch-util.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  27306
-  '(997 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-global-keybindings.el"
-  "prelude-global-keybindings.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1507
-  '(1507 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/h:/Downloads/emacs-prelude/emacs-prelude/modules/prelude-common-lisp.el"
-  "prelude-common-lisp.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1881
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui.el"
-  "lch-ui.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1027
-  '(16508 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-shell.el"
-  "lch-shell.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  1131
-  '(3605 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (TeX-master . t)))
 
 (desktop-create-buffer 206
   nil
-  "emacs-lisp-mode"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode)
-  836
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/emacs-lisp-mode/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "images (Sunrise)<3>"
+  "LooChao (Sunrise)"
   'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  100
+  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode TeX-PDF-mode)
+  88
   '(nil nil)
   t
-  '((dirs "/Users/LooChao/Sites/images/"))
+  '((dirs "/Users/LooChao/") (left . t) (right . t))
   '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "images (Sunrise)<2>"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  100
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/images/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  nil
-  "images (Sunrise)"
-  'sr-mode
-  '(global-auto-revert-mode highlight-parentheses-mode dired-omit-mode)
-  43
-  '(nil nil)
-  t
-  '((dirs "/Users/LooChao/Sites/images/"))
-  '((truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
-  "lch-elisp.el"
-  'emacs-lisp-mode
-  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode eldoc-mode yas/minor-mode)
-  13606
-  '(13393 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
