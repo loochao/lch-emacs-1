@@ -1,0 +1,7 @@
+% -----------------------------------------------------------------------
+\subsection{$0}
+\begin{frame}
+  \frametitle{}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+% -----------------------------------------------------------------------

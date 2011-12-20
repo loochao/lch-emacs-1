@@ -1,6 +1,36 @@
-;-*- coding: utf-8 -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;;>======== MOUSE ========<;
+;;; MOUSE.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; commentary
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 ;(define-key global-map (kbd "<mouse-1>") 'mouse-set-point) ;Default
 ;(define-key global-map (kbd "<down-mouse-1>") 'mouse-drag-region) ;Default
 ;(define-key global-map (kbd "<mouse-2>") 'mouse-yank-at-click)
@@ -40,7 +70,7 @@
 				  (cdr yank-menu)
 				  (not buffer-read-only))
 			 :help "Choose a string from the kill ring and paste it")
-	(clear menu-item "Clear" delete-region 
+	(clear menu-item "Clear" delete-region
 	       :enable (and mark-active (not buffer-read-only))
 	       :help "Delete the text in region between mark and current position"
 	       :keys "Del")
@@ -54,3 +84,11 @@
   (popup-menu edit-popup-menu))
 
 (provide 'lch-mouse)
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:
+

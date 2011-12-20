@@ -1,6 +1,36 @@
-;-*- coding: utf-8 -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>======== ORG.EL ========<;
+;;; ORG.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
+
+;; commentary
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 ;(defvar org-dir "~/Dropbox/org" "org dir")                                     => dotEmacs
 ;(defvar org-source-dir "~/Dropbox/org/org" "org source dir")                   => dotEmacs
 ;(defvar pub-html-dir "~/Dropbox/org/public_html" "html dir")                   => dotEmacs
@@ -79,6 +109,8 @@
 ;;                ("DONE" . t) ("NEXT") ("ACTIVE"))
 ;;                )))
 
+
+;;; Org-tag
 (setq org-tag-alist '(
 		      ("#A" . ?[)
 		      ("#B" . ?])
@@ -222,8 +254,8 @@
 ;(add-hook 'org-agenda-mode-hook 'hl-line-mode)
 
 
-;>-------- YASnippet --------<;
-;- Loaded in org.el, for the key conflict
+;;; YASnippet
+;; Loaded in org.el, for the key conflict
 
 (add-to-list 'load-path
 	     (concat emacs-dir "/site-lisp/yasnippet-0.6.1c"))
@@ -240,7 +272,7 @@
 
 (add-hook 'org-mode-hook 'lch-yas-in-org)
 
-;>-------- Org Capture --------<;
+;;; Org Capture
 ;; %a          annotation, normally the link created with org-store-link
 ;; %i          initial content, the region when remember is called with C-u.
 ;; %t          timestamp, date only
@@ -282,11 +314,11 @@
 (define-key global-map (kbd "<f7> i") (lambda () (interactive) (org-capture nil "i")))
 (define-key global-map (kbd "<f7> l") (lambda () (interactive) (org-capture nil "l")))
 
-;>-------- Google Weather --------<;
+;;; Google Weather
 (require 'google-weather)
 (require 'org-google-weather)
 
-;>-------- Trigger Agenda --------<;
+;;; Trigger Agenda
 ;; (defun lch-agenda-showup()
 ;;   (interactive)
 ;;   (split-window-horizontally)
@@ -302,7 +334,7 @@
 ;;        (file-expand-wildcards (concat rsch-bib-dir "/*.bib")
 ;; 			      (concat rsch-dir "Research.bib"))))
 
-;>-------- Org-Util --------<;
+;;; Org-Util
 ;; (defun lch-org-property ()
 ;;   (interactive)
 ;;   (let ((ext (file-name-extension (buffer-file-name)))
@@ -315,7 +347,7 @@
 ;;   (insert ":END:\n")
 ;;   )
 
-;>-------- Org-Library --------<;
+;;; Org-Library
 (require 'org-latex)
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
@@ -361,42 +393,49 @@
 (provide 'lch-org)
 
 
-;>-------- Template --------<;
-;> #+STARTUP    Overview
-;> #+STARTUP    Odd Hideblocks
-;> #+TITLE:     The title to be shown (default is the buffer name)
-;> #+AUTHOR:    The author (default taken from user-full-name) LooChao
-;> #+EMAIL:     LooChao@gmail.com
-;> #+DATE:
-;> #+LANGUAGE:  Language for HTML
-;> #+TEXT:
-;> #+TODO:
-;> #+TYP_TODO:
-;> #+EXPORT_SELECT_TAGS:
-;> #+EXPORT_EXCLUDE_TAGS:
-;> #+LATEX_HEADER:
-;> #+KEYWORDS:   The page description, e.g. for the XHTML meta tag
-;> #+BIND:
-;> #+INFOJS_OPT: View:info TOC:t Mouse:Underline Buttons:0
-;> #+INFOJS_OPT: Path:http://orgmode.org/org-info.js
-;> #+INFOJS_OPT: Home:index.html Up:index.html
-;> #+OPTIONS:    H:3 Num:nil TOC:t \n:t @:t ::t |:t ^:t *:t TeX:t LaTeX:t
-;> #+OPTIONS:    skip:nil d:t tags:not-in-toc
-;> #+OPTIONS:    *:  Turn on/off emphasized text (bold, italic, underlined).
-;> #+OPTIONS:    f:  Turn on/off footnotes like this[1].
-;> #+OPTIONS:    -:  Turn on/off conversion of special strings.
-;> #+OPTIONS:    ^:  Turn on/off TeX-like syntax for sub- and superscripts.  If
-;> #+OPTIONS:         you write "^:{}", a_{b} will be interpreted, but
-;> #+OPTIONS:         the simple a_b will be left as it is.
-;> #+OPTIONS:    |:  Turn on/off tables
-;> #+OPTIONS:    @:  Turn on/off quoted HTML tags
-;> #+OPTIONS:    <:  Turn on/off inclusion of any time/date stamps like DEADLINES
-;> #+OPTIONS:    d:  Turn on/off inclusion of drawers
-;> #+OPTIONS:    toc:2  d:(HIDE)
-;> #+STYLE:      <link rel="stylesheet" type="text/css" href="./theme/org.css" />
-;> #+SEQ_TODO:   TODO PROPOSED | DONE DEFERRED REJECTED
-;> #+FILETAGS: Cookery
-;> #+setupfile: setup.org
-;> # $Id: kinderuni.org 234 2009-07-12 19:52:12Z stefan $
-;> {{{my-simple-2table(stempel.png, mpilogo.png)}}}
+;;; Template
+;; #+STARTUP    Overview
+;; #+STARTUP    Odd Hideblocks
+;; #+TITLE:     The title to be shown (default is the buffer name)
+;; #+AUTHOR:    The author (default taken from user-full-name) LooChao
+;; #+EMAIL:     LooChao@gmail.com
+;; #+DATE:
+;; #+LANGUAGE:  Language for HTML
+;; #+TEXT:
+;; #+TODO:
+;; #+TYP_TODO:
+;; #+EXPORT_SELECT_TAGS:
+;; #+EXPORT_EXCLUDE_TAGS:
+;; #+LATEX_HEADER:
+;; #+KEYWORDS:   The page description, e.g. for the XHTML meta tag
+;; #+BIND:
+;; #+INFOJS_OPT: View:info TOC:t Mouse:Underline Buttons:0
+;; #+INFOJS_OPT: Path:http://orgmode.org/org-info.js
+;; #+INFOJS_OPT: Home:index.html Up:index.html
+;; #+OPTIONS:    H:3 Num:nil TOC:t \n:t @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+;; #+OPTIONS:    skip:nil d:t tags:not-in-toc
+;; #+OPTIONS:    *:  Turn on/off emphasized text (bold, italic, underlined).
+;; #+OPTIONS:    f:  Turn on/off footnotes like this[1].
+;; #+OPTIONS:    -:  Turn on/off conversion of special strings.
+;; #+OPTIONS:    ^:  Turn on/off TeX-like syntax for sub- and superscripts.  If
+;; #+OPTIONS:         you write "^:{}", a_{b} will be interpreted, but
+;; #+OPTIONS:         the simple a_b will be left as it is.
+;; #+OPTIONS:    |:  Turn on/off tables
+;; #+OPTIONS:    @:  Turn on/off quoted HTML tags
+;; #+OPTIONS:    <:  Turn on/off inclusion of any time/date stamps like DEADLINES
+;; #+OPTIONS:    d:  Turn on/off inclusion of drawers
+;; #+OPTIONS:    toc:2  d:(HIDE)
+;; #+STYLE:      <link rel="stylesheet" type="text/css" href="./theme/org.css" />
+;; #+SEQ_TODO:   TODO PROPOSED | DONE DEFERRED REJECTED
+;; #+FILETAGS: Cookery
+;; #+setupfile: setup.org
+;; # $Id: kinderuni.org 234 2009-07-12 19:52:12Z stefan $
+;; {{{my-simple-2table(stempel.png, mpilogo.png)}}}
 
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:

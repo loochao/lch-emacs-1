@@ -1,6 +1,29 @@
-%% ==============================================================================
-%% Chao LU's Beamer theme.
-%% ==============================================================================
+% ==============================================================================
+% Chao LU's Beamer theme.
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+% Color definition
+% ------------------------------------------------------------------------------
+\definecolor{LC_Scarlet}{RGB}{140,17,17}
+\definecolor{LC_Cream}{RGB}{245,240,219}
+\definecolor{LC_DarkGrey}{RGB}{35,35,35}
+\definecolor{LC_Grey}{RGB}{100,100,100}
+\definecolor{LC_LightGrey}{RGB}{200,200,200}
+\definecolor{LC_VeryLightGrey}{RGB}{225,225,225}
+% Alternatives
+% Red            204  0    0
+% Logo           240  7    46
+% Original       255  25   25
+% Scarlet        140  17   17
+% Cream          245  240  219
+% Cream2         245  255  250 - Whitest
+% Dairy Cream    249  228  188 - more peachy
+% Cream Brulee   255  229  160 - peach
+% Cream Can      245  200   92 - Almost a peach
+% Coconut Cream  248  247  220 - More white
+
+
 \mode
 <beamer>
 
@@ -14,7 +37,7 @@
 \useinnertheme[shadow=true]{rounded}
 %\useinnertheme[shadow=false]{rounded}
 
-%% Also change items into ball
+% Also change items into ball
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
 \setbeamertemplate{items}[triangle]
@@ -23,13 +46,13 @@
 \setbeamertemplate{navigation symbols}{}
 %\setbeamertemplate{navigation symbols}{\insertbackfindforwardnavigationsymbol}
 
-%% ------------------------------------------------------------------------------
-%% Head/foot line
-%% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Head/foot line
+% ------------------------------------------------------------------------------
 % \setbeamertemplate{footline}{\hfill \insertpagenumber}
 
-%% footline with only framenumber
-%% "%" inside hbox is important! Or you will get hbox overflowed by space.
+% footline with only framenumber
+% "%" inside hbox is important! Or you will get hbox overflowed by space.
 % \setbeamertemplate{footline}
 % {
 %   \hbox{%
@@ -45,19 +68,19 @@
 %   \vskip0pt%
 % }
 
-%% Versatile footline 3 parts
+% Versatile footline 3 parts
 \setbeamertemplate{footline}
 {
   \hbox{%
-    %% Author
+    % Author
     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
     %   \usebeamerfont{author in head/foot}\insertshortauthor
     % \end{beamercolorbox}%
-    %% Section
+    % Section
     \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}
       \usebeamerfont{section in head/foot}\insertsection
     \end{beamercolorbox}%
-    %% Subsection
+    % Subsection
     % \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in head/foot}
     %   \insertsubsection
     % \end{beamercolorbox}%
@@ -105,37 +128,20 @@
 %   \fi%
 % }%
 
-%% ------------------------------------------------------------------------------
-%% Color theme
-%% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Color theme
+% ------------------------------------------------------------------------------
 
-%% Inner color themes: lily, orchid, rose
-%% Complete color themes: albatross, beetle, crane, dove, fly, seagull
-%% Outer color themes: whale, seahorse, dolphin(?)
+% Inner color themes: lily, orchid, rose
+% Complete color themes: albatross, beetle, crane, dove, fly, seagull
+% Outer color themes: whale, seahorse, dolphin(?)
 \usecolortheme[RGB={140,17,17}]{structure}
 \usecolortheme{orchid}
 \usecolortheme{whale}
 
-%% ------------------------------------------------------------------------------
-%% Customized Various Color elements
-%% ------------------------------------------------------------------------------
-\definecolor{LC_Scarlet}{RGB}{140,17,17}
-\definecolor{LC_Cream}{RGB}{245,240,219}
-\definecolor{LC_DarkGrey}{RGB}{35,35,35}
-\definecolor{LC_Grey}{RGB}{100,100,100}
-\definecolor{LC_LightGrey}{RGB}{200,200,200}
-\definecolor{LC_VeryLightGrey}{RGB}{225,225,225}
-%% Alternatives
-%% Red            204  0    0
-%% Logo           240  7    46
-%% Original       255  25   25
-%% Scarlet        140  17   17
-%% Cream          245  240  219
-%% Cream2         245  255  250 - Whitest
-%% Dairy Cream    249  228  188 - more peachy
-%% Cream Brulee   255  229  160 - peach
-%% Cream Can      245  200   92 - Almost a peach
-%% Coconut Cream  248  247  220 - More white
+% ------------------------------------------------------------------------------
+% Customized Various Color elements
+% ------------------------------------------------------------------------------
 
 \setbeamercolor{titlelike}{fg=LC_Cream,bg=LC_Scarlet}
 \setbeamercolor{frametitle}{fg=LC_Cream}
@@ -149,9 +155,9 @@
 \setbeamercolor{block title}{fg=white,bg=black}
 \setbeamercolor{block body}{fg=black,bg=LC_VeryLightGrey}
 
-%% ------------------------------------------------------------------------------
-%% Handout Mode - Using the default layouts, no menus, etc.
-%% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Handout Mode - Using the default layouts, no menus, etc.
+% ------------------------------------------------------------------------------
 \mode
 <handout>
 
@@ -162,12 +168,12 @@
 \setbeamercolor{block title}{fg=black,bg=LC_LightGrey}
 \setbeamercolor{block body}{fg=black,bg=LC_VeryLightGrey}
 
-%% ------------------------------------------------------------------------------
-%% Settings for every mode
-%% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% Settings for every mode
+% ------------------------------------------------------------------------------
 \mode
 <all>
 
-%% <presentation> encompasses <beamer>, <handout>, and <trans>
-%% (transparencies)
+% <presentation> encompasses <beamer>, <handout>, and <trans>
+% (transparencies)
 %\mode<presentation>

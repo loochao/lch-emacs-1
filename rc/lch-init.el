@@ -280,7 +280,7 @@
 ;; Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
 ;; Auto fill length
-(set-fill-column 78)
+(set-fill-column 72)
 ;; Automatically turn on auto-fill-mode when editing text files
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)

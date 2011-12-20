@@ -1,11 +1,41 @@
 ;-*- coding: utf-8 -*-
 
-;;>======== MENU.EL ========<;
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
+
+;;; MENU.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
 
 ;; the purpose of this file is to create a more clean menu.
 ;; Rationale:
 ;; • Emacs's Menu Usability Problem
 ;;   http://xahlee.org/emacs/modernization_menu.html
+
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 
 ;; File menu
 (setq menu-bar-file-menu
@@ -94,7 +124,7 @@
 				  (cdr yank-menu)
 				  (not buffer-read-only))
 			 :help "Choose a string from the kill ring and paste it")
-	(clear menu-item "Clear" delete-region 
+	(clear menu-item "Clear" delete-region
 	       :enable (and mark-active (not buffer-read-only))
 	       :help "Delete the text in region between mark and current position"
 	       :keys "Del")
@@ -123,10 +153,10 @@
 		   "Incremental Search"))
 	(replace menu-item "Replace"
 		 (keymap
-		  (query-replace menu-item "Replace String..." query-replace 
+		  (query-replace menu-item "Replace String..." query-replace
 				 :enable (not buffer-read-only)
 				 :help "Replace string interactively, ask about each occurrence")
-		  (query-replace-regexp menu-item "Replace Regexp..." query-replace-regexp 
+		  (query-replace-regexp menu-item "Replace Regexp..." query-replace-regexp
 					:enable (not buffer-read-only)
 					:help "Replace regular expression interactively, ask about each occurrence")
 		  (separator-replace-tags menu-item "--")
@@ -150,7 +180,7 @@
 				  (not
 				   (ring-empty-p tags-location-ring)))
 			 :help "Find next function/variable matching last tag name")
-	       (next-tag-otherw menu-item "Next Tag in Other Window" menu-bar-next-tag-other-window 
+	       (next-tag-otherw menu-item "Next Tag in Other Window" menu-bar-next-tag-other-window
 				:enable (and
 					 (boundp 'tags-location-ring)
 					 (not
@@ -206,7 +236,7 @@
 ;; add font scale change
 (define-key-after menu-bar-options-menu [menu-font-size]
   '(menu-item "Font Size"
-	      (keymap 
+	      (keymap
 	       (zoom-in menu-item "Zoom In" text-scale-increase)
 	       (zoom-out menu-item "Zoom Out" text-scale-decrease)
 	       (zoom-reset menu-item "Zoom Reset" text-scale-normal-size)))

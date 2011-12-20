@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
- org-export-as-latex
  cd
  lm
  5x5
  afm
  arp
  dbx
+ dig
 )
 
 ;; ----- smex-data -----
 (
- (org-export-as-latex . 2)
+ 
 )

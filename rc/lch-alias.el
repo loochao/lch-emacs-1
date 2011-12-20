@@ -1,6 +1,16 @@
 ;-*- coding: utf-8 -*-
+;;-*- coding:utf-8; mode:emacs-lisp; -*-
 
-;>======== ALIAS.EL  ========<;
+;;; ALIAS.EL
+;;
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;;
+;; Author: Chao LU <loochao@gmail.com>
+;; URL: http://www.princeton.edu/~chaol
+
+;; This file is not part of GNU Emacs.
+
+;;; Commentary:
 
 ;; From Leexha:
 ;; the reason for these aliases is that, often, elisp package names is
@@ -12,7 +22,7 @@
 ;; what function user needs to call for particular major mode he wants.
 ;; (the mode menu in ErgoEmacs helps, but this is not in GNU Emacs 23)
 
-;; also, due to elisp not having name space, or a enforced
+;; Also, due to elisp not having name space, or a enforced
 ;; package/module/lib naming system etc, package names shouldn't be
 ;; just the language name. That is, a particular javascript mode
 ;; really shouldn't be named javascript-mode, because, different
@@ -28,13 +38,31 @@
 ;; different one if he has knowledege about which modes exists for the
 ;; lang he wants.
 
+;;; License:
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+;; Boston, MA 02110-1301, USA.
+
+;;; Code
 (message "=> lch-alias: loading...")
 
 (defalias 'ahk-mode 'xahk-mode)
 (defalias 'cmd-mode 'dos-mode)
 (defalias 'spell-check 'speck-mode)
 
-;; Commands
+;;; Commands
 (defalias 'gf 'grep-find)
 (defalias 'fd 'find-dired)
 (defalias 'sh 'shell)
@@ -45,7 +73,7 @@
 (defalias 'rof 'recentf-open-files)
 (defalias 'sl 'sort-lines)
 
-;; Modes
+;;; Modes
 (defalias 'hm 'html-mode)
 (defalias 'tm 'text-mode)
 (defalias 'elm 'emacs-lisp-mode)
@@ -53,7 +81,7 @@
 (defalias 'vlm 'visual-line-mode)
 (defalias 'wsm 'whitespace-mode)
 
-;; Elisp
+;;; Elisp
 (defalias 'ee 'eval-expression)
 (defalias 'eb 'eval-buffer)
 (defalias 'er 'eval-region)
@@ -65,3 +93,10 @@
 
 (message "~~ lch-binding: done.")
 (provide 'lch-alias)
+
+;;; Local Vars.
+;; Local Variables:
+;; mode: emacs-lisp
+;; mode: outline-minor
+;; outline-regexp: ";;;;* "
+;; End:
