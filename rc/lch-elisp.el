@@ -488,12 +488,11 @@
 
 ;;; Matlab
 ;; FIXME
-(load-library "matlab-load")
-;(matlab-cedet-setup)
-(autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
-(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
-(autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
-
+;; (load-library "matlab-load")
+;; ;(matlab-cedet-setup)
+;; (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
+;; (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
+;; (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 
 ;;; AucTeX
 ;(load "auctex.el" nil t t)

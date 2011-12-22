@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ recover-this-file
  cd
  lm
  5x5
  afm
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (recover-this-file . 1)
 )

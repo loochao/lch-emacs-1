@@ -90,7 +90,7 @@
                                    (revert-buffer-with-coding-system 'gb18030)
 				   (message "buffer reverted with gb18030")))
 
-(message "lch-coding done...")
+(message "~~ lch-coding done...")
 (provide 'lch-coding)
 
 ;;; Local Vars.

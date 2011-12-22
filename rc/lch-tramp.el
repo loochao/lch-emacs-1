@@ -1,5 +1,4 @@
 ;;-*- coding:utf-8; mode:emacs-lisp; -*-
-
 ;;; TRAMP.EL
 ;;
 ;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
