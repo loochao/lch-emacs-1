@@ -495,14 +495,7 @@ end tell" mydir)))
   (interactive)
   (message "Untabifying buffer...")
   (untabify (point-min) (point-max))
-  (message "Untabifying buffer... done"))
-
-(defun lch-fill-buffer ()
-  "Convert all tabs in buffer with multiple spaces, preserving columns."
-  (interactive)
-  (message "Untabifying buffer...")
-  (fill-region (point-min) (point-max))
-  (message "Untabifying buffer... done"))
+  (message "Untabify done"))
 
 (defun lch-cleanup-buffer ()
   "Perform a bunch of operations on the whitespace content of a buffer."
@@ -511,7 +504,7 @@ end tell" mydir)))
   (lch-indent-buffer)
   (lch-untabify-buffer)
   (delete-trailing-whitespace)
-  (message "Cleaning up buffer... done"))
+  (message "Cleanup  done"))
 (define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)
 
 ;; Yet another way to do it
