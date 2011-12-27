@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Dec 22 16:19:15 2011
+;; Created Mon Dec 26 23:29:26 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,8 +11,96 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("plan" "ilog" "occur" "amorphous" "note" "grap" "conden" "late" "what is" "appli" "late" "subsec" "lat" "appli" "photoin" "bond"))
+(setq regexp-search-ring '("eldoc" "cleanup" "font" "pt" "10pt" "info-d" "recent" "rename" "env" "\f" "clean" "truncate" "diction" "scroll-a" "magit" "C-x g"))
 (setq register-alist nil)
-(setq file-name-history '("~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org" "~/Dropbox/Org/org/Miscellaneous.org" "~/Dropbox/Org/org/Methodology.org" "~/Dropbox/Org/org/MechanicalSE.org" "~/Dropbox/Org/org/Mathematics.org" "~/Dropbox/Org/org/Lifetip.org" "~/Dropbox/Org/org/Life.org" "~/Dropbox/Org/org/Library.org" "~/Dropbox/Org/org/Humor.org" "~/Dropbox/Org/org/Html.org" "~/Dropbox/Org/org/History.org" "~/Dropbox/Org/org/Fiction.org" "~/Dropbox/Org/org/English.org" "~/Dropbox/Org/org/Emacs.org" "~/Dropbox/Org/org/ElectricalSE.org" "~/Dropbox/Org/org/Economy.org" "~/Dropbox/Org/org/Culture.org" "~/Dropbox/Org/org/Cookery.org" "~/Dropbox/Org/org/ComputerSE.org" "~/Dropbox/Org/org/Career.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/.emacs.d/rc/lch-org.el" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/Org/org/iPrv.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/" "~/Dropbox/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets/text-mode/org-mode/p" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Unix.org" "~/Dropbox/Org/org/USLife.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org"))
+(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/.wine/dosdevices/z:/Users/LooChao/.viper.elc" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/.viper" "~/.viper" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/APL2.tex" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/main.tex" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/Makefile" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/.vimperator.d/lch-plugin.vimp" "~/Dropbox/.vimperator.d/plugin/stylish.js" "~/Dropbox/.vimperator.d/_vimperatorrc" "~/Dropbox/.vimperator.d/lch-util.vimp" "~/Dropbox/.vimperator.d/lch-init.vimp" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/Org/org/iPrv.org" "/private/etc/hosts" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Education/General_Exam/3/tex-beamer-example-3/main_bak_before_4.tex" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/.emacs.d/doc/tex-beamer-example-2/tex-beamer-example.tex" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Education/General_Exam/3/tex-beamer-example-3/main.tex" "~/.wine/dosdevices/h:/Downloads/APL2.tex" "~/.wine/dosdevices/h:/Downloads/references.bib" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/reference.bib" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/Makefile" "~/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/main.tex" "~/Downloads/dotfiles/fvwm/fvwm2rc" "~/Downloads/dotfiles/emacs" "~/Downloads/dotfiles/vimperatorrc" "~/Dropbox/.vimperator.d/lch-ui.vimp" "~/Dropbox/.emacs.d/rc/lch-ui-theme.el" "~/.wine/dosdevices/h:/Downloads/1.bib" "~/Dropbox/.emacs.d/rc/lch-binding.el" "~/Downloads/emacs/init.el"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el"
+  "lch-pgm.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode auto-complete-mode eldoc-mode yas/minor-mode TeX-PDF-mode)
+  1192
+  '(4787 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "rc"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  5236
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
+  "lch-elisp.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode auto-complete-mode eldoc-mode yas/minor-mode TeX-PDF-mode)
+  1099
+  '(1099 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "LooChao"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  5068
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/APL2.tex"
+  "APL2.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode text-scale-mode)
+  3149
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/main.tex"
+  "main.tex"
+  'latex-mode
+  '(auto-fill-mode abbrev-mode global-auto-revert-mode highlight-parentheses-mode outline-minor-mode flyspell-mode yas/minor-mode TeX-PDF-mode)
+  8877
+  '(8376 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/Makefile"
+  "Makefile"
+  'makefile-mode
+  '(global-auto-revert-mode highlight-parentheses-mode outline-minor-mode auto-complete-mode TeX-PDF-mode)
+  211
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "4"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode TeX-PDF-mode)
+  282
+  '(nil nil)
+  t
+  '("/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/education/General_Exam/4/")
+  nil)
+

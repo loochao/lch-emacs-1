@@ -32,7 +32,8 @@
 
 ;;; Code
 (message "=> lch-elisp: loading...")
-
+;;; Viper
+(setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
 ;;; Windmove
 ;; use shift + arrow keys to switch between visible buffers
 (require 'windmove)
@@ -82,7 +83,8 @@
 ;;; Flyspell
 ;; By default, it's iSpell, but if aspell is installed:
 (when (featurep 'aspell) (setq ispell-program-name "aspell"))
-(setq-default ispell-local-dictionary "american")
+(set-default 'ispell-skip-html t)
+(setq ispell-local-dictionary "english")
 (setq ispell-extra-args '("--sug-mode=ultra"))
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
@@ -94,11 +96,13 @@
 
 (add-hook 'message-mode-hook 'lch-turn-on-flyspell)
 (add-hook 'text-mode-hook 'lch-turn-on-flyspell)
+(add-hook 'nxml-mode-hook 'lch-turn-on-flyspell)
+(add-hook 'texinfo-mode-hook 'lch-turn-on-flyspell)
+(add-hook 'TeX-mode-hook 'lch-turn-on-flyspell)
 
-;; (dolist (hook '(text-mode-hook))
-;;   (add-hook hook (lambda () (flyspell-mode 1))))
-;; (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
-;;   (add-hook hook (lambda () (flyspell-mode -1))))
+(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
+(add-hook 'lisp-mode-hook 'flyspell-prog-mode)
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 
 ;; Omit tex keywords
 (add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
@@ -183,8 +187,7 @@
 
 ;;; Magit
 (require 'magit)
-(define-key global-map (kbd "C-x g") 'magit-status)
-
+(define-key global-map (kbd "<f1> g") 'magit-status)
 
 ;;; Goto-last-change
 (require 'goto-last-change)
@@ -230,7 +233,8 @@
 ;; file to save the recent list into
 (setq recentf-save-file (concat emacs-var-dir "/emacs.recentf")
       recentf-max-saved-items 200
-      recentf-max-menu-items 30)
+      recentf-max-menu-items 30
+      recentf-exclude '("/tmp/" "/ssh:"))
 
 (defun lch-recentf-ido-find-file ()
   "Find a recent file using ido."
@@ -240,8 +244,8 @@
       (find-file file))))
 
 ;; Key bindings
-(define-key global-map (kbd "C-x R") 'recentf-open-files)
-(define-key global-map (kbd "C-x C-r") 'lch-recentf-ido-find-file)
+(define-key global-map (kbd "C-x C-r") 'recentf-open-files)
+(define-key global-map (kbd "C-c r") 'lch-recentf-ido-find-file)
 
 ;;; Pager
 

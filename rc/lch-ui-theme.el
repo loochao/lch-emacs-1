@@ -35,25 +35,25 @@
 (add-to-list 'load-path emacs-theme-dir)
 (require 'color-theme)
 
-;>-------- Theme Shortcuts --------<;
+;;; Arjen
 (require 'color-theme-arjen)
 (define-key global-map (kbd "<f11> <f3>") (lambda() (interactive) (color-theme-arjen) (message "color theme arjen selected")))
-
+;;; Tango
 (require 'color-theme-tango)
 (define-key global-map (kbd "<f11> <f4>") (lambda() (interactive) (color-theme-tango) (message "color theme tango selected")))
-
+;;; Tango2
 (require 'color-theme-tango2)
 (define-key global-map (kbd "<f11> <f5>") (lambda() (interactive) (color-theme-tango2) (message "color theme tango2 selected")))
-
+;;; railscasts
 (require 'color-theme-railscasts)
 (define-key global-map (kbd "<f11> <f6>") (lambda() (interactive) (color-theme-railscasts) (message "color theme railscast selected")))
-
+;;; Jimmy
 (require 'color-theme-jimmy)
 (define-key global-map (kbd "<f11> <f7>") (lambda() (interactive) (color-theme-jimmy) (message "color theme jimmy selected")))
-
+;;; Zenburn
 (require 'color-theme-zenburn)
 (define-key global-map (kbd "<f11> <f8>") (lambda() (interactive) (color-theme-zenburn) (message "color theme zenburn selected")))
-
+;;; Tomorrow
 (require 'color-theme-tomorrow)
 (require 'color-theme-tomorrow-night)
 (require 'color-theme-tomorrow-night-eighties)
@@ -65,7 +65,7 @@
 ;(require 'color-theme-dimilartty)
 ;(define-key global-map (kbd "<f11> <f10>") (lambda() (interactive) (color-theme-dimilartty) (message "color theme dimilartty selected")))
 
-;>-------- LCH-Color-Theme --------<;
+;;; LCH
 (defun lch-color-theme ()
   "Color theme by LooChao"
   (interactive)
@@ -267,7 +267,7 @@
 
      )))
 
-;>-------- LOAD-COLOR-THEME --------<;
+;;; LOAD-COLOR-THEME
 (color-theme-arjen)
 (lch-color-theme)
 (define-key global-map (kbd "<f11> <f2>") (lambda() (interactive) (lch-color-theme) (message "color theme lch selected")))

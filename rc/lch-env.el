@@ -173,6 +173,9 @@
 (define-prefix-command 'f12-map)
 (define-key global-map (kbd "<f12>") 'f12-map)
 
+(define-prefix-command 'Ctrl-z-map)
+(define-key global-map (kbd "C-z") 'Ctrl-z-map)
+
 
 ;;; PROVIDE
 (provide 'lch-env)

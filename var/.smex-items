@@ -1,16 +1,18 @@
 
 ;; ----- smex-history -----
 (
- recover-this-file
+ viper-mode
+ lch-fill-buffer
+ eldoc-mode
  cd
  lm
  5x5
  afm
- arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
- (recover-this-file . 1)
+ (eldoc-mode . 1)
+ (lch-fill-buffer . 1)
+ (viper-mode . 6)
 )

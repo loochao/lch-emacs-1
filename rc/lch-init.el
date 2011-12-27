@@ -303,7 +303,6 @@
     (message "Setting truncate-lines to nil"))
   )
 (define-key global-map (kbd "C-c ^") 'lch-toggle-line-wrapping)
-
 
 ;;; Auto compile el files
 (defun elisp-compile-hook ()

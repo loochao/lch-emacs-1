@@ -138,7 +138,7 @@ file of a buffer in an external program."
 
 ;;; Special words
 (defvar keywords-critical-pattern
-      "\\(BUGS\\|FIXME\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
+  "\\(BUGS\\|FIXME\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
 (make-face 'keywords-critical)
 (set-face-attribute 'keywords-critical nil
                     :foreground "Black" :background "Cyan"
@@ -147,7 +147,7 @@ file of a buffer in an external program."
 ;; smaller subset of keywords for ensuring no conflict with Org mode TODO keywords
 ;; \\|[^*] TODO
 (defvar keywords-org-critical-pattern
-      "\\(BUGS\\|FIXME\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
+  "\\(BUGS\\|FIXME\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
 
 
 ;; FIXME Highlighting all special keywords but "TODO" in Org mode is already a
@@ -183,8 +183,8 @@ file of a buffer in an external program."
 ;; *and* all major modes derived from it
 (defun fontify-keywords ()
   (interactive)
-;;   (font-lock-mode -1)
-;;   (font-lock-mode 1)
+  ;;   (font-lock-mode -1)
+  ;;   (font-lock-mode 1)
   (font-lock-add-keywords nil
                           `((,keywords-critical-pattern 1 'keywords-critical prepend)
                             (,keywords-normal-pattern 1 'keywords-normal prepend))))
@@ -338,16 +338,16 @@ time."
 
 ;;; Automatically add execute permission to a script file.
 (defun lch-chmod-x ()
-   (and (save-excursion
-          (save-restriction
-            (widen)
-            (goto-char (point-min))
-            (save-match-data
-              (looking-at "^#!"))))
-        (not (file-executable-p buffer-file-name))
-        (if (= 0 (shell-command (concat "chmod u+x " buffer-file-name)))
-            (message
-             (concat "Saved as script: " buffer-file-name)))))
+  (and (save-excursion
+         (save-restriction
+           (widen)
+           (goto-char (point-min))
+           (save-match-data
+             (looking-at "^#!"))))
+       (not (file-executable-p buffer-file-name))
+       (if (= 0 (shell-command (concat "chmod u+x " buffer-file-name)))
+           (message
+            (concat "Saved as script: " buffer-file-name)))))
 
 (add-hook 'after-save-hook 'lch-chmod-x)
 
@@ -357,11 +357,11 @@ time."
    Currently, just work under Mac OSX."
   (interactive)
   (let (mydir)
-  (setq mydir (pwd))
-  (string-match "Directory " mydir)
-  (setq mydir (replace-match "" nil nil mydir 0))
-  (when lch-mac-p (shell-command (format "open -a Finder %s" mydir)))
-  ))
+    (setq mydir (pwd))
+    (string-match "Directory " mydir)
+    (setq mydir (replace-match "" nil nil mydir 0))
+    (when lch-mac-p (shell-command (format "open -a Finder %s" mydir)))
+    ))
 (define-key global-map (kbd "<f4> <f4>") 'lch-start-file-browser)
 
 ;;; Start terminal
@@ -370,17 +370,17 @@ time."
    Currently, just work under Mac OSX."
   (interactive)
   (let (mydir)
-  (setq mydir (pwd))
-  (string-match "Directory " mydir)
-  (setq mydir (replace-match "" nil nil mydir 0))
-  (when lch-mac-p
-    (do-applescript
-     (format
-      "tell application \"Terminal\"
+    (setq mydir (pwd))
+    (string-match "Directory " mydir)
+    (setq mydir (replace-match "" nil nil mydir 0))
+    (when lch-mac-p
+      (do-applescript
+       (format
+        "tell application \"Terminal\"
 activate
 do script \"cd '%s'; bash \"
 end tell" mydir)))
-  ))
+    ))
 (define-key global-map (kbd "<f1> <f2>") 'lch-start-terminal)
 
 
@@ -409,11 +409,11 @@ end tell" mydir)))
 (defun delete-trailing-spaces (arg)
   "Remove all the tabs and spaces at the end of lines."
   (interactive "p")
-   (while (> arg 0)
-     (end-of-line nil)
-     (delete-horizontal-space)
-     (forward-line 1)
-     (decf arg 1)))
+  (while (> arg 0)
+    (end-of-line nil)
+    (delete-horizontal-space)
+    (forward-line 1)
+    (decf arg 1)))
 
 ;;; Remove all the tabs and spaces at the end of the lines.
 (defun buffer-delete-trailing-spaces ()
@@ -427,21 +427,6 @@ end tell" mydir)))
   (message "Deleting trailing spaces... done"))
 
 
-;;; Buffer beautify
-(defun buffer-untabify ()
-  "Convert all tabs in buffer with multiple spaces, preserving columns."
-  (interactive)
-  (message "Untabifying buffer...")
-  (untabify (point-min) (point-max))
-  (message "Untabifying buffer... done"))
-
-(defun buffer-beautify ()
-  "Calls both buffer-delete-trailing-spaces and buffer-smart-tabify."
-  (interactive)
-  (message "Cleaning up buffer...")
-  (buffer-delete-trailing-spaces)
-  (buffer-smart-tabify)
-  (message "Cleaning up buffer... done"))
 
 ;;; Compute the length of the marked region
 (defun region-length ()
@@ -472,20 +457,20 @@ end tell" mydir)))
   (erase-buffer)
   (save-excursion
     (let ((i -1))
-    (insert "                   ASCII chars from 0 to 127 \n")
-    (insert "----------------------------------------------------------------- \n")
-    (insert " HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR\n")
-    (while (< i 31)
-      (insert (format "%4x %4d %4s | %4x %4d %4s | %4x %4d %4s | %4x %4d %4s\n"
-                      (setq i (+ 1 i)) i (single-key-description i)
-                      (setq i (+ 32 i)) i (single-key-description i)
-                      (setq i (+ 32 i)) i (single-key-description i)
-                      (setq i (+ 32 i)) i (single-key-description i)))
-      (setq i (- i 96))
-      ))))
+      (insert "                   ASCII chars from 0 to 127 \n")
+      (insert "----------------------------------------------------------------- \n")
+      (insert " HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR |  HEX  DEC CHAR\n")
+      (while (< i 31)
+        (insert (format "%4x %4d %4s | %4x %4d %4s | %4x %4d %4s | %4x %4d %4s\n"
+                        (setq i (+ 1 i)) i (single-key-description i)
+                        (setq i (+ 32 i)) i (single-key-description i)
+                        (setq i (+ 32 i)) i (single-key-description i)
+                        (setq i (+ 32 i)) i (single-key-description i)))
+        (setq i (- i 96))
+        ))))
 
 
-;;; Indent whole buffer
+;;; Indent/untabify/clean  buffer
 (defun lch-indent-buffer ()
   "Indents the entire buffer."
   (interactive)
@@ -503,8 +488,31 @@ end tell" mydir)))
         (lch-indent-buffer)
         (message "Indented buffer.")))))
 
-
 (define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)
+
+(defun lch-untabify-buffer ()
+  "Convert all tabs in buffer with multiple spaces, preserving columns."
+  (interactive)
+  (message "Untabifying buffer...")
+  (untabify (point-min) (point-max))
+  (message "Untabifying buffer... done"))
+
+(defun lch-fill-buffer ()
+  "Convert all tabs in buffer with multiple spaces, preserving columns."
+  (interactive)
+  (message "Untabifying buffer...")
+  (fill-region (point-min) (point-max))
+  (message "Untabifying buffer... done"))
+
+(defun lch-cleanup-buffer ()
+  "Perform a bunch of operations on the whitespace content of a buffer."
+  (interactive)
+  (message "Cleaning up buffer...")
+  (lch-indent-buffer)
+  (lch-untabify-buffer)
+  (delete-trailing-whitespace)
+  (message "Cleaning up buffer... done"))
+(define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)
 
 ;; Yet another way to do it
 ;; (defun indent-whole-buffer ()
@@ -513,6 +521,22 @@ end tell" mydir)))
 ;;     (mark-whole-buffer)
 ;;     (indent-for-tab-command)))
 
+;;; Removes file connected to current buffer and kills buffer
+(defun delete-this-buffer-and-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
+
+(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
+
 ;;; insert a time stamp string
 (defun lch-insert-time-stamp ()
   "Insert a time stamp."
@@ -622,7 +646,6 @@ end tell" mydir)))
     (if buf (save-selected-window
               (pop-to-buffer buf))))
   (call-interactively 'his-transpose-windows))
-(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)
 (define-key global-map (kbd "C-c w") 'ywb-favorite-window-config)
 
 ;;; Transpose(Interchange) Two Windows
@@ -654,7 +677,6 @@ end tell" mydir)))
     (switch-to-buffer (get-buffer-create "*scratch*"))
     (when (null buf)
       (lisp-interaction-mode))))
-(define-key global-map (kbd "<f1> s") 'ywb-create/switch-scratch)
 (define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)
 
 ;;; Alt+F4 closes the frame (Win32 ONLY)
@@ -683,9 +705,9 @@ the frame title bar."
 
 ;;; Go-to-char
 ;; C-c a x goto x, then press x to go to next 'x'
-(defun my-wy-go-to-char (n char)
+(defun lch-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
-Typing `wy-go-to-char-key' again will move forwad to the next Nth
+Typing `lch-go-to-char-key' again will move forwad to the next Nth
 occurence of CHAR."
   (interactive "p\ncGo to char: ")
   (search-forward (string char) nil nil n)
@@ -693,8 +715,7 @@ occurence of CHAR."
                      char)
     (search-forward (string char) nil nil n))
   (setq unread-command-events (list last-input-event)))
-(define-key global-map (kbd "C-x g") 'my-wy-go-to-char)
-;(define-key global-map (kbd "M-g") 'my-wy-go-to-char)
+(define-key global-map (kbd "C-x g") 'lch-go-to-char)
 
 ;;; Nuke buffers
 (defun nuke-some-buffers (&optional list)
@@ -719,12 +740,11 @@ LIST defaults to all existing live buffers."
                    (kill-buffer buffer))
              (kill-buffer buffer))))
     (setq list (cdr list))))
-(define-key global-map (kbd "<f1> n") 'nuke-some-buffers)
 (define-key global-map (kbd "C-c n") 'nuke-some-buffers)
 
 ;;; Auto scroll
 (defvar my-scroll-auto-timer nil)
-(defun my-scroll-auto (arg)
+(defun lch-scroll-auto (arg)
   "Scroll text of current window automatically with a given frequency.
 With a numeric prefix ARG, use its value as frequency in seconds.
 With C-u, C-0 or M-0, cancel the timer."
@@ -740,31 +760,43 @@ With C-u, C-0 or M-0, cancel the timer."
   (if (not (or (eq arg 0) (equal arg '(4))))
       (setq my-scroll-auto-timer (run-at-time t arg 'scroll-up 1))))
 
-(define-key global-map (kbd "<f1> S") 'my-scroll-auto)
-
 
 ;;; Inserts the user name
 (defun insert-userid ()
   "Insert the my full name and address"
   (interactive)
-        (insert user-full-name))
+  (insert user-full-name))
 
 
 ;;; Process
-(define-key global-map (kbd "<f1> p")
-                (lambda () (interactive)
-                  (let* ((n "*top*")
-                         (b (get-buffer n)))
-                    (if b (switch-to-buffer b)
-                      (if (eq system-type 'windows-nt)
-                         (progn
-                           (proced)
-                           (proced-toggle-tree 1))
-                        (ansi-term "top"))
-                      (rename-buffer n)
-                      (local-set-key "q" '(lambda () (interactive) (kill-buffer (current-buffer))))
-                      (hl-line-mode 1)))))
+(define-key global-map (kbd "C-c p")
+  (lambda () (interactive)
+    (let* ((n "*top*")
+           (b (get-buffer n)))
+      (if b (switch-to-buffer b)
+        (if (eq system-type 'windows-nt)
+            (progn
+              (proced)
+              (proced-toggle-tree 1))
+          (ansi-term "top"))
+        (rename-buffer n)
+        (local-set-key "q" '(lambda () (interactive) (kill-buffer (current-buffer))))
+        (hl-line-mode 1)))))
 
+;;; Rename file and buffer
+(defun rename-file-and-buffer (new-name)
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not filename)
+        (message "Buffer '%s' is not visiting a file!" name)
+      (if (get-buffer new-name)
+          (message "A buffer named '%s' already exists!" new-name)
+        (progn
+          (rename-file name new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil))))))
 ;;; Switch Mode
 ;; The mode selected last time is remembered.
 (defvar switch-major-mode-last-mode nil)
@@ -788,13 +820,12 @@ With C-u, C-0 or M-0, cancel the timer."
   (let ((last-mode major-mode))
     (funcall mode)
     (setq switch-major-mode-last-mode last-mode)))
-(define-key global-map (kbd "<f1> C-m") 'switch-major-mode)
 
 ;;; Inserts Date
 (defun insert-date()
-"Insert a time-stamp according to locale's date and time format."
-(interactive)
-(insert (format-time-string "%y.%m.%d %H:%M" (current-time))))
+  "Insert a time-stamp according to locale's date and time format."
+  (interactive)
+  (insert (format-time-string "%y.%m.%d %H:%M" (current-time))))
 
 (define-key global-map (kbd "<f1> T") 'insert-date)
 
@@ -851,8 +882,8 @@ it if necessary."
    ((eq major-mode 'dired-mode)
     (shell-command (concat "start explorer /e,\"" (replace-regexp-in-string "/" "\\\\" (dired-current-directory)) "\"")))
    ;; In eshell mode
-;   ((eq major-mode 'eshell-mode)
-;    (shell-command (concat "start explorer /e,\"" (replace-regexp-in-string "/" "\\\\" (eshell/pwd)) "\"")))
+                                        ;   ((eq major-mode 'eshell-mode)
+                                        ;    (shell-command (concat "start explorer /e,\"" (replace-regexp-in-string "/" "\\\\" (eshell/pwd)) "\"")))
    ;; Use default-directory as last resource
    (t
     (shell-command (concat "start explorer /e,\"" (replace-regexp-in-string "/" "\\\\" default-directory) "\"")))))
@@ -869,31 +900,31 @@ it if necessary."
   "Convert multiple spaces in buffer into tabs, preserving columns."
   (interactive)
   (progn
-   (message "Tabifying buffer...")
-   (save-excursion
-     (goto-char (point-min))
-     (let ((percent 0) (old-percent 0) (indent-tabs-mode nil)
-           (characters (- (point-max) (point-min))) (line 1)
-           b e column)
-       (while (not (eobp))
-         (goto-line line)
-         (beginning-of-line)
-         (when (looking-at "[ \t]*")
-           (setq b (match-beginning 0)
-                 e (match-end 0))
-           (unless (eq e b)
-             (goto-char e)
-             (setq column (current-column))
-             (unless (equal (buffer-substring b e) (make-string (- e b) ?\ ))
-               (delete-region b e)
-               (indent-to column))))
-         (setq percent (/ (* 100 (point)) characters))
-         (when (> percent old-percent)
-           (message "Tabifying buffer... (%d%%)" percent))
-         (setq old-percent percent)
-         (end-of-line)
-         (setq line (1+ line)))))
-   (message "Tabifying buffer... done")))
+    (message "Tabifying buffer...")
+    (save-excursion
+      (goto-char (point-min))
+      (let ((percent 0) (old-percent 0) (indent-tabs-mode nil)
+            (characters (- (point-max) (point-min))) (line 1)
+            b e column)
+        (while (not (eobp))
+          (goto-line line)
+          (beginning-of-line)
+          (when (looking-at "[ \t]*")
+            (setq b (match-beginning 0)
+                  e (match-end 0))
+            (unless (eq e b)
+              (goto-char e)
+              (setq column (current-column))
+              (unless (equal (buffer-substring b e) (make-string (- e b) ?\ ))
+                (delete-region b e)
+                (indent-to column))))
+          (setq percent (/ (* 100 (point)) characters))
+          (when (> percent old-percent)
+            (message "Tabifying buffer... (%d%%)" percent))
+          (setq old-percent percent)
+          (end-of-line)
+          (setq line (1+ line)))))
+    (message "Tabifying buffer... done")))
 
 ;;; Provide
 (message "~~ lch-util: done.")

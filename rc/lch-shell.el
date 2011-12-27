@@ -46,10 +46,6 @@
 ;; translate ANSI escape sequences into faces
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-
-
-
 ;;; Popup shell
 (defvar th-shell-popup-buffer nil)
 
@@ -57,8 +53,8 @@
   "Toggle a shell popup buffer with the current file's directory as cwd."
   (interactive)
   (unless (buffer-live-p th-shell-popup-buffer)
-    (save-window-excursion (shell "*-Shell-*"))
-    (setq th-shell-popup-buffer (get-buffer "*-Shell-*")))
+    (save-window-excursion (shell "*Shell*"))
+    (setq th-shell-popup-buffer (get-buffer "*Shell*")))
   (let ((win (get-buffer-window th-shell-popup-buffer))
 	(dir (file-name-directory (or (buffer-file-name)
 				      ;; dired
@@ -72,10 +68,8 @@
 (global-set-key (kbd "<f1> <f1>") 'th-shell-popup)
 
 
-
-
-;>---- NEWSMTH ----<;
-;- Not so good, keep here as an example.
+;; NEWSMTH
+;; Not so good, keep here as an example.
 ;; (setq xwl-newsmth-buffer-name "newsmth")
 ;; (defun xwl-bbs-heartbeat ()
 ;;   "Keep bbs connection alive."

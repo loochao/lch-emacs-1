@@ -33,23 +33,6 @@
 ;;; Code
 (message "=> lch-pgm: loading...")
 
-;;; Lisp mode
-(defun xwl-lisp-mode-hook ()
-  ;; (which-func-mode 1)
-  ;; (eldoc-mode 1)
-
-  (set (make-local-variable 'outline-regexp) ";>---- ") ;; FIXME
-  ;; (outline-minor-mode 1)
-  ;; (unless (string= "*scratch*" (buffer-name))
-  ;;   (outline-minor-mode))
-  (local-set-key (kbd "<backtab>") 'lisp-complete-symbol)
-  (local-set-key (kbd "<S-tab>") 'lisp-complete-symbol)
-  (local-set-key (kbd "C-c C-r") 'eval-region))
-
-(add-hook 'lisp-mode-hook 'xwl-lisp-mode-hook)
-(add-hook 'lisp-interaction-mode-hook 'xwl-lisp-mode-hook)
-(add-hook 'emacs-lisp-mode-hook 'xwl-lisp-mode-hook)
-
 ;;; Highlight Special Keywords
 ;; Using Greek Symbol to respresent lambda
 (font-lock-add-keywords
@@ -137,7 +120,8 @@
 (add-hook 'cperl-mode-hook 'lch-cperl-mode-hook t)
 ;;; Emacs lisp
 (defun lch-emacs-lisp-mode-hook ()
-  (turn-on-eldoc-mode))
+  ;(turn-on-eldoc-mode) ;way too slow
+  )
 
 (add-hook 'emacs-lisp-mode-hook 'lch-emacs-lisp-mode-hook)
 
