@@ -260,7 +260,7 @@
 (add-to-list 'load-path
 	     (concat emacs-dir "/site-lisp/yasnippet-0.6.1c"))
 (require 'yasnippet) ;; not yasnippet-bundle
-(setq yas/root-directory (concat emacs-dir "/site-lisp/yasnippet-0.6.1c/snippets"))
+(setq yas/root-directory (concat emacs-lib-dir "/snippets"))
 (yas/load-directory yas/root-directory)
 (yas/initialize)
 ;(setq yas/trigger-key nil)

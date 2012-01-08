@@ -32,6 +32,12 @@
 
 ;;; Code
 (message "=> lch-elisp: loading...")
+;;; Textmate
+;; Works only for mac.
+(when lch-mac-p
+  (require 'textmate)
+  (textmate-mode))
+
 ;;; Viper
 ;(setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
 ;;; Windmove

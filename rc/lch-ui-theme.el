@@ -31,39 +31,46 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
-(defvar emacs-theme-dir (concat emacs-dir "/site-lisp/color-theme/themes"))
+(defvar emacs-theme-dir (concat emacs-lib-dir "/themes"))
 (add-to-list 'load-path emacs-theme-dir)
 (require 'color-theme)
 
 ;;; Arjen
 (require 'color-theme-arjen)
-(define-key global-map (kbd "<f11> <f3>") (lambda() (interactive) (color-theme-arjen) (message "color theme arjen selected")))
+(define-key global-map (kbd "<f11> <f3>") (lambda() (interactive) (color-theme-arjen) (lch-modeline) (message "color theme arjen selected")))
 ;;; Tango
 (require 'color-theme-tango)
-(define-key global-map (kbd "<f11> <f4>") (lambda() (interactive) (color-theme-tango) (message "color theme tango selected")))
+(define-key global-map (kbd "<f11> <f4>") (lambda() (interactive) (color-theme-tango) (lch-modeline) (message "color theme tango selected")))
 ;;; Tango2
 (require 'color-theme-tango2)
-(define-key global-map (kbd "<f11> <f5>") (lambda() (interactive) (color-theme-tango2) (message "color theme tango2 selected")))
+(define-key global-map (kbd "<f11> <f5>") (lambda() (interactive) (color-theme-tango2) (lch-modeline) (message "color theme tango2 selected")))
 ;;; railscasts
 (require 'color-theme-railscasts)
-(define-key global-map (kbd "<f11> <f6>") (lambda() (interactive) (color-theme-railscasts) (message "color theme railscast selected")))
+(define-key global-map (kbd "<f11> <f6>") (lambda() (interactive) (color-theme-railscasts) (lch-modeline) (message "color theme railscast selected")))
 ;;; Jimmy
 (require 'color-theme-jimmy)
-(define-key global-map (kbd "<f11> <f7>") (lambda() (interactive) (color-theme-jimmy) (message "color theme jimmy selected")))
+(define-key global-map (kbd "<f11> <f7>") (lambda() (interactive) (color-theme-jimmy) (lch-modeline) (message "color theme jimmy selected")))
 ;;; Zenburn
 (require 'color-theme-zenburn)
-(define-key global-map (kbd "<f11> <f8>") (lambda() (interactive) (color-theme-zenburn) (message "color theme zenburn selected")))
+(define-key global-map (kbd "<f11> <f8>") (lambda() (interactive) (color-theme-zenburn) (lch-modeline) (message "color theme zenburn selected")))
 ;;; Tomorrow
 (require 'color-theme-tomorrow)
 (require 'color-theme-tomorrow-night)
+(define-key global-map (kbd "<f11> <f9>") (lambda() (interactive) (color-theme-tomorrow-night) (lch-modeline) (message "color theme tomorrow-night selected")))
 (require 'color-theme-tomorrow-night-eighties)
 (require 'color-theme-tomorrow-night-bright)
+(define-key global-map (kbd "<f11> <f10>") (lambda() (interactive) (color-theme-tomorrow-night-bright) (lch-modeline) (message "color theme tomorrow-night-bright selected")))
 
-;(require 'color-theme-dimilar)
-;(define-key global-map (kbd "<f11> <f9>") (lambda() (interactive) (color-theme-dimilar) (message "color theme dimilar selected")))
-
-;(require 'color-theme-dimilartty)
-;(define-key global-map (kbd "<f11> <f10>") (lambda() (interactive) (color-theme-dimilartty) (message "color theme dimilartty selected")))
+;;; Modeline
+(defun lch-modeline ()
+  (interactive)
+  (if lch-mac-p
+      (set-face-font 'modeline "-apple-Monaco-medium-normal-normal-*-18-*-*-*-m-0-fontset-startup")
+    (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
+  (set-face-background 'modeline "DarkRed")
+  (set-face-foreground 'modeline "white")
+  )
+(define-key global-map (kbd "<f11> =") 'lch-modeline)
 
 ;;; LCH
 (defun lch-color-theme ()
@@ -270,7 +277,8 @@
 ;;; LOAD-COLOR-THEME
 (color-theme-arjen)
 (lch-color-theme)
-(define-key global-map (kbd "<f11> <f2>") (lambda() (interactive) (lch-color-theme) (message "color theme lch selected")))
+(lch-modeline)
+(define-key global-map (kbd "<f11> <f2>") (lambda() (interactive) (lch-color-theme) (lch-modeline) (message "color theme lch selected")))
 
 (provide 'lch-ui-theme)
 ;;; Local Vars.

@@ -168,7 +168,7 @@
        default-frame-alist)))
 (if lch-mac-p
     (set-face-font 'modeline "-apple-Monaco-medium-normal-normal-*-18-*-*-*-m-0-fontset-startup")
-    (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
+  (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
 
 ;;; Show buffer name in titlebar
 ;; %f: Full path of current file.
