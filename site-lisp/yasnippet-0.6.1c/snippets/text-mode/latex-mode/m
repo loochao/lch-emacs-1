@@ -1,0 +1,8 @@
+\begin{minipage}[t]{${1:1.0}\linewidth}
+\centering
+$0
+\end{minipage}
+
+\begin{minipage}[t]{${2:1.0}\linewidth}
+\centering
+\end{minipage}

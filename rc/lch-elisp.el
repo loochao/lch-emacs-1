@@ -33,7 +33,7 @@
 ;;; Code
 (message "=> lch-elisp: loading...")
 ;;; Viper
-(setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
+;(setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
 ;;; Windmove
 ;; use shift + arrow keys to switch between visible buffers
 (require 'windmove)
