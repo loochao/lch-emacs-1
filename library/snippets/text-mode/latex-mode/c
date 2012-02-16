@@ -1,14 +1,8 @@
 \begin{columns}
   \begin{column}{${1:0.5}\textwidth}
-    \begin{itemize}
-        \item $0
-    \end{itemize}
+  $0
   \end{column}
 
   \begin{column}{${2:0.5}\textwidth}
-  \begin{figure}
-  \includegraphics[width=.8\textwidth]{figures/$5}
-  \caption[${3:caption}]{${4:caption}}
-  \end{figure}
   \end{column}
 \end{columns}

@@ -31,6 +31,12 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
+;;; Delete the trailing Chinese space in Douban comments
+(defun lch-douban-delete-trailing-white-space ()
+  (interactive)
+  (goto-char (point-min))
+  (re-search-forward "\\　\\　")
+  (replace-match ""))
 ;;; Jump to a definition in the current file. (This is awesome.)
 (require 'imenu)
 

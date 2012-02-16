@@ -1,16 +1,16 @@
 
 ;; ----- smex-history -----
 (
+ revert-buffer-with-coding-system
  cd
  lm
  5x5
  afm
  arp
  dbx
- dig
 )
 
 ;; ----- smex-data -----
 (
- 
+ (revert-buffer-with-coding-system . 7)
 )
