@@ -2,33 +2,96 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Volumes/DATA/Music/" . "PURECN/")
+ ("/Volumes/DATA/Private/Photography/" . "120217_PU/")
+ ("/Volumes/DATA/Private/" . "Photography/")
+ ("/Volumes/DATA/" . "Music/")
+ ("/Volumes/" . "DATA/")
+ ("/" . "Volumes/")
+ ("/ssh:chaol@hats.princeton.edu:public_html/" . "image/")
+ ("/ssh:chaol@hats.princeton.edu:" . "public_html/")
  ("/Users/LooChao/Dropbox/.emacs.d/" . "rc/")
- ("/Users/LooChao/Dropbox/" . ".emacs.d/")
+ ("/Users/LooChao/Dropbox/" . "Org/")
  ("/Users/LooChao/" . "Dropbox/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/LooChao/Dropbox/Org/"
+ "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/"
+ "/ssh:chaol@hats.princeton.edu:public_html/"
+ "/ssh:chaol@hats.princeton.edu:"
+ "/ssh:chaol@sixtyfour.princeton.edu:"
+ "/ssh:sixtyfour.princeton.edu:"
+ "/Users/LooChao/Dropbox/Org/org/"
+ "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/"
  "/Users/LooChao/Dropbox/.emacs.d/rc/"
  "/Users/LooChao/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "Research.org"
+ "example4.py"
+ "example3.py"
+ "example2.py"
+ "Career.html"
+ "Music_for_Doudou.org"
+ "李碧华_生死桥_note.txt"
  "test.py"
  "lch-env.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/LooChao/Dropbox/.emacs.d/rc/" (19904 50973) "xwl-wubi.elc" "xwl-wubi.el" "xwl-util.elc" "xwl-util.el" "xwl-shell.elc" "xwl-shell.el" "xwl-emms.elc" "xwl-emms.el" "xwl-calendar.elc" "xwl-calendar.el" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w3m.elc" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-template.elc" "lch-template.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-org.elc" "lch-org.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.elc" "lch-hl-line.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-elisp-el-get.elc" "lch-elisp-el-get.el" "lch-el-get.elc" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bookmark.elc" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-alias.elc" "lch-alias.el" "dotEmacs" "../" "./")
+ ("/Volumes/DATA/Music/PURECN/" (20276 45174) "齐豫_般若波罗密多心经.mp3" "齐豫_大悲咒.mp3" "黄霑.鲍比达_定情.mp3" "陈敏_蒼い雨音.mp3" "陈勋奇_天地孤影任我行.mp3" "闲云野鹤.mp3" "辛晓琪_莫呼洛迦.mp3" "越人歌.mp3" "赵季平_活着.mp3" "范宗沛_水色.mp3" "胡伟立_偷功.mp3" "红楼梦_题帕三绝.mp3" "红楼梦_葬花吟.mp3" "红楼梦_聪明累.mp3" "红楼梦_红豆曲.mp3" "红楼梦_秋窗风雨夕.mp3" "红楼梦_枉凝眉.mp3" "红楼梦_晴雯曲.mp3" "红楼梦_引子.mp3" "红楼梦_叹香菱.mp3" "红楼梦_分骨肉.mp3" "林海_欢沁.mp3" "思情.mp3" "夜深沉.mp3" "吕秀龄_情咒.mp3" "卡洛儿_兰花草.mp3" "十大古曲_高山流水.mp3" "十大古曲_陽春白雪.mp3" "十大古曲_胡笳十八拍.mp3" "十大古曲_漢宮秋月.mp3" "十大古曲_渔樵问答.mp3" "十大古曲_梅花三弄.mp3" "十大古曲_廣陵散曲.mp3" "十大古曲_平沙落雁.mp3" "十大古曲_夕陽簫鼓.mp3" "十大古曲_十面埋伏.mp3" "冰菊物语.mp3" "人生如此.mp3" "云水禅心.mp3" "../" "./")
 
- ("/Users/LooChao/Dropbox/.emacs.d/" (19904 50533) "var.smex-items" "var/" "url/" "tramp" "site-lisp-bak/" "site-lisp/" "server/" "semanticdb/" "rc/" "library/" "games/" "bin/" "auto-save-list/" "ac-comphist.dat" ".emacs.desktop" "../" "./")
+ ("/Volumes/DATA/Music/" (20083 41871) "PURECN/" "PURE/" "POPFN/" "POPEN/" "POPCN/" "OST/" "OPERAFN/" "OPERA/" "MISC/" "FOLKFN/" "FOLKEN/" "FOLKCN/" "COLLEGE/" "COLLECTION/" "CLASSICALCN/" "CLASSICAL/" "Automatically Add to iTunes/" ".DS_Store" ".dropbox" "../" "./")
 
- ("/Users/LooChao/" (19904 32723) "vimperator/" "Sites/" "Python/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine_bak/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".subversion/" ".stardict/" ".ssh/" ".srecode/" ".sh_history" ".session" ".profile" ".mplayer/" ".matlab/" ".macports/" ".local/" ".ido.last" ".gitconfig" ".fontconfig/" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs-recentf" ".emacs" ".DS_Store" ".dropbox/" ".diskorderbash" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" "../" "./")
+ ("/Volumes/" (20286 45830) "MACINTOSH/" "DATA/" "BACKUP/" "../" "./")
 
- ("/Users/LooChao/Dropbox/" (19904 43817) "Zotero_Backup/" "Zotero/" "WALLPAPER/" "Vimperator.zip" "vimperator/" "TXT/" "TMP/" "This is your Dropbox.txt" "SYNC/" "Summer.School/" "SOFT/" "SCAN/" "RESEARCH/" "REPO/" "PUC/" "Public/" "PU.Soccer.Hunter.csv" "Private/" "Picture/" "Photos/" "PGM/" "org/" "MUSIC/" "MOVIE/" "MobileOrg/" "LIB/" "iPad intro.pdf" "INBOX/" "Icon
-" "FLV/" "FirefoxPT/" "EDU/" "DOWNLOAD/" "Documents/" "COS333/" "COMIC/" "AUDIO/" "Android intro.pdf" "110330_FirefoxPT4.0.zip" ".emacs.d/" ".DS_Store" ".dropbox.cache/" "../" "./")
+ ("/Users/LooChao/Dropbox/Org/" (20287 32091) "var/" "tmp/" "template/" "Research.org" "public_html/" "private_html/" "org/" "data/" ".svn/" ".org-timestampsWorg-notes.cache" ".org-timestampspublic-static.cache" ".org-timestampspublic-notes.cache" ".org-timestampsPrivate.cache" ".org-timestampsorg-static.cache" ".org-timestampsorg-notes.cache" ".org-timestamps/" ".DS_Store" "../" "./")
+
+ ("/Volumes/DATA/Private/Photography/120217_PU/" (20286 12751) "DSC_0593.NEF" "DSC_0592.NEF" "DSC_0590.NEF" "DSC_0588.NEF" "DSC_0586.NEF" "DSC_0582.NEF" "DSC_0581.NEF" "DSC_0579.NEF" "DSC_0577.NEF" "DSC_0576.NEF" "DSC_0575.NEF" "DSC_0574.NEF" "DSC_0573.NEF" "DSC_0565.NEF" "DSC_0564.NEF" "DSC_0563.NEF" "DSC_0562.NEF" "DSC_0561.NEF" "DSC_0559.NEF" "DSC_0556.NEF" "DSC_0555.NEF" "DSC_0554.NEF" "DSC_0547.NEF" "DSC_0544.NEF" "DSC_0540.NEF" "DSC_0534.NEF" "DSC_0533.NEF" "DSC_0532.NEF" "DSC_0531.NEF" "DSC_0524.NEF" "DSC_0522.NEF" "DSC_0521.NEF" "DSC_0519.NEF" "DSC_0517.NEF" "DSC_0515.NEF" "DSC_0511.NEF" "DSC_0510.NEF" "../" "./")
+
+ ("/Volumes/DATA/Private/Photography/" (20286 12804) "120217_PU/" "../" "./")
+
+ ("/Volumes/DATA/Private/" (20286 12799) "Resume/" "Picture/" "Photography/" "Photo/" "Info/" "Friend/" "Contact/" ".DS_Store" "../" "./")
+
+ ("/Volumes/DATA/" (20286 12804) "Video/" "Temperory/" "Repository/" "Private/" "Ports/" "Notes/" "Music/" "Mathematica_Notes.nb" "Flv/" "Education/" "Dropbox/" "Audio/" "Applications/" "Apple/" ".Trashes/" ".TemporaryItems/" ".Spotlight-V100/" ".fseventsd/" ".DS_Store" ".com.apple.timemachine.supported" "../" "./")
+
+ ("/ssh:chaol@hats.princeton.edu:public_html/" (ftp . 369303.455) "./" "../" "USLife.html" "Unix.html" "Softip.html" "Sociology.html" "Society.html" "Sitemap.html" "Schedule.html" "Portfolio/" "PU-MieJueShiTai.html" "Programming.html" "Politics.html" "PKU-PHYNotes-Proverb.html" "Physics.html" "Pgm.html" "Pearl.html" "Opera.html" "Miscellaneous.html" "Methodology.html" "MechanicalSE.html" "Mathematics.html" "Lifetip.html" "Life.html" "Library.html" "index.html" "Humor.html" "Html.html" "History.html" "Flight.html" "Fiction.html" "English.html" "Emacs.html" "ElectricalSE.html" "Economy.html" "Culture.html" "Cookery.html" "ComputerSE.html" "CEE525-HW3.html" "Career.html" "Bib-Edu.html" "Art-Ent.html" "theme/" "Rsch/" "Physics/" "ltxpng/" "library/" "image/" "data/" "fvwm.zip" "YiGeNingNing.mp3" "Tsinghua.pdf" "Berkeley.pdf" "index.org" "Chao_Arch_Application.pdf" "CHN.html" "Music.html" "Music_for_Doudou.html" "Philosophy.html" "ruby-output.html" "Sports.html" "Calculus/" "110702_Tsinghua.Veteran.zip" "MSL/" "Xsession.d.zip" "Application.zip" "Movie.html" "Yale.pdf" "INBOX.html" "NECBL.html" "1.mp3")
+
+ ("/Users/LooChao/" (20286 11413) "vimperator/" "Temporary/" "Sites/" "Repository/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".xnviewmp/" ".Xcode/" ".Xauthority" ".wine/" ".w3m/" ".vimperatorrc" ".vimperator/" ".viminfo" ".Trash/" ".texlive2011/" ".texlive2010/" ".subversion/" ".ssh/" ".srecode/" ".sh_history" ".session" ".serverauth.5235" ".serverauth.39758" ".serverauth.322" ".serverauth.2158" ".serverauth.2032" ".serverauth.10094" ".python-eggs/" ".profile" ".pps/" ".nnex" ".nevernote/" ".mplayer/" ".matlab/" ".macports/" ".local/" ".InstallAnywhere/" ".inputrc" ".ido.last" ".gitconfig" ".fontconfig/" ".flexlmrc" ".eshell/" ".emms-cache" ".emacs.var/" ".emacs.d/" ".emacs" ".DS_Store" ".dropbox/" ".cvspass" ".cups/" ".config/" ".CFUserTextEncoding" ".bm-repository" ".bashrc" ".bash_history" ".bash_aliases" ".aspell.en.pws" ".aspell.en.prepl" ".adobe/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/" (20233 801) "var/" "tramp" "site-lisp/" "server/" "README" "rc/" "library/" "info/" "doc/" "bin/" ".session" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/library/" (20233 3604) "template/" "snippets/" "programming/" "dotfiles/" "bin/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/library/programming/" (20221 7106) "tex/" "python/" "matlab/" "mathematica/" "makefile/" "emacs/" "cpp/" "c/" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/library/programming/python/" (20285 27650) "test.py" "example4.py" "example3.py" "example2.py" "example1.py" "../" "./")
+
+ ("/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/" (20285 21832) "rootfs_ics_winmo_2011-jan-18.7z" "pb9101024.pdf" "pb9001002.pdf" "pb03001095.pdf" "paper.pdf" "notes 2.pdf" "MIUIROM/" "miui_HD2_1.12.16_3dak_SD_2.3.7_k=3dak_r3.9.7z.7z" "miui_HD2-完美修改自用_BY546021540_2.zip" "Jeremy_Lin_林书豪0_5秒三分绝杀" "heat-toc.pdf" "HD2_MIUI4_2.1.13_K_3dak_r4.0-ICS.7z" "hannover 40.pdf" "exp8-phy.nb" "exp7-geo.nb" "exp6-prob.nb" "exp2_3-Pi.nb" "exp11-brach.nb" "exp1-fund.nb" "E.L. Cussler - DIFFUSION - MASS TRANSFER IN FLUID SYSTEMS.pdf" "Diffusion and Mass transfer.pdf" "Chapter 2 Counters and Digital Encoders rev1(1).doc" "1334555fn6jrfjp990mojj.zip" "04python.pdf" "03awk.pdf" ".DS_Store" "../" "./")
+
+ ("/Users/LooChao/Dropbox/Org/org/" (20284 34997) "Unix.org_archive" "Travel.org" "Sports.org" "Softip.org_archive" "Softip.org" "Sociology.org" "Society.org" "Sitemap.org" "Science.org" "Research/" "Refile.org_archive" "Refile.org" "Programming.org" "Programming/" "Private.org" "Politics.org" "Physics.org_archive" "Physics.org" "Physics/" "Philosophy.org" "Pearl.org_archive" "Pearl.org" "Opera.org" "Music_for_Doudou.org" "Music.org" "Movie.org" "Miscellaneous.org" "ltxpng/" "Lifetip.org_archive" "Lifetip.org" "Life.org" "Library.org" "library/" "Latex/" "iTHU.org" "iStuff.org_archive" "iStuff.org" "iResearch.org" "iPU.org" "iPrv.org_archive_archive" "iPrv.org_archive_2" "iPrv.org_archive" "iPrv.org" "index.org" "image/" "iLog.org" "iDea.org_archive" "iDea.org" "iDD.org" "iCount.org_archive" "iCount.org" "Humor.org" "Html.org" "History.org_archive" "History.org" "History/" "Fiction.org" "English.org" "Emacs.org_archive" "Emacs/" "Culture/" "Cookery.org" "ComputerSE.org" "Career.org" "Career/" "Bib-Edu.org" "BBall.Team.Reimbursement.org" "Art-Ent.org_archive" "Art-Ent.org" "Archive/" "application.org" "../" "./")
+
+ ("/Users/LooChao/Dropbox/Org/public_html/" (20284 34997) "USLife.html" "Unix.html" "Travel.html" "theme/" "test.html" "Sports.html" "Softip.html" "Sociology.html" "Society.html" "Sitemap.html" "Science.html" "Schedule.html" "ruby-output.html" "Rsch.html" "Rsch/" "Research/" "Refile.html" "PU-MieJueShiTai.html" "Programming.html" "Private.html" "Politics.html" "PKU-PHYNotes-Proverb.html" "Physics.html" "Physics/" "PHY403.html" "PHY403-HW8-Prob4.html" "Philosophy.html" "Pgm.html" "Pearl.html" "Opera.html" "Necbl.html" "Music_for_Doudou.html" "Music.html" "Movie.html" "Miscellaneous.html" "Methodology.html" "MechanicalSE.html" "Mathematics.html" "ltxpng/" "Lifetip.html" "Life.html" "Library.html" "library/" "Laser.Startup.html" "iTHU.html" "iSys.html" "iStuff.html" "iRsch.html" "iResearch.html" "iPU.html" "iPrv.html" "index.html" "INBOX.html" "image/" "iLog.html" "iDea.html" "iDD.html" "iCount.html" "Humor.html" "Html.html" "History.html" "History/" "Flight.html" "Fiction.html" "English.html" "Emacs.html" "Emacs/" "ElectricalSE.html" "Economy.html" "data/" "Culture.html" "Culture/" "Cookery.html" "ComputerSE.html" "communication_c0d59d505502967cb07104d7019fda29960f6db3.png" "CHN.html" "CEE525-HW3.html" "Career.html" "Bib-Edu.html" "BBall.Team.Reimbursement.html" "Art-Ent.html" "Archive/" "application.html" "2010-Summer-Work-Proposal-ChaoLU.html" "../" "./")
+
+ ("/ssh:chaol@hats.princeton.edu:public_html/image/" (ftp . 369268.5983333333) "./" "../" ".svn/" "Art-Ent_2008Peking.jpg" "Art-Ent_BlindShaft.jpg" "Art-Ent_BlindWell.jpg" "Art-Ent_CJY.jpg" "Emacs_communication.png" "Emacs_EditorCurves.jpg" "Emacs_YouXuan_AgendaView.png" "Emacs_YASnippet.png" "Emacs_YouXuan_EmacsOrg_TODO.png" "Emacs_YouXuan_Remember.png" "Humor_All.I.Need.Just.U.jpg" "Humor_China3-0Kerea.jpg" "Humor_China3-0Kerea_2.jpg" "Humor_DingZhaoZhong.jpg" "Humor_Efficiency.jpg" "Humor_XinHuaShe.jpg" "iPrv_Maya.jpg" "Lovetip_Dating.Motivation.Table.jpg" "Lovetip_Ring.Heart.Love.png" "Lovetip_Window.Love.png" "ltxpng/" "MSE-DIY.WallE.PC.jpg" "PGM_Fibonacci_Heap.gif" "Physics_Scattering.gif" "Physics_Drum_Vibration_Mode.gif" "Society_China-Military-Regions.jpg" "Physics_Spherical_Wave.gif" "Physics_Wave_Equ_1D_Fixed_Endpts.gif" "Unix_Cygwin_Installation.png" "Unix_Vi_KBCN.jpg" "DD1.png" "DD2.png" "DD3.png")
+
+ ("/Users/LooChao/Dropbox/Org/public_html/image/" (20284 32191) "Unix_Vi_KBCN.jpg" "Unix_Cygwin_Installation.png" "Society_China-Military-Regions.jpg" "Physics_Wave_Equ_1D_Fixed_Endpts.gif" "Physics_Spherical_Wave.gif" "Physics_Scattering.gif" "Physics_Drum_Vibration_Mode.gif" "PGM_Fibonacci_Heap.gif" "MSE-DIY.WallE.PC.jpg" "Lovetip_Window.Love.png" "Lovetip_Ring.Heart.Love.png" "Lovetip_Dating.Motivation.Table.jpg" "iPrv_Maya.jpg" "Humor_XinHuaShe.jpg" "Humor_Squirrel.jpg" "Humor_Fake.Cellphone.jpg" "Humor_Efficiency.jpg" "Humor_DingZhaoZhong.jpg" "Humor_China3-0Kerea_2.jpg" "Humor_China3-0Kerea.jpg" "Humor_All.I.Need.Just.U.jpg" "Emacs_YouXuan_Remember.png" "Emacs_YouXuan_EmacsOrg_TODO.png" "Emacs_YouXuan_AgendaView.png" "Emacs_YASnippet.png" "Emacs_EditorCurves.jpg" "Emacs_communication.png" "Emacs_communication (LCH-X61's conflicted copy 2011-03-01).png" "DD3.png" "DD2.png" "DD1.png" "Art-Ent_CJY.jpg" "Art-Ent_BlindWell.jpg" "Art-Ent_BlindShaft.jpg" "Art-Ent_2008Peking.jpg" "../" "./")
+
+ ("/ssh:chaol@hats.princeton.edu:/u/chaol/public_html/" (ftp . 369268.475) "./" "../" "USLife.html" "Unix.html" "Softip.html" "Sociology.html" "Society.html" "Sitemap.html" "Schedule.html" "Portfolio/" "PU-MieJueShiTai.html" "Programming.html" "Politics.html" "PKU-PHYNotes-Proverb.html" "Physics.html" "Pgm.html" "Pearl.html" "Opera.html" "Miscellaneous.html" "Methodology.html" "MechanicalSE.html" "Mathematics.html" "Lifetip.html" "Life.html" "Library.html" "index.html" "Humor.html" "Html.html" "History.html" "Flight.html" "Fiction.html" "English.html" "Emacs.html" "ElectricalSE.html" "Economy.html" "Culture.html" "Cookery.html" "ComputerSE.html" "CEE525-HW3.html" "Career.html" "Bib-Edu.html" "Art-Ent.html" "theme/" "Rsch/" "Physics/" "ltxpng/" "library/" "image/" "data/" "fvwm.zip" "YiGeNingNing.mp3" "Tsinghua.pdf" "Berkeley.pdf" "index.org" "Chao_Arch_Application.pdf" "CHN.html" "Music.html" "Philosophy.html" "ruby-output.html" "Sports.html" "Calculus/" "110702_Tsinghua.Veteran.zip" "MSL/" "Xsession.d.zip" "Application.zip" "Movie.html" "Yale.pdf" "INBOX.html" "NECBL.html" "1.mp3")
+
+ ("/Users/" (19594 45080) "Shared/" "LooChao/" ".localized" "../" "./")
+
+ ("/Users/LooChao/Dropbox/.emacs.d/rc/" (20282 16304) "Makefile" "lch-z.elc" "lch-z.el" "lch-z-var.elc" "lch-z-var.el" "lch-z-menu.elc" "lch-z-menu.el" "lch-web.elc" "lch-web.el" "lch-w32.elc" "lch-w32.el" "lch-util.elc" "lch-util.el" "lch-ui.elc" "lch-ui.el" "lch-ui-theme.elc" "lch-ui-theme.el" "lch-tramp.elc" "lch-tramp.el" "lch-tex.elc" "lch-tex.el" "lch-template.elc" "lch-template.el" "lch-startup.elc" "lch-startup.el" "lch-skeleton.elc" "lch-skeleton.el" "lch-shell.elc" "lch-shell.el" "lch-pgm.elc" "lch-pgm.el" "lch-outline.elc" "lch-outline.el" "lch-other-conf.elc" "lch-other-conf.el" "lch-org.elc" "lch-org.el" "lch-org-latex.elc" "lch-org-latex.el" "lch-org-export.elc" "lch-org-export.el" "lch-org-agenda.elc" "lch-org-agenda.el" "lch-mouse.elc" "lch-mouse.el" "lch-mac.elc" "lch-mac.el" "lch-irc.elc" "lch-irc.el" "lch-init.elc" "lch-init.el" "lch-inbox.elc" "lch-inbox.el" "lch-hl-line.el" "lch-erc.el" "lch-env.elc" "lch-env.el" "lch-emms.elc" "lch-emms.el" "lch-elisp.elc" "lch-elisp.el" "lch-el-get.el" "lch-dired.elc" "lch-dired.el" "lch-dict.elc" "lch-dict.el" "lch-custom.elc" "lch-custom.el" "lch-conf.elc" "lch-conf.el" "lch-coding.elc" "lch-coding.el" "lch-calendar.elc" "lch-calendar.el" "lch-bmk.elc" "lch-bmk.el" "lch-binding.elc" "lch-binding.el" "lch-auto-mode.elc" "lch-auto-mode.el" "lch-aquamacs.elc" "lch-aquamacs.el" "lch-aqua-custom.elc" "lch-aqua-custom.el" "lch-alias.elc" "lch-alias.el" "dotEmacs.elc" "dotEmacs" "../" "./")
+
+ ("/Users/LooChao/Dropbox/Reader/" (20221 14185) "WM/" "Reader_Rules.txt" "KindleDXG/" "Kindle/" "INBOX/" ".DS_Store" "../" "./")
+
+ ("/Users/LooChao/Dropbox/" (20281 30203) "This is your Dropbox.txt" "Temporary/" "Software/" "Share/" "Research/" "Repository/" "Reader/" "Public/" "Programming/" "Program/" "Private/" "Print/" "Photos/" "Org/" "Music/" "Movie/" "MobileOrg/" "Library/" "iPad intro.pdf" "Icon
+" "Favoriate/" "Education/" "Download/" "Documents/" "Android intro.pdf" ".vimperator.d/" ".vim.d/" ".vim/" ".emacs.lib/" ".emacs.d/" ".DS_Store" ".dropbox.cache/" ".doc.lib/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Feb 13 17:01:22 2012
+;; Created Sat Feb 18 20:48:28 2012
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,8 +11,305 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("figu" "ui" "veri" "exp" "surface mor" "V E" "big" "probl" "linear" "line" "pressure" "what's" "real" "proble" "boundary" "some"))
+(setq regexp-search-ring '("music" "dropbox" "apr" "2010" "figu" "ui" "veri" "exp" "surface mor" "V E" "big" "probl" "linear" "line" "pressure" "what's"))
 (setq register-alist nil)
-(setq file-name-history '("/Users/LooChao/.wine/dosdevices/z:/Volumes/Kindle/DK_Daochu/1970.02.07.12-24-4605-懟茟碧懺芲懓畱在懪约/懯閼摘.dat" "/Users/LooChao/.wine/dosdevices/z:/Volumes/Kindle/DK_Documents/懟茟碧懺芲懓畱在懪约.txt" "~/Dropbox/.emacs.d/var/.bm-repository" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Education/General_Exam/main.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/coding/test.py" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/APL2.tex" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/xKindle_2012-01.04.C4554/\221\266\340\221\277\264\221\311\375\221\274\266\221\260\262\221滛\221堯\221\322\342.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/DK_v110520_(K2.K3.DXG)/DK_System/install/install.sh" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/(K3)2012\221\243\25502\221\243\25511.C5823\221\311\375\221\274\266\221\260\374/\221\311\375\221\274\266\221\260\374/k3\221\311\375\221\274\266\221\260\374/\221\266\340\221\277\264\221\311\375\221\274\266\221\260\262\221滛\221堯\221\322\342.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/(K3)2012\221\243\25502\221\243\25511.C5823\221\311\375\221\274\266\221\260\374/\221\311\375\221\274\266\221\260\374/Installation" "/Volumes/LIB/BACKUP/System/Kindle_Duokan/(K3)2012\221\243\25502\221\243\25511.C5823\221\311\375\221\274\266\221\260\374/\221\311\375\221\274\266\221\260\374/Guide.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/(K3)2012\221\243\25502\221\243\25511.C5823\221\311\375\221\274\266\221\260\374/ChangeLog.txt" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/\221\311\375\221\274\266\221\260\374/k3\221\311\375\221\274\266\221\260\374/\221\266\340\221\277\264\221\311\375\221\274\266\221\260\262\221滛\221堯\221\322\342.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/emergency.txt" "/Volumes/DATA/Ports/TXT/B_Guess Good/Culture/Anthology/\221\300滙滛パ\273\252/Good/Culture/Anthology/\221\300滙滛パ\273\252/06-\221\300滙滛パ\273\252\221\243\272\221\301戄赲331.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Reader/Reader_Rules.txt" "/Users/LooChao/.wine/dosdevices/z:/Volumes/LIB/BACKUP/System/Kindle_Duokan/DK_v110520_(K2.K3.DXG)/readme.txt" "~/Dropbox/.emacs.d/var/.bm-repository" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/120210_Diffusion/main.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General_Exam/4/title.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General_Exam/4/Makefile" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General_Exam/4/main.tex" "~/Dropbox/Education/120210_Diffusion/Makefile" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/120210_Diffusion/title.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/120210_Diffusion/front.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General_Exam/4/section1.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/120210_Diffusion/section1.tex" "/Volumes/DATA/Dropbox/education/120210_Diffusion/slide.tex" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/General_Exam/4/section1.tex" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Education/120210_Diffusion/front.tex"))
+(setq file-name-history '("/ssh:chaol@hats.princeton.edu:public_html/1.mp3" "/ssh:chaol@hats.princeton.edu" "/ssh:" "/Users/LooChao/Dropbox/Org/Research.org" "/ssh:chaol@hats.princeton.edu" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example4.py" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example3.py" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example2.py" "~/Dropbox/.emacs.d/library/programming/python/example1.py" "~/Dropbox/.emacs.d/library/programming/python/example1.py" "~/Dropbox/.emacs.d/library/programming/python/test.py" "/ssh:chaol@hats.princeton.edu:public_html/Music_for_Doudou.html" "/ssh:chaol@hats.princeton.edu" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Archive/Research/Mica.org" "~/Dropbox/Org/org/Archive/Necbl.org" "~/Dropbox/Org/org/Archive/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Culture/PU-MieJueShiTai.org" "~/Dropbox/Org/org/Culture/YuShan.org" "~/Dropbox/Org/org/History/No.CHN.After.Song.org" "~/Dropbox/Org/org/Physics/PU-MieJueShiTai.org" "~/Dropbox/Org/org/Physics/PKU-PHYNotes-Proverb.org" "~/Dropbox/Org/org/Physics/PKU-PHYNotes-Proverb (LCH-X61's conflicted copy 2011-03-01).org" "~/Dropbox/Org/org/Research/Laser.Startup.org" "~/Dropbox/Org/org/Research/Mica.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/Career.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  nil
+  "PURECN"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  169
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Music/PURECN/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/Research.org"
+  "Research.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  298
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/iPrv.org"
+  "iPrv.org"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  292
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example4.py"
+  "example4.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
+  305
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "120217_PU"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  2640
+  '(nil nil)
+  t
+  '("/Volumes/DATA/Private/Photography/120217_PU/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example3.py"
+  "example3.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
+  87
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example2.py"
+  "example2.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
+  11
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "python"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  130
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/python/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example1.py"
+  "example1.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
+  244
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/test.py"
+  "test.py"
+  'python-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
+  253
+  '(nil nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "public_html"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  3037
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/public_html/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "org"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  3214
+  '(886 nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/org/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "image"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  1042
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/public_html/image/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/public_html/image/DD3.png"
+  "DD3.png"
+  'image-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/public_html/image/DD2.png"
+  "DD2.png"
+  'image-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
+
+(desktop-create-buffer 206
+  nil
+  "LooChao"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  573
+  '(350 nil)
+  t
+  '("/Users/LooChao/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "iResearch"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  492
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/org/iResearch/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "data"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  107
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/org/data/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Emacs"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  113
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/org/data/Emacs/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "Beamer-Example-PUAPC523"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  139
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/Org/org/data/Emacs/Beamer-Example-PUAPC523/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/Org/org/Music_for_Doudou.html"
+  "Music_for_Doudou.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/Unix.html"
+  "Unix.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/USLife.html"
+  "USLife.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/Mathematics.html"
+  "Mathematics.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/Emacs.html"
+  "Emacs.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/Culture.html"
+  "Culture.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-dos)))
+
+(desktop-create-buffer 206
+  "/Volumes/DATA/Dropbox/Org/public_html/Emacs/norang-org-mode.html"
+  "norang-org-mode.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+

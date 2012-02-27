@@ -4,7 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Dropbox/Org/org/iPrv.org")
- (front-context-string . "*** 找Anatoly 讲刘川")
+ (front-context-string . "*** Matlab mode ")
  (rear-context-string . "ND:\n** TODO-#B-\n")
  (position . 10262))
 )

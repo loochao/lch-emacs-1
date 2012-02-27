@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <11/12/15 15:40:23 /Users/LooChao/Dropbox/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <12/02/18 20:48:23 /Users/LooChao/Dropbox/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -18,28 +18,6 @@
   ("gid-integer" 0)
   ("ls" "/bin/ls")
   ("ls-dired" nil))
- (["ssh" "chaol" "hats.princeton.edu" nil]
-  ("uname" "Linux 2.6.18-274.0.0.0.1.el5")
-  ("test" "test")
-  ("remote-path"
-   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
-  ("remote-shell" "/bin/sh")
-  ("~" "/u/chaol")
-  ("perl-file-spec" t)
-  ("perl-cwd-realpath" t)
-  ("perl" "\\perl")
-  ("file-exists" "test -e")
-  ("stat" "\\stat")
-  ("id" "/usr/bin/id")
-  ("uid-integer" 77296)
-  ("gid-integer" 37)
-  ("readlink" "\\readlink")
-  ("local-encoding" base64-encode-region)
-  ("local-decoding" base64-decode-region)
-  ("remote-encoding" "base64")
-  ("remote-decoding" "base64 -d -i")
-  ("inline-compress" "gzip")
-  ("inline-decompress" "gzip -d"))
  (["scp" "chaol" "hats.princeton.edu" nil]
   ("uname" "Linux 2.6.18-274.0.0.0.1.el5")
   ("test" "test")
@@ -95,26 +73,6 @@
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl"))
- (["ssh" "chaol" "sixtyfour.princeton.edu" nil]
-  ("uname" "Linux 2.6.18-274.0.0.0.1.el5")
-  ("test" "test")
-  ("remote-path"
-   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
-  ("remote-shell" "/bin/sh")
-  ("stat" "\\stat")
-  ("file-exists" "test -e")
-  ("id" "/usr/bin/id")
-  ("gid-integer" 37)
-  ("perl-file-spec" t)
-  ("perl-cwd-realpath" t)
-  ("perl" "\\perl")
-  ("readlink" "\\readlink")
-  ("local-encoding" base64-encode-region)
-  ("local-decoding" base64-decode-region)
-  ("remote-encoding" "base64")
-  ("remote-decoding" "base64 -d -i")
-  ("inline-compress" "gzip")
-  ("inline-decompress" "gzip -d"))
  (["ssh" "yluo" "portal.pppl.gov" nil]
   ("uname" "Linux 2.6.18-274.el5")
   ("test" "test")
@@ -129,8 +87,6 @@
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
   ("~" "/u/yluo"))
- (["sudo" "root" "dynamic-oit-vapornet-c-3511.princeton.edu" nil]
-  nil)
  (["sudo" "root" "localhost" nil]
   ("uname" "Darwin 10.8.0")
   ("test" "test")
@@ -145,4 +101,45 @@
   ("id" "/usr/bin/id")
   ("gid-integer" 0)
   ("file-exists" "test -e")
-  ("uid-integer" 0)))
+  ("uid-integer" 0))
+ (["ssh" nil "sixtyfour.princeton.edu" nil]
+  nil)
+ (["ssh" "chaol" "sixtyfour.princeton.edu" nil]
+  ("uname" "Linux 2.6.18-274.3.1.0.1.el5")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/u/chaol")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("stat" "\\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 34))
+ (["ssh" nil "128.112.129.190" nil]
+  nil)
+ (["scpc" nil "ssh" nil]
+  nil)
+ (["ssh" "chaol" "hats.princeton.edu" nil]
+  ("uname" "Linux 2.6.18-274.3.1.0.1.el5")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("~" "/u/chaol")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("stat" "\\stat")
+  ("file-exists" "test -e")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 34)
+  ("readlink" "\\readlink")
+  ("local-encoding" base64-encode-region)
+  ("local-decoding" base64-decode-region)
+  ("remote-encoding" "base64")
+  ("remote-decoding" "base64 -d -i")
+  ("inline-compress" "gzip")
+  ("inline-decompress" "gzip -d")))
