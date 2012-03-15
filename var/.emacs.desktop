@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Feb 18 20:48:28 2012
+;; Created Mon Mar 12 19:56:10 2012
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,305 +11,173 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("music" "dropbox" "apr" "2010" "figu" "ui" "veri" "exp" "surface mor" "V E" "big" "probl" "linear" "line" "pressure" "what's"))
+(setq regexp-search-ring '("sina" "require" "simpli" "block" "boun" "go fro" "columns" "assu" "phys" "lisp" "misc" "music" "dropbox" "apr" "2010" "figu"))
 (setq register-alist nil)
-(setq file-name-history '("/ssh:chaol@hats.princeton.edu:public_html/1.mp3" "/ssh:chaol@hats.princeton.edu" "/ssh:" "/Users/LooChao/Dropbox/Org/Research.org" "/ssh:chaol@hats.princeton.edu" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example4.py" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example3.py" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example2.py" "~/Dropbox/.emacs.d/library/programming/python/example1.py" "~/Dropbox/.emacs.d/library/programming/python/example1.py" "~/Dropbox/.emacs.d/library/programming/python/test.py" "/ssh:chaol@hats.princeton.edu:public_html/Music_for_Doudou.html" "/ssh:chaol@hats.princeton.edu" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Archive/Research/Mica.org" "~/Dropbox/Org/org/Archive/Necbl.org" "~/Dropbox/Org/org/Archive/BBall.Team.Reimbursement.org" "~/Dropbox/Org/org/Culture/PU-MieJueShiTai.org" "~/Dropbox/Org/org/Culture/YuShan.org" "~/Dropbox/Org/org/History/No.CHN.After.Song.org" "~/Dropbox/Org/org/Physics/PU-MieJueShiTai.org" "~/Dropbox/Org/org/Physics/PKU-PHYNotes-Proverb.org" "~/Dropbox/Org/org/Physics/PKU-PHYNotes-Proverb (LCH-X61's conflicted copy 2011-03-01).org" "~/Dropbox/Org/org/Research/Laser.Startup.org" "~/Dropbox/Org/org/Research/Mica.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Art-Ent.org" "~/Dropbox/Org/org/Bib-Edu.org" "~/Dropbox/Org/org/Career.org"))
+(setq file-name-history '("~/Dropbox/.emacs.d/var/.bm-repository" "~/Temporary/test.html" "~/Dropbox/.emacs.d/library/programming/python/lch_python06.py" "~/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/lch_python06.py" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music_for_Doudou.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  nil
-  "PURECN"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  169
+  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help"
+  "python.help"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  3571
   '(nil nil)
-  t
-  '("/Volumes/DATA/Music/PURECN/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/Research.org"
-  "Research.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  298
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/iPrv.org"
-  "iPrv.org"
-  'org-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  292
-  '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example4.py"
-  "example4.py"
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/lch_python06.py"
+  "lch_python06.py"
   'python-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  305
+  91
   '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "120217_PU"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  2640
-  '(nil nil)
-  t
-  '("/Volumes/DATA/Private/Photography/120217_PU/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example3.py"
-  "example3.py"
-  'python-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  87
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example2.py"
-  "example2.py"
-  'python-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  11
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "python"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  130
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/python/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/example1.py"
-  "example1.py"
-  'python-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  244
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/test.py"
-  "test.py"
-  'python-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  253
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "public_html"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  3037
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Org/public_html/")
-  nil)
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
   nil
   "org"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  3214
-  '(886 nil)
+  1605
+  '(nil nil)
   t
   '("/Users/LooChao/Dropbox/Org/org/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  "image"
+  "rc"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  1042
+  108
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/Org/public_html/image/")
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
   nil)
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/public_html/image/DD3.png"
-  "DD3.png"
-  'image-mode
+  nil
+  "Temporary"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  174
+  '(nil nil)
+  t
+  '("/Users/LooChao/Temporary/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Temporary/test.html"
+  "test.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  325
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "javascript"
+  'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
   1
   '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/public_html/image/DD2.png"
-  "DD2.png"
-  'image-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . no-conversion) (truncate-lines . t)))
-
-(desktop-create-buffer 206
-  nil
-  "LooChao"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  573
-  '(350 nil)
   t
-  '("/Users/LooChao/")
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/javascript/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  "iResearch"
+  "tex"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  492
+  128
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/Org/org/iResearch/")
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/tex/")
   nil)
 
 (desktop-create-buffer 206
   nil
-  "data"
+  "org-beamer"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  140
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/tex/org-beamer/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "mathematica"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  138
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/mathematica/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "c"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  125
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/c/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "matlab"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  337
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/matlab/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "cpp"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  889
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "emacs"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  129
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/emacs/")
+  nil)
+
+(desktop-create-buffer 206
+  nil
+  "doc"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
   107
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/Org/org/data/")
+  '("/Users/LooChao/Dropbox/.emacs.d/doc/")
   nil)
-
-(desktop-create-buffer 206
-  nil
-  "Emacs"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  113
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Org/org/data/Emacs/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "Beamer-Example-PUAPC523"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  139
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/Org/org/data/Emacs/Beamer-Example-PUAPC523/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/Org/org/Music_for_Doudou.html"
-  "Music_for_Doudou.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/Unix.html"
-  "Unix.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/USLife.html"
-  "USLife.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/Mathematics.html"
-  "Mathematics.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/Emacs.html"
-  "Emacs.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/Culture.html"
-  "Culture.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-dos)))
-
-(desktop-create-buffer 206
-  "/Volumes/DATA/Dropbox/Org/public_html/Emacs/norang-org-mode.html"
-  "norang-org-mode.html"
-  'html-mode
-  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
 

@@ -1,21 +1,16 @@
 
 ;; ----- smex-history -----
 (
- org-publish
- org-export-as-html
- revert-buffer-with-coding-system
- lch-douban-delete-trailing-white-space
- lch-punctuate-buffer
- delete-trailing-spaces
+ calculator
  cd
+ lm
+ 5x5
+ afm
+ arp
+ dbx
 )
 
 ;; ----- smex-data -----
 (
- (delete-trailing-spaces . 2)
- (lch-punctuate-buffer . 1)
- (lch-douban-delete-trailing-white-space . 26)
- (revert-buffer-with-coding-system . 3)
- (org-publish . 19)
- (org-export-as-html . 3)
+ (calculator . 1)
 )

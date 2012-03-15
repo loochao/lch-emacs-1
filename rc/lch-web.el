@@ -52,12 +52,13 @@
 (defvar w3m-buffer-name (concat w3m-buffer-name-prefix "*") "Name of w3m buffer")
 (defvar w3m-bookmark-buffer-name (concat w3m-buffer-name-prefix "-bookmark*") "Name of w3m buffer")
 
-;>---- General Variable ----<;
+;; General Variable
 (setq w3m-home-page   "http://www.emacswiki.org/"         ; "http://localhost/"
       w3m-use-favicon nil
       w3m-horizontal-shift-columns        1               ; columns used when scrolling a window horizontally
       w3m-default-save-directory          "~/Downloads/"
       w3m-default-display-inline-images   t               ; always display images
+      w3m-use-cookies t
       )
 
 
@@ -88,7 +89,7 @@
 
 (setq w3m-process-modeline-format " loaded: %s")
 
-;>-- Using Tab --<;
+;; Using Tab
 (define-key w3m-mode-map (kbd "<C-tab>") 'w3m-next-buffer)
 (define-key w3m-mode-map [(control shift iso-lefttab)] 'w3m-previous-buffer)
 

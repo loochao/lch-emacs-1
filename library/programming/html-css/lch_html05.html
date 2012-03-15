@@ -1,0 +1,39 @@
+<head>
+  <script>
+    var req;
+    function geturl(s){
+    if (s.length > 1){
+    url = 'http://www.cs.princeton.edu/~bwk/phone3.cgi?'+s;
+    loadXMLDoc(url); // loads asynchronously
+    }
+    }
+
+    function loadXMLDoc(url){
+    req = new XMLHttpRequest();
+    if (req) {
+    req.onreadystatechange = processReqChange;
+    req.open("GET", url);
+    req.send(null);
+    }
+    }
+
+    function processReqChange() {
+    if (req.readyState == 4){  // completed request
+    if (req.state == 200)      // sucessful
+    show(req.responseText);    // could be responseXML
+    }
+    }
+
+    function show(s){ // show whatever came back
+    document.getElementById("place").innerHTML = s
+    }
+  </script>
+</head>
+<body>
+  <h1> unPhonebook </h1>
+  <form name=phone>
+    Type here:
+    <input type="text" id="pat" onkeyup='geturl(pat.value);'>
+  </form>
+  <pre id="place"></pre>
+</body>

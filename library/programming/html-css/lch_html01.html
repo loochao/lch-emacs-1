@@ -1,0 +1,43 @@
+<head>
+  <script>
+    function setfocus() { document.srch.q.focus(); }
+  </script>
+</head>
+
+<style type="text/css" media="all">
+  body { background: #ffe; color: #000; }
+  pre { font-weight: bold; background-color: #ffffcc; }
+  a:hover { color: #00f; font-weight: bold;
+  background-color: yellow; }
+</style>
+
+<body onload='setfocus();'>
+  <H1>Basic events on forms</H1>
+  <form name=srch
+        action="http://www.google.com/search?q="+srch.q.value>
+    <input type=text size=25
+           id=q name=q value="" onmouseover='setfocus()'>
+    <input type=button value="Google" name=but
+           onclick='window.location="http://www.google.com/search?q="+srch.q.value'>
+    <input type=button value="Wikipedia" name=but
+           onclick='window.location="http://en.wikipedia.com/wiki/"+srch.q.value'>
+    <input type=button value="Reset" onclick='srch.q.value=""' >
+  </form>
+
+  <form>
+    <input type=button value="Hit me"
+           onClick='alert("Ouch! That hurt.")'> <P>
+      <input type=text name=url size=40
+             value="http://www.princeton.edu/~chaol">
+      <input type=button value="open"
+             onClick='window.open(url.value)'> <P>
+      <input type=text name=url2 size=40 value="http://">
+      <input type=button value="load"
+             onClick='window.location=url2.value'> <P>
+      <input type=button value="color it"
+             onClick='document.bgColor=color.value'>
+      <input type=text name=color value='type a color'>
+      <input type=button value='make it white'
+             onClick='document.bgColor="white"'>
+  </form>
+

@@ -32,6 +32,44 @@
 
 ;;; Code
 (message "=> lch-elisp: loading...")
+;;; Fill-column-indicator
+(require 'fill-column-indicator)
+;;; Erc
+(global-set-key (kbd "C-z erc") (lambda () (interactive)
+                           (erc :server "irc.freenode.net" :port "6667"
+                                :nick "loochao")))
+
+(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "#erc")))
+(setq erc-interpret-mirc-color t)
+
+;; Kill buffers for channels after /part
+(setq erc-kill-buffer-on-part t)
+;; Kill buffers for private queries after quitting the server
+(setq erc-kill-queries-on-quit t)
+;; Kill buffers for server messages after quitting the server
+(setq erc-kill-server-buffer-on-quit t)
+
+;;; Twittering mode
+(require 'twittering-mode)
+
+;; Need support of gnupg
+(setq twittering-use-master-password t)
+
+(setq twittering-allow-insecure-server-cert t)
+(setq twittering-oauth-use-ssl nil)
+(setq twittering-use-ssl nil)
+
+(twittering-enable-unread-status-notifier)
+(setq-default twittering-icon-mode t)
+
+(setq twittering-initial-timeline-spec-string
+      `(;":home@sina"
+        ;":home@douban"
+        ":home@twitter"
+       ))
+
+(set-face-background twittering-zebra-1-face "gray24")
+(set-face-background twittering-zebra-2-face "gray22")
 ;;; Textmate
 ;; Works only for mac.
 (when lch-mac-p

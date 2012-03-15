@@ -1,0 +1,25 @@
+
+<head>
+  h1 { font-weight: 12pt; color: #00f; text-align: center }
+  h2,h3 { margin:0 0 14px; padding-bottom:5px; color: #666 }
+  .big { font-size: 200%; }
+  <p class=big style="color:red">
+    div { text-align: left; }
+    #princeton { color: #FF9933; font-size: 200%; }
+    .yale { color: #AA0000; font-size: 50%; }
+    p.harvard { color: 0000AA; font-size: 10% };
+</head>
+
+<script>
+  window.onload = function() {
+  var p = document.getElementsByTagName("P");
+  for (var i=0; i<p.length; i++) {
+                            p[i].onmouseover = function() {
+                            this.style.backgroundColor = "yellow";}
+                            };
+                            p[i].onmouseout = function(){
+                            this.style.backgroundColor = "white"
+                            };
+                            }
+                            }
+                            </script>
