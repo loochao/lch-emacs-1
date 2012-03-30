@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Mar 12 19:56:10 2012
+;; Created Sun Mar 25 18:56:53 2012
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,173 +11,107 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("sina" "require" "simpli" "block" "boun" "go fro" "columns" "assu" "phys" "lisp" "misc" "music" "dropbox" "apr" "2010" "figu"))
+(setq regexp-search-ring '("chao" "‘Ì«‘¹«" "‘Îå" "sina" "require" "simpli" "block" "boun" "go fro" "columns" "assu" "phys" "lisp" "misc" "music" "dropbox"))
 (setq register-alist nil)
-(setq file-name-history '("~/Dropbox/.emacs.d/var/.bm-repository" "~/Temporary/test.html" "~/Dropbox/.emacs.d/library/programming/python/lch_python06.py" "~/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help" "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/lch_python06.py" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help" "~/Dropbox/Org/org/index.org" "~/Dropbox/Org/org/iTHU.org" "~/Dropbox/Org/org/iStuff.org" "~/Dropbox/Org/org/iResearch.org" "~/Dropbox/Org/org/iPU.org" "~/Dropbox/Org/org/iLog.org" "~/Dropbox/Org/org/iDea.org" "~/Dropbox/Org/org/iDD.org" "~/Dropbox/Org/org/iCount.org" "~/Dropbox/Org/org/application.org" "~/Dropbox/Org/org/Travel.org" "~/Dropbox/Org/org/Sports.org" "~/Dropbox/Org/org/Softip.org" "~/Dropbox/Org/org/Sociology.org" "~/Dropbox/Org/org/Society.org" "~/Dropbox/Org/org/Sitemap.org" "~/Dropbox/Org/org/Science.org" "~/Dropbox/Org/org/Refile.org" "~/Dropbox/Org/org/Programming.org" "~/Dropbox/Org/org/Private.org" "~/Dropbox/Org/org/Politics.org" "~/Dropbox/Org/org/Physics.org" "~/Dropbox/Org/org/Philosophy.org" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/Org/org/Opera.org" "~/Dropbox/Org/org/Music_for_Doudou.org" "~/Dropbox/Org/org/Music.org" "~/Dropbox/Org/org/Movie.org"))
+(setq file-name-history '("~/Downloads/5.txt" "/Volumes/DATA/Dropbox/Library/Miscellaneous/TXT/Culture/History/‘ËØ‘ÑÕ‘¸ñ‘¸ñ_‘´ó‘Ã÷‘Ó¢‘ÁÐ‘´«.txt" "/Users/LooChao/‘´ó‘Ã÷‘Ó¢‘ÁÒ‘´«.txt" "~/1.txt_archive" "~/1.txt" "~/Downloads/‘´ó‘Ã÷‘Ó¢‘ÁÒ‘´«.txt" "~/Downloads/Lightroom 4/SerialsLS.txt" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html04.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/lch_html2_01.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html05.html" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html04.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/lch_html2_01.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html05.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html05.html" "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/lch_html05.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/lch_html2_01.html" "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html05.html" "~/Dropbox/.emacs.d/library/programming/html-css/lch_html04.html" "~/Dropbox/.emacs.d/var/emacs-bmk" "~/Dropbox/Org/org/iPrv.org" "/Users/LooChao/.wine/dosdevices/c:/users/LooChao/Temp/_tc/nxhtml/README.txt" "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html04.html" "~/Dropbox/.emacs.d/library/programming/html-css" "~/Downloads/\221\303 \221\304\224\252œô«Ì\311\221\312 \266\371.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/120314_As2S3_Absorption_HeNe.and.Green/As2S3_deltaN_HeNe_Green.m" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/120306_Expose.Green/ExposeGreen.m" "~/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/111209_As2S3_Aborsoption/Halogen_Direct.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/111209_As2S3_Aborsoption/Halogen_As2S3_1.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/111209_As2S3_Aborsoption/Halogen_GlassOnly.txt" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Dropbox/Research/INBOX_CHG/111209_As2S3_Aborsoption/Halogen_As2S3_1.txt"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Temporary/COS333_S10/python.help"
-  "python.help"
+  "/Volumes/DATA/Dropbox/Library/Miscellaneous/TXT/Culture/History/‘ËØ‘ÑÕ‘¸ñ‘¸ñ_‘´ó‘Ã÷‘Ó¢‘ÁÐ‘´«.txt"
+  "‘ËØ‘ÑÕ‘¸ñ‘¸ñ_‘´ó‘Ã÷‘Ó¢‘ÁÐ‘´«.txt"
   'org-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  3571
-  '(nil nil)
+  120011
+  '(98755 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines)))
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
-  "/Users/LooChao/Dropbox/.emacs.d/library/programming/python/lch_python06.py"
-  "lch_python06.py"
-  'python-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode auto-complete-mode yas/minor-mode)
-  91
-  '(nil nil)
+  "/Users/LooChao/Downloads/5.txt"
+  "5.txt"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  252
+  '(22 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+  '((buffer-file-coding-system . chinese-gbk-unix) (truncate-lines)))
 
 (desktop-create-buffer 206
   nil
-  "org"
+  "html-css"
   'dired-mode
   '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  1605
+  515
   '(nil nil)
   t
-  '("/Users/LooChao/Dropbox/Org/org/")
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/")
   nil)
 
 (desktop-create-buffer 206
+  "/Users/LooChao/Downloads/Lightroom 4/SerialsLS.txt"
+  "SerialsLS.txt"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  1
+  '(30 nil)
   nil
-  "rc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  108
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
-  nil)
+  nil
+  '((buffer-file-coding-system . utf-8-dos) (truncate-lines)))
 
 (desktop-create-buffer 206
-  nil
-  "Temporary"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  174
-  '(nil nil)
-  t
-  '("/Users/LooChao/Temporary/")
-  nil)
-
-(desktop-create-buffer 206
-  "/Users/LooChao/Temporary/test.html"
-  "test.html"
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html05.html"
+  "lch_html05.html"
   'html-mode
   '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
-  325
+  735
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "lch_html_w_figure"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  232
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/")
+  nil)
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html_w_figure/lch_html2_01.html"
+  "lch_html2_01.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  57
+  '(191 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/library/programming/html-css/lch_html04.html"
+  "lch_html04.html"
+  'html-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  511
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
 
 (desktop-create-buffer 206
-  nil
-  "javascript"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  1
+  "/Users/LooChao/1.txt_archive"
+  "1.txt_archive"
+  'org-mode
+  '(auto-fill-mode global-auto-revert-mode highlight-parentheses-mode textmate-mode outline-minor-mode flyspell-mode yas/minor-mode)
+  4698
   '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/javascript/")
-  nil)
-
-(desktop-create-buffer 206
   nil
-  "tex"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  128
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/tex/")
-  nil)
-
-(desktop-create-buffer 206
   nil
-  "org-beamer"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  140
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/tex/org-beamer/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "mathematica"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  138
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/mathematica/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "c"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  125
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/c/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "matlab"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  337
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/matlab/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "cpp"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  889
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/cpp/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "emacs"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  129
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/library/programming/emacs/")
-  nil)
-
-(desktop-create-buffer 206
-  nil
-  "doc"
-  'dired-mode
-  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
-  107
-  '(nil nil)
-  t
-  '("/Users/LooChao/Dropbox/.emacs.d/doc/")
-  nil)
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines)))
 

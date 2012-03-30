@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
- calculator
+ revert-buffer-with-coding-system
+ auto-fill-mode
  cd
  lm
  5x5
  afm
  arp
- dbx
 )
 
 ;; ----- smex-data -----
 (
- (calculator . 1)
+ (revert-buffer-with-coding-system . 2)
+ (auto-fill-mode . 1)
 )
