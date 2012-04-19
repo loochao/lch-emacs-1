@@ -1,17 +1,21 @@
 
 ;; ----- smex-history -----
 (
- revert-buffer-with-coding-system
- auto-fill-mode
+ org-mode
+ lch-copy-file-name-to-clipboard
+ whitespace-mode
+ prelude-sudo-edit
+ prelude-recentf-ido-find-file
+ eval-buffer
  cd
- lm
- 5x5
- afm
- arp
 )
 
 ;; ----- smex-data -----
 (
- (revert-buffer-with-coding-system . 2)
- (auto-fill-mode . 1)
+ (eval-buffer . 1)
+ (prelude-recentf-ido-find-file . 1)
+ (prelude-sudo-edit . 1)
+ (whitespace-mode . 1)
+ (lch-copy-file-name-to-clipboard . 1)
+ (org-mode . 2)
 )

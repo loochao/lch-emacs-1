@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <12/02/18 20:48:23 /Users/LooChao/Dropbox/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <12/04/15 15:51:26 /Users/LooChao/Dropbox/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -102,8 +102,6 @@
   ("gid-integer" 0)
   ("file-exists" "test -e")
   ("uid-integer" 0))
- (["ssh" nil "sixtyfour.princeton.edu" nil]
-  nil)
  (["ssh" "chaol" "sixtyfour.princeton.edu" nil]
   ("uname" "Linux 2.6.18-274.3.1.0.1.el5")
   ("test" "test")
@@ -118,10 +116,6 @@
   ("stat" "\\stat")
   ("id" "/usr/bin/id")
   ("gid-integer" 34))
- (["ssh" nil "128.112.129.190" nil]
-  nil)
- (["scpc" nil "ssh" nil]
-  nil)
  (["ssh" "chaol" "hats.princeton.edu" nil]
   ("uname" "Linux 2.6.18-274.3.1.0.1.el5")
   ("test" "test")

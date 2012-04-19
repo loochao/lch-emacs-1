@@ -337,6 +337,8 @@
 ;(define-key global-map (kbd "C-0") 'text-scale-normal-size)                  ;; => lch-util.el
 ;(define-key global-map (kbd "C-j") 'newline)                                 ;; => lch-init.el
 ;(define-key global-map (kbd "C-m") 'newline-and-indent)                      ;; => lch-init.el
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
 ;(define-key global-map (kbd "C-z") 'undo)
 
 (define-key global-map (kbd "C-\\") 'hippie-expand)
@@ -360,7 +362,6 @@
 ;;; Ctrl+C Map
 (define-key global-map (kbd "C-c c") 'comment-region)
 ;; (define-key global-map (kbd "C-c d") 'lch-insert-date)
-;; CAUTION
 (define-key global-map (kbd "C-6")
 		'(lambda () (interactive)
 		   (require 'lch-dired)
@@ -399,8 +400,7 @@
 
 ;(define-key global-map (kbd "C-x b") 'ibuffer)                               ;; => lch-elisp.el
 ;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)                          ;; => lch-elisp.el
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(define-key global-map (kbd "C-x C-3") 'lch-copy-file-name-to-clipboard)      ;; => lch-elisp.el
 ;(global-set-key (kbd "C-x g") 'goto-line)
 ;(define-key global-map (kbd "C-x g") 'magit-status)                          ;; => lch-elisp.el
 
@@ -414,6 +414,8 @@
 
 ;;; Ctrl Z Map
 (define-key global-map (kbd "C-z c") 'list-colors-display)
+(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)             ;; => lch-util.el
+;(define-key global-map (kbd "C-z r") 'lch-sudo-edit)                         ;; => lch-util.el
 ;;; Alt Map
 (eval-after-load 'dired
   '(progn

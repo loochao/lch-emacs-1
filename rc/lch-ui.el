@@ -244,10 +244,10 @@
 (global-highlight-parentheses-mode)
 
 ;; Get rid of all space-wasting garbage and minimize clutter
-(if (not lch-mac-p) (and (fboundp 'menu-bar-mode)   (menu-bar-mode   -1)))
+(if (not lch-mac-p) (and (fboundp 'menu-bar-mode) (menu-bar-mode   -1)))
 (and (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 ;(if lch-linux-p (and (fboundp 'tool-bar-mode)   (tool-bar-mode   -1)))
-(and (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
+(and (fboundp 'tool-bar-mode) (tool-bar-mode   -1))
 
 ;;; Line-num
 ;; vi style set num

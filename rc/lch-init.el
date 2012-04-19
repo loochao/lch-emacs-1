@@ -62,7 +62,7 @@
       completion-ignore-case t
       message-log-max t                 ; Don't truncate the message log buffer when it becomes large
       indicate-buffer-boundaries t      ; ?? visually indicate buffer boundaries and scrolling
-      inhibit-startup-message t         ; Turn off the picture startup
+      inhibit-startup-message t         ; Disable startup screen
       mark-ring-max 200                 ; # of marks kept in the mark ring.
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
       scroll-step 1                     ; Move down 1 line instead of multi.

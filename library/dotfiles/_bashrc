@@ -80,11 +80,11 @@ export MANPATH=.:$MANPATH
 #     ;;
 # esac
 
-#-- LSCOLOR --#
-export CLICOLOR=1
+
+#export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
 # use this if you are using a black background:
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+#export LSCOLORS=cxBxhxgxfxhxhxhxhxfxcx
 
 #-- Global Configuration --#
 export PAGER="less"
@@ -114,12 +114,11 @@ fi
 set -o ignoreeof         # Do not log out with <ctrl-d>
 set -o noclobber         # Do not overwrite files via '>'
 
-#-- Create aliases for commonly used commands.
-#alias ls="ls -a --color=tty"
+#-- LSCOLOR --#
 if [[ $ARCH == 'Darwin' ]]; then
-  alias ls="ls -G -v"     # -v to display chs
   # good for dark backgrounds
-  export LSCOLORS=cxfxcxdxbxegedabagacad
+  # export LSCOLORS=cxfxcxdxbxegedabagacad
+  export LSCOLORS=cxfxcxdxbxegedabagaccx
 else
   # For linux
   alias ls="ls --color=auto"
@@ -153,21 +152,28 @@ fi
 # | h   |    37 | Grey  |
 # | x   |     0 | Bkgd  |
 
+#---- Aliases ----#
+#-- Create aliases for commonly used commands.
+if [ -e ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+#alias ls="ls -a --color=tty"
+alias c="clear"
+alias e="exit"
+alias ssh="ssh -X"
+alias ..="cd .."
 alias l="ls"
 alias ll="ls -lh"
 alias la="ls -a"
 alias lal="ls -alh"
 alias ec="emacsclient"
 alias cde="cd /Volumes/DATA/Dropbox/.emacs.d"
+alias ls="ls -G -v"     # -v to display chs
 #alias emacs="emacs -nw"
 
 #-- Make the sort program behave in the traditional way.
 export LC_ALL=C
-
-#---- Aliases ----#
-if [ -e ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
 
 #---- History ----#
 # When you exit a shell, the history from that session is appended to

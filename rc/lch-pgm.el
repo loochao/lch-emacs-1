@@ -90,9 +90,6 @@
 
 (add-hook 'makefile-mode-hook 'lch-makefile-mode-hook)
 
-(provide 'lch-pgm)
-(message "~~ lch-pgm: done.")
-
 ;;; Perl
 (defalias 'perl-mode 'cperl-mode)
 
@@ -124,6 +121,10 @@
   )
 
 (add-hook 'emacs-lisp-mode-hook 'lch-emacs-lisp-mode-hook)
+
+;;; Provide
+(provide 'lch-pgm)
+(message "~~ lch-pgm: done.")
 
 ;;; Local Vars.
 ;; Local Variables:

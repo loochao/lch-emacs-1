@@ -31,6 +31,38 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
+;;; Copy filename to clipboard
+(defun lch-copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+(define-key global-map (kbd "C-x C-3") 'lch-copy-file-name-to-clipboard)
+
+;;; Delete file and buffer
+(defun lch-delete-file-and-buffer ()
+  "Kills the current buffer and deletes the file it is visiting"
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (y-or-n-p "FILE DELETE! ")
+        (progn (delete-file filename)
+               (message "Deleted file %s" filename)
+               (kill-buffer))
+        (message "DELETION Canceled")))))
+(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)
+
+;;; Sudo edit
+(defun lch-sudo-edit (&optional arg)
+  (interactive "p")
+  (if (or arg (not buffer-file-name))
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+(define-key global-map (kbd "C-z r") 'lch-sudo-edit)
 ;;; Delete the trailing Chinese space in Douban comments
 (defun lch-douban-delete-trailing-white-space ()
   (interactive)
@@ -476,7 +508,7 @@ end tell" mydir)))
         ))))
 
 
-;;; Indent/untabify/clean  buffer
+;;; Indent/untabify/clean buffer
 (defun lch-indent-buffer ()
   "Indents the entire buffer."
   (interactive)
