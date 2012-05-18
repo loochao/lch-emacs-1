@@ -35,13 +35,19 @@
 
 ;;; Super and Meta
 ;; Emacs users obviously have little need for Command and Option keys,
-;; but they do need Meta and Super
+;; but they do need Meta and Super.
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'super)
   (setq mac-option-modifier 'meta))
 
 ;;; Use Spotlight as locate in OSX
 (setq locate-command "mdfind")
+
+;;; Fix path
+;; Emacs does not always properly catch the system and user paths at
+;; launch on OS X. I rely on code lifted from Aquamacs to fix this.
+;; Cost: 1 second at launch time.
+(require 'fixpath)
 
 ;;; Define a function to setup additional path
 (defun my-add-path (path-element)

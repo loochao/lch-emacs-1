@@ -32,6 +32,7 @@
 
 ;;; Code
 (message "=> lch-elisp: loading...")
+
 ;;; Fill-column-indicator
 (require 'fill-column-indicator)
 ;;; Erc
@@ -49,35 +50,62 @@
 ;; Kill buffers for server messages after quitting the server
 (setq erc-kill-server-buffer-on-quit t)
 
+;;; Weibo
+(require 'weibo)
 ;;; Twittering mode
 (require 'twittering-mode)
 
-;; Need support of gnupg
+;; Need support of gnupg, to prevent inputting passwd every time.
 (setq twittering-use-master-password t)
 
+;; Some site like sina doesn't like SSL.
 (setq twittering-allow-insecure-server-cert t)
 (setq twittering-oauth-use-ssl nil)
 (setq twittering-use-ssl nil)
 
+;; Display unread tweets and icon.
 (twittering-enable-unread-status-notifier)
 (setq-default twittering-icon-mode t)
 
+;; Timeline open by default
 (setq twittering-initial-timeline-spec-string
-      `(;":home@sina"
+      `(":home@sina"
         ;":home@douban"
-        ":home@twitter"
+        ;":home@twitter"
        ))
 
 (set-face-background twittering-zebra-1-face "gray24")
 (set-face-background twittering-zebra-2-face "gray22")
+
+;; FIXME
+
+(define-key global-map (kbd "M-8 p")
+  'twittering-update-status-interactive)
+(define-key global-map (kbd "M-8 M-8")
+  'lch-twittering-update-status-interactive)
+(define-key global-map (kbd "M-9")
+  'lch-twittering-update-status-interactive)
+(define-key global-map (kbd "M-8 r")
+  'twittering-retweet)
+
+(defun lch-twittering-update-status-interactive ()
+  (interactive)
+  (let ((spec (twittering-current-timeline-spec)))
+    (funcall twittering-update-status-function
+             nil nil nil spec)))
+
+
+
 ;;; Textmate
 ;; Works only for mac.
 (when lch-mac-p
   (require 'textmate)
   (textmate-mode))
 
+
 ;;; Viper
 ;(setq viper-custom-file-name (convert-standard-filename "~/.emacs.d/.viper"))
+
 ;;; Windmove
 ;; use shift + arrow keys to switch between visible buffers
 (require 'windmove)
@@ -541,13 +569,6 @@
 ;; (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
 ;; (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
 ;; (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
-
-;;; AucTeX
-;(load "auctex.el" nil t t)
-;(setq TeX-auto-save t)
-;(setq-default TeX-master nil)
-;(load "preview-latex.el" nil t t)
-
 
 ;;;---- Session ----
 ;! Save a list of open files in ~/.emacs.d/session.

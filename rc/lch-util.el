@@ -31,6 +31,7 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
+
 ;;; Copy filename to clipboard
 (defun lch-copy-file-name-to-clipboard ()
   "Copy the current buffer file name to the clipboard."
@@ -43,6 +44,8 @@
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 (define-key global-map (kbd "C-x C-3") 'lch-copy-file-name-to-clipboard)
 
+
+
 ;;; Delete file and buffer
 (defun lch-delete-file-and-buffer ()
   "Kills the current buffer and deletes the file it is visiting"
@@ -56,6 +59,7 @@
         (message "DELETION Canceled")))))
 (define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)
 
+
 ;;; Sudo edit
 (defun lch-sudo-edit (&optional arg)
   (interactive "p")
@@ -121,7 +125,7 @@
           (add-to-list 'name-and-pos (cons name position))))))))
 (global-set-key (kbd "M-i") 'prelude-ido-goto-symbol)
 
-
+
 ;;; Better kill-region
 ;;  Note 'kill-region' is binded to 'C-w'
 (defadvice kill-region (before slick-cut activate compile)

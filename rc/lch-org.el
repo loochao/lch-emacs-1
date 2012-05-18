@@ -237,8 +237,6 @@
 ;; I don't want to be prompted on every code block evaluation
 (setq org-confirm-babel-evaluate nil)
 
-
-
 (setq org-refile-targets '(
                            ("iPrv.org" :level . 2)
                            ("iDea.org" :level . 2)
@@ -292,8 +290,7 @@
 ;	("C" "TODO-#C~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#C") "* %? :#C:\n%U" :prepend t)
 	;("c" "COUNT" entry (file+datetree (concat org-private-dir "/iCount.org")) "* %? \n%U" :prepend t)
 	("d" "IDEA" entry (file+olp (concat org-private-dir "/iDea.org") "IDEAs" "IDEA") "* %? \n%U" :prepend t)
-;       ("D" "DD" entry (file+olp (concat org-private-dir "/iDD.org") "DDs" "DD") "%? \n%U" :prepend t)
-	("D" "DD" entry (file+datetree (concat org-private-dir "/iDD.org")) "* %U\n%?" :prepend t)
+        ("g" "GOOD" entry (file+olp (concat org-private-dir "/iPrv.org") "GOOD" "-GOOD-") "* %? :#B:\n%U" :prepend t)
 	("i" "INBOX" entry (file+olp (concat org-private-dir "/Refile.org") "INBOXs" "INBOX") "* %? \n%U" :prepend t)
 	("n" "NOTES" entry (file+olp (concat org-private-dir "/Refile.org") "NOTEs" "NOTE") "* %? \n%U" :prepend t)
 	("q" "QUESTION" entry (file+olp (concat org-private-dir "/iPrv.org") "QUESTIONs" "QUESTION") "* %? \n%U" :prepend t)

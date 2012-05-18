@@ -42,7 +42,6 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
-
 (if lch-win32-p (add-to-list 'exec-path (concat emacs-dir "/bin/w3m")))
 ;(setq w3-default-stylesheet "~/.default.css")
 (require 'w3m)
@@ -52,7 +51,7 @@
 (defvar w3m-buffer-name (concat w3m-buffer-name-prefix "*") "Name of w3m buffer")
 (defvar w3m-bookmark-buffer-name (concat w3m-buffer-name-prefix "-bookmark*") "Name of w3m buffer")
 
-;; General Variable
+;;; General Variable
 (setq w3m-home-page   "http://www.emacswiki.org/"         ; "http://localhost/"
       w3m-use-favicon nil
       w3m-horizontal-shift-columns        1               ; columns used when scrolling a window horizontally
@@ -61,7 +60,10 @@
       w3m-use-cookies t
       )
 
+(defvar w3m-dir (concat emacs-dir "/site-lisp/w3m/") "Dir of w3m.")
+(setq w3m-icon-directory (concat w3m-dir "icons"))
 
+;;; Set browse function to be firefox
 (if lch-mac-p
     (progn
       (defun browse-url-firefox-macosx (url &optional new-window)
@@ -69,6 +71,7 @@
         (start-process (concat "open -a Firefox" url) nil "open" url))
       (setq browse-url-browser-function 'browse-url-firefox-macosx)))
 
+;;; Proxy
 ;; proxy settings example, just uncomment to use.
 ;; (when (string= (upcase (system-name)) "PC3701")
 ;;   (eval-after-load "w3m"
@@ -78,7 +81,7 @@
 ;;                                         ; FIXME https_proxy for HTTPS support
 ;;   (setq w3m-no-proxy-domains '("local.com" "sysdoc")))
 
-
+;;; Arguments
 (setq w3m-command-arguments '("-cookie" "-F")
       ;; w3m-command-arguments
       ;;       (append w3m-command-arguments
@@ -87,9 +90,10 @@
       ;;       w3m-no-proxy-domains '(".edu.cn,166.111.,162.105.,net9.org"))
         )
 
+;;; Modeline
 (setq w3m-process-modeline-format " loaded: %s")
 
-;; Using Tab
+;;; Tab
 (define-key w3m-mode-map (kbd "<C-tab>") 'w3m-next-buffer)
 (define-key w3m-mode-map [(control shift iso-lefttab)] 'w3m-previous-buffer)
 
@@ -100,9 +104,7 @@
 (define-key w3m-mode-map (kbd "C-t") 'w3m-new-tab)
 (define-key w3m-mode-map (kbd "C-w") 'w3m-delete-buffer)
 
-(defvar w3m-dir (concat emacs-dir "/site-lisp/w3m/") "Dir of w3m.")
-(setq w3m-icon-directory (concat w3m-dir "icons"))
-
+;;; Utils
 (defun lch-switch-to-w3m ()
   "Switch to an existing w3m buffer or look at bookmarks."
   (interactive)
@@ -140,32 +142,36 @@
   (w3m-browse-url mylocation)
   ))
 
+;;; Bindings
 (defun lch-w3m-mode-hook ()
   (define-key w3m-mode-map (kbd "t") '(lambda() (interactive) (w3m-new-tab) (lch-w3m-goto-url)))
   (define-key w3m-mode-map (kbd "C-t") 'w3m-new-tab)
-;  (define-key w3m-mode-map (kbd "g") 'lch-w3m-goto-location)
-  (define-key w3m-mode-map (kbd "w") 'w3m-view-previous-page)
-  (define-key w3m-mode-map (kbd "e") 'w3m-view-next-page)
   (define-key w3m-mode-map (kbd "[") 'w3m-view-previous-page)
   (define-key w3m-mode-map (kbd "]") 'w3m-view-next-page)
   (define-key w3m-mode-map (kbd "p") 'w3m-previous-buffer)
   (define-key w3m-mode-map (kbd "n") 'w3m-next-buffer)
+  (define-key w3m-mode-map (kbd "^") 'w3m-view-parent-page)
   (define-key w3m-mode-map (kbd "d") 'w3m-delete-buffer)
   (define-key w3m-mode-map (kbd "B") '(lambda() (interactive) (w3m-new-tab) (w3m-bookmark-view)))
   (define-key w3m-mode-map (kbd "H") 'w3m-history)
   (define-key w3m-mode-map (kbd "o") 'w3m-goto-url)
   (define-key w3m-mode-map (kbd "O") 'w3m-goto-url-new-session)
+  (define-key w3m-mode-map (kbd "s") 'w3m-search)
   (define-key w3m-mode-map (kbd "<up>") 'previous-line)
   (define-key w3m-mode-map (kbd "<down>") 'next-line)
   (define-key w3m-mode-map (kbd "<left>") 'backward-char)
   (define-key w3m-mode-map (kbd "<right>") 'forward-char)
   (define-key w3m-mode-map (kbd "<tab>") 'w3m-next-anchor)
+  (define-key w3m-mode-map (kbd "}") 'w3m-next-image)
+  (define-key w3m-mode-map (kbd "{") 'w3m-previous-image)
+  (define-key w3m-mode-map (kbd ">") 'scroll-left)
+  (define-key w3m-mode-map (kbd "<") 'scroll-right)
+  (define-key w3m-mode-map (kbd "\\") 'w3m-view-source)
+  (define-key w3m-mode-map (kbd "=") 'w3m-view-header)
+  (define-key w3m-mode-map (kbd "C-<return>") 'w3m-view-this-url-new-session)
+  ;FIXME(define-key w3m-mode-map (kbd "<C-mouse-1>") 'w3m-view-this-url-new-session)
   (setq truncate-lines nil))
 (add-hook 'w3m-mode-hook 'lch-w3m-mode-hook)
-
-;>---- Cookie Variables ----<;
-;; enable cookies (to use sites such as Gmail)
-(setq w3m-use-cookies t)
 
 ;; functions for cookie processing
 (when (require 'w3m-cookie)
@@ -178,8 +184,6 @@
 	  "yahoo.com" ".yahoo.com"
 	  "groups.yahoo.com"
 	  )))
-
-
 
 ;; FIXME toggle a minor mode showing link numbers
 ;; (when (require 'w3m-lnum)
@@ -199,10 +203,26 @@
 ;;   ;; enable link numbering mode by default
 ;;   (add-hook 'w3m-mode-hook 'w3m-link-numbering-mode))
 
-;>---- wget ----<;
+
+;;; Delicious
+;; FIXME
+(defun lch-delicious-url ()
+  "Post either the url under point or the url of the current w3m page to delicious."
+  (interactive)
+  (let ((w3m-async-exec nil))
+    (if (thing-at-point-url-at-point)
+        (unless (eq (current-buffer) (w3m-alive-p))
+          (w3m-goto-url (thing-at-point-url-at-point))))
+    (w3m-goto-url
+     (concat "http://del.icio.us/loochao?"
+             "url="    (w3m-url-encode-string w3m-current-url)
+             "&title=" (w3m-url-encode-string w3m-current-title)))))
+(define-key global-map (kbd "<f1> d") 'lch-delicious-url)
+
+;;; Wget
 (setq wget-download-directory "~/Downloads")
 
-;>---- Search ----<;
+;;; Search
 (when (require 'w3m-search)
   (define-key global-map (kbd "<f3> s") 'w3m-search)
   (add-to-list 'w3m-search-engine-alist

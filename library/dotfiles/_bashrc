@@ -1,5 +1,13 @@
 #-*- coding:utf-8; mode:sh -*-
 
+# echo ""
+# echo -n "Welcome to Unix on Mac OS X, "; whoami
+# echo ""
+# echo -n "Today is "; date "+%m-%d-%Y %H:%M:%S"
+# echo ""
+echo -n "Uptime: "; uptime
+echo ""
+
 #========== BASH ========#
 #---- Possible Variables ----#
 # MANPATH=
@@ -181,11 +189,13 @@ export LC_ALL=C
 # sessions (weird that this is not enabled by default).
 shopt -s histappend
 
-export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*:history*"
 # remove duplicates from the history (when a new item is added)
 export HISTCONTROL=erasedups
 # increase the default size from only 1,000 items
 export HISTSIZE=10000
+export HISTFILESIZE=1000000
+#export HISTTIMEFORMAT='%b %d %I:%M %p '                 #Display time when that cmd used.
 
 #---- Bash Completion, if available ----#
 if [ -f /usr/local/etc/bash_completion ]; then

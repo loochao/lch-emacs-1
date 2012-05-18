@@ -44,6 +44,7 @@
 
 (define-key global-map (kbd "<f1> <f1>") 'shell)
 ;(define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)                   ;; => lch-util.el
+;(define-key global-map (kbd "<f1> d") 'lch-delicious-url)                    ;; => lch-web.el
 (define-key global-map (kbd "<f1> e") 'erase-buffer)
 (define-key global-map (kbd "<f1> f") 'fill-region)
 ;(define-key global-map (kbd "<f1> g") 'magit-status)                         ;; => lch-elisp.el
@@ -66,8 +67,8 @@
 (define-key global-map (kbd "<f2> o") 'org-mode)
 (define-key global-map (kbd "<f2> O") 'outline-minor-mode)
 (define-key global-map (kbd "<f2> s") 'flyspell-mode)
+(define-key global-map (kbd "<f2> t") 'twittering-mode)
 (define-key global-map (kbd "<f2> w") 'whitespace-mode)
-
 
 ;;; F3
 ;(define-key global-map (kbd "<f3>") ')

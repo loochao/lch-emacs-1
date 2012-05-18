@@ -1,4 +1,4 @@
-NAME=loochao-cheat-sheet
+NAME=lch-emacs-cheat-sheet
 SOURCE=$(NAME).tex
 
 pdf: $(SOURCE)

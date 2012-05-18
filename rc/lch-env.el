@@ -134,6 +134,9 @@
 (define-prefix-command 'm-k-map)
 (define-key global-map (kbd "M-k") 'm-k-map)
 
+(define-prefix-command 'm-8-map)
+(define-key global-map (kbd "M-8") 'm-8-map)
+
 (define-prefix-command 'f1-map)
 (define-key global-map (kbd "<f1>") 'f1-map)
 

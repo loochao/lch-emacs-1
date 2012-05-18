@@ -37,14 +37,22 @@
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
+;; Defensive hack to find latex in case the PATH environment variable
+;; was not correctly altered at TeX Live installation. Contributed by
+;; Rodney Sparapani <rsparapa@mcw.edu>.
+(require 'executable)
+(if (and (not (executable-find "latex")) (file-exists-p "/usr/texbin"))
+    (setq LaTeX-command-style
+	  '(("" "/usr/texbin/%(PDF)%(latex) %S%(PDFout)"))))
+
+;(setq TeX-auto-save t)
+;(setq TeX-parse-self t)
 
 (setq-default TeX-master nil)
-
+
 ;;; Pdflatex
 (setq TeX-PDF-mode t)
-
+
 ;;; Viewer
 (setq TeX-view-program-selection
       '((output-dvi "DVI Viewer")
