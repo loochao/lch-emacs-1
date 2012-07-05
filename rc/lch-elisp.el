@@ -91,10 +91,9 @@
 (defun lch-twittering-update-status-interactive ()
   (interactive)
   (let ((spec (twittering-current-timeline-spec)))
+    (save-excursion
     (funcall twittering-update-status-function
-             nil nil nil spec)))
-
-
+             nil nil nil spec))))
 
 ;;; Textmate
 ;; Works only for mac.
@@ -563,12 +562,9 @@
 
 
 ;;; Matlab
-;; FIXME
-;; (load-library "matlab-load")
-;; ;(matlab-cedet-setup)
-;; (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
-;; (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
-;; (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
+(autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
+(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
+(autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 
 ;;;---- Session ----
 ;! Save a list of open files in ~/.emacs.d/session.
@@ -729,5 +725,6 @@
 ;;; Local Vars.
 ;; Local Variables:
 ;; mode: emacs-lisp
+;; mode: outline-minor
 ;; outline-regexp: ";;;;* "
 ;; End:

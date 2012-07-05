@@ -132,7 +132,7 @@
     (w3m-new-tab)
     (call-interactively 'w3m-goto-url)
     ))
-(define-key global-map (kbd "C-c C-f") 'lch-switch-to-w3m-goto-url)
+(define-key global-map (kbd "C-z C-f") 'lch-switch-to-w3m-goto-url)
 (define-key global-map (kbd "<f3> <f3>") 'lch-switch-to-w3m-goto-url)
 
 (defun lch-w3m-goto-location ()

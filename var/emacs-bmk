@@ -3,8 +3,8 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/Dropbox/Org/org/Refile.org")
- (front-context-string . "*** Schaum's out")
- (rear-context-string . "N\n* BIBs\n** BIB\n")
- (position . 710))
+ (filename . "~/Dropbox/Org/org/iPrv.org")
+ (front-context-string . "*** 要把金针度于人入BD  ")
+ (rear-context-string . "ND:\n** TODO-#B-\n")
+ (position . 8877))
 )

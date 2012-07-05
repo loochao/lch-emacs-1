@@ -206,7 +206,6 @@
 
 
 ;;; F10
-
 ;; Find file & dir map.
 ;; File in emacs.d/rc has the initial letter as its invoker.
 (define-key global-map (kbd "<f10> 1") (lambda() (interactive) (dired (concat emacs-dir "/rc"))))
@@ -333,6 +332,11 @@
 
 
 ;;; Ctrl Map
+(define-key global-map (kbd "C-6")
+  '(lambda () (interactive)
+     (require 'lch-dired)
+     (call-interactively 'dired-jump)))
+
 ;(define-key global-map (kbd "C-=") 'text-scale-increase)                     ;; => lch-util.el
 ;(define-key global-map (kbd "C--") 'text-scale-decrease)                     ;; => lch-util.el
 ;(define-key global-map (kbd "C-0") 'text-scale-normal-size)                  ;; => lch-util.el
@@ -361,40 +365,7 @@
 
 
 ;;; Ctrl+C Map
-(define-key global-map (kbd "C-c c") 'comment-region)
-;; (define-key global-map (kbd "C-c d") 'lch-insert-date)
-(define-key global-map (kbd "C-6")
-		'(lambda () (interactive)
-		   (require 'lch-dired)
-		   (call-interactively 'dired-jump)))
-
-(define-key global-map (kbd "C-c e") 'eval-buffer)
-(define-key global-map (kbd "C-c f") 'find-dired)
-;; (define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
-(define-key global-map (kbd "C-c g") 'grep-find)
-;; (define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
-;; (define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)           ;; => lch-util.el
-;; (global-set-key (kbd "C-c o") 'lch-open-with)                                ;; => lch-util.el
-;; C-c p => process                                                             ;; => lch-util.el
-;; (define-key global-map (kbd "C-c r") 'lch-recentf-ido-find-file)             ;; => lch-util.el
-;; (define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)             ;; => lch-util.el
-(define-key global-map (kbd "C-c u") 'uncomment-region)
-(define-key global-map (kbd "C-c v") 'view-mode)
-(setq view-mode-hook
-      (lambda ()
-        (define-key view-mode-map "h" 'backward-char)
-        (define-key view-mode-map "l" 'forward-char)
-        (define-key view-mode-map "j" 'next-line)
-        (define-key view-mode-map "k" 'previous-line)
-	(define-key view-mode-map "q" 'bury-buffer)
-	(define-key view-mode-map "u" 'view-scroll-page-backward)
-	))
-
-;(define-key global-map (kbd "C-c w") 'ywb-favorite-window-config)           ;; => lch-util.el
-;(global-set-key (kbd "C-c -") 'gse-underline-previous-line)                 ;; => lch-util.el
-;(global-set-key (kbd "C-c _") 'gse-underline-previous-line)                 ;; => lch-util.el
-(define-key global-map (kbd "C-c $") 'toggle-truncate-lines)
-
+;; Reserved for mode-specific commands (both user-defined and standard Emacs extensions)
 
 ;;; Ctrl X Map
 ;C-x f ffap
@@ -414,9 +385,38 @@
 
 
 ;;; Ctrl Z Map
-(define-key global-map (kbd "C-z c") 'list-colors-display)
-(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)             ;; => lch-util.el
+(define-key global-map (kbd "C-z c") 'comment-region)
+(define-key global-map (kbd "C-z C-c") 'list-colors-display)
+;; (define-key global-map (kbd "C-z d") 'lch-insert-date)
+(define-key global-map (kbd "C-z e") 'eval-buffer)
+(define-key global-map (kbd "C-z f") 'find-dired)
+;; (define-key global-map (kbd "C-z C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
+(define-key global-map (kbd "C-z g") 'grep-find)
+(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)               ;; => lch-util.el
+;; (define-key global-map (kbd "C-z n") 'nuke-some-buffers)                     ;; => lch-util.el
+;; (define-key global-map (kbd "C-z i") 'lch-indent-region-or-buffer)           ;; => lch-util.el
+;; (global-set-key (kbd "C-z o") 'lch-open-with)                                ;; => lch-util.el
+;; C-z p => process                                                             ;; => lch-util.el
+;; (define-key global-map (kbd "C-z r") 'lch-recentf-ido-find-file)             ;; => lch-util.el
 ;(define-key global-map (kbd "C-z r") 'lch-sudo-edit)                         ;; => lch-util.el
+;; (define-key global-map (kbd "C-z s") 'ywb-create/switch-scratch)             ;; => lch-util.el
+(define-key global-map (kbd "C-z u") 'uncomment-region)
+(define-key global-map (kbd "C-z v") 'view-mode)
+(setq view-mode-hook
+      (lambda ()
+        (define-key view-mode-map "h" 'backward-char)
+        (define-key view-mode-map "l" 'forward-char)
+        (define-key view-mode-map "j" 'next-line)
+        (define-key view-mode-map "k" 'previous-line)
+	(define-key view-mode-map "q" 'bury-buffer)
+	(define-key view-mode-map "u" 'view-scroll-page-backward)
+	))
+
+                                        ;(define-key global-map (kbd "C-z w") 'ywb-favorite-window-config)           ;; => lch-util.el
+                                        ;(global-set-key (kbd "C-z -") 'gse-underline-previous-line)                 ;; => lch-util.el
+                                        ;(global-set-key (kbd "C-z _") 'gse-underline-previous-line)                 ;; => lch-util.el
+(define-key global-map (kbd "C-z $") 'toggle-truncate-lines)
+
 ;;; Alt Map
 (eval-after-load 'dired
   '(progn

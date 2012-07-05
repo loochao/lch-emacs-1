@@ -410,6 +410,12 @@
 (setq grep-find-command "find . -type f ! -regex \".*/\\({arch}\\|\\.arch-ids\\|\\.svn\\|_darcs\\|\\.bzr\\|\\.git\\|\\.hg\\)/.*\" -print0 | xargs -0 grep -nH -e ")
 
 
+;;; Set non-file buffer based on buffer name
+(setq-default major-mode (lambda ()
+                           (if buffer-file-name
+                               (fundamental-mode))
+                           (let ((buffer-file-name (buffer-name))))
+                           (set-auto-mode)))
 ;;; Auto save files in one place
 ;- Put autosave files (i.e. #foo#) in one place, *NOT*
 ;; scattered all over the file system!

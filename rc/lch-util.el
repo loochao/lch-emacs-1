@@ -146,7 +146,7 @@ file of a buffer in an external program."
                       (read-shell-command "Open current file with: "))
                     " "
                     buffer-file-name))))
-(global-set-key (kbd "C-c o") 'lch-open-with)
+(global-set-key (kbd "C-z o") 'lch-open-with)
 
 ;;; Underline prev line.
 (defun gse-underline-previous-line ()
@@ -261,7 +261,7 @@ file of a buffer in an external program."
   (or shell-command-history (error "Nothing to repeat."))
   (shell-command (car shell-command-history)))
 
-(global-set-key (kbd "C-c j") 'repeat-shell-command)
+(global-set-key (kbd "C-z j") 'repeat-shell-command)
 
 ;;; Shift a line up or down
 (defun move-line (n)
@@ -347,7 +347,7 @@ time."
                       ((equal prefix '(4)) "%Y-%m-%d %a")
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format (current-time)))))
-(define-key global-map (kbd "C-c d") 'lch-insert-date)
+(define-key global-map (kbd "C-z d") 'lch-insert-date)
 
 ;;; lch-search
 (defun lch-search ()
@@ -530,7 +530,7 @@ end tell" mydir)))
         (lch-indent-buffer)
         (message "Indented buffer.")))))
 
-(define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)
+(define-key global-map (kbd "C-z i") 'lch-indent-region-or-buffer)
 
 (defun lch-untabify-buffer ()
   "Convert all tabs in buffer with multiple spaces, preserving columns."
@@ -570,7 +570,7 @@ end tell" mydir)))
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
-(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
+(global-set-key (kbd "C-z k") 'delete-this-buffer-and-file)
 
 ;;; insert a time stamp string
 (defun lch-insert-time-stamp ()
@@ -681,7 +681,7 @@ end tell" mydir)))
     (if buf (save-selected-window
               (pop-to-buffer buf))))
   (call-interactively 'his-transpose-windows))
-(define-key global-map (kbd "C-c w") 'ywb-favorite-window-config)
+(define-key global-map (kbd "C-z w") 'ywb-favorite-window-config)
 
 ;;; Transpose(Interchange) Two Windows
 ;;;###autoload
@@ -712,7 +712,7 @@ end tell" mydir)))
     (switch-to-buffer (get-buffer-create "*scratch*"))
     (when (null buf)
       (lisp-interaction-mode))))
-(define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)
+(define-key global-map (kbd "C-z s") 'ywb-create/switch-scratch)
 
 ;;; Alt+F4 closes the frame (Win32 ONLY)
 (defun close-frame ()
@@ -739,7 +739,7 @@ the frame title bar."
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;;; Go-to-char
-;; C-c a x goto x, then press x to go to next 'x'
+;; C-z a x goto x, then press x to go to next 'x'
 (defun lch-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
 Typing `lch-go-to-char-key' again will move forwad to the next Nth
@@ -775,7 +775,7 @@ LIST defaults to all existing live buffers."
                    (kill-buffer buffer))
              (kill-buffer buffer))))
     (setq list (cdr list))))
-(define-key global-map (kbd "C-c n") 'nuke-some-buffers)
+(define-key global-map (kbd "C-z n") 'nuke-some-buffers)
 
 ;;; Auto scroll
 (defvar my-scroll-auto-timer nil)
@@ -804,7 +804,7 @@ With C-u, C-0 or M-0, cancel the timer."
 
 
 ;;; Process
-(define-key global-map (kbd "C-c p")
+(define-key global-map (kbd "C-z p")
   (lambda () (interactive)
     (let* ((n "*top*")
            (b (get-buffer n)))

@@ -9,11 +9,8 @@
 
 ;; This file is not part of GNU Emacs.
 
-;;; Commentary:
-
-;; commentary
-
-;;; License:
+;;; Commentary
+;;; License
 
 ;; This program is free software; you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License
@@ -73,6 +70,7 @@
 
 (setq org-use-fast-todo-selection t)
 (setq org-todo-keywords '((sequence "QUEUE(q)" "ACTIVE(a)" "PENDING(p@/!)" "|" "DONE(d@/!)" "CANCELLED(c@/!)")
+                          (sequence "TOFNSH(t)" "|" "DONE")
 			  (sequence "INVOICE(i)" "SENT(n)" "|" "RCVD(r)")
 			  (sequence "PROJECT(P)" "|" "DONE(d)")
 			  (type "APPT(a)")
@@ -86,6 +84,7 @@
 (setq org-todo-keyword-faces '(
 		       ("QUEUE" :foreground "Lavender" :weight bold)
 		       ("ACTIVE" :foreground "Cyan" :weight bold)
+		       ("TOFNSH" :foreground "PINK" :weight bold)
 		       ("DONE" :foreground "PeachPuff2" :weight bold)
 		      ;("WAITING" :foreground "medium blue" :weight bold)
 		       ("APPT" :foreground "medium blue" :weight bold)
