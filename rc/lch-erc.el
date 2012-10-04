@@ -141,6 +141,8 @@ that can occur between two notifications.  The default is
   (interactive)
   (when (y-or-n-p "Do you want to start IRC? ")
     (erc :server "irc.freenode.net" :port 6667 :nick erc-nick)))
+(define-key global-map (kbd "<f2> e") 'start-irc)
+(define-key global-map (kbd "<f3> e") 'start-irc)
 
 (defun filter-server-buffers ()
   (delq nil

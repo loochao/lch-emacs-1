@@ -40,20 +40,21 @@
 ;(define-key global-map (kbd "M-n") 'pager-page-down)
 ;(define-key global-map (kbd "M-p") 'pager-page-up)
 
-;;; F1
-
-(define-key global-map (kbd "<f1> <f1>") 'shell)
-;(define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)                   ;; => lch-util.el
-;(define-key global-map (kbd "<f1> d") 'lch-delicious-url)                    ;; => lch-web.el
+;;; F1: (command-map)
+;; (define-key global-map (kbd "<f1> <f1>") 'shell)
+;; (define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)                   ;; => lch-util.el
+;; (define-key global-map (kbd "<f1> d") 'lch-delicious-url)                    ;; => lch-web.el
 (define-key global-map (kbd "<f1> e") 'erase-buffer)
 (define-key global-map (kbd "<f1> f") 'fill-region)
-;(define-key global-map (kbd "<f1> g") 'magit-status)                         ;; => lch-elisp.el
-;(define-key global-map (kbd "<f1> C-m") 'dictionary-match-words)             ;; => lch-elisp.el
-(define-key global-map (kbd "<f1> r") 'revert-buffer)
-(define-key global-map (kbd "<f1> s") 'dictionary-search)
-; (<f1> p 'process)                                                           ;; => lch-util.el
+;; (define-key global-map (kbd "<f1> g") 'magit-status)                         ;; => lch-elisp.el
+(define-key global-map (kbd "<f1> i") 'indent-region)
+;; (define-key global-map (kbd "<f1> C-m") 'dictionary-match-words)             ;; => lch-elisp.el
+(define-key global-map (kbd "<f1> p") 'print-buffer)
+(define-key global-map (kbd "<f1> r") 'repeat-complex-command)
+;; (define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)           ;; => lch-util.el
 
-;;; F2
+;;; F2: (mode-map)
+;(define-key global-map (kbd "<f2> <f2>") 'goto-last-change)                  ;; => lch-elisp.el
 ;(define-key global-map (kbd "C-<f2>") 'ediff)
 ;(define-key global-map (kbd "S-<f2>") 'eshell)
 ;(define-key global-map (kbd "C-S-<f2>") 'cmd-shell)                          ;; => lch-util.el
@@ -62,6 +63,7 @@
 
 (define-key global-map (kbd "<f2> c") 'calendar)
 (define-key global-map (kbd "<f2> d") 'dired)
+;(define-key global-map (kbd "<f2> e") 'start-irc)                            ;; => lch-erc.el
 (define-key global-map (kbd "<f2> f") 'auto-fill-mode)
 (define-key global-map (kbd "<f2> l") 'lisp-mode)
 (define-key global-map (kbd "<f2> o") 'org-mode)
@@ -70,83 +72,65 @@
 (define-key global-map (kbd "<f2> t") 'twittering-mode)
 (define-key global-map (kbd "<f2> w") 'whitespace-mode)
 
-;;; F3
+;;; F3: (network-map)
 ;(define-key global-map (kbd "<f3>") ')
 ;(define-key global-map (kbd "<C-f3>") 'joc-dired-magic-buffer)
 ;(define-key global-map (kbd "<M-f3>") 'joc-dired-toggle-buffer-name)
 
 ;(define-key global-map (kbd "<f3> <f3>") 'lch-w3m-go)                        ;; => lch-w3m.el
 ;(define-key global-map (kbd "<f3> s") 'w3m-search)                           ;; => lch-w3m.el
-(define-key global-map (kbd "<f3> t") 'w3m-goto-url-new-session)
-(define-key global-map (kbd "<f3> o") 'w3m-goto-url)
-(define-key global-map (kbd "<f3> y") 'w3m-print-this-url)
-(define-key global-map (kbd "<f3> l") 'w3m-print-current-url)
+(define-key global-map (kbd "<f3> b")
+  (lambda() (interactive) (w3m-new-tab) (w3m-bookmark-view)))
 
 
-;;; F4
-;(define-key global-map (kbd "M-<f4>") 'close-frame)                          ;; => lch-util.el
-;> Binding to Namespace (Such as Org, w3m...)
-;(define-key global-map (kbd "<f4> <f4>") 'lch-open-file-browser)                ;; => lch-util.el
-
-;; Org
-(define-key global-map (kbd "<f4> o a") 'org-agenda-list)
-(define-key global-map (kbd "<f4> o d") 'org-deadline)
-(define-key global-map (kbd "<f4> o i") 'org-toggle-iimage-in-org)
-(define-key global-map (kbd "<f4> o j") 'org-journal-entry)
-(define-key global-map (kbd "<f4> o p") 'org-insert-property-drawer)
-(define-key global-map (kbd "<f4> o r") 'org-remember)
-(define-key global-map (kbd "<f4> o s") 'org-schedule)
-(define-key global-map (kbd "<f4> o t") 'org-todo-list)
-;(if lch-win32-p                                                              ;; => lch-util.el
-;(define-key global-map (kbd "<f4>-<f4>") 'locate-current-file-in-explorer))
-
-
-;;; F5
-;> Skeleton related stuff
-;(define-key global-map (kbd "<f5> c") 'org-center-skeleton)                  ;; => lch-skeleton.el
-;(define-key global-map (kbd "<f5> e") 'org-example-skeleton)                 ;; => lch-skeleton.el
-;(define-key global-map (kbd "<f5> h") 'org-head-skeleton)                    ;; => lch-skeleton.el
-;(define-key global-map (kbd "<f5> i") 'org-image-skeleton)                   ;; => lch-skeleton.el
-;(define-key global-map (kbd "<f5> s l") 'org-src-lisp-skeleton)              ;; => lch-skeleton.el
-
-;; (define-key global-map (kbd "C-c C-b") 'switch-to-bookmark)
-
-;; (define-key global-map (kbd "<f5> <f5>") 'list-bookmarks)
-;; (define-key global-map (kbd "S-<f5>") 'bookmark-set)
-;; (define-key global-map (kbd "C-<f5>") 'switch-to-bookmark)
-
+;;; F4:
+;; (define-key global-map (kbd "M-<f4>") 'close-frame)                          ;; => lch-util.el
+;; (define-key global-map (kbd "<f4> <f4>") 'lch-open-file-browser)                ;; => lch-util.el
 
 
 
-;;; F6
+;;; F5: (bookmark-and-onekey-map)
+;; (global-set-key (kbd "<f5> <f5>") 'bm-toggle)                              ;; => lch-elisp.el
+;; (global-set-key (kbd "<f5> <f6>") 'bm-next)                                ;; => lch-elisp.el
+;; (global-set-key (kbd "<f5> <f4>") 'bm-previous)                            ;; => lch-elisp.el
+;; (global-set-key (kbd "M-<f5>") 'bm-previous)                               ;; => lch-elisp.el
+;; (global-set-key (kbd "C-<f5>") 'bm-next)                                   ;; => lch-elisp.el
+
+;; (define-key global-map (kbd "<f5> a") 'bookmark-set)                       ;; => lch-bmk.el (a: add)
+;; (define-key global-map (kbd "<f5> b") 'list-bookmarks)                     ;; => lch-bmk.el
+;; (define-key global-map (kbd "<f5> e") 'one-key-menu-emms)                  ;; => lch-emms.el
+;; (define-key global-map (kbd "<f5> j") 'switch-to-bookmark)                 ;; => lch-bmk.el (j: jump)
+;; (define-key global-map (kbd "<f5> s") 'one-key-menu-skeleton)              ;; => lch-skeleton.el
+;; (define-key global-map (kbd "<f5> o") 'one-key-menu-org-export)            ;; => lch-org-export.el
+
+
+;;; F6: (org-publish-map)
 ;(define-key global-map (kbd "<f6> e") 'org-export-as-html)                   ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> o") 'org-publish)                          ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> p") 'lch-org-publish-org)                  ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> P") 'lch-org-publish-prv)                  ;; => lch-org.el
 ;(define-key global-map (kbd "<f6> w") 'lch-org-publish-worg)                 ;; => lch-org.el
-
 
-;;; F7
+;;; F7: (skeleton-map)
+;; (define-key global-map (kbd "<f7> <f7>") 'dictionary-search)                 ;; => lch-dict.el
 
-;(define-key global-map (kbd "C-0") 'org-capture)                             ;; => lch-org.el
-;<f7> i 'org-capture --> INBOX                                                ;; => lch-org.el
-
+;; F7: skeleton-map
+;; (define-key global-map (kbd "<f7> c") 'org-center-skeleton)                  ;; => lch-skeleton.el
+;; (define-key global-map (kbd "<f7> e") 'org-example-skeleton)                 ;; => lch-skeleton.el
+;; (define-key global-map (kbd "<f7> h") 'org-head-skeleton)                    ;; => lch-skeleton.el
+;; (define-key global-map (kbd "<f7> i") 'org-image-skeleton)                   ;; => lch-skeleton.el
+;; (define-key global-map (kbd "<f7> s l") 'org-src-lisp-skeleton)              ;; => lch-skeleton.el
 
-;;; F8
+;;; F8: (org-agenda-map)
 ;(define-key global-map (kbd "<f8>") 'org-agenda)                             ;; => lch-org.el
 
 
-;;; F9
-;> 0 ;> =: Bookmark related stuffs.
-;> alpha:  org files.
-;(defvar org-source-dir "~/Dropbox/org/org" "org source dir") ;; => dotEmacs
-;(defvar pub-html-dir "~/Dropbox/org/public_html" "html dir") ;; => dotEmacs
+;;; F9: (org-file-map)
+;; (define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point)         ;; => lch-util.el
+;; (define-key global-map (kbd "C-<f9>") 'highlight-symbol-next)                ;; => lch-util.el
+;; (define-key global-map (kbd "S-<f9>") 'highlight-symbol-prev)                ;; => lch-util.el
 
-;(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point)         ;; => lch-util.el
-;(define-key global-map (kbd "C-<f9>") 'highlight-symbol-next)                ;; => lch-util.el
-;(define-key global-map (kbd "S-<f9>") 'highlight-symbol-prev)                ;; => lch-util.el
-
-
+;; F9: org-file-map
 (define-key global-map (kbd "<f9> 1") (lambda() (interactive) (dired org-source-dir)))
 (define-key global-map (kbd "<f9> 2") (lambda() (interactive) (dired org-private-dir)))
 (define-key global-map (kbd "<f9> 3") (lambda() (interactive) (dired (concat org-source-dir "/public_html"))))
@@ -205,7 +189,7 @@
     (define-key global-map (kbd "<f9> w t") (lambda() (interactive) (find-file "e:/TMP/DOC/TEX/Untitled1.tex")))))
 
 
-;;; F10
+;;; F10 (conf-file-map)
 ;; Find file & dir map.
 ;; File in emacs.d/rc has the initial letter as its invoker.
 (define-key global-map (kbd "<f10> 1") (lambda() (interactive) (dired (concat emacs-dir "/rc"))))
@@ -263,7 +247,7 @@
 
 
 
-;;; F11
+;;; F11 (ui-map)
 ;~~>- UI related stuffs.
 (define-key global-map (kbd "C-<f11>") 'menu-bar-mode)
 (define-key global-map (kbd "S-<f11>") 'tool-bar-mode)
@@ -304,8 +288,8 @@
 (define-key global-map (kbd "<f11> W") 'whitespace-mode)
 
 
-;;; F12
-;> EMMS
+;;; F12 (emms-map)
+;; EMMS
 ;; (define-key global-map (kbd "<f12> <f12>") 'emms-pause)                     ;; => All in lch-emms.el
 ;; (define-key global-map (kbd "<f12> c")   'emms-start)
 ;; (define-key global-map (kbd "<f12> x")   'emms-stop)
@@ -328,7 +312,7 @@
 (define-key global-map (kbd "M-1") 'shell)
 
 (define-key global-map (kbd "M-k") 'kill-this-buffer)
-(define-key global-map (kbd "M-g") 'goto-line)
+;; (define-key global-map (kbd "M-g") 'lch-go-to-char)
 
 
 ;;; Ctrl Map
@@ -342,10 +326,13 @@
 ;(define-key global-map (kbd "C-0") 'text-scale-normal-size)                  ;; => lch-util.el
 ;(define-key global-map (kbd "C-j") 'newline)                                 ;; => lch-init.el
 ;(define-key global-map (kbd "C-m") 'newline-and-indent)                      ;; => lch-init.el
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(define-key global-map (kbd "C-r") 'isearch-backward-regexp)
+(define-key global-map (kbd "C-s") 'isearch-forward-regexp)
 ;(define-key global-map (kbd "C-z") 'undo)
 
+;; Completion that uses many different methods to find options.
+(define-key global-map (kbd "C-.") 'hippie-expand)
+(define-key global-map (kbd "C-:") 'hippie-expand-lines)
 (define-key global-map (kbd "C-\\") 'hippie-expand)
 ;(define-key global-map (kbd "C-,") 'previous-buffer)
 ;(define-key global-map (kbd "C-.") 'next-buffer)
@@ -366,6 +353,30 @@
 
 ;;; Ctrl+C Map
 ;; Reserved for mode-specific commands (both user-defined and standard Emacs extensions)
+(define-key global-map (kbd "C-c c") 'comment-region)
+(define-key global-map (kbd "C-c C-c") 'list-colors-display)
+;; (define-key global-map (kbd "C-c d") 'lch-insert-date)
+(define-key global-map (kbd "C-c e") 'eval-buffer)
+(define-key global-map (kbd "C-c f") 'find-dired)
+;; (define-key global-map (kbd "C-c C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
+(define-key global-map (kbd "C-c g") 'grep-find)
+(define-key global-map (kbd "C-c k") 'lch-delete-file-and-buffer)               ;; => lch-util.el
+;; (define-key global-map (kbd "C-c n") 'nuke-some-buffers)                     ;; => lch-util.el
+;; (define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)           ;; => lch-util.el
+;; (global-set-key (kbd "C-c o") 'lch-open-with)                                ;; => lch-util.el
+;; C-c p => process                                                             ;; => lch-util.el
+;; (define-key global-map (kbd "C-c r") 'lch-recentf-ido-find-file)             ;; => lch-util.el
+;; (define-key global-map (kbd "C-c r") 'lch-sudo-edit)                         ;; => lch-util.el
+;; (define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)             ;; => lch-util.el
+(define-key global-map (kbd "C-c l") 'goto-line)
+(define-key global-map (kbd "C-c u") 'uncomment-region)
+(define-key global-map (kbd "C-c v") 'view-mode)
+;; (define-key global-map (kbd "C-x m") 'browse-url-at-point)                   ;; => lch-web.el
+;(global-set-key (kbd "C-c -") 'gse-underline-previous-line)                    ;; => lch-util.el
+;(global-set-key (kbd "C-c _") 'gse-underline-previous-line)                    ;; => lch-util.el
+(define-key global-map (kbd "C-c $") 'toggle-truncate-lines)
+
+;; (define-key global-map (kbd "C-c C-b") 'list-bookmarks)
 
 ;;; Ctrl X Map
 ;C-x f ffap
@@ -373,10 +384,9 @@
 ;(define-key global-map (kbd "C-x b") 'ibuffer)                               ;; => lch-elisp.el
 ;(global-set-key (kbd "C-x C-b") 'ido-switch-buffer)                          ;; => lch-elisp.el
 (define-key global-map (kbd "C-x C-3") 'lch-copy-file-name-to-clipboard)      ;; => lch-elisp.el
-;(global-set-key (kbd "C-x g") 'goto-line)
 ;(define-key global-map (kbd "C-x g") 'magit-status)                          ;; => lch-elisp.el
 
-;=> lch-dict.el
+;; lch-dict.el
 ;; (define-key global-map (kbd "M-s") '(lambda ()
 ;;                                (interactive)
 ;;                                (require 'xwl-dictionary)
@@ -385,38 +395,6 @@
 
 
 ;;; Ctrl Z Map
-(define-key global-map (kbd "C-z c") 'comment-region)
-(define-key global-map (kbd "C-z C-c") 'list-colors-display)
-;; (define-key global-map (kbd "C-z d") 'lch-insert-date)
-(define-key global-map (kbd "C-z e") 'eval-buffer)
-(define-key global-map (kbd "C-z f") 'find-dired)
-;; (define-key global-map (kbd "C-z C-f") 'lch-w3m-goto-url)                    ;; => lch-web.el
-(define-key global-map (kbd "C-z g") 'grep-find)
-(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)               ;; => lch-util.el
-;; (define-key global-map (kbd "C-z n") 'nuke-some-buffers)                     ;; => lch-util.el
-;; (define-key global-map (kbd "C-z i") 'lch-indent-region-or-buffer)           ;; => lch-util.el
-;; (global-set-key (kbd "C-z o") 'lch-open-with)                                ;; => lch-util.el
-;; C-z p => process                                                             ;; => lch-util.el
-;; (define-key global-map (kbd "C-z r") 'lch-recentf-ido-find-file)             ;; => lch-util.el
-;(define-key global-map (kbd "C-z r") 'lch-sudo-edit)                         ;; => lch-util.el
-;; (define-key global-map (kbd "C-z s") 'ywb-create/switch-scratch)             ;; => lch-util.el
-(define-key global-map (kbd "C-z u") 'uncomment-region)
-(define-key global-map (kbd "C-z v") 'view-mode)
-(setq view-mode-hook
-      (lambda ()
-        (define-key view-mode-map "h" 'backward-char)
-        (define-key view-mode-map "l" 'forward-char)
-        (define-key view-mode-map "j" 'next-line)
-        (define-key view-mode-map "k" 'previous-line)
-	(define-key view-mode-map "q" 'bury-buffer)
-	(define-key view-mode-map "u" 'view-scroll-page-backward)
-	))
-
-                                        ;(define-key global-map (kbd "C-z w") 'ywb-favorite-window-config)           ;; => lch-util.el
-                                        ;(global-set-key (kbd "C-z -") 'gse-underline-previous-line)                 ;; => lch-util.el
-                                        ;(global-set-key (kbd "C-z _") 'gse-underline-previous-line)                 ;; => lch-util.el
-(define-key global-map (kbd "C-z $") 'toggle-truncate-lines)
-
 ;;; Alt Map
 (eval-after-load 'dired
   '(progn
@@ -427,19 +405,20 @@
 ;; Alt-z ZapToChar
 
 
+;;; Alpha Map
+(define-key global-map (kbd "RET") 'newline-and-indent)
 ;;; MISC
-;=> lch-skeleton.el
-; (define-key global-map (kbd "(") 'skeleton-pair-insert-maybe)
-; (define-key global-map (kbd "[") 'skeleton-pair-insert-maybe)
-; (define-key global-map (kbd "{") 'skeleton-pair-insert-maybe)
-; ;(define-key global-map (kbd "<") 'skeleton-pair-insert-maybe)
-; (define-key global-map (kbd "\"") 'skeleton-pair-insert-maybe)
-
+(setq view-mode-hook
+      (lambda ()
+        (define-key view-mode-map "h" 'backward-char)
+        (define-key view-mode-map "l" 'forward-char)
+        (define-key view-mode-map "j" 'next-line)
+        (define-key view-mode-map "k" 'previous-line)
+	(define-key view-mode-map "q" 'bury-buffer)
+	(define-key view-mode-map "u" 'view-scroll-page-backward)
+	))
 
 
-
-
-
 ;;; Keybinding Table
 
 ;; [from http://www-xray.ast.cam.ac.uk/~gmorris/dotemacs.html]
@@ -554,7 +533,7 @@
     (goto-char (point-min))
     (values)))
 
-;;; Provide lch-binding.
+;;; Provide.
 (provide 'lch-binding)
 (message "~~ lch-binding: done.")
 

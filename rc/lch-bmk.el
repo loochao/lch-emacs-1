@@ -41,15 +41,14 @@
                              (bookmark-all-names)))
                        (ido-read-buffer "Jump to bookmark: " nil t))))
   (bookmark-jump bname))
-(define-key global-map (kbd "C-c C-b") 'switch-to-bookmark)
+(define-key global-map (kbd "C-c C-b") 'list-bookmarks)
 
-(define-key global-map (kbd "<f5> <f5>") 'list-bookmarks)
-(define-key global-map (kbd "S-<f5>") 'bookmark-set)
-(define-key global-map (kbd "C-<f5>") 'switch-to-bookmark)
+(define-key global-map (kbd "<f5> b") 'list-bookmarks)
+(define-key global-map (kbd "<f5> a") 'bookmark-set)
+(define-key global-map (kbd "<f5> j") 'switch-to-bookmark)
 (setq bookmark-save-flag 1)
 
-;>-------- BM --------<;
-;> Bookmark for lines.
+;; Bookmark for lines.
 ;; (require 'bm)
 ;; (when (require 'bm)
 ;;   (define-key global-map (kbd "<f5> <SPC>") 'bm-toggle)

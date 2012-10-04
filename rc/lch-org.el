@@ -283,8 +283,8 @@
 	("a" "TODO-#A" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#A" "TODO-#A-") "* %? :#A:\n%U" :prepend t)
 ;	("A" "TODO-#A~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#A") "* %? :#A:\n%U" :prepend t)
 	("b" "TODO-#B" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#B" "TODO-#B-") "* %? :#B:\n%U" :prepend t)
-;	("B" "TODO-#B~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#B") "* %? :#B:\n%U" :prepend t)
-	("B" "BIB" entry (file+olp (concat org-private-dir "/Refile.org") "BIBs" "BIB") "* %? \n%U" :prepend t)
+	("B" "ACTIVE-#B" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#B" "TODO-#B-") "* ACTIVE %? :#B:\n%U" :prepend t)
+	("8" "BIB" entry (file+olp (concat org-private-dir "/Refile.org") "BIBs" "BIB") "* %? \n%U" :prepend t)
 	("c" "TODO-#C" entry (file+olp (concat org-private-dir "/iPrv.org") "TODO-#C" "TODO-#C-") "* %? :#C:\n%U" :prepend t)
 ;	("C" "TODO-#C~" entry (file+olp (concat org-private-dir "/Refile.org") "TODOs" "TODO-#C") "* %? :#C:\n%U" :prepend t)
 	;("c" "COUNT" entry (file+datetree (concat org-private-dir "/iCount.org")) "* %? \n%U" :prepend t)
@@ -307,9 +307,7 @@
 	;("w" "org-protocol" entry (file (concat org-private-dir "iPrv.org")) "* TODO Review %c %U" :immediate-finish t :clock-in t :clock-resume t)
         ))
 
-(define-key global-map (kbd "<f7> e") (lambda () (interactive) (org-capture nil "e")))
-(define-key global-map (kbd "<f7> i") (lambda () (interactive) (org-capture nil "i")))
-(define-key global-map (kbd "<f7> l") (lambda () (interactive) (org-capture nil "l")))
+;; (define-key global-map (kbd "<f7> l") (lambda () (interactive) (org-capture nil "l")))
 
 ;;; Google Weather
 (require 'google-weather)

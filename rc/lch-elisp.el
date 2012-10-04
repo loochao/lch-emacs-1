@@ -33,12 +33,50 @@
 ;;; Code
 (message "=> lch-elisp: loading...")
 
+;;; Tabbar-ruler
+;; (setq EmacsPortable-global-tabbar nil) ; If you want tabbar
+;; (setq EmacsPortable-global-ruler nil)  ; if you want a global ruler
+;; (setq EmacsPortable-popup-menu t)      ; If you want a popup menu.
+;; (setq EmacsPortable-popup-toolbar nil) ; If you want a popup toolbar
+
+;; (require 'tabbar-ruler)
+;;; Bash-completion
+(require 'bash-completion)
+(bash-completion-setup)
+
+;; Or autoload it:
+;; (autoload 'bash-completion-dynamic-complete
+;;   "bash-completion"
+;;   "BASH completion hook")
+;; (add-hook 'shell-dynamic-complete-functions
+;;           'bash-completion-dynamic-complete)
+;; (add-hook 'shell-command-complete-functions
+;;           'bash-completion-dynamic-complete)
+
+;;; Expand-region
+(require 'expand-region)
+(global-set-key (kbd "C-'") 'er/expand-region)
+;;; Undo-tree
+;; Represent undo-history as an actual tree (visualize with C-x u)
+(setq undo-tree-mode-lighter "")
+(require 'undo-tree)
+(global-undo-tree-mode)
+(global-set-key (kbd "C-x u") 'undo-tree-visualize)
+;;; Markdown-mode
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 ;;; Fill-column-indicator
 (require 'fill-column-indicator)
+(require 'fci-osx-23-fix)
+(setq fci-rule-width 1)
+(setq fci-rule-color "#111122")
+
 ;;; Erc
-(global-set-key (kbd "C-z erc") (lambda () (interactive)
-                           (erc :server "irc.freenode.net" :port "6667"
-                                :nick "loochao")))
+;; (global-set-key (kbd "C-z erc") (lambda () (interactive)
+;;                            (erc :server "irc.freenode.net" :port "6667"
+;;                                 :nick "loochao")))
 
 (setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "#erc")))
 (setq erc-interpret-mirc-color t)
@@ -111,11 +149,12 @@
 (windmove-default-keybindings 'super)
 
 ;;; Saveplace
-;; Remembers your location in a file when saving files
+;; Save point position between sessions
+(require 'saveplace)
 (setq save-place-file (concat emacs-var-dir "/saveplace"))
 ;; activate it for all buffers
 (setq-default save-place t)
-(require 'saveplace)
+
 
 ;;; Icicles
 ;; (require 'icicles)
@@ -157,37 +196,44 @@
 (set-default 'ispell-skip-html t)
 (setq ispell-local-dictionary "english")
 (setq ispell-extra-args '("--sug-mode=ultra"))
-
-(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+;; (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 
 (defun lch-turn-on-flyspell ()
   "Force flyspell-mode on using a positive argument.  For use in hooks."
   (interactive)
   (flyspell-mode +1))
 
-(add-hook 'message-mode-hook 'lch-turn-on-flyspell)
-(add-hook 'text-mode-hook 'lch-turn-on-flyspell)
-(add-hook 'nxml-mode-hook 'lch-turn-on-flyspell)
-(add-hook 'texinfo-mode-hook 'lch-turn-on-flyspell)
-(add-hook 'TeX-mode-hook 'lch-turn-on-flyspell)
+;; (add-hook 'message-mode-hook 'lch-turn-on-flyspell)
+;; (add-hook 'text-mode-hook 'lch-turn-on-flyspell)
+;; (add-hook 'nxml-mode-hook 'lch-turn-on-flyspell)
+;; (add-hook 'texinfo-mode-hook 'lch-turn-on-flyspell)
+;; (add-hook 'TeX-mode-hook 'lch-turn-on-flyspell)
 
-(add-hook 'c-mode-common-hook 'flyspell-prog-mode)
-(add-hook 'lisp-mode-hook 'flyspell-prog-mode)
-(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
+;; (add-hook 'c-mode-common-hook 'flyspell-prog-mode)
+;; (add-hook 'lisp-mode-hook 'flyspell-prog-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 
 ;; Omit tex keywords
 (add-hook 'tex-mode-hook (function (lambda () (setq ispell-parser 'tex))))
+
+;; Personal dict and save personal dict w/o enquiry.
+;; (setq ispell-personal-dictionary (concat emacs-var-dir "/personal-dictionary"))
+;; (setq ispell-silently-savep t)
 
 ;;; BM
 (setq bm-restore-repository-on-load t)
 (setq bm-repository-file (concat emacs-var-dir "/.bm-repository"))
+(setq bm-repository-size nil)      ;; nil == unlimited
 (require 'bm)
+
 (set-face-attribute 'bm-persistent-face nil :background "SlateBlue")
-(global-set-key (kbd "<f6> <f6>") 'bm-toggle)
-(global-set-key (kbd "<f6> <f7>") 'bm-next)
-(global-set-key (kbd "<f6> <f5>") 'bm-previous)
-(global-set-key (kbd "M-<f6>") 'bm-previous)
-(global-set-key (kbd "C-<f6>") 'bm-next)
+;(setq bm-highlight-style 'bm-highlight-line-and-fringe)
+
+(global-set-key (kbd "<f5> <f5>") 'bm-toggle)
+(global-set-key (kbd "<f5> <f6>") 'bm-next)
+(global-set-key (kbd "<f5> <f4>") 'bm-previous)
+(global-set-key (kbd "M-<f5>") 'bm-previous)
+(global-set-key (kbd "C-<f5>") 'bm-next)
 ;; make bookmarks persistent as default
 (setq-default bm-buffer-persistence t)
 
@@ -207,6 +253,10 @@
                               (bm-buffer-save-all)
                               (bm-repository-save)))
 
+(add-hook 'after-save-hook 'bm-buffer-save)
+(add-hook 'after-revert-hook 'bm-buffer-restore)
+(setq bm-wrap-search t)
+(setq bm-wrap-immediately nil)
 
 ;;; Evernote mode
 ;; (require 'evernote-mode)
@@ -222,33 +272,6 @@
 ;; (define-key global-map (kbd "M-0 w") 'evernote-write-note)
 ;; (define-key global-map (kbd "M-0 p") 'evernote-post-region)
 ;; (define-key global-map (kbd "M-0 b") 'evernote-browser)
-
-
-;;; One-key
-(require 'one-key)
-(defvar one-key-menu-emms-alist nil
-  "`One-Key' menu list for EMMS.")
-
-(setq one-key-menu-emms-alist
-      '(
-        (("g" . "Playlist Go") . emms-playlist-mode-go)
-        (("d" . "Play Directory Tree") . emms-play-directory-tree)
-        (("f" . "Play File") . emms-play-file)
-        (("i" . "Play Playlist") . emms-play-playlist)
-        (("t" . "Add Directory Tree") . emms-add-directory-tree)
-        (("c" . "Toggle Repeat Track") . emms-toggle-repeat-track)
-        (("w" . "Toggle Repeat Playlist") . emms-toggle-repeat-playlist)
-        (("u" . "Play Now") . emms-play-now)
-        (("z" . "Show") . emms-show)
-        (("s" . "Emms Streams") . emms-streams)
-        (("b" . "Emms Browser") . emms-browser)))
-
-(defun one-key-menu-emms ()
-  "`One-Key' menu for EMMS."
-  (interactive)
-  (one-key-menu "emms" one-key-menu-emms-alist t))
-
-(define-key global-map (kbd "<f12> <f11>") 'one-key-menu-emms)
 
 
 ;;; Calfw
@@ -292,10 +315,9 @@
          (t (find-file-at-point))))
 (define-key global-map (kbd "C-x f") 'lch-ffap)
 (define-key global-map (kbd "<f10> <f10>") 'lch-ffap)
-
 
 ;;; Recentf
-;; save recent files
+;; Save a list of recent files visited.
 (require 'recentf)
 
 ;; toggle `recentf' mode
@@ -426,6 +448,13 @@
       ido-max-prospects 10
       ido-default-file-method 'selected-window)
 
+(add-to-list 'ido-ignore-directories "target")
+(add-to-list 'ido-ignore-directories "node_modules")
+
+;; Use ido everywhere -- seems to be slow.
+;; (require 'ido-ubiquitous)
+;; (ido-ubiquitous)
+
 (setq ido-save-directory-list-file (concat emacs-var-dir "/emacs-ido-last"))
 (define-key global-map (kbd "C-x b") 'ido-switch-buffer)
 
@@ -502,7 +531,11 @@
 (add-to-list 'ac-dictionary-directories emacs-site-lisp)
 (ac-config-default)
 (setq ac-comphist-file  (concat emacs-var-dir "/ac-comphist.dat"))
-(global-auto-complete-mode t)
+
+(global-auto-complete-mode t)           ;enable global-mode
+(setq ac-auto-start t)                  ;automatically start
+(setq ac-dwim t)                        ;Do what i mean
+(setq ac-override-local-map nil)        ;don't override local map
 
 ;; Use Company Backends for Auto-Complete.
 ;; (require 'ac-company)
@@ -595,12 +628,11 @@
 ;; Highlight occurrence of current word, and move cursor to next/prev occurrence
 ;; see http://xahlee.org/emacs/modernization_isearch.html
 (require 'highlight-symbol)
-;; temp hotkeys
-(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point) ; this is a toggle
-(define-key global-map (kbd "<f9> <f8>") 'highlight-symbol-next)
-(define-key global-map (kbd "<f9> <f10>") 'highlight-symbol-prev)
-
-
+(define-key global-map (kbd "<f9> <f9>") 'highlight-symbol-at-point) ;; This is a toggle
+(define-key global-map (kbd "<f9> <f8>") 'highlight-symbol-prev)
+(define-key global-map (kbd "<f9> <f10>") 'highlight-symbol-next)
+(define-key global-map (kbd "M-<f9>") 'highlight-symbol-prev)
+(define-key global-map (kbd "C-<f9>") 'highlight-symbol-next)
 
 ;;; Bat Mode
 ;; For editing Windows's cmd.exe's script; batch, ".bat" file mode.

@@ -31,14 +31,12 @@
 ;; Boston, MA 02110-1301, USA.
 
 ;;; Code
-
 (define-skeleton org-center-skeleton
   "Inserts org center block"
   nil
 > "#+begin_center"\n
 > _ \n
 > "#+end_center"\n)
-(define-key global-map (kbd "<f5> c") 'org-center-skeleton)
 
 (define-skeleton org-example-skeleton
   "inserts org example block"
@@ -46,15 +44,11 @@
 > "#+begin_example"\n
 > _ \n
 > "#+end_example"\n)
-(define-key global-map (kbd "<f5> e") 'org-example-skeleton)
-
 
 (define-skeleton org-file-skeleton
   "inserts org center block"
   nil
 "[[./data/" _ "][]]"\n)
-(define-key global-map (kbd "<f5> f") 'org-file-skeleton)
-
 
 (define-skeleton org-head-skeleton
   "inserts org header"
@@ -63,7 +57,6 @@
   "#+INFOJS_OPT: home:http://orgmode.org\n"
   "#+OPTIONS: num:nil\n"
   )
-(define-key global-map (kbd "<f5> h") 'org-head-skeleton)
 
 (define-skeleton org-html-skeleton
   "Inserts org center block"
@@ -71,19 +64,17 @@
 > "#+begin_html"\n
 > _ \n
 > "#+end_html"\n)
-(define-key global-map (kbd "<f5> H") 'org-html-skeleton)
 
 (define-skeleton org-image-skeleton
   "Inserts org center block"
   nil
 "[[./image/" _ "]]"\n)
-(define-key global-map (kbd "<f5> i") 'org-image-skeleton)
 
 (define-skeleton org-lib-image-skeleton
   "Inserts org center block"
   nil
 "[[./library/" _ "]]"\n)
-(define-key global-map (kbd "<f5> I") 'org-lib-image-skeleton)
+
 
 (define-skeleton org-src-lisp-skeleton
   "Inserts org src block"
@@ -91,9 +82,31 @@
 > "#+begin_src lisp"\n
 > _ \n
 > "#+end_src"\n)
-(define-key global-map (kbd "<f5> s l") 'org-src-lisp-skeleton)
 
-;> The other choise autopair in lch-elisp.el
+;;; One-key
+(defvar one-key-menu-skeleton-alist nil
+  "`One-Key' menu list for SKELETON.")
+
+(setq one-key-menu-skeleton-alist
+      '(
+        (("c" . "Org Center") . org-center-skeleton)
+        (("e" . "Org Example") . org-example-skeleton)
+        (("f" . "Org File") . org-file-skeleton)
+        (("h" . "Org Head") . org-head-skeleton)
+        (("H" . "Org Html") . org-html-skeleton)
+        (("i" . "Org Image") . org-image-skeleton)
+        (("I" . "Org Image Lib") . org-lib-image-skeleton)
+        (("l" . "Org lisp") . skeleton-show)))
+
+(defun one-key-menu-skeleton ()
+  "`One-Key' menu for SKELETON."
+  (interactive)
+  (one-key-menu "skeleton" one-key-menu-skeleton-alist t))
+
+(define-key global-map (kbd "<f5> s") 'one-key-menu-skeleton)
+
+
+;; The other choise autopair in lch-elisp.el
 (setq skeleton-pair t)
 (define-key global-map (kbd "(") 'skeleton-pair-insert-maybe)
 (define-key global-map (kbd "[") 'skeleton-pair-insert-maybe)
@@ -144,6 +157,7 @@
 ;; (define-abbrev org-mode-abbrev-table "ihtml"  "" 'insert-emacser-code)
 
 (provide 'lch-skeleton)
+
 
 ;;; Local Vars.
 ;; Local Variables:

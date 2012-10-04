@@ -33,49 +33,6 @@
 ;;; Code
 (message "=> lch-pgm: loading...")
 
-;;; Highlight Special Keywords
-;; Using Greek Symbol to respresent lambda
-(font-lock-add-keywords
- nil ;; 'emacs-lisp-mode
- `(("\\<lambda\\>"
-    (0 (progn (compose-region (match-beginning 0) (match-end 0)
-                              ,(make-char 'greek-iso8859-7 107))
-              nil)))))
-
-;; Highlight TODO & FIXME
-(make-face 'font-lock-fixme-face)
-(make-face 'font-lock-todo-face)
-(make-face 'font-lock-lch-face)
-(make-face 'font-lock-caution-face)
-(make-face 'font-lock-figure-face)
-(make-face 'font-lock-why-face)
-
-(modify-face 'font-lock-fixme-face "Black" "Yellow" nil t nil t nil nil)
-(modify-face 'font-lock-lch-face "White" "SlateBlue" nil t nil t nil nil)
-(modify-face 'font-lock-todo-face  "Black" "Yellow" nil t nil nil nil nil)
-(modify-face 'font-lock-caution-face  "White" "DarkRed" nil t nil nil nil nil)
-(modify-face 'font-lock-figure-face "White" "DarkRed" nil t nil t nil nil)
-(modify-face 'font-lock-why-face "Black" "Cyan" nil t nil t nil nil)
-
-(setq lch-keyword-highlight-modes
-     '(php-mode java-mode c-mode c++-mode emacs-lisp-mode scheme-mode
-       text-mode outline-mode))
-
-(defun lch-highlight-special-keywords ()
- (mapc (lambda (mode)
-         (font-lock-add-keywords
-          mode
-          '(("\\<\\(FIXME\\)" 1 'font-lock-fixme-face t)
-            ("\\<\\(TODO~\\)"  1 'font-lock-todo-face  t)
-            ("\\<\\(LCH\\)"  1 'font-lock-lch-face  t)
-            ("\\<\\(CAUTION\\)"  1 'font-lock-caution-face t)
-            ("\\<\\(FIGURE\\)"  1 'font-lock-figure-face t)
-            ("\\<\\(WHY\\)"  1 'font-lock-why-face t)
-	    )))
-       lch-keyword-highlight-modes))
-
-(lch-highlight-special-keywords)
-
 ;;; cc mode
 (defun lch-c-mode-common-hook ()
   (setq c-basic-offset 4))

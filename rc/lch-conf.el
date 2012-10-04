@@ -33,12 +33,13 @@
 ;;; Code
 (message "=> lch-conf: loading...")
 
-;(require 'lch-autoloads)
+;; (require 'lch-autoloads)
 (require 'lch-init)
+(require 'one-key)
 (require 'lch-ui)
 (require 'lch-ui-theme)
 (require 'lch-elisp)
-;(require 'lch-el-get)
+;; (require 'lch-el-get)
 (require 'lch-coding)
 (require 'lch-binding)
 (require 'lch-mouse)
@@ -48,7 +49,6 @@
 (require 'lch-util)
 (require 'lch-pgm)
 (require 'lch-dict)
-;(require 'lch-irc)
 (require 'lch-emms)
 (require 'lch-web)
 (require 'lch-auto-mode)

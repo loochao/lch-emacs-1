@@ -1,19 +1,16 @@
 
 ;; ----- smex-history -----
 (
- org-mode
- goto-line
- auto-fill-mode
- fill-region
  cd
- lm
  5x5
+ afm
+ arp
+ dbx
+ dig
+ erc
 )
 
 ;; ----- smex-data -----
 (
- (goto-line . 3)
- (fill-region . 8)
- (auto-fill-mode . 2)
- (org-mode . 1)
+ 
 )

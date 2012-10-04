@@ -57,7 +57,7 @@
                (message "Deleted file %s" filename)
                (kill-buffer))
         (message "DELETION Canceled")))))
-(define-key global-map (kbd "C-z k") 'lch-delete-file-and-buffer)
+(define-key global-map (kbd "C-c k") 'lch-delete-file-and-buffer)
 
 
 ;;; Sudo edit
@@ -66,7 +66,7 @@
   (if (or arg (not buffer-file-name))
       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-(define-key global-map (kbd "C-z r") 'lch-sudo-edit)
+(define-key global-map (kbd "C-c r") 'lch-sudo-edit)
 ;;; Delete the trailing Chinese space in Douban comments
 (defun lch-douban-delete-trailing-white-space ()
   (interactive)
@@ -134,6 +134,8 @@
    (if mark-active (list (region-beginning) (region-end))
      (list (line-beginning-position)
            (line-beginning-position 2)))))
+;;; Special words
+;; (require 'lch-special-words)
 ;;; Open file in external program
 (defun lch-open-with ()
   "Simple function that allows us to open the underlying
@@ -146,7 +148,7 @@ file of a buffer in an external program."
                       (read-shell-command "Open current file with: "))
                     " "
                     buffer-file-name))))
-(global-set-key (kbd "C-z o") 'lch-open-with)
+(global-set-key (kbd "C-c o") 'lch-open-with)
 
 ;;; Underline prev line.
 (defun gse-underline-previous-line ()
@@ -178,81 +180,6 @@ file of a buffer in an external program."
 (global-set-key (kbd "C-c -") 'gse-underline-previous-line)
 (global-set-key (kbd "C-c _") 'gse-underline-previous-line)
 
-;;; Special words
-(defvar keywords-critical-pattern
-  "\\(BUGS\\|FIXME\\|todo\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
-(make-face 'keywords-critical)
-(set-face-attribute 'keywords-critical nil
-                    :foreground "Black" :background "Cyan"
-                    :weight 'bold)
-
-;; smaller subset of keywords for ensuring no conflict with Org mode TODO keywords
-;; \\|[^*] TODO
-(defvar keywords-org-critical-pattern
-  "\\(BUGS\\|FIXME\\|XXX\\|[Ee][Rr][Rr][Oo][Rr]\\|[Mm][Ii][Ss][Ss][Ii][Nn][Gg]\\|[Ii][Nn][Vv][Aa][Ll][Ii][Dd]\\|[Ff][Aa][Ii][Ll][Ee][Dd]\\|[Cc][Oo][Rr][Rr][Uu][Pp][Tt][Ee][Dd]\\)")
-
-
-;; FIXME Highlighting all special keywords but "TODO" in Org mode is already a
-;; good step. Though, a nicer integration would be that "TODO" strings in the
-;; headings are not touched by this code, and that only "TODO" strings in the
-;; text body would be. Don't know (yet) how to do that...
-(make-face 'keywords-org-critical)
-(set-face-attribute 'keywords-org-critical nil
-                    :foreground "Black" :background "Cyan"
-                    :weight 'bold)
-
-(setq keywords-normal-pattern "\\([Ww][Aa][Rr][Nn][Ii][Nn][Gg]\\)")
-(make-face 'keywords-normal)
-(set-face-attribute 'keywords-normal nil
-                    :foreground "Black" :background "Magenta2")
-
-;; Set up highlighting of special words for proper selected major modes only
-;; No interference with Org mode (which derives from text-mode)
-(dolist (mode '(fundamental-mode
-                svn-log-view-mode
-                text-mode))
-  (font-lock-add-keywords mode
-                          `((,keywords-critical-pattern 1 'keywords-critical prepend)
-                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
-
-;; Set up highlighting of special words for Org mode only
-(dolist (mode '(org-mode))
-  (font-lock-add-keywords mode
-                          `((,keywords-org-critical-pattern 1 'keywords-org-critical prepend)
-                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
-
-;; Add fontification patterns (even in comments) to a selected major mode
-;; *and* all major modes derived from it
-(defun fontify-keywords ()
-  (interactive)
-  ;;   (font-lock-mode -1)
-  ;;   (font-lock-mode 1)
-  (font-lock-add-keywords nil
-                          `((,keywords-critical-pattern 1 'keywords-critical prepend)
-                            (,keywords-normal-pattern 1 'keywords-normal prepend))))
-;; FIXME                        0                  t
-
-;; Set up highlighting of special words for selected major modes *and* all
-;; major modes derived from them
-(dolist (hook '(c++-mode-hook
-                c-mode-hook
-                change-log-mode-hook
-                cperl-mode-hook
-                css-mode-hook
-                emacs-lisp-mode-hook
-                html-mode-hook
-                java-mode-hook
-                latex-mode-hook
-                lisp-mode-hook
-                makefile-mode-hook
-                message-mode-hook
-                php-mode-hook
-                python-mode-hook
-                sh-mode-hook
-                shell-mode-hook
-                ssh-config-mode-hook))
-  (add-hook hook 'fontify-keywords))
-
 ;;; Repeat last command passed to `shell-command'
 (defun repeat-shell-command ()
   "Repeat most recently executed shell command."
@@ -261,7 +188,7 @@ file of a buffer in an external program."
   (or shell-command-history (error "Nothing to repeat."))
   (shell-command (car shell-command-history)))
 
-(global-set-key (kbd "C-z j") 'repeat-shell-command)
+(global-set-key (kbd "C-c j") 'repeat-shell-command)
 
 ;;; Shift a line up or down
 (defun move-line (n)
@@ -347,7 +274,7 @@ time."
                       ((equal prefix '(4)) "%Y-%m-%d %a")
                       ((equal prefix '(16)) "%Y-%m-%d %a %H:%M"))))
     (insert (format-time-string format (current-time)))))
-(define-key global-map (kbd "C-z d") 'lch-insert-date)
+(define-key global-map (kbd "C-c d") 'lch-insert-date)
 
 ;;; lch-search
 (defun lch-search ()
@@ -443,6 +370,33 @@ end tell" mydir)))
     (goto-char (point-min))
     (while (search-forward "”" nil t)
       (replace-match "\"" nil t))
+    (goto-char (point-min))
+    (while (search-forward "：" nil t)
+      (replace-match ": " nil t))
+    (goto-char (point-min))
+    (while (search-forward "（" nil t)
+      (replace-match "(" nil t))
+    (goto-char (point-min))
+    (while (search-forward "）" nil t)
+      (replace-match ")" nil t))
+    (goto-char (point-min))
+    (while (search-forward "；" nil t)
+      (replace-match ";" nil t))
+    (goto-char (point-min))
+    (while (search-forward "！" nil t)
+      (replace-match "! " nil t))
+    (goto-char (point-min))
+    (while (search-forward "、" nil t)
+      (replace-match ", " nil t))
+    (goto-char (point-min))
+    (while (search-forward "？" nil t)
+      (replace-match "? " nil t))
+    (goto-char (point-min))
+    (while (search-forward "【" nil t)
+      (replace-match "[" nil t))
+    (goto-char (point-min))
+    (while (search-forward "】" nil t)
+      (replace-match "]" nil t))
     ))
 
 ;;; Delete trailing spaces
@@ -530,7 +484,7 @@ end tell" mydir)))
         (lch-indent-buffer)
         (message "Indented buffer.")))))
 
-(define-key global-map (kbd "C-z i") 'lch-indent-region-or-buffer)
+(define-key global-map (kbd "C-c i") 'lch-indent-region-or-buffer)
 
 (defun lch-untabify-buffer ()
   "Convert all tabs in buffer with multiple spaces, preserving columns."
@@ -570,7 +524,7 @@ end tell" mydir)))
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
-(global-set-key (kbd "C-z k") 'delete-this-buffer-and-file)
+(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
 
 ;;; insert a time stamp string
 (defun lch-insert-time-stamp ()
@@ -681,7 +635,7 @@ end tell" mydir)))
     (if buf (save-selected-window
               (pop-to-buffer buf))))
   (call-interactively 'his-transpose-windows))
-(define-key global-map (kbd "C-z w") 'ywb-favorite-window-config)
+(define-key global-map (kbd "<f1> w") 'ywb-favorite-window-config)
 
 ;;; Transpose(Interchange) Two Windows
 ;;;###autoload
@@ -712,7 +666,7 @@ end tell" mydir)))
     (switch-to-buffer (get-buffer-create "*scratch*"))
     (when (null buf)
       (lisp-interaction-mode))))
-(define-key global-map (kbd "C-z s") 'ywb-create/switch-scratch)
+(define-key global-map (kbd "C-c s") 'ywb-create/switch-scratch)
 
 ;;; Alt+F4 closes the frame (Win32 ONLY)
 (defun close-frame ()
@@ -739,7 +693,7 @@ the frame title bar."
 (define-key global-map (kbd "C--") 'text-scale-decrease)
 
 ;;; Go-to-char
-;; C-z a x goto x, then press x to go to next 'x'
+;; C-c a x goto x, then press x to go to next 'x'
 (defun lch-go-to-char (n char)
   "Move forward to Nth occurence of CHAR.
 Typing `lch-go-to-char-key' again will move forwad to the next Nth
@@ -750,7 +704,7 @@ occurence of CHAR."
                      char)
     (search-forward (string char) nil nil n))
   (setq unread-command-events (list last-input-event)))
-(define-key global-map (kbd "C-x g") 'lch-go-to-char)
+(define-key global-map (kbd "M-g") 'lch-go-to-char)
 
 ;;; Nuke buffers
 (defun nuke-some-buffers (&optional list)
@@ -775,7 +729,7 @@ LIST defaults to all existing live buffers."
                    (kill-buffer buffer))
              (kill-buffer buffer))))
     (setq list (cdr list))))
-(define-key global-map (kbd "C-z n") 'nuke-some-buffers)
+(define-key global-map (kbd "C-c n") 'nuke-some-buffers)
 
 ;;; Auto scroll
 (defvar my-scroll-auto-timer nil)
@@ -804,7 +758,7 @@ With C-u, C-0 or M-0, cancel the timer."
 
 
 ;;; Process
-(define-key global-map (kbd "C-z p")
+(define-key global-map (kbd "C-c p")
   (lambda () (interactive)
     (let* ((n "*top*")
            (b (get-buffer n)))

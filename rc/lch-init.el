@@ -49,9 +49,6 @@
                 objc-mode latex-mode plain-tex-mode python-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
-(when window-system
-  (global-unset-key "\C-z"))
-
 ;;; Customization
 (setq enable-local-eval t
       modeline-click-swaps-buffers t
@@ -62,7 +59,7 @@
       completion-ignore-case t
       message-log-max t                 ; Don't truncate the message log buffer when it becomes large
       indicate-buffer-boundaries t      ; ?? visually indicate buffer boundaries and scrolling
-      inhibit-startup-message t         ; Disable startup screen
+      inhibit-startup-message t         ; No splash screen please ... jeez
       mark-ring-max 200                 ; # of marks kept in the mark ring.
       enable-recursive-minibuffers t    ; Allow recursive minibuffer ops.
       scroll-step 1                     ; Move down 1 line instead of multi.
@@ -73,7 +70,8 @@
      ;kill-whole-line t                 ; Remove the newlines as well.
       )
 
-(setq-default indent-tabs-mode nil)
+;; Show me empty lines after buffer end
+;(set-default 'indicate-empty-lines t)
 
 (setq sentence-end "\\([。！？。！？]\\|……\\|[.?!][]\"')}]*\\($\\|[ \t]\\)\\)[ \t\n]*")
 
@@ -86,21 +84,35 @@
 ;; Trailing whitespace is unnecessary
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
-;; Explicitly show the end of a buffer
-;(set-default 'indicate-empty-lines t)
-
 ;; Default major mode for new buffers and any files with unspecified mode
 (when (locate-library "org.el")
      (setq-default major-mode 'org-mode))
 
-;; Auto-reload file when modified from external app
-;; whenever an external process changes a file underneath emacs, and there
-;; was no unsaved changes in the corresponding buffer, just revert its
-;; content to reflect what's on-disk.
+;; Auto refresh buffers
 (global-auto-revert-mode 1)
 
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+
+;; Show keystrokes in progress
+(setq echo-keystrokes 0.1)
+
+;;; Info directory
+;; FIXME
+;; (defvar info-dir (concat emacs-dir "/info"))
+;; (require 'info)
+;; (setq Info-directory-list
+;;       (cons (expand-file-name info-dir)
+;;             Info-directory-list))
+
+;;; Transparently open compressed files
+(auto-compression-mode t)
 ;;; Transient mark
 (when window-system (transient-mark-mode 1))
+(make-variable-buffer-local 'transient-mark-mode)
+(put 'transient-mark-mode 'permanent-local t)
+(setq-default transient-mark-mode t)
 
 ;;; Set default browser
 (setq browse-url-browser-function 'browse-url-firefox)
@@ -130,7 +142,7 @@
 ;(mouse-avoidance-mode 'jump)
 
 
-;;; Turn on the functions disabled by default
+;;; Run at full power please
 (put 'upcase-region    'disabled nil)
 (put 'downcase-region  'disabled nil)
 (put 'overwrite-mode   'disabled t)
@@ -146,6 +158,8 @@
 
 ;;; Death to the tabs!
 (setq-default indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
 
 ;;; 'y' for 'yes', 'n' for 'no'
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -164,14 +178,12 @@
 
 ;;; Line trancation enable
 (setq truncate-partial-width-windows nil)
-
 
 ;;; Display column & line number
 (when (fboundp 'line-number-mode)
   (line-number-mode 1))
 (when (fboundp 'column-number-mode)
   (column-number-mode 1))
-
 
 ;;; Time stamp support
 ;; when there's "Time-stamp: <>" in the first 10 lines of the file
@@ -193,16 +205,13 @@
 
 ;;; Directly delete current line
 ;(define-key global-map (kbd "C-k") 'kill-whole-line)
-
 
 ;;; Set default major mode org-mode
-;> Enabled in Org-mode
+;; Enabled in Org-mode
 ;(setq major-mode 'org-mode)
-
 
 ;;; Display picture
 (auto-image-file-mode)
-
 
 ;;; Grammar highlight
 ;; Significant functionality depends on font-locking being active.
@@ -212,12 +221,10 @@
 
 ;; For Org buffers only
 ;; (add-hook 'org-mode-hook 'turn-on-font-lock)
-
 
 ;;; Bookmark file
 ;; Not only on exit, but on every modification
 (setq bookmark-save-flag 1)
-
 
 ;;; Savehist
 ;; keeps track of some history
@@ -230,23 +237,20 @@
       savehist-file (concat emacs-var-dir "/savehist"))
 (savehist-mode t)
 
-;;; Allow emacs cocopy&paste with X11 apps
+;;; Allow pasting selection outside of Emacs
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
-
-;;; Start server for emacsclient
 
 ;;; Start the emacs server only if another instance of the server is not running.
 (require 'server)
 (if (eq (server-running-p server-name) nil)
     (server-start))
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
-
 
 ;;; Delete the selection with a keypress
-;; Select and press a key to delete, like MSWord
-(delete-selection-mode t)
+;; Remove text in active region if inserting text
+(delete-selection-mode 1)
 
 ;;; Enable some function
 (put 'narrow-to-region 'disabled nil)
@@ -273,18 +277,15 @@
 ;(setq diary-file "~/.emacs.var/.diary")
 ;(add-hook 'diary-hook 'appt-make-list)
 ;(setq diary-mail-addr "loochao@gmail.com")
-
-
 
 ;;; Auto fill
 ;; Turn on auto-fill mode for all major modes
 ;(setq-default auto-fill-function 'do-auto-fill)
-;; Auto fill length
-(set-fill-column 72)
+;; Lines should be 80 characters wide, not 72
+(setq fill-column 80)
 ;; Automatically turn on auto-fill-mode when editing text files
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'tex-mode-hook 'turn-on-auto-fill)
-
 
 ;;; Truncate lines
 ;; t means aaaaa->
@@ -451,8 +452,9 @@
 (provide 'lch-init)
 (message "~~ lch-init: done.")
 
-;;; Local Vars.
+;;; Local Vars
 ;; Local Variables:
 ;; mode: emacs-lisp
+;; mode: outline-minor
 ;; outline-regexp: ";;;;* "
 ;; End:

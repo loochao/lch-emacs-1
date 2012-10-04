@@ -1,6 +1,4 @@
-; -*- coding: utf-8 -*-
-
-;;-*- coding:utf-8; mode:emacs-lisp; -*-
+;;-*- coding: utf-8 -*-
 
 ;;; OUTLINE.EL
 ;;

@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <12/04/15 15:51:26 /Users/LooChao/Dropbox/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <12/09/20 19:20:07 /Users/LooChao/Dropbox/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -136,4 +136,6 @@
   ("remote-encoding" "base64")
   ("remote-decoding" "base64 -d -i")
   ("inline-compress" "gzip")
-  ("inline-decompress" "gzip -d")))
+  ("inline-decompress" "gzip -d"))
+ (["sudo" "root" "nat-oitwireless-inside-vapornet100-a-30125.princeton.edu" nil]
+  nil))

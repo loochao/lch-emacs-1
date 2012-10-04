@@ -33,12 +33,25 @@
 ;;; Code
 (message "=> lch-shell: loading...")
 
-
 (defun lch-visit-term-buffer ()
   (interactive)
   (if (not (get-buffer "*ansi-term*"))
       (ansi-term "/bin/bash")
     (switch-to-buffer "*ansi-term*")))
+
+;; Note: Emacs runs .bashrc in *shell*
+;; So mac users should ln -s .profile .bashrc
+
+(autoload 'bash-completion-dynamic-complete
+  "bash-completion"
+  "BASH completion hook")
+(add-hook 'shell-dynamic-complete-functions
+          'bash-completion-dynamic-complete)
+(add-hook 'shell-command-complete-functions
+          'bash-completion-dynamic-complete)
+
+(require 'shell-command)
+(shell-command-completion-mode)
 
 ;; regexp to match prompts in the inferior shell
 (setq shell-prompt-pattern (concat "^" (system-name) " [^ ]+ \\[[0-9]+\\] "))
@@ -65,7 +78,7 @@
 	(delete-window win)
       (pop-to-buffer th-shell-popup-buffer nil t)
       (comint-send-string nil (concat "cd " dir "\n")))))
-(global-set-key (kbd "<f1> <f1>") 'th-shell-popup)
+;(global-set-key (kbd "<f1> ") 'th-shell-popup)
 
 
 ;; NEWSMTH

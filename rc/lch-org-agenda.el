@@ -7,8 +7,8 @@
 (define-key global-map (kbd "<f8>") 'org-agenda)
 (setq org-agenda-custom-commands
       '(
-        ("=" "ALL" tags "#A|DAILY|DUALLY|TRIPLY|WEEKLY|RECUR|AUDIO|CAR|MOBILE|#B|#C|IDEA")
-	("`" agenda "DAY/FOCUS" ((org-agenda-ndays 1)))
+        ("=" "ALL" tags "#A|DAILY|DUALLY|WEEKLY|RECUR|AUDIO|CAR|MOBILE|#B|#C|IDEA")
+	("-" agenda "DAY/FOCUS" ((org-agenda-ndays 1)))
 	 ;; ("1m" "MOBILE" tags "MOBILE/ACTIVE")
 	 ;; ("1a" "AUDIO" tags "AUDIO/ACTIVE")
 	 ;; ("1c" "CAR" tags "CAR/ACTIVE")
@@ -16,12 +16,21 @@
 	 ;; ("1D" "RECUR DUALLY" tags "DUALLY/ACTIVE")
 	 ;; ("1t" "RECUR TRIPLY" tags "TRIPLY/ACTIVE")
 	 ;; ("1w" "RECUR WEEKLY" tags "WEEKLY/ACTIVE")
-	 ("1" "ACTIVE TODO-#A"
-	  (
-;	  (tags "PLAN/ACTIVE" ((org-agenda-overriding-header
-;		 ";>--------PLAN--------<;")))
+        ("`" "ALL TODO"
+         (
+	  (tags "#A/ACTIVE|WAITING")
+	  (tags "#B|OBTAIN/ACTIVE")
+          (tags "DAILY/TOFNSH")
+	  (tags "DAILY|DUALLY|WEEKLY|RECUR/ACTIVE")
+          (tags "MOBILE|AUDIO|CAR/ACTIVE")
+	  (tags "#C/ACTIVE")
+          ))
+        ("1" "ACTIVE TODO-#A"
+         (
+                                        ;	  (tags "PLAN/ACTIVE" ((org-agenda-overriding-header
+                                        ;		 ";>--------PLAN--------<;")))
 	  (tags "#A/ACTIVE|WAITING" ((org-agenda-overriding-header
-				       ";>--------ACTIVE & #A TASKs--------<;")))
+                                      ";>--------ACTIVE & #A TASKs--------<;")))
 	  (agenda "Week Agenda" ((org-agenda-ndays 12)
 				 (org-agenda-sorting-strategy
 				  (quote ((agenda time-up priority-down tag-up))))
@@ -29,28 +38,26 @@
 				 (org-agenda-overriding-header
 				  "\n;>--------AGENDA--------<;")))
 	  (tags "#A/PENDING" ((org-agenda-overriding-header
-				";>--------PENDING #A TASKs--------<;")))
-	   ))
+                               ";>--------PENDING #A TASKs--------<;")))
+          ))
 	 ("2" "ACTIVE BLOCKS"
 	  (
-          (tags "MOBILE|AUDIO|CAR/ACTIVE")
-	  (tags "DAILY|DUALLY|TRIPLY|WEEKLY/ACTIVE")
-	  (tags "#B|OBTAIN/ACTIVE")
-	  (tags "#C/ACTIVE")
+           (tags "MOBILE|AUDIO|CAR/ACTIVE")
+           (tags "DAILY|DUALLY|WEEKLY/ACTIVE")
+           (tags "#B|OBTAIN/ACTIVE")
+           (tags "#C/ACTIVE")
 	   )
 	  )
  	 ("3" "RECUR BLOCKS"
 	  (
-           (tags "DAILY/TOFNSH")
 	   (tags "DAILY/ACTIVE")
-	   (tags "DUALLY/TOFNSH")
+	   ;(tags "DUALLY/TOFNSH")
 	   (tags "DUALLY/ACTIVE")
-	   (tags "TRIPLY/ACTIVE")
 	   (tags "WEEKLY/ACTIVE")
 	   ;(tags "RECUR/ACTIVE")
 	   ))
 	 ("4" "FUN ITEMS" tags "FUN")
-	("0" .  "MISCITEMS")
+         ("0" .  "MISCITEMS")
 	 ("01" "TODO-#A QUEUE" tags "#A-ACTIVE")
 	 ("02" "TODO-#B/#C/OBT QUEUE" tags "#B|OBTAIN|#C/QUEUE")
 	 ("03" "ACM QUEUE" tags "AUDIO|CAR|MOBILE/QUEUE")
@@ -60,7 +67,7 @@
 ;	 ("10" "TEST" occur-tree "Title="Quantum Mechanics"")
 ;	       (agenda "")
 ;	       (todo "ACTIVE|NEXT|QUEUE")
-;	       (tags "ACTIVE|TIMEBOX|MOBILE|AUDIO|CAR|DAILY|DUALLY|TRIPLY|WEEKLY")
+;	       (tags "ACTIVE|TIMEBOX|MOBILE|AUDIO|CAR|DAILY|DUALLY|WEEKLY")
 ;	  (todo "ACTIVE")
 ;	  (tags "CAR")
 ;	       ))

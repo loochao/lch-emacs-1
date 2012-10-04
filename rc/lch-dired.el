@@ -19,7 +19,7 @@
 ;; s a: sort-show-all
 ;; s t: sort-by-date
 ;; s x: sort-by-extension
-;; s z: sort-by-size
+;; s s: sort-by-size
 ;; v: w3m-find-file;
 ;; V: ywb-w3m-find-file;
 ;; w: copy filename;
@@ -77,11 +77,18 @@
 ;(setq dired-recursive-deletes 'top)
 (setq dired-recursive-deletes 'always)
 
-;;Switch infos on/off
-;(require 'dired-details)
-;(dired-details-install)
-;(setq dired-details-hidden-string " ")
-;(require 'dired-details+)
+;; Switch infos on/off
+;; (require 'dired-details)
+;; (setq-default dired-details-hidden-string "--- ")
+;; (dired-details-install)
+
+;; Reload dired after creating a directory
+(defadvice dired-create-directory (after revert-buffer-after-create activate)
+  (revert-buffer))
+
+;; Reload dired after quitting wdired
+(defadvice wdired-abort-changes (after revert-buffer-after-abort activate)
+  (revert-buffer))
 
 ;; Set Face
 (eval-after-load 'dired '(progn (require 'dired-filetype-face)))
@@ -315,7 +322,7 @@ end tell" d)))
 (define-key dired-mode-map (kbd "s t") 'dired-sort-by-date)
 (define-key dired-mode-map (kbd "s x") 'dired-sort-by-extenstion)
 (define-key dired-mode-map (kbd "s .") 'dired-sort-by-invisible-only)
-(define-key dired-mode-map (kbd "s z") 'dired-sort-by-size)
+(define-key dired-mode-map (kbd "s s") 'dired-sort-by-size)
 
 (define-key dired-mode-map (kbd "<SPC>") 'dired-count-sizes)
 
@@ -349,7 +356,7 @@ end tell" d)))
   (local-unset-key (kbd "<down>"))
   (local-unset-key (kbd "<left>"))
   (local-unset-key (kbd "<right>"))
-;  (define-key dired-mode-map (kbd "6") 'dired-up-directory)
+; (define-key dired-mode-map (kbd "6") 'dired-up-directory)
   (define-key dired-mode-map (kbd "6")  '(lambda () (interactive) (joc-dired-single-buffer "..")))
   (define-key dired-mode-map [return] 'joc-dired-single-buffer)
   (define-key dired-mode-map [mouse-1] 'joc-dired-single-buffer-mouse)
