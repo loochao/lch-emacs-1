@@ -2,7 +2,7 @@
 
 ;;; ELISP.EL
 ;;
-;; Copyright (c) 2006 2007 2008 2009 2010 2011 Chao LU
+;; Copyright (c) 2006 2007 2008 2009 2010 2011 Charles LU
 ;;
 ;; Author: Chao LU <loochao@gmail.com>
 ;; URL: http://www.princeton.edu/~chaol
