@@ -1,0 +1,504 @@
+
+[Tue Jul 31 2012]
+*** You have joined channel #emacs                                      [13:17]
+*** Topic for #emacs: Ask your M-x doctor if M-x eliza is right for
+    you...today | Emacs 24 released! | http://shop.fsf.org/ |
+    http://emacswiki.org/EmacsChannelFaq | http://paste.lisp.org/ | No public
+    logging! What happens in #emacs stays in #emacs | Sexism will not be
+    tolerated. Yes, I'm looking at you.
+*** #emacs: topic set by offby1!~user@pdpc/supporter/monthlybyte/offby1,
+    01:09:11 2012/07/26
+*** Users on #emacs: LooChao plotr dcolish daveo dnolen_ dys srhb kanzeon
+    julienfantin kanru mishok13 pnpuff erics sfalcon OwenOu tgunr disnet
+    zenwryly lagging_troll bipt mahmoudimus toabctl m477 beffbernard AimHere
+    centipedefarmer hiroaki_ Sigma zypper arvind_khadri hansy zanes necros
+    thelazydeveloper thisirs Guest54633 stisti Vulpes JordiGH sduckett
+    technomancy hyperair ex00 hectorh30 phaer jehan dmizzle jandrusk
+    tensorpudding raph_ael psykotron tupi rtj youlysses tiwula
+*** Users on #emacs: ananthakumaran wbooze treehug dgvncsz0f zeotron bzzbzz
+    optikalmouse zellio amitp Macphisto minde jo` ryh sssslang fbru02 fold dkh
+    ice mboldt ndk pmade dzhus Frozenlock fisted_ shergill fledermaus ddc__
+    timvishe` elik lduros Gun^Rose cvandusen ashawley TehTreag vcgomes sohail_
+    sjihs leth Sembei poelfda wataken44 jsoa trebor_dki Yuuhi drl Frozenlo`
+    speredenn dooglus mekeor agumonkey jasox kmels taylanub bitonic aaptel
+    rods antoszka rj-code mrBliss
+*** Users on #emacs: unknown_lamer Quadresce pgega rham gusnan nicol pfote
+    xinming forcer PuercoPop PimpLord mishoo crk o1e9 jcubic cfy exhortatory
+    dunib lcc XceptN rossabaker rainrider|away Will| ijp damd| peterhil scottj
+    milkpost anildigital mathrick_ shader assem benny muhoo aartist acagle
+    `moebius` kevinbenko asmanur_ dan64 justin_w ski dankles sellout wagle
+    magog dshep CrrustY_ arrsim` jaimef thone_ jave_ blast_hardcheese ldlework
+    rizumu mfisher angelixd_ sword AlbireoX
+*** Users on #emacs: Jaimef2 dizzylizzy cads Myk267 runejuhl Natch LAMMJohnson
+    sav hpd mnemonikk alrua karswell mtk yonkeltron jaequery golodhrim jlf
+    vibo doukipudonktan anxt SamB_MacG5 calimocho maarhart jrm easye bremner
+    levarnu limetree abeaumont Unhammer tsetumel hewbrocc` mathk turbolent
+    dec4y carif_ louxiu m0ugly aurelien lfazio alang 31NABUMZN GeorgeJetson
+    kirk kstar clintm arrsim timvisher quintela__ tycho ameoba_ djcb CampinSam
+    magcius NaCl ConstantineXVI
+*** Users on #emacs: theBlackDragon Urchin barika classix lusory kuzary
+    aclocal chrisb quotemstr mattcen mns erikwb cuba33ci thanosQR mrkotfw
+    gentz kryl99 jimi_hendrix vmeson duck1123 djao_ cbpage jlindsay kordex
+    SeySayux ivenkys asuka_ tali713 Joefish Khady bvk bigjust sshirokov
+    derrida drewr scgilardi leathekd w0m kanru_ schmitt953 gezgin rizzy
+    solarus GnarlyBob fsbot kahen Derander Trademark91 bersace_olfeo txxt
+    xmesg rods` TheCrittaC talyz` spaceships gsathya nullman
+*** Users on #emacs: matthiasgorgens benzap wapiflap1 danszr cyberspace- k-man
+    dfox ft Obfuscate ivan`` maio mtkoan cola_zero offby1 rudybot thomases
+    erez redblue Laynef caveat- rotty BlastHardcheese dim aindilis Pio
+    bartiosze gianlucadv ellencubed cata Amadiro NimeshNeema sweet_kid cthuluh
+    johnsu01 legov DraX gensym tazle Shrik3 iiska prip toshi ivan\ guifre
+    jhowarth fperrin unlink offbyone macrobat drdo georgehank favadi russm
+    newman Boney jedediah proq defektz vds dropdrive
+*** Users on #emacs: demolithion tbarletz tsbtmn felipe_ StMichel lenzoid
+    CrazyEddy fbs Odin- Joelbyte tankpilot ecraven kenyon digie bob2 birny
+    nuba ozzloy xxtjaxx bradwright james_be wunki quasisane abc321 it3ration
+    rdd hiroaki rgrau peder fualo dubz jfincher stokachu robmyers easytiger
+    onodes qsun beneth` sanderd fhd heatxsink remote gaqzi wanders dotemacs
+    dboswell mr_yall` avar Rapp andres marienz Koshian daimrod nominolo
+    xristos froggey Mad_Dud eqyiel ub|k surrounder
+*** Users on #emacs: lokydor boredomist abuiles Han nano- BigEndian Dr_Jazz
+    Buglouse atrus arkx anonus wilder gnomon futuro` zw01 netrom^off Jonii
+    Ottre bla iderrick raso __main__ mami bedouin wuj CosmicRay tromey galdor
+    nimred thorkill juri_ dueno Borbus korutsu fimblo mgsk jeekl mak fasta
+    ingenious twem2 cmbntr kodein cataska genehack __yhvh__ Mosu srid raek
+    monotux tg c0rn derekv tmarble SndAsleep ned Fuco steez Silex antono synx
+    RushPL i7c cpt_nemo Viiru renard_ ezra
+*** Users on #emacs: Hapsbana1 hanDerPeder mstr xAFFE_ brendyn zenzike reeses
+    axrfnu docgnome tsally_ kini setheus nully sigjuice les cbmuser muep ybit
+    bastii literal Sketch mjrosenb jtg __class__ xp_prg jeffrubic isak_
+    tessier occamshatchet ArZa AlexanderS Raynes illovae kloeri jasond
+    fschmitt adnap squarepeg z0d qDot_ YokYok jlf_ lloydhuang Tasser
+    upgrayeddd wdouglas hiredman wolong magnars skangas endojelly sheepbat
+    wgreenhouse noptys sybariten _root_ aboudreault _schulte_
+*** Users on #emacs: DrSpotter anildigital_work wilfredh neurodamage ruediger
+    dzho newcup cods hohum barik eN_Joy_ Seb zygen jabot delYsid lorn Nafai
+    lahwran binjured ob MrWGW hhuuggoo dale b0ef free birkenfeld ext
+    klutometis Ender79 hober murr4y stepnem jayne tvaalen kenjiskywalker
+    mitchty hgb yibe_ Dybber icks Athas shabble lotia clop fmu TTilus nelk
+    YoungFrog dbristow oconnore Swathe quicksilver Drakx Dnumgis mechairoi Zol
+    idlecool
+*** #emacs URL: http://emacswiki.org/
+*** #emacs modes: +np
+*** #emacs was created on Sunday 2006/11/26 01:42:33
+<youlysses> Is there a automated way to convert my .odt documents to org-mode,
+            and/or other documenting based services/languagus?
+<tali713> hey, and many times there are aspects of the law were I would like
+          more consistency.  like I think that corporations, being persons
+          after all, should have to serve jail time and be unable to conduct
+          business after accidentally killing thousands of people.  just like
+          if I am drunk and hit a guy while driving a car.
+<ijp> tali713: and liquor stores should not be allowed to sell alcohol until
+      they have been in business 18/21 years :P                         [13:18]
+<shergill> exactly. meaning either do away with the 'corporations are people'
+           analogy entirely, or codify a better analogy.
+<shergill> don't do neither, and rely on human discretion *every* time
+<Frozenlock> tali713: Why the distinction between hitting someone with your
+             car and hitting someone with your car while drunk?         [13:19]
+<tali713> oh, nah, i'm in favor of metaphorically jailing them.  if you kill
+          people being a corporation shouldn't mean, well it doesn't matter,
+          here is a fine that's half of one days net profit.
+*** oposomme (~oposomme@bur91-8-78-238-224-125.fbx.proxad.net) has joined
+    channel #emacs
+*** dragansah (~dragan@78.157.17.14) has joined channel #emacs
+<ijp> tali713: communist
+<tali713> Frozenlock: implied innability to control ones actions doesn't mean
+          the crime didn't happen, drunk, half asleep, whatever, you still
+          wrecklessly endangered peoples lives, you don't need to be intent on
+          that consequence.  just not intent on avoiding it.            [13:20]
+<ijp> let's sacrifice some bulls to appease the almighty free market.
+<tali713> ijp: only when I am feeling pro-govermnment. :)
+*** sssslang (~sssslang@123.122.11.170) has quit: Ping timeout: 252 seconds
+                                                                        [13:21]
+*** guillaum (~oposomme@206.222.178.126) has joined channel #emacs
+*** guillaum (~oposomme@206.222.178.126) has quit: Client Quit
+*** zhen (~user@152.16.52.128) has joined channel #emacs
+<JordiGH> This needs a caption:
+          http://gymnasticscoaching.com/new/wp-content/uploads/2010/08/diver.jpg
+                                                                        [13:22]
+* JordiGH is getting into the olympic spirit.
+*** phaer (~user@chello080108051063.9.11.vie.surfer.at) has quit: Ping
+    timeout: 248 seconds
+<jlf> aaptel: ping
+*** alephnull (~alok@122.172.35.232) has joined channel #emacs
+<ijp> JordiGH: I dunno, maybe a pregancy joke would be appropriate
+*** chewbranca (~chewbranc@c-67-171-22-195.hsd1.wa.comcast.net) has joined
+    channel #emacs                                                      [13:23]
+*** pnpuff (~user@unaffiliated/pnpuff) has quit: Remote host closed the
+    connection
+<JordiGH> where's legumbre...
+*** leth (~user@fsf/member/leth) has quit: Ping timeout: 245 seconds
+<jlf> ,vuvuzela
+<fsbot> bbbbzzzzzzzz
+<shergill> is he trying to pull a ron jeremy?
+*** oposomme (~oposomme@bur91-8-78-238-224-125.fbx.proxad.net) has quit: Ping
+    timeout: 265 seconds
+<shergill> *trying in vain                                              [13:24]
+*** dberg (~user@12.216.213.194) has joined channel #emacs
+<JordiGH> How does one pull a Ron Jeremy?
+<Frozenlock> tali713: Taking alcohol increases the risk. However the risk
+             variation isn't the same for everyone. Some are sober and
+             represent the same risk as others who've taken some shots. Should
+             driving for them also be criminal? How do you determine this? Can
+             you universalize this principle? -> increase of risk = criminal?
+<ijp> JordiGH: by the d**k                                              [13:25]
+<ijp> ,rimshot
+<fsbot> Ba-dum, *Ching!*
+<tali713> Frozenlock: if they kill someone, yes.  end of story.         [13:26]
+<Frozenlock> But until then, no, is that right?
+<tali713> Frozenlock: their state of mind effects the nature of the killing,
+          regardless, it is a killing.
+<ijp> Frozenlock: you make guidelines about reasonable alcohol consumption
+      based on expected average tolerance                               [13:27]
+<Frozenlock> I agree. Which is why I don't see why whether or not they've
+             taken alcohol should matter.
+<tali713> Frozenlock: irrelevent to the case at hand.  I was using vehicular
+          manslaughter as an example.  your driving ability is not at hand
+          here.  your willful disregard for life is.
+*** rtj (~rtj@bb220-255-83-99.singnet.com.sg) has quit: Ping timeout: 265
+    seconds
+*** pnpuff (~user@unaffiliated/pnpuff) has joined channel #emacs
+<tali713> Frozenlock: because it isn't vehicular murder if you didn't mean to
+          kill the victim.  if you are drunk, odds are, it was an accident.
+                                                                        [13:28]
+<ned> punishing people for drunk driving is the equivalent of thoughtcrime 
+<youlysses> Compaines are only "people" when they view it to be more
+            preffrable to the law they must "adhere" to.
+<ned> (i'm 80% joking, but somewhat serious)
+<proq> what about search engine crime?                                  [13:29]
+<ned> what's that? punishing people for looking up things that could
+      potentially faciliate a crime?
+<ijp> ned: okay, so how is reckless endangerment of others using heavy
+      machinery a thoughtcrime?
+<Frozenlock> tali713: Perhaps I misunderstood what you were saying, I thought
+             you wanted a drunk driver to have different consequences than
+             anybody else.
+<tali713> Frozenlock: just like if you are are a drug company, and you decide
+          that it is an acceptable risk to put an unsafe drug on the
+          market. (by advertsining for a pupose other than what it was tested
+          for), you aren't intending to kill people, it's just the consequence
+          of the actions.
+<ned> ijp: until you actually do some damage it's punishing people for
+      potential damage rather than actual damage
+<ijp> ned: the mere fact that you've actually got drunk, and got in a car, is
+      an actual act                                                     [13:30]
+*** pgega (~pgega@5ad7c217.bb.sky.com) has quit: Quit: Konversation
+    terminated!
+<ned> yes i agree with that but that act isn't inherently causing damage
+<tali713> ned: the same argument could be made for headlights.
+<offby1> when I say PATH=/some/dir:$PATH, is there an easy way to ensure that
+         /some/dir doesn't also appear _later_ in $PATH?  I often find my PATH
+         has multiple copies of directories, like
+         /some/dir:/usr/bin:/usr/local/bin:/some/dir:/usr/share/bin:/some/dir
+         etc
+<ned> tali713: and safety belts
+<ned> actually, i withdraw the safety belt quip, that's not even remotely
+      analogous                                                         [13:31]
+*** julienfantin (Adium@nat/hackerschool.com/x-nzbzqynpkvjrxaqp) has quit:
+    Quit: Leaving.
+<tali713> ned: not really, the only people effected by safety belt usage is
+          the occupent of the vehicle.  headlights are not just for you.
+          driving in a predictible manner is not just for you.
+<ned> yeah i withdrew that argument ;]                                  [13:32]
+<tali713> yup, saw that.
+*** jmd` (~user@de.cellform.com) has joined channel #emacs
+<tali713> the thing is, you won't be arrested for driving drunk if you show no
+          signs.  but if you do show highly erratic driving, and you are
+          drunk, then your choice to get drunk and get in the vehicle is
+          certainly a problem. (crime or not)                           [13:33]
+*** kevinbenko (~kvirc@misterfluffy.dsl.xmission.com) has quit: Quit: KVIrc
+    4.1.3 Equilibrium http://www.kvirc.net/
+<ijp> ned: I could see how that would be an argument against checkpoints, but
+      if you were noticed by a passing officer, they probably aren't going to
+      stop you unless you are driving in an uncoordinated (and therefore
+      dangerous) manner
+<proq> Frozenlock: the drunk driving law is one of those cases where it
+       doesn't really matter what an individual's opinion about the law is.
+       it's other people's lives at stake, and disagreeing is pretty selfish
+<ijp> ah, tali713 beat me to it
+<Frozenlock> So don't drive at 20 km/h if you're drunk, it might be
+             suspicious. Go at 50-60 km/h instead :P                    [13:34]
+<ned> ijp: i support pulling people over for lane violations, erratic driving,
+      and speeding regardless of whether or not theyre under the influence
+<tali713> don't drive unsafely ever, and if your judgement is impaired (the
+          first sign being that you are convinced your judgment is not
+          impaired), then you can't drive safely, it requires reflexes you
+          don't have.
+*** yat (~user@81-174-45-208.v4.ngi.it) has joined channel #emacs       [13:35]
+*** hrehf_ (~s@p4FE3AFA2.dip.t-dialin.net) has joined channel #emacs
+<ijp> ned: okay, but you don't think that being under the influence should be
+      a factor in deciding the appropriate punishment?                  [13:36]
+<daveo> in some ways, a drunk driver killing someone (regardless of intent) is
+        far worse than the the planned murder, the victum is not guilty of any
+        offense                                                         [13:37]
+<daveo> innocent bystander
+<ijp> daveo: but the murdered person totally had it coming?
+<shergill> daveo: what makes you think the victim has to be guilty of anything
+           in planned murder?
+<Frozenlock> proq: Don't associate law and preferable behavior. I would not
+             drive drunk. I just think treating drunk driver differently is
+             incoherent. (And the law should be coherent/understandable for
+             Joe Sixpack to be able to follow it. Saying otherwise is pretty
+             selfish ;-)  )
+<tali713> ned: those aren't the bad part of drunk driving, those are the
+          observable parts.  the lack of reaction time is the truly dangerous
+          part.  you might be able to handle normal circumstances, but driving
+          doesn't gaurentee those and you need to be able to react almost
+          instantaniously.  I also think talking on a cellular is equivalent
+          and should be punished equivalently.
+<ned> ijp: you can't use being drunk as an excuse to justify your crime in
+      defense in order to diminish the sentence issued post conviction. the
+      converse should be true -- i.e., your punishment shouldn't be increased
+<proq> Frozenlock: 38% of traffic fatalities in 2009 were from drunk driving
+       accidents                                                        [13:38]
+<ned> tali713: should you punish old people who have demonstratably lowered
+      reaction times?
+<Frozenlock> proq: How does that relate to what I've said?
+<ijp> ned: there is a reason we make them retest more often
+<tali713> ned: yes, by revoking their license, if you can't react fast enough
+          to road conditions then you don't deserve the privilege of driving.
+<ned> how do you objectively quantify who's 'fit to drive' ? id take a 25 year
+      old who had 4 beers over 4 hours over a 95 year old on the road.
+<proq> ned: old people have to retake the test, and eventually fail
+<ned> i've never once heard of re-tests in the united states
+<ned> ive lived in new york and massachusetts                           [13:39]
+<ned> granted that's a tiny sample size
+<ned> is this really common practice?
+<tali713> yes the get quite frequent as you get old because of the reasons
+          already mentioned.
+<proq> Frozenlock: since when does it have to be an exact response to the last
+       thing you said?
+<Frozenlock> Proq: well ok then... I've eaten bacon for breakfast. Hmmmmm.
+<tali713> ned: drunk driving is not about you, it is about everyone else on
+          the road, driving is a privilege not a right.                 [13:40]
+*** graft (~graft@udp009060uds.ucsf.edu) has joined channel #emacs
+*** graft (~graft@udp009060uds.ucsf.edu) has quit: Changing host
+*** graft (~graft@unaffiliated/graft) has joined channel #emacs
+<ijp> ned: I disagree, if you got into a car drunk, you 1) know that you are
+      drunk and that 2) drunk people have impaired reactions.
+<ned> ijp/tali713: i'm looking up retests in the US, and i only see vision
+      tests.
+<ned> not reactino tests
+<jlf> yhbt, yhl, hand
+<ijp> jlf: that does seem to be the case
+<ned> which states issue re-tests that test faculty?
+<proq> Frozenlock: there are other cases where you will be punished for
+       incoherent driving - using a cellphone and just plain "reckless
+       driving" for example
+<zellio> proq: false
+<zellio> proq: in the majority of cases maybe                           [13:41]
+<macrobat> ned: I don't want to meet you in traffic
+*** jo` (~user@AMontsouris-551-1-27-158.w90-24.abo.wanadoo.fr) has quit: Ping
+    timeout: 255 seconds
+*** isak (~isak@h87-241-95-229.dynamic.se.alltele.net) has joined channel
+    #emacs                                                              [13:42]
+<Frozenlock> proq: not a cellphone per se, but _holding_ the cellphone (at
+             least in my jurisdiction). Which is dumb, because it's the actual
+             conversation that's disturbing.
+*** bitonic (~user@li146-81.members.linode.com) has quit: Remote host closed
+    the connection
+<tali713> "I don't have impaired judgment." "You're just saying that because
+          you are drunk."
+<w0m> studies have shown cellphone usage is worse than drivign drunk
+<Frozenlock> Indeed.
+<ijp> w0m: cell phones while driving are also banned in many countries
+<ned> im sure 'how drunk' is a factor
+<shergill> ok, so people: i'm trying to prettify urxvt. i'm struggling with
+           defining the font-size. setting 'urxvt*font: xft:Dejavu Sans
+           Mono:size=10' seems to set the correct vertical size, but the font
+           is oddly horizontally expanded (i'm using gnome-terminal as a
+           reference)
+<zellio> w0m: studies have shown a lot of things
+<amitp> studies have shown that most studies are wrong
+<proq> zellio: the "majority" of the time there isn't a cop around observing
+       how you drive, so I fail to see your point
+<w0m> have shown* not all situations
+<ijp> proq: that statistic (assuming it is correct), is all the more damning,
+      since significantly less people drive drunk
+<shergill> am i missing something in the above setting?
+<ijp> amitp: lol true                                                   [13:43]
+<tali713> ned: "I don't think i'm /that/ drunk."  "you are just saying that
+          because your judgment is impaired."
+<zellio> proq: driving tests should  be harder
+<zellio> proq: and people should be retested more often
+<w0m> I don't know anyone who got into an accident in thel ast ~4 years that a
+      cellphone wasn't involved; including a couple serious ones
+<zellio> proq: driver incompetance will come out no matter what
+<ned> tali713: i was responding to w0m's cell phone remark
+<tali713> ned: oic.
+*** amitp (~amitp@c-67-169-101-66.hsd1.ca.comcast.net) has quit: Quit:
+    Leaving.
+<w0m> anecdotal for sure
+<fledermaus> ciao
+<proq> ijp: yes, would you have to correlate the statistics with 1982 where
+       drunk driving was 60% of all fatalities because more people were
+       driving drunk, and it has been declining ever since
+*** fledermaus (~vivek@bhaji-mythic.collabora.co.uk) has quit: Quit: gone
+                                                                        [13:44]
+<daveo> ciao fledermaus 
+<Frozenlock> proq: Suppose that we had statistics showing that men (or women)
+             are worse drivers. Should we ban them from the street?
+<ijp> Frozenlock: now you're just being ridiculous
+<w0m> The study i recall; they setup an obstical course; and had people use a
+      cellphone and run through it; to get a numerical score. They then had
+      drunk people of varying levels (based on BAC) run the same course; and a
+      sober person                                                      [13:45]
+<w0m> (and a sober/normal person also)
+<daveo> shergill: doesn't gnome-terminal != urxvt ?
+<proq> zellio: that still would fail unless you figure out a way to test
+       whether people can get easily distracted, and only when they don't
+       *know* they're being tested
+<ned> how is that ridiculous, he's being hyperbolic to get at a larger point--
+      how do you objectively determine who a safe driver is and who isn't
+<Frozenlock> ijp: Well If you can just find risk factor and use them to bend
+             the law (pre-crime), then we must apply it. Think of the children
+             for god sake!                                              [13:46]
+<ijp> ned: because at that scale the difference is so small as to be
+      negligible
+*** dcolish (dcolish@ruby.cat.pdx.edu) has left channel #emacs: "Leaving..."
+<zellio> so sit there and poke them with a stick proq 
+<shergill> daveo: yes. i'm talking of the display. i'm wondering why setting
+           the same font and size is giving different appearance on the same
+           machine
+<ijp> that's like saying you shouldn't be allowed to drive if you've had a
+      cold within the last 12 months since you might sneeze             [13:47]
+<ned> he's saying 'suppose', so for the sake of argument if men were 20% more
+      likely to get into fatal accidents with oncoming traffic, should they be
+      banned from driving?
+<wbooze> you should ban the boobs, they are attracting them!
+*** pmade (~pmade@c-67-172-158-253.hsd1.co.comcast.net) has quit: Quit: bye.
+<wbooze> lol
+<ijp> ned: you would need to show something more causitive than gender
+<Frozenlock> wbooze: Soooo true :P
+<jlf> wbooze: lurk moar
+<ijp> which we can do for booze and phones
+<Frozenlock> ijp: Hormone levels?
+*** bitonic (~user@li146-81.members.linode.com) has joined channel #emacs
+                                                                        [13:48]
+<ijp> Frozenlock: maybe during puberty, but past that, I doubt it
+*** tgunr (~davec@cust-66-249-166-11.static.o1.com) has quit: Quit: Computer
+    has gone to sleep.
+*** insomniaSalt (~milan@unaffiliated/iammilan) has joined channel #emacs
+*** ivan-kanis (~user@89.83.137.164) has joined channel #emacs
+<wbooze> jlf: brb
+*** bitonic (~user@li146-81.members.linode.com) has quit: Remote host closed
+    the connection
+<daveo> shergill: in the olden days porportional fonts didn't play well with
+        terminal/console/et al                                          [13:49]
+<ijp> ned:Alcohol _edoes_ cause judgement impairment, ask anyone who has ever
+      been drunk. The same cannot be said of being male (though some women
+      will disagree).
+<Frozenlock> ijp: I said 'suppose'
+*** jmd` (~user@de.cellform.com) has quit: Remote host closed the connection
+*** johnw (~user@c-98-215-105-167.hsd1.il.comcast.net) has joined channel
+    #emacs                                                              [13:50]
+* daveo thinks ned is drunk right now!
+<ijp> daveo: would make a lot of sense
+<Frozenlock> And being a woman does change your perceptions, at least once a
+             month.
+*** tgunr (~davec@cust-66-249-166-11.static.o1.com) has joined channel #emacs
+<shergill> apparently it's a known
+           issue. http://crunchbanglinux.org/wiki/urxvt#font_spacing
+<ned> daveo: i'm fairly certain my arguments are pretty logically consistent,
+      even if my stance is unpopular and people are disagreeing, there's no
+      real cognitive dissonance
+*** bzzbzz (~franco@modemcable151.155-57-74.mc.videotron.ca) has quit: Ping
+    timeout: 248 seconds                                                [13:51]
+*** yat (~user@81-174-45-208.v4.ngi.it) has quit: Ping timeout: 252 seconds
+<proq> Frozenlock: you're welcome to lobby for a law to make driving tests
+       harder.  that sounds like a real winner
+<ijp> ned: s/logically//
+<proq> it should include a clause that all the people that want to drive drunk
+       must take 20 drinks before starting the test                     [13:52]
+<technomancy> shergill: I've noticed urxvt stretching things oddly too
+<ijp> I think the real issue here is ned is pissed he doesn't get to drive
+      home after getting sloshed
+*** bzzbzz (~franco@modemcable151.155-57-74.mc.videotron.ca) has joined
+    channel #emacs
+<ned> ijp: feel free to point out any fallacies in anything i've posited
+<ned> ijp: i live in new york city, i don't even have a car.            [13:53]
+<offby1> ha ha, shergill is trying to make fonts work on *nix
+<offby1> :-|
+<ijp> ned: confusing correlation and causation for a start
+<ned> ijp: where did i do that
+*** ryanc (~ryanc@208.85.208.53) has joined channel #emacs
+<macrobat> shergill: why should the evil gnome-terminal be the gold standard?
+           just pick a font and a size
+<ned> other than my rhetorical defense of Frozenlock's scenario
+*** ryanc (~ryanc@208.85.208.53) has quit: Changing host
+*** ryanc (~ryanc@unaffiliated/ryanc) has joined channel #emacs
+<Frozenlock> proq: Why would I want that? I'm saying you can't just pick and
+             choose what risk variation is acceptable. Judge someone when a
+             crime (not a maybe-will-happen crime) occured.
+*** enzuru (~mandelak@70.183.17.147) has joined channel #emacs          [13:54]
+<ned> (which wasn't my position, and, again, i was arguing just for the sake
+      of rhetoric)
+<shergill> technomancy: it seems to be an issue with xft fonts. the
+           'URxvt*letterSpace: -2' option in ~/.Xresources fixes it for me
+<shergill> offby1: not just trying :P                                   [13:55]
+*** sohail (~sohail@75-119-249-160.dsl.teksavvy.com) has joined channel #emacs
+*** sohail (~sohail@75-119-249-160.dsl.teksavvy.com) has quit: Changing host
+*** sohail (~sohail@unaffiliated/sohail) has joined channel #emacs
+*** sohail_ (~sohail@75-119-242-38.dsl.teksavvy.com) has quit: Read error:
+    Operation timed out
+*** stisti (~sami@cs27081070.pp.htv.fi) has quit: Remote host closed the
+    connection
+<offby1> I salute you.                                                  [13:56]
+<offby1> I generally put up with whatever works by default :-|
+<technomancy> shergill: huh... just noticed actually I had a leftover
+              URxvt*letterSpace setting in .Xdefaults, and removing it made it
+              look right =)
+*** bitonic (~user@li146-81.members.linode.com) has joined channel #emacs
+<ijp> it's hard to pull you over for fallacious arguments when you haven't
+      posted any actual arguments
+<JordiGH> Ooh, funky DAG:
+          http://inversethought.com/hg/octave-max/graph/0e07de8441e9    [13:57]
+<JordiGH> Perhaps I spend too much time looking at DAGs.
+<technomancy> JordiGH: you'll go blind
+<shergill> technomancy: hah
+<ijp> you made a few comments about how "it's thoughtcrime", posted scepticism
+      at the thought of retesting, and made a bullshit defense Frozenlock's
+      example                                                           [13:58]
+<ijp> _that's it_
+<offby1> Gentlemen, you can't fight here.  This is the War Room.
+<ned> ijp: where did i confuse correlatino for causation
+<ned> how was my defense bullshit                                       [13:59]
+<ijp> in your defense of frozenlock's argument
+<ned> and which states retest ?
+<ijp> I don't know, I'm not an american
+<proq> let's backtrack
+<futuro`> Does anyone know how to make cperl mode highlight scalar variables?
+<futuro`> for example "$foo" isn't highlighted
+<futuro`> but arrays, such as "@foo" are
+<ijp> proq: to where?
+<ned> < ijp> ned: there is a reason we make them retest more often
+<ned> which countries retest old people then i suppose i should ask     [14:00]
+<jlf> futuro`: with the point on $foo, what default face is shown when you do
+      M-x customize-face RET ?
+<futuro`> jlf: all faces                                                [14:02]
+<tali713> futuro`: font-lock-add-keywords if it is isn't already highlighted
+          (albeit invisibly)
+<futuro`> 'all faces'*
+<proq> ijp: I was making a double entendre.  backtrack is also a distro
+<jlf> futuro`: hmm, that's surprising
+<ijp> ned: there is talk of doing it in the UK, though we do not at present.
+<futuro`> perl-mode shows 'font-lock-variable-name-face'
+<futuro`> tali713: I'll look for that variable
+<tali713> futuro`: it's not a variable, it's a function.
+<ned> ijp: your statement implied that you already do it, apologies for being
+      presumptuous
+*** graft (~graft@unaffiliated/graft) has quit: Ping timeout: 264 seconds
+<futuro`> M-x font-lock-aTAB -> [No match]
+<ijp> poor use of english on my part
+<tali713> ned:
+          http://www.smartmotorist.com/traffic-and-safety-guideline/older-drivers-elderly-driving-seniors-at-the-wheel.html
+          if you want to know that side of the discussion.              [14:03]
+<rudybot> http://tinyurl.com/yz87u4n
+<tali713> futuro`: it's not a command, it is a function. C-h f.
+*** centipedefarmer (~centipede@75-162-50-137.desm.qwest.net) has quit: Quit:
+    This computer has gone to sleep
+*** erics (~Skif@72.1.92.57) has quit: Read error: Connection reset by peer
+                                                                        [14:04]
+*** Skif (~Skif@72.1.92.57) has joined channel #emacs
+<ijp> ned: we do make them have to renew the test at 70, though I'm not sure
+      what that entails

@@ -1,0 +1,15 @@
+;;; w3m-session  -*- mode: emacs-lisp; coding: iso-2022-7bit -*-
+;; This file is generated automatically by emacs-w3m v1.4.437.
+
+(("Automatic saved sessions-1"
+  (20496 11355 663522)
+  (("http://www.emacswiki.org/emacs/WThreeMKeymap" (5) (("about:" (:title "About emacs-w3m") (0) :window-start 1 :position (0 . 0) :window-hscroll 0) ("http://www.emacswiki.org/" (:title "EmacsWiki: Site Map") (1) :forms ([w3m-form-object get "http://www.google.com/cse" nil application/x-www-form-urlencoded (1 (:value ("cx" . "004774160799092323420:6-ff2s0o6yi")) 2 (:value ("q" . "")) 3 (:value ("sa")))])) ("about://history/" (:title "URL history") (2)) ("about://db-history/?start=0" (:title "URL history in DataBase") (3) :window-start 1 :position (5 . 0) :window-hscroll 0) ("http://www.emacswiki.org/" (:title "EmacsWiki: Site Map") (4) :referer "about://db-history/?start=0" :forms ([w3m-form-object get "http://www.google.com/cse" nil application/x-www-form-urlencoded (1 (:value ("cx" . "004774160799092323420:6-ff2s0o6yi")) 2 (:value ("q" . "")) 3 (:value ("sa")))])) ("about://db-history/?start=0" (:title "URL history in DataBase") (5) :window-start 1 :position (9 . 4) :window-hscroll 0)) "EmacsWiki: W Three M Keymap"))
+  0)
+ ("EmacsWiki: Site Map"
+  (20496 10702 269236)
+  (("about:" nil nil "About emacs-w3m") ("http://www.emacswiki.org/" (0) (("about:" (:title "About emacs-w3m") (0) :window-start 1 :position (0 . 0) :window-hscroll 0)) "EmacsWiki: Site Map"))
+  1)
+ ("Automatic saved sessions-2"
+  (20496 10634 715554)
+  (("http://www.emacswiki.org/emacs/WThreeMSession" (2) (("about:" (:title "About emacs-w3m") (0)) ("about://db-history/?start=0" (:title "URL history in DataBase") (1) :window-start 1 :position (7 . 0) :window-hscroll 0) ("http://www.emacswiki.org/emacs/emacs-w3m" (:title "EmacsWiki: emacs-w3m") (2) :referer "about://db-history/?start=0" :window-start 2677 :position (81 . 15) :window-hscroll 0 :forms ([w3m-form-object get "http://www.google.com/cse" nil application/x-www-form-urlencoded (1 (:value ("cx" . "004774160799092323420:6-ff2s0o6yi")) 2 (:value ("q" . "")) 3 (:value ("sa")))]))) "EmacsWiki: W Three M Session"))
+  nil))

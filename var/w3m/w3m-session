@@ -1,0 +1,7 @@
+;;; w3m-session  -*- mode: emacs-lisp; coding: iso-2022-7bit -*-
+;; This file is generated automatically by emacs-w3m v1.4.437.
+
+(("Crash recovery sessions"
+  (20589 110 241543)
+  (("http://traeki.freeshell.org/files/viper-sample" nil nil "viper-sample"))
+  nil))

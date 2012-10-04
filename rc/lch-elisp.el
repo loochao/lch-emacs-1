@@ -53,9 +53,6 @@
 ;; (add-hook 'shell-command-complete-functions
 ;;           'bash-completion-dynamic-complete)
 
-;;; Expand-region
-(require 'expand-region)
-(global-set-key (kbd "C-'") 'er/expand-region)
 ;;; Undo-tree
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (setq undo-tree-mode-lighter "")
