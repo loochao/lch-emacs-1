@@ -1,0 +1,5 @@
+;;; w3m-cookie  -*- mode: emacs-lisp; coding: iso-2022-7bit -*-
+;; This file is generated automatically by emacs-w3m v1.4.437.
+
+(["http://www.iciba.com/?s=%E7%8E%B0%E5%9C%A8" ".iciba.com" nil "iciba_n_rand" "0" "/" 0 "Sat, 17-Nov-2012 20:59:21 GMT" nil]
+["http://www.iciba.com/?s=%E7%8E%B0%E5%9C%A8" ".iciba.com" nil "iciba_u_rand" "1065d38115f78d17d64a4963858f41c3%40140.180.253.112" "/" 0 "Sat, 17-Nov-2012 20:59:21 GMT" nil])
