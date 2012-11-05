@@ -60,26 +60,37 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 ;;; Popup shell
-(defvar th-shell-popup-buffer nil)
+;; (defvar th-shell-popup-buffer nil)
 
-(defun th-shell-popup ()
-  "Toggle a shell popup buffer with the current file's directory as cwd."
-  (interactive)
-  (unless (buffer-live-p th-shell-popup-buffer)
-    (save-window-excursion (shell "*Shell*"))
-    (setq th-shell-popup-buffer (get-buffer "*Shell*")))
-  (let ((win (get-buffer-window th-shell-popup-buffer))
-	(dir (file-name-directory (or (buffer-file-name)
-				      ;; dired
-				      dired-directory
-				      ;; use HOME
-				      "~/"))))
-    (if win
-	(delete-window win)
-      (pop-to-buffer th-shell-popup-buffer nil t)
-      (comint-send-string nil (concat "cd " dir "\n")))))
-;(global-set-key (kbd "<f1> ") 'th-shell-popup)
-
+;; (defun th-shell-popup ()
+;;   "Toggle a shell popup buffer with the current file's directory as cwd."
+;;   (interactive)
+;;   (unless (buffer-live-p th-shell-popup-buffer)
+;;     (save-window-excursion (shell "*Shell*"))
+;;     (setq th-shell-popup-buffer (get-buffer "*Shell*")))
+;;   (let ((win (get-buffer-window th-shell-popup-buffer))
+;; 	(dir (file-name-directory (or (buffer-file-name)
+;; 				      ;; dired
+;; 				      dired-directory
+;; 				      ;; use HOME
+;; 				      "~/"))))
+;;     (if win
+;; 	(delete-window win)
+;;       (pop-to-buffer th-shell-popup-buffer nil t)
+;;       (comint-send-string nil (concat "cd " dir "\n")))))
+;; ;(global-set-key (kbd "<f1> ") 'th-shell-popup)
+;; 
+;;; Multi-term
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+;;; Shell-pop
+(require 'shell-pop)
+(shell-pop-set-internal-mode "ansi-term")
+(shell-pop-set-internal-mode-shell "/bin/bash")
+(shell-pop-set-window-height 60) ;the number for the percentage of the selected window. if 100, shell-pop use the whole of selected window, not spliting.
+(shell-pop-set-window-position "bottom") ;shell-pop-up position. You can choose "top" or "bottom".
+(define-key global-map (kbd "<f1> <f2>") 'shell-pop)
+
 
 ;; NEWSMTH
 ;; Not so good, keep here as an example.

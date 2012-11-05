@@ -41,6 +41,7 @@
 ;(define-key global-map (kbd "M-p") 'pager-page-up)
 
 ;;; F1: (command-map)
+;; (define-key global-map (kbd "<f1> <f2>") 'shell-pop)                         ;; => lch-elisp.el
 ;; (define-key global-map (kbd "<f1> <f1>") 'shell)
 ;; (define-key global-map (kbd "<f1> c") 'lch-cleanup-buffer)                   ;; => lch-util.el
 ;; (define-key global-map (kbd "<f1> d") 'lch-delicious-url)                    ;; => lch-web.el
@@ -310,6 +311,8 @@
 ;;                                (other-window -1)))
 
 (define-key global-map (kbd "M-1") 'shell)
+(define-key global-map (kbd "M-2") 'multi-term)
+(define-key global-map (kbd "M-3") 'ansi-term)
 
 (define-key global-map (kbd "M-k") 'kill-this-buffer)
 ;; (define-key global-map (kbd "M-g") 'lch-go-to-char)

@@ -33,13 +33,22 @@
 ;;; Code
 (message "=> lch-elisp: loading...")
 
-;;; Tabbar-ruler
-;; (setq EmacsPortable-global-tabbar nil) ; If you want tabbar
-;; (setq EmacsPortable-global-ruler nil)  ; if you want a global ruler
-;; (setq EmacsPortable-popup-menu t)      ; If you want a popup menu.
-;; (setq EmacsPortable-popup-toolbar nil) ; If you want a popup toolbar
+;;; Key-chord
+(require 'key-chord)
+(key-chord-mode 1)
 
-;; (require 'tabbar-ruler)
+(key-chord-define-global ",."     "<>\C-b")
+(key-chord-define-global "hj"     'undo)
+(key-chord-define-global "jk"     'dabbrev-expand)
+(key-chord-define-global "cv"     'reindent-then-newline-and-indent)
+(key-chord-define-global "4r"     "$")
+
+;; A ONE-key chord is a single key quickly pressed twice (within one third
+;; of a second or so)
+(key-chord-define-global "''"     "`'\C-b")
+(key-chord-define-global ",,"     'indent-for-comment)
+(key-chord-define-global "qq"     "the ")
+(key-chord-define-global "QQ"     "The ")
 ;;; Bash-completion
 (require 'bash-completion)
 (bash-completion-setup)
@@ -52,7 +61,7 @@
 ;;           'bash-completion-dynamic-complete)
 ;; (add-hook 'shell-command-complete-functions
 ;;           'bash-completion-dynamic-complete)
-
+
 ;;; Undo-tree
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (setq undo-tree-mode-lighter "")
@@ -64,11 +73,6 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
-;;; Fill-column-indicator
-(require 'fill-column-indicator)
-(require 'fci-osx-23-fix)
-(setq fci-rule-width 1)
-(setq fci-rule-color "#111122")
 
 ;;; Erc
 ;; (global-set-key (kbd "C-z erc") (lambda () (interactive)
@@ -87,7 +91,7 @@
 
 ;;; Weibo
 (require 'weibo)
-;;; Twittering mode
+;;; Twittering-mode
 (require 'twittering-mode)
 
 ;; Need support of gnupg, to prevent inputting passwd every time.
@@ -105,9 +109,9 @@
 ;; Timeline open by default
 (setq twittering-initial-timeline-spec-string
       `(":home@sina"
-        ;":home@douban"
-        ;":home@twitter"
-       ))
+                                        ;":home@douban"
+                                        ;":home@twitter"
+        ))
 
 (set-face-background twittering-zebra-1-face "gray24")
 (set-face-background twittering-zebra-2-face "gray22")
@@ -127,9 +131,32 @@
   (interactive)
   (let ((spec (twittering-current-timeline-spec)))
     (save-excursion
-    (funcall twittering-update-status-function
-             nil nil nil spec))))
+      (funcall twittering-update-status-function
+               nil nil nil spec))))
 
+
+;;; Saveplace
+;; Save point position between sessions
+(require 'saveplace)
+(setq save-place-file (concat emacs-var-dir "/saveplace"))
+;; activate it for all buffers
+(setq-default save-place t)
+
+
+;;; Tabbar-ruler
+;; (setq EmacsPortable-global-tabbar nil) ; If you want tabbar
+;; (setq EmacsPortable-global-ruler nil)  ; if you want a global ruler
+;; (setq EmacsPortable-popup-menu t)      ; If you want a popup menu.
+;; (setq EmacsPortable-popup-toolbar nil) ; If you want a popup toolbar
+
+;; (require 'tabbar-ruler)
+
+;;; Fill-column-indicator
+;; (require 'fill-column-indicator)
+;; (require 'fci-osx-23-fix)
+;; (setq fci-rule-width 1)
+;; (setq fci-rule-color "#111122")
+
 ;;; Textmate
 ;; Works only for mac.
 (when lch-mac-p
@@ -145,14 +172,7 @@
 (require 'windmove)
 (windmove-default-keybindings 'super)
 
-;;; Saveplace
-;; Save point position between sessions
-(require 'saveplace)
-(setq save-place-file (concat emacs-var-dir "/saveplace"))
-;; activate it for all buffers
-(setq-default save-place t)
 
-
 ;;; Icicles
 ;; (require 'icicles)
 ;; (icy-mode 1)
@@ -164,10 +184,10 @@
 
 ;;; Highlight non-breaking spaces
 ;; FIXME How does it work?
-(require 'disp-table)
-(aset standard-display-table
-      (make-char 'latin-iso8859-1 (- ?\240 128))
-      (vector (+ ?\267 (* 524288 (face-id 'nobreak-space)))))
+;; (require 'disp-table)
+;; (aset standard-display-table
+;;       (make-char 'latin-iso8859-1 (- ?\240 128))
+;;       (vector (+ ?\267 (* 524288 (face-id 'nobreak-space)))))
 
 
 ;;; PP ^L
@@ -272,9 +292,8 @@
 
 
 ;;; Calfw
-(require 'calfw)
-(require 'calfw-org)
-
+;; (require 'calfw)
+;; (require 'calfw-org)
 
 ;;; Magit
 (require 'magit)
@@ -376,8 +395,6 @@
 ;;; Find-dired
 (require 'find-dired)
 (setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld"))
-
-
 
 ;;; Package
 ;; (when (require 'package)
@@ -387,10 +404,9 @@
 ;; (package-initialize)
 
 ;>~~~~~~~~~~ Lisp conf ~~~~~~~~~~<;
-(require 'highlight-beyond-fill-column)
-(setq highlight-beyond-fill-column-in-modes
-      '("emacs-lisp-mode"))
-
+;; (require 'highlight-beyond-fill-column)
+;; (setq highlight-beyond-fill-column-in-modes
+;;       '("emacs-lisp-mode"))
 
 ;;; Less
 ;(require 'less)
@@ -492,15 +508,15 @@
 
 
 ;;; Dired-jump
-;> provide some dired goodies and dired-jump at C-x C-j
+;; provide some dired goodies and dired-jump at C-x C-j
 (load "dired-x")
-;; ;> TC-like file search, just need to press letters.
+;; TC-like file search, just need to press letters.
 ;; (require 'dired-lis)
 ;; (dired-lcs-mode 1)
 
 
 ;;; YASnippet
-;- Loaded in org.el
+;; Loaded in org.el
 
 
 ;;; Company
@@ -544,7 +560,6 @@
 
 ;;; Vimpulse
 ;(require 'vimpulse)
-
 
 ;;; Cygwin
 ;(require 'setup-cygwin)
@@ -553,18 +568,17 @@
 ;;; Cedet
 ;(require 'cedet)
 ;(semantic-mode 1)
-
 
 ;;; Sunrise Commander
-(require 'sunrise-commander)
-(add-to-list 'auto-mode-alist '("\\.srvm\\'" . sr-virtual-mode))
-(define-key global-map (kbd "C-M-e") 'sunrise)
-(require 'sunrise-x-buttons)
-(require 'sunrise-x-loop)
-(require 'sunrise-x-mirror)
-(require 'sunrise-x-modeline)
-(require 'sunrise-x-tabs)
-(require 'sunrise-x-tree)
+;; (require 'sunrise-commander)
+;; (add-to-list 'auto-mode-alist '("\\.srvm\\'" . sr-virtual-mode))
+;; (define-key global-map (kbd "C-M-e") 'sunrise)
+;; (require 'sunrise-x-buttons)
+;; (require 'sunrise-x-loop)
+;; (require 'sunrise-x-mirror)
+;; (require 'sunrise-x-modeline)
+;; (require 'sunrise-x-tabs)
+;; (require 'sunrise-x-tree)
 
 
 
@@ -574,23 +588,6 @@
 ;; (highlight-tail-mode)
 
 
-;;; Bat-mode
-(when (string-equal system-type "windows-nt")
-  (progn
-    (setq auto-mode-alist
-      (append
-       (list (cons "\\.[bB][aA][tT]$" 'bat-mode))
-       ;; For DOS init files
-       (list (cons "CONFIG\\."   'bat-mode))
-       (list (cons "AUTOEXEC\\." 'bat-mode))
-       auto-mode-alist))
-
-    (autoload 'bat-mode "bat-mode" "DOS and WIndows BAT files" t)
-    )
-  )
-
-
-
 ;;; Matlab
 (autoload 'matlab-mode "matlab" "Enter MATLAB mode." t)
 (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
@@ -604,21 +601,21 @@
 
 ;;; Whitespace-mode
 ;; Make whitespace-mode with very basic background coloring for whitespaces
-(defvar whitespace-style (quote ( spaces tabs newline space-mark tab-mark newline-mark )))
+;; (defvar whitespace-style (quote ( spaces tabs newline space-mark tab-mark newline-mark )))
 
-;- Make whitespace-mode and whitespace-newline-mode use "¶" for end of line char and ▷ for tab.
-(setq
- whitespace-display-mappings
- '(
-   (space-mark 32 [183] [46]) ; normal space, MIDDLE DOT, FULL STOP.
-   (space-mark 160 [164] [95])
-   (space-mark 2208 [2212] [95])
-   (space-mark 2336 [2340] [95])
-   (space-mark 3616 [3620] [95])
-   (space-mark 3872 [3876] [95])
-   (newline-mark 10 [182 10]) ; newlne
-   (tab-mark 9 [9655 9] [92 9]) ; tab
-))
+;; Make whitespace-mode and whitespace-newline-mode use "¶" for end of line char and ▷ for tab.
+;; (setq
+;;  whitespace-display-mappings
+;;  '(
+;;    (space-mark 32 [183] [46]) ; normal space, MIDDLE DOT, FULL STOP.
+;;    (space-mark 160 [164] [95])
+;;    (space-mark 2208 [2212] [95])
+;;    (space-mark 2336 [2340] [95])
+;;    (space-mark 3616 [3620] [95])
+;;    (space-mark 3872 [3876] [95])
+;;    (newline-mark 10 [182 10]) ; newlne
+;;    (tab-mark 9 [9655 9] [92 9]) ; tab
+;; ))
 
 
 ;;; Highlight Symbol
@@ -636,12 +633,25 @@
 (autoload 'dos-mode "dos" "A mode for editing Windows cmd.exe batch scripts." t)
 (add-to-list 'auto-mode-alist '("\\.bat\\'" . dos-mode))
 (add-to-list 'auto-mode-alist '("\\.cmd\\'" . dos-mode))
+(when (string-equal system-type "windows-nt")
+  (progn
+    (setq auto-mode-alist
+          (append
+           (list (cons "\\.[bB][aA][tT]$" 'bat-mode))
+           ;; For DOS init files
+           (list (cons "CONFIG\\."   'bat-mode))
+           (list (cons "AUTOEXEC\\." 'bat-mode))
+           auto-mode-alist))
+
+    (autoload 'bat-mode "bat-mode" "DOS and WIndows BAT files" t)
+    )
+  )
 
 
 ;;; AutoHotKey Mode
 ;; a keyboard macro for Windows
-(autoload 'xahk-mode "xahk-mode" "AutoHotKey mode" t)
-(add-to-list 'auto-mode-alist '("\\.ahk\\'" . xahk-mode))
+;; (autoload 'xahk-mode "xahk-mode" "AutoHotKey mode" t)
+;; (add-to-list 'auto-mode-alist '("\\.ahk\\'" . xahk-mode))
 
 
 ;;; Hunspell

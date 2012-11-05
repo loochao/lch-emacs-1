@@ -114,10 +114,11 @@ history_control=ignoredups
 #-- Set the shell prompt.  See the bash man page for a description
 # of special characters.
 if [ ! "$LOGIN_SHELL" ]; then
-   PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
+   PS1="\[\e[36m\]\w\\[\e[0m\]$ "
+#  PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
 fi
 
-   PS1="\[\e[32m\]\h:\w\\[\e[0m\]$ "
+   PS1="\[\e[36m\]\w\\[\e[0m\]$ "
 #-- Establish a safe environment.
 set -o ignoreeof         # Do not log out with <ctrl-d>
 set -o noclobber         # Do not overwrite files via '>'

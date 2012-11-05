@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ twittering-restart
+ gdb
  cd
+ lm
  5x5
  afm
  arp
- dbx
- dig
- erc
 )
 
 ;; ----- smex-data -----
 (
- 
+ (gdb . 1)
+ (twittering-restart . 1)
 )

@@ -32,6 +32,10 @@
 
 ;;; Code
 
+;;; Buffer count
+(defun count-buffer ()
+  (interactive)
+  (message "%s buffers now" (length (buffer-list))))
 ;;; Copy filename to clipboard
 (defun lch-copy-file-name-to-clipboard ()
   "Copy the current buffer file name to the clipboard."
@@ -350,7 +354,7 @@ activate
 do script \"cd '%s'; bash \"
 end tell" mydir)))
     ))
-(define-key global-map (kbd "<f1> <f2>") 'lch-start-terminal)
+(define-key global-map (kbd "<f1> 1") 'lch-start-terminal)
 
 
 ;;; Punctuation substitution
