@@ -106,6 +106,9 @@
 ;;       (cons (expand-file-name info-dir)
 ;;             Info-directory-list))
 
+;;; Dialog
+(setq use-file-dialog t)
+(setq use-dialog-box nil)
 ;;; Transparently open compressed files
 (auto-compression-mode t)
 ;;; Transient mark
@@ -159,11 +162,15 @@
 ;;; Death to the tabs!
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
-(setq tab-width 4)
+(setq tab-width 8)
+
+;; if indent-tabs-mode is off, untabify before saving
+(add-hook 'write-file-hooks
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))))
 
 ;;; 'y' for 'yes', 'n' for 'no'
 (fset 'yes-or-no-p 'y-or-n-p)
-
 
 ;;; Alter the scratch message
 (setq initial-scratch-message "")

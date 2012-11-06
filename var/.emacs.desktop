@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Nov  5 15:08:53 2012
+;; Created Tue Nov  6 16:49:28 2012
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -11,8 +11,63 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("te" "hs" "bind" ".emacs.d" "caution" "w3m" "wory" "desktop" "publsih" "publish" "org-pub" "pub-" "org" "emacs-dir" "window" "auctex"))
-(setq regexp-search-ring '("lch-ui" "meth" "english" "icir" "whit" "shell" "ghost" "gh" "hum" "HU" "history" "hu" "pearl" "export" "post" "expor"))
+(setq regexp-search-ring '("inde" "company" "ibuffer" "set-face-a" "tool-" "to" "pg" "lch-ui" "meth" "english" "icir" "whit" "shell" "ghost" "gh" "hum"))
 (setq register-alist nil)
-(setq file-name-history '("~/Dropbox/Education/APC524/Asgn1/Solution/Solution/duffing.c" "~/Dropbox/Education/APC524/Asgn1/Solution/Solution/Makefile" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "~/Dropbox/.emacs.d/site-lisp/key-chord.el" "~/Dropbox/.emacs.d/site-lisp/key-chord.el" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/Org/org/Unix.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bashrc-in-emacs" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bash_profile" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bashrc-aliases" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.abbrev_defs" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.emacs" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/note.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/my-programmer-dvorak.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/beagle-grep-readme.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/bash-complete-filenames.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/mplayer/input.conf" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/mplayer/config" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/presentations/ToolsAndProgramming.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/wiki/Win32IME.wiki" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/wiki/TweakingRegistry.wiki" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/wiki/TourDeBabel.wiki" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/daily/2012-02.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/daily/2012-01.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/daily/2011.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/presentations/ToolsAndProgramming.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/usr/share/gnome-session/sessions/gnome-fallback.session" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/doc/resume/baohaojun-en.tex" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/confluence/Emacs" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/bin/screen-exchange-format.pl" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/bin/super-print.sh" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/bin/update-host-ip" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/bin/where-are-we"))
+(setq file-name-history '("~/Dropbox/.emacs.d/rc/lch-init.el" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-ui.el" "~/Dropbox/.emacs.d/rc/lch-elisp.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/Kindle/DK_ReadingData/‘ÌÆ‘µÂ‘¸Õ--‘Ô¬‘ÊÏ‘µ±‘¹ú.txt.html" "~/Dropbox/.emacs.d/var/.bm-repository" "~/Dropbox/.emacs.d/rc/lch-init.el" "/Users/LooChao/.wine/dosdevices/z:/Volumes/DATA/Dropbox/Temporary/joodie-emacs-d/init-topics.el" "~/Dropbox/Temporary/emacs-d/.gitmodules" "/Users/LooChao/Dropbox/.emacs.d/site-lisp/simple-slides.el" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/emacs-config-master/slime-complete-locals.el" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/emacs-config-master/simple-slides.el" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/emacs-config-master/js2-mode.el" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/emacs-config-master/init.el" "~/Dropbox/Org/org/Pearl.org" "~/Dropbox/.emacs.d/rc/lch-pgm.el" "/Volumes/DATA/Dropbox/.emacs.d/doc/loochao-resume/loochao-resume-121101.pdf" "~/Dropbox/Education/APC524/Asgn1/Solution/Solution/duffing.c" "~/Dropbox/Education/APC524/Asgn1/Solution/Solution/Makefile" "~/Dropbox/.emacs.d/site-lisp/key-chord.el" "~/Dropbox/.emacs.d/rc/lch-util.el" "~/Dropbox/Org/org/Unix.org" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bashrc-in-emacs" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bash_profile" "~/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.bashrc-aliases" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.abbrev_defs" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/.emacs" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/note.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/my-programmer-dvorak.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/beagle-grep-readme.org" "/Users/LooChao/.wine/dosdevices/z:/Users/LooChao/Downloads/windows-config-master/org/bash-complete-filenames.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-elisp.el"
+  "lch-elisp.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode undo-tree-mode textmate-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  19206
+  '(19167 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-pgm.el"
+  "lch-pgm.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode undo-tree-mode textmate-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  1390
+  '(1326 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-init.el"
+  "lch-init.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode undo-tree-mode textmate-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  5525
+  '(5396 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/LooChao/Dropbox/.emacs.d/rc/lch-ui.el"
+  "lch-ui.el"
+  'emacs-lisp-mode
+  '(global-auto-revert-mode highlight-parentheses-mode undo-tree-mode textmate-mode auto-complete-mode outline-minor-mode yas/minor-mode)
+  1736
+  '(1891 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  nil
+  "rc"
+  'dired-mode
+  '(global-auto-revert-mode highlight-parentheses-mode textmate-mode)
+  108
+  '(nil nil)
+  t
+  '("/Users/LooChao/Dropbox/.emacs.d/rc/")
+  nil)
+

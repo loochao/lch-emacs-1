@@ -1,17 +1,21 @@
 
 ;; ----- smex-history -----
 (
+ indent-region
+ slide-quit
+ slide-init
+ outline-minor-mode
  twittering-restart
  gdb
  cd
- lm
- 5x5
- afm
- arp
 )
 
 ;; ----- smex-data -----
 (
  (gdb . 1)
  (twittering-restart . 1)
+ (slide-init . 2)
+ (outline-minor-mode . 2)
+ (slide-quit . 2)
+ (indent-region . 1)
 )

@@ -33,9 +33,29 @@
 ;;; Code
 (message "=> lch-pgm: loading...")
 
+;;; Common programming
+;; FIXME: How to add this common hook to lang modes?
+;; ac-sources: auto-complete sources.
+(defun lch-lang-mode-common-hook ()
+  (interactive)
+  (make-local-variable 'fill-column)
+  (setq fill-column 120)
+  ;; (setq indent-tabs-mode nil)       ;; defined in lch-init.el
+  (setq comment-style 'extra-line)
+  (linum-mode t)
+  (hs-minor-mode t)
+  (auto-fill-mode t)
+  (setq ac-sources (append ac-sources '(ac-source-semantic))))
+
 ;;; cc mode
 (defun lch-c-mode-common-hook ()
-  (setq c-basic-offset 4))
+  (interactive)
+  (make-local-variable 'tab-width)
+  (setq tab-width 8)
+  (setq text-width 120)
+  (setq c-basic-offset tab-width)
+  (make-local-variable 'tab-stop-list)
+  (setq tab-stop-list (number-sequence 4 text-width tab-width)))
 
 ;; this will affect all modes derived from cc-mode, like
 ;; java-mode, php-mode, etc
@@ -46,6 +66,10 @@
   (setq tab-width 4))
 
 (add-hook 'makefile-mode-hook 'lch-makefile-mode-hook)
+
+(setq c-default-style
+      '((c-mode . "k&r")
+        (java-mode . "java")))
 
 ;;; Perl
 (defalias 'perl-mode 'cperl-mode)

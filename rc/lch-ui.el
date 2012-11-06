@@ -33,38 +33,6 @@
 ;;; Code
 (message "=> lch-ui: loading...")
 
-;;; W32 max/restore frame
-(if lch-win32-p
-    (and (fboundp 'w32-send-sys-command)
-    (progn
-      (defun w32-restore-frame ()
-	"Restore a minimized frame"
-	(interactive)
-        (w32-send-sys-command 61728))
-
-      (defun w32-maximize-frame ()
-	"Maximize the current frame"
-	(interactive)
-	(w32-send-sys-command 61488))
-
-      (define-key global-map (kbd "<f11> m") 'w32-maximize-frame))))
-
-;;; Pretty Control L
-;(require 'pp-c-l)
-;(pretty-control-l-mode 1)
-
-;;; MENU
-;> get rid of the Games in the Tools menu
-;(define-key menu-bar-tools-menu [games] nil)
-
-;;; Theme
-;; (add-to-list 'load-path (concat emacs-dir "/site-lisp/color-theme"))
-;; (require 'color-theme)
-;; (color-theme-arjen)
-
-;(set-foreground-color "MistyRose3")
-;(set-background-color "Black")
-
 ;;; Frame parameters
 (setq default-frame-alist
       (append
@@ -73,16 +41,46 @@
 	 (default-left-fringe-width . 12)
 	 (default-left-margin-width . 14)
 	 (cursor-color . "sienna1")
-;	(background-color . "Black")
-;	(foreground-color . "moccasin")
-;	(top . 42)
-;	(left . 42)
-;	(height . 47)
-;	(width . 128)
-	) default-frame-alist)
-      )
+         ;; (background-color . "Black")
+         ;; (foreground-color . "moccasin")
+         ;; (top . 42)
+         ;; (left . 42)
+         ;; (height . 47)
+         ;; (width . 128)
+         ) default-frame-alist))
+
 
-;;; FONT
+(if (not lch-mac-p)
+    (when (fboundp 'menu-bar-mode)
+      (menu-bar-mode -1)))
+
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
+;; (setq default-indicate-empty-lines t)
+(setq default-indicate-buffer-boundaries 'left)
+
+
+;;; Menu
+;; get rid of the Games in the Tools menu
+;; (define-key menu-bar-tools-menu [games] nil)
+
+
+;;; Modeline
+;(require 'modeline-posn)
+(setq size-indication-mode t)
+(add-to-list 'default-mode-line-format
+             '((mark-active
+                (:eval (format "Selected: %d line(s), %d char(s) "
+                               (count-lines (region-beginning)
+                                            (region-end))
+                               (- (region-end) (region-beginning)))))))
+
+
+;;; Font
 ;; You can get text properties of any char by typing `C-u C-x ='
 
 ;; Under Windows, you can get the current font string by typing
@@ -163,24 +161,13 @@
 
 (if lch-mac-p
     (setq default-frame-alist
-      (append
-       '((font . "-apple-Monaco-medium-normal-normal-*-21-*-*-*-m-0-fontset-startup"))
-       default-frame-alist)))
+          (append
+           '((font . "-apple-Monaco-medium-normal-normal-*-21-*-*-*-m-0-fontset-startup"))
+           default-frame-alist)))
 (if lch-mac-p
     (set-face-font 'modeline "-apple-Monaco-medium-normal-normal-*-18-*-*-*-m-0-fontset-startup")
   (set-face-font 'modeline "-outline-Lucida Console-normal-normal-normal-mono-18-*-*-*-c-*-iso8859-1"))
 
-;;; Show buffer name in titlebar
-;; %f: Full path of current file.
-;; %b: Buffer name.
-(setq frame-title-format "LooChao@%b")
-;(setq frame-title-format "LooChao@%b")
-;(setq frame-title-format "FIRST THING FIRST / DO IT NOW!!")
-(setq icon-title-format "Emacs - %b")
-
-(set-face-background 'isearch "darkCyan")
-(set-face-foreground 'isearch "white")
-(set-face-background 'region "gray50")
 
 ;;; Cursor
 ;; Don't blink
@@ -203,15 +190,15 @@
 (defun lch-set-cursor-according-to-mode ()
   "change cursor color and type according to some minor modes."
   (cond
-    (buffer-read-only
-      (set-cursor-color lch-read-only-color)
-      (setq cursor-type lch-read-only-cursor-type))
-    (overwrite-mode
-      (set-cursor-color lch-overwrite-color)
-      (setq cursor-type lch-overwrite-cursor-type))
-    (t
-      (set-cursor-color lch-normal-color)
-      (setq cursor-type lch-normal-cursor-type))))
+   (buffer-read-only
+    (set-cursor-color lch-read-only-color)
+    (setq cursor-type lch-read-only-cursor-type))
+   (overwrite-mode
+    (set-cursor-color lch-overwrite-color)
+    (setq cursor-type lch-overwrite-cursor-type))
+   (t
+    (set-cursor-color lch-normal-color)
+    (setq cursor-type lch-normal-cursor-type))))
 
 (defun aquamacs-cursor ()
   (set-cursor-color lch-normal-color)
@@ -221,41 +208,21 @@
 (if (not lch-aquamacs-p) (add-hook 'post-command-hook 'lch-set-cursor-according-to-mode)
   (add-hook 'after-init-hook 'aquamacs-cursor))
 
-;;; Parentheses
-;; Comment this paragraph, so the highlight-parentheses will work.
-;; Paren color set in color-theme-lch.el
-(if (fboundp 'show-paren-mode)
-    (progn
-      (show-paren-mode t)
-      (setq show-paren-delay 0)
-      (setq show-paren-style 'parentheses)
-;     (setq show-paren-style 'expression)
-      ))
+;;; Titlebar
+;; %f: Full path of current file.
+;; %b: Buffer name.
+(setq frame-title-format "LooChao@%b")
+;; (setq frame-title-format "FIRST THING FIRST / DO IT NOW!!")
+(setq icon-title-format "Emacs - %b")
 
-;; Highlight paren when inside (red)
-(require 'highlight-parentheses)
-
-;; Have to define global-highlight-parentheses-mode to enable it all the time
-(defun turn-on-highlight-parentheses-mode ()
-  (highlight-parentheses-mode t))
-(define-global-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  turn-on-highlight-parentheses-mode)
-(global-highlight-parentheses-mode)
-
-;; Get rid of all space-wasting garbage and minimize clutter
-(if (not lch-mac-p) (and (fboundp 'menu-bar-mode) (menu-bar-mode   -1)))
-(and (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-;(if lch-linux-p (and (fboundp 'tool-bar-mode)   (tool-bar-mode   -1)))
-(and (fboundp 'tool-bar-mode) (tool-bar-mode   -1))
-
-;;; Line-num
-;; vi style set num
-(require 'setnu)
+(set-face-background 'isearch "darkCyan")
+(set-face-foreground 'isearch "white")
+(set-face-background 'region "gray50")
 
 ;;; Menu-bar+
 (eval-after-load "menu-bar" '(require 'menu-bar+))
 
+
 ;;; Tabbar
 (require 'tabbar)
 ;; (tabbar-mode)
@@ -353,6 +320,46 @@ Return a list of one element based on major mode."
 (global-set-key (kbd "s-j") 'tabbar-backward)
 (global-set-key (kbd "s-k") 'tabbar-forward)
 
+
+;;; Pretty Control L
+;(require 'pp-c-l)
+;(pretty-control-l-mode 1)
+
+;;; Theme
+;; (add-to-list 'load-path (concat emacs-dir "/site-lisp/color-theme"))
+;; (require 'color-theme)
+;; (color-theme-arjen)
+
+;(set-foreground-color "MistyRose3")
+;(set-background-color "Black")
+
+;;; Parentheses
+;; Comment this paragraph, so the highlight-parentheses will work.
+;; Paren color set in color-theme-lch.el
+(if (fboundp 'show-paren-mode)
+    (progn
+      (show-paren-mode 1)
+      (setq show-paren-delay 0)
+      (setq show-paren-style 'parentheses)
+      ;; (setq show-paren-style 'expression)
+      ))
+
+;; Highlight paren when inside (red)
+(require 'highlight-parentheses)
+
+;; Have to define global-highlight-parentheses-mode to enable it all the time
+(defun turn-on-highlight-parentheses-mode ()
+  (highlight-parentheses-mode t))
+(define-global-minor-mode global-highlight-parentheses-mode
+  highlight-parentheses-mode
+  turn-on-highlight-parentheses-mode)
+(global-highlight-parentheses-mode)
+
+
+;;; Line-num
+;; vi style set num
+(require 'setnu)
+
 ;;; Cycle color
 (defun lch-cycle-fg-color (num)
   ""
@@ -418,16 +425,6 @@ See `cycle-color'."
   )
 (define-key global-map (kbd "<f11> 4") 'lch-cycle-bg-color-backward)
 
-;;; Mode-line
-;(require 'modeline-posn)
-(setq size-indication-mode t)
-(add-to-list 'default-mode-line-format
-             '((mark-active
-                (:eval (format "Selected: %d line(s), %d char(s) "
-                               (count-lines (region-beginning)
-                                            (region-end))
-                               (- (region-end) (region-beginning)))))))
-
 ;;; Cycle fonts
 (defun cycle-font (num)
   "Change font in current frame.
@@ -491,6 +488,20 @@ See `cycle-font'."
 
 (define-key global-map (kbd "<f11> l") 'toggle-line-spacing)
 
+;;; W32 max/restore frame
+(if lch-win32-p
+    (when (fboundp 'w32-send-sys-command)
+         (progn
+           (defun w32-restore-frame ()
+             "Restore a minimized frame"
+             (interactive)
+             (w32-send-sys-command 61728))
+           (defun w32-maximize-frame ()
+             "Maximize the current frame"
+             (interactive)
+             (w32-send-sys-command 61488))
+           (define-key global-map (kbd "<f11> m") 'w32-maximize-frame))))
+
 ;;; Auto Select Fonts
 (defun qiang-font-existsp (font)
   (if (null (x-list-fonts font))
